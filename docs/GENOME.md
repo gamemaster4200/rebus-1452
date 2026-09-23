@@ -39,7 +39,9 @@ The first compiler maps hereditary traits into a 16-bar Strudel event plan:
   rotations, probabilities, instruments, and layer changes;
 - harmony selects absolute MIDI notes and the optional section-B shift;
 - oscillator, filter, envelope, space, delay, and drive become bounded SuperDough
-  controls; noise traits select dedicated white, pink, or brown noise synths;
+  controls; pitched `noise-blend` basses retain a sawtooth fundamental while the
+  noise trait shapes roughness, and dedicated filtered noise synths are reserved
+  for short hats and noise percussion;
 - development traits transform bars 9–16 through density, probability, rotation,
   pitch, percussion, filter, and energy changes;
 - interactions influence kick/bass balance, open-hat ducking, and aligned accents.

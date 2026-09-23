@@ -6,7 +6,7 @@ const pattern = { _Pattern: true as const };
 
 function compiled(genomeId: string): CompiledStrudelPattern {
   return {
-    compilerVersion: 'strudel-compiler-v1',
+    compilerVersion: 'strudel-compiler-v2',
     genomeId,
     genomeSeed: genomeId,
     bpm: 120,
@@ -22,6 +22,8 @@ function compiled(genomeId: string): CompiledStrudelPattern {
 class FakeController {
   readonly cancelScheduledValues = vi.fn();
   readonly setValueAtTime = vi.fn();
+  readonly destinationConnect = vi.fn((destination: AudioNode) => destination);
+  readonly destinationDisconnect = vi.fn();
   readonly orbitDisconnect = vi.fn();
   readonly busDisconnect = vi.fn();
   readonly outputDisconnect = vi.fn();
@@ -31,6 +33,8 @@ class FakeController {
         cancelScheduledValues: this.cancelScheduledValues,
         setValueAtTime: this.setValueAtTime,
       },
+      connect: this.destinationConnect,
+      disconnect: this.destinationDisconnect,
     },
     disconnect: this.outputDisconnect,
   };
@@ -41,7 +45,28 @@ class FakeController {
 }
 
 function setup() {
-  const context = { currentTime: 12 } as AudioContext;
+  const limiters: DynamicsCompressorNode[] = [];
+  const limiterDisconnects: Array<ReturnType<typeof vi.fn>> = [];
+  const createDynamicsCompressor = vi.fn(() => {
+    const disconnect = vi.fn();
+    const limiter = {
+      threshold: { value: 0 },
+      knee: { value: 0 },
+      ratio: { value: 0 },
+      attack: { value: 0 },
+      release: { value: 0 },
+      connect: vi.fn(),
+      disconnect,
+    } as unknown as DynamicsCompressorNode;
+    limiters.push(limiter);
+    limiterDisconnects.push(disconnect);
+    return limiter;
+  });
+  const context = {
+    currentTime: 12,
+    createDynamicsCompressor,
+    destination: {} as AudioDestinationNode,
+  } as unknown as AudioContext;
   const controllers: FakeController[] = [new FakeController(context)];
   let currentController: FakeController | null = controllers[0];
   const setPattern = vi.fn(() => Promise.resolve());
@@ -92,6 +117,8 @@ function setup() {
     defaultPrebake,
     engine,
     initAudio,
+    limiters,
+    limiterDisconnects,
     module,
     replStop,
     setPattern,
@@ -118,6 +145,8 @@ describe('StrudelAudioEngine', () => {
       controllers,
       engine,
       initAudio,
+      limiters,
+      limiterDisconnects,
       replStop,
       setPattern,
       setSuperdoughAudioController,
@@ -132,9 +161,11 @@ describe('StrudelAudioEngine', () => {
     expect(setPattern).toHaveBeenCalledTimes(2);
     expect(setSuperdoughAudioController).toHaveBeenCalledTimes(2);
     expect(firstPlayback.setValueAtTime).toHaveBeenCalledWith(0, 12);
+    expect(firstPlayback.destinationConnect).toHaveBeenCalledWith(limiters[0]);
     expect(firstPlayback.orbitDisconnect).toHaveBeenCalledOnce();
     expect(firstPlayback.busDisconnect).toHaveBeenCalledOnce();
     expect(firstPlayback.outputDisconnect).toHaveBeenCalledOnce();
+    expect(limiterDisconnects[0]).toHaveBeenCalledOnce();
     expect(replStop).toHaveBeenCalledTimes(2);
   });
 
@@ -147,6 +178,8 @@ describe('StrudelAudioEngine', () => {
     engine.stop();
 
     expect(playback.outputDisconnect).toHaveBeenCalledOnce();
-    expect(playback.setValueAtTime).toHaveBeenCalledOnce();
+    expect(playback.setValueAtTime).toHaveBeenCalledTimes(2);
+    expect(playback.setValueAtTime).toHaveBeenNthCalledWith(1, 0.78, 12);
+    expect(playback.setValueAtTime).toHaveBeenNthCalledWith(2, 0, 12);
   });
 });

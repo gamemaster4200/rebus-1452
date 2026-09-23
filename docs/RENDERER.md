@@ -28,10 +28,11 @@ materializes the event plan through Strudel's structured pattern API (`pure`,
 `stack`, `sequence`, and `slowcat`) and never evaluates genome-provided code.
 
 Safety is applied at compilation and runtime: gains and synthesis controls are
-clamped, per-event compression and conservative post-gain are included, effects
-feedback is bounded, and Strudel polyphony is capped at 48 voices. This reduces
-surprises but does not replace normal listening care; start at a modest system
-volume.
+clamped, short bass envelopes fit the 16th-note grid, noise percussion is
+high-pass filtered, effect tails and feedback are bounded, and voices use
+separate effect orbits. A master limiter protects the summed output, while
+Strudel polyphony is capped at 48 voices. This reduces surprises but does not
+replace normal listening care; start at a modest system volume.
 
 Noise timbres use Strudel's dedicated white, pink, and brown synths. The
 SuperDough oscillator/noise crossfade control is deliberately excluded because

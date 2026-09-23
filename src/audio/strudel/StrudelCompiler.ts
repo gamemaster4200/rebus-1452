@@ -75,7 +75,7 @@ function soundName(genome: MusicGenome): string {
     case 'fm':
       return 'sine';
     case 'noise-blend':
-      return genome.sound.noiseAmount >= 0.5 ? 'pink' : 'white';
+      return 'sawtooth';
     default:
       return genome.sound.oscillator;
   }
@@ -87,20 +87,40 @@ function safeCommonControls(
 ): Omit<StrudelEventControls, 's' | 'gain' | 'velocity' | 'clip'> {
   const development = section === 'B' ? genome.development : null;
   const cutoffFactor = 1 + (development?.filterMovement ?? 0) * 0.72;
+  const envelope = genome.sound.envelope;
   return {
-    cutoff: round(clamp(genome.sound.filterCutoff * cutoffFactor, 180, 14_000)),
-    resonance: round(clamp(genome.sound.resonance, 0, 0.78)),
-    drive: round(clamp(genome.sound.drive, 0, 0.82)),
-    attack: round(clamp(genome.sound.envelope.attack, 0.001, 0.3)),
-    decay: round(clamp(genome.sound.envelope.decay, 0.02, 1)),
-    sustain: round(clamp(genome.sound.envelope.sustain, 0, 0.85)),
-    release: round(clamp(genome.sound.envelope.release, 0.02, 1)),
-    room: round(clamp(genome.sound.reverbAmount * 0.58, 0, 0.5)),
-    delay: round(clamp(genome.sound.delayAmount * 0.42, 0, 0.3)),
-    delayfeedback: round(
-      clamp(0.16 + genome.sound.delayAmount * 0.24, 0.12, 0.35),
+    cutoff: round(clamp(genome.sound.filterCutoff * cutoffFactor, 250, 12_000)),
+    resonance: round(clamp(genome.sound.resonance * 0.7, 0, 0.55)),
+    drive: round(
+      clamp(
+        genome.sound.drive * 0.38 + genome.sound.noiseAmount * 0.1,
+        0,
+        0.42,
+      ),
     ),
-    distort: round(clamp(genome.sound.drive * 0.65, 0, 0.55)),
+    // A grid step is 125 ms at 120 BPM. Preserve the genome's envelope
+    // ordering while keeping the audible bass transient inside that window.
+    attack: round(clamp(0.001 + envelope.attack * 0.055, 0.001, 0.025)),
+    decay: round(clamp(0.035 + envelope.decay * 0.14, 0.04, 0.22)),
+    sustain: round(clamp(0.2 + envelope.sustain * 0.52, 0.2, 0.68)),
+    release: round(clamp(0.025 + envelope.release * 0.07, 0.03, 0.16)),
+    room: round(clamp(genome.sound.reverbAmount * 0.14, 0, 0.12)),
+    roomsize: round(clamp(0.28 + genome.sound.reverbAmount * 0.55, 0.28, 0.78)),
+    roomfade: 0.015,
+    roomlp: round(clamp(genome.sound.filterCutoff * 1.35, 3_000, 9_000)),
+    roomdim: 1_400,
+    delay: round(clamp(genome.sound.delayAmount * 0.11, 0, 0.08)),
+    delayfeedback: round(
+      clamp(0.1 + genome.sound.delayAmount * 0.08, 0.1, 0.16),
+    ),
+    delaysync: 0.0625,
+    distort: round(
+      clamp(
+        genome.sound.drive * 0.18 + genome.sound.noiseAmount * 0.06,
+        0,
+        0.2,
+      ),
+    ),
     fmi:
       genome.sound.oscillator === 'fm'
         ? round(clamp(0.35 + genome.sound.drive * 1.2, 0.35, 1.5))
@@ -110,8 +130,8 @@ function safeCommonControls(
     compressorKnee: 4,
     compressorAttack: 0.003,
     compressorRelease: 0.08,
-    postgain: 0.72,
-    orbit: 0,
+    postgain: 0.82,
+    orbit: 1,
     cps: 0.5,
   };
 }
@@ -256,7 +276,7 @@ function compileBass(genome: MusicGenome): CompiledStrudelEvent[] {
     const noteLength = match.ghost
       ? 0.3
       : genome.bass.noteLengths[match.hitIndex];
-    let gain = 0.23 * (0.62 + accent * 0.38) * sectionGain(genome, section);
+    let gain = 0.42 * (0.62 + accent * 0.38) * sectionGain(genome, section);
     if (genome.interaction.kickBassAvoidance && globalStep % 4 === 0)
       gain *= 0.72;
 
@@ -267,7 +287,7 @@ function compileBass(genome: MusicGenome): CompiledStrudelEvent[] {
         ...safeCommonControls(genome, section),
         s: soundName(genome),
         note: round(note),
-        gain: round(clamp(gain, 0.06, 0.3)),
+        gain: round(clamp(gain, 0.12, 0.5)),
         velocity: round(clamp(accent, 0.35, 1)),
         clip: round(clamp(genome.bass.gate * noteLength * 1.6, 0.18, 2)),
       },
@@ -305,38 +325,53 @@ function compileRhythmVoice(
     const accent = match.ghost ? 0.38 : pattern.accents[match.hitIndex];
     const isOpen = voice === 'open-hat';
     const common = safeCommonControls(genome, section);
+    const hatRoom = genome.sound.reverbAmount * (isOpen ? 0.08 : 0.035);
+    const hatDelay = genome.sound.delayAmount * (isOpen ? 0.045 : 0.02);
     events.push({
       ...eventLocation(globalStep),
       voice,
       controls: {
         ...common,
-        s:
-          genome.sound.noiseAmount >= 0.5
-            ? isOpen
-              ? 'pink'
-              : 'white'
-            : isOpen
-              ? 'white'
-              : 'pink',
+        s: isOpen ? 'pink' : 'white',
         note: isOpen ? 91 : 103,
         gain: round(
           clamp(
-            (isOpen ? 0.075 : 0.065) *
+            (isOpen ? 0.052 : 0.044) *
               (0.55 + accent * 0.45) *
               sectionGain(genome, section),
             0.025,
-            isOpen ? 0.12 : 0.1,
+            isOpen ? 0.082 : 0.068,
           ),
         ),
         velocity: round(clamp(accent, 0.3, 1)),
-        clip: isOpen ? 1.4 : 0.42,
-        cutoff: round(clamp((common.cutoff ?? 8_000) * 1.18, 4_000, 14_000)),
+        clip: isOpen ? 0.82 : 0.3,
+        cutoff: round(clamp((common.cutoff ?? 8_000) * 1.6, 9_000, 15_000)),
+        hcutoff: round(
+          clamp(
+            (common.cutoff ?? 5_000) * (isOpen ? 0.62 : 0.82),
+            3_200,
+            6_500,
+          ),
+        ),
+        hresonance: 0.08,
         resonance: round(clamp(genome.sound.resonance * 0.38, 0, 0.35)),
+        drive: round(clamp(genome.sound.drive * 0.12, 0, 0.1)),
+        fmi: undefined,
         attack: 0.001,
-        decay: isOpen ? 0.16 : 0.035,
+        decay: isOpen ? 0.09 : 0.026,
         sustain: 0,
-        release: isOpen ? 0.15 : 0.025,
-        distort: round(clamp(genome.sound.drive * 0.28, 0, 0.24)),
+        release: isOpen ? 0.07 : 0.018,
+        room: round(clamp(hatRoom, 0, isOpen ? 0.06 : 0.026)),
+        roomsize: round(
+          clamp(0.22 + genome.sound.reverbAmount * 0.38, 0.22, 0.55),
+        ),
+        delay: round(clamp(hatDelay, 0, isOpen ? 0.034 : 0.015)),
+        delayfeedback: round(
+          clamp(0.08 + genome.sound.delayAmount * 0.05, 0.08, 0.12),
+        ),
+        distort: round(clamp(genome.sound.drive * 0.08, 0, 0.065)),
+        postgain: 0.62,
+        orbit: 2,
       },
     });
   }
@@ -400,6 +435,7 @@ function compilePercussion(genome: MusicGenome): CompiledStrudelEvent[] {
       const accent = match.ghost ? 0.36 : layer.accents[match.hitIndex];
       const sound = PERCUSSION_SOUND[layer.instrument];
       const common = safeCommonControls(genome, section);
+      const noisyPercussion = ['clap', 'noise'].includes(layer.instrument);
       events.push({
         ...eventLocation(globalStep),
         voice: `percussion-${layerIndex}`,
@@ -419,11 +455,25 @@ function compilePercussion(genome: MusicGenome): CompiledStrudelEvent[] {
           ),
           velocity: round(clamp(accent, 0.3, 1)),
           clip: sound.clip,
+          hcutoff: noisyPercussion ? 1_800 : undefined,
+          hresonance: noisyPercussion ? 0.06 : undefined,
+          drive: round(clamp(genome.sound.drive * 0.18, 0, 0.15)),
+          fmi: undefined,
           attack: 0.001,
           decay: layer.instrument === 'tom' ? 0.2 : 0.06,
           sustain: 0,
           release: layer.instrument === 'tom' ? 0.16 : 0.05,
-          distort: round(clamp(genome.sound.drive * 0.36, 0, 0.32)),
+          room: round(clamp(genome.sound.reverbAmount * 0.06, 0, 0.05)),
+          roomsize: round(
+            clamp(0.24 + genome.sound.reverbAmount * 0.4, 0.24, 0.58),
+          ),
+          delay: round(clamp(genome.sound.delayAmount * 0.035, 0, 0.026)),
+          delayfeedback: round(
+            clamp(0.08 + genome.sound.delayAmount * 0.04, 0.08, 0.11),
+          ),
+          distort: round(clamp(genome.sound.drive * 0.1, 0, 0.08)),
+          postgain: 0.68,
+          orbit: 3 + layerIndex,
         },
       });
     }
