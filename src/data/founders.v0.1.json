@@ -1,0 +1,9976 @@
+[
+  {
+    "version": "0.1",
+    "id": "founder-001",
+    "founderId": 1,
+    "family": "sparse-hypnotic",
+    "seed": "rebus-1452-founders-v1:001",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "A#",
+      "pitchSet": [
+        0
+      ],
+      "octave": 3,
+      "steps": 16,
+      "hits": [
+        0,
+        14
+      ],
+      "noteChoice": [
+        0,
+        0
+      ],
+      "accents": [
+        0.793027,
+        0.640732
+      ],
+      "noteLengths": [
+        1.184026,
+        0.74941
+      ],
+      "gate": 0.501682,
+      "probability": 0.890824,
+      "rotation": 1,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [
+        2,
+        8,
+        12,
+        13
+      ],
+      "accents": [
+        0.858101,
+        0.58731,
+        0.949514,
+        0.595174
+      ],
+      "density": 0.25,
+      "probability": 0.95961,
+      "rotation": -3,
+      "euclideanPulses": null,
+      "muteBars": [
+        6,
+        11,
+        12
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 32,
+      "hits": [
+        5,
+        17
+      ],
+      "accents": [
+        0.671369,
+        0.521188
+      ],
+      "density": 0.0625,
+      "probability": 0.848233,
+      "rotation": 1,
+      "euclideanPulses": null,
+      "muteBars": [
+        9,
+        14
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 24,
+          "hits": [
+            12,
+            20
+          ],
+          "accents": [
+            0.782374,
+            0.95632
+          ],
+          "density": 0.08333333333333333,
+          "probability": 0.994127,
+          "rotation": 0,
+          "euclideanPulses": null,
+          "muteBars": [
+            4,
+            13
+          ],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A#",
+      "pitchCollection": [
+        0
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "triangle",
+      "filterCutoff": 5345.046275,
+      "resonance": 0.026339,
+      "drive": 0.19234,
+      "envelope": {
+        "attack": 0.211168,
+        "decay": 0.806795,
+        "sustain": 0.120429,
+        "release": 1.58662
+      },
+      "noiseAmount": 0.05008,
+      "reverbAmount": 0.681635,
+      "delayAmount": 0.314546
+    },
+    "development": {
+      "densityDelta": 0.044381,
+      "bassVariation": false,
+      "hatVariation": false,
+      "percussionChange": 1,
+      "filterMovement": 0.08812,
+      "probabilityDelta": 0.013075,
+      "rotationDelta": 0,
+      "energyDelta": 0.084274
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.555417,
+      "openHatPercussionDucking": 0.024023,
+      "accentAlignment": 0.539232,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.091474,
+      "mutationStrength": 0.238459,
+      "microWeight": 0.539448,
+      "mesoWeight": 0.297883,
+      "macroWeight": 0.162669,
+      "rhythmWeight": 0.170273,
+      "pitchWeight": 0.103363,
+      "soundWeight": 0.358474,
+      "developmentWeight": 0.36789
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-002",
+    "founderId": 2,
+    "family": "sparse-hypnotic",
+    "seed": "rebus-1452-founders-v1:002",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "D",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 2,
+      "steps": 24,
+      "hits": [
+        4,
+        8,
+        9,
+        12,
+        16,
+        19
+      ],
+      "noteChoice": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        0
+      ],
+      "accents": [
+        0.72767,
+        0.911614,
+        0.84769,
+        0.704695,
+        0.711684,
+        0.7253
+      ],
+      "noteLengths": [
+        1.063498,
+        0.474308,
+        0.965067,
+        0.964642,
+        1.02588,
+        0.547815
+      ],
+      "gate": 0.787566,
+      "probability": 0.960038,
+      "rotation": 0,
+      "periodicVariation": {
+        "everyBars": 2,
+        "rotation": 2
+      }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 24,
+      "hits": [
+        2,
+        4,
+        8,
+        9,
+        12,
+        16
+      ],
+      "accents": [
+        0.656988,
+        0.582444,
+        0.732007,
+        0.560035,
+        0.646029,
+        0.606155
+      ],
+      "density": 0.25,
+      "probability": 0.986472,
+      "rotation": -1,
+      "euclideanPulses": 6,
+      "muteBars": [
+        0,
+        6,
+        11
+      ]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 16,
+      "hits": [
+        5,
+        8
+      ],
+      "accents": [
+        0.45825,
+        0.936591
+      ],
+      "density": 0.125,
+      "probability": 0.961618,
+      "rotation": -3,
+      "euclideanPulses": 2,
+      "muteBars": [
+        15
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 24,
+          "hits": [
+            2,
+            7,
+            9,
+            13,
+            23
+          ],
+          "accents": [
+            0.522715,
+            0.817194,
+            0.84577,
+            0.657569,
+            0.474619
+          ],
+          "density": 0.20833333333333334,
+          "probability": 0.874596,
+          "rotation": -4,
+          "euclideanPulses": 5,
+          "muteBars": [
+            11
+          ],
+          "instrument": "cowbell"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "D",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "sine",
+      "filterCutoff": 4933.137223,
+      "resonance": 0.303507,
+      "drive": 0.357372,
+      "envelope": {
+        "attack": 0.091772,
+        "decay": 0.769648,
+        "sustain": 0.092169,
+        "release": 0.966691
+      },
+      "noiseAmount": 0.145904,
+      "reverbAmount": 0.603569,
+      "delayAmount": 0.302001
+    },
+    "development": {
+      "densityDelta": 0.108916,
+      "bassVariation": false,
+      "hatVariation": false,
+      "percussionChange": -1,
+      "filterMovement": 0.19746,
+      "probabilityDelta": 0.067119,
+      "rotationDelta": 0,
+      "energyDelta": 0.19589
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.068669,
+      "openHatPercussionDucking": 0.072081,
+      "accentAlignment": 0.102447,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.077851,
+      "mutationStrength": 0.222332,
+      "microWeight": 0.405708,
+      "mesoWeight": 0.361682,
+      "macroWeight": 0.23261,
+      "rhythmWeight": 0.346044,
+      "pitchWeight": 0.194996,
+      "soundWeight": 0.224755,
+      "developmentWeight": 0.234205
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-003",
+    "founderId": 3,
+    "family": "sparse-hypnotic",
+    "seed": "rebus-1452-founders-v1:003",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "F#",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 1,
+      "steps": 32,
+      "hits": [
+        5,
+        7,
+        8,
+        16,
+        17,
+        20,
+        24
+      ],
+      "noteChoice": [
+        2,
+        1,
+        2,
+        1,
+        2,
+        0,
+        2
+      ],
+      "accents": [
+        0.76042,
+        0.818846,
+        0.929084,
+        0.850313,
+        0.464357,
+        0.989922,
+        0.931133
+      ],
+      "noteLengths": [
+        0.754828,
+        1.04455,
+        0.547313,
+        0.159958,
+        0.47591,
+        1.092299,
+        0.571812
+      ],
+      "gate": 0.619761,
+      "probability": 0.888909,
+      "rotation": -3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 32,
+      "hits": [
+        0,
+        4,
+        8,
+        12,
+        20,
+        22,
+        30
+      ],
+      "accents": [
+        0.591029,
+        0.637878,
+        0.96169,
+        0.899348,
+        0.802604,
+        0.46752,
+        0.55735
+      ],
+      "density": 0.21875,
+      "probability": 0.899021,
+      "rotation": 3,
+      "euclideanPulses": null,
+      "muteBars": [
+        5
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [
+        11,
+        12
+      ],
+      "accents": [
+        0.684855,
+        0.684942
+      ],
+      "density": 0.125,
+      "probability": 0.849468,
+      "rotation": 4,
+      "euclideanPulses": null,
+      "muteBars": [
+        8,
+        14
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 32,
+          "hits": [
+            4,
+            6,
+            7,
+            12,
+            20,
+            26
+          ],
+          "accents": [
+            0.672178,
+            0.702567,
+            0.524089,
+            0.655616,
+            0.765427,
+            0.75221
+          ],
+          "density": 0.1875,
+          "probability": 0.769664,
+          "rotation": 3,
+          "euclideanPulses": 6,
+          "muteBars": [
+            15
+          ],
+          "instrument": "tom"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "F#",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": -2
+    },
+    "sound": {
+      "oscillator": "fm",
+      "filterCutoff": 4150.695321,
+      "resonance": 0.310107,
+      "drive": 0.20489,
+      "envelope": {
+        "attack": 0.234707,
+        "decay": 0.618964,
+        "sustain": 0.456066,
+        "release": 1.77481
+      },
+      "noiseAmount": 0.152274,
+      "reverbAmount": 0.558293,
+      "delayAmount": 0.407481
+    },
+    "development": {
+      "densityDelta": 0.076572,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": -1,
+      "filterMovement": 0.079319,
+      "probabilityDelta": 0.025948,
+      "rotationDelta": 0,
+      "energyDelta": 0.168949
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.170735,
+      "openHatPercussionDucking": 0.041613,
+      "accentAlignment": 0.694365,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.062169,
+      "mutationStrength": 0.201232,
+      "microWeight": 0.311277,
+      "mesoWeight": 0.387076,
+      "macroWeight": 0.301647,
+      "rhythmWeight": 0.295495,
+      "pitchWeight": 0.10724,
+      "soundWeight": 0.249161,
+      "developmentWeight": 0.348104
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-004",
+    "founderId": 4,
+    "family": "sparse-hypnotic",
+    "seed": "rebus-1452-founders-v1:004",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "A",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 1,
+      "steps": 24,
+      "hits": [
+        1,
+        8,
+        12,
+        14,
+        20
+      ],
+      "noteChoice": [
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "accents": [
+        0.556146,
+        0.789141,
+        0.691807,
+        0.82197,
+        0.828996
+      ],
+      "noteLengths": [
+        0.519652,
+        1.084668,
+        0.278832,
+        0.447271,
+        0.876837
+      ],
+      "gate": 0.667364,
+      "probability": 0.972464,
+      "rotation": -1,
+      "periodicVariation": {
+        "everyBars": 8,
+        "rotation": -3
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 32,
+      "hits": [
+        0,
+        4,
+        8,
+        12,
+        24
+      ],
+      "accents": [
+        0.923438,
+        0.62968,
+        0.967293,
+        0.861262,
+        0.776598
+      ],
+      "density": 0.15625,
+      "probability": 0.683957,
+      "rotation": 1,
+      "euclideanPulses": null,
+      "muteBars": [
+        6,
+        9
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [
+        4
+      ],
+      "accents": [
+        0.728793
+      ],
+      "density": 0.0625,
+      "probability": 0.927569,
+      "rotation": -3,
+      "euclideanPulses": null,
+      "muteBars": [
+        8,
+        14
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 16,
+          "hits": [
+            8,
+            10,
+            12
+          ],
+          "accents": [
+            0.9387,
+            0.780475,
+            0.769083
+          ],
+          "density": 0.1875,
+          "probability": 0.902074,
+          "rotation": -2,
+          "euclideanPulses": null,
+          "muteBars": [
+            0,
+            9
+          ],
+          "instrument": "noise"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "saw",
+      "filterCutoff": 3430.721422,
+      "resonance": 0.301322,
+      "drive": 0.210592,
+      "envelope": {
+        "attack": 0.124904,
+        "decay": 0.184488,
+        "sustain": 0.125027,
+        "release": 0.199315
+      },
+      "noiseAmount": 0.122372,
+      "reverbAmount": 0.531908,
+      "delayAmount": 0.412806
+    },
+    "development": {
+      "densityDelta": -0.04682,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": -1,
+      "filterMovement": -0.130786,
+      "probabilityDelta": -0.048671,
+      "rotationDelta": 0,
+      "energyDelta": -0.160996
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.602761,
+      "openHatPercussionDucking": 0.038748,
+      "accentAlignment": 0.604848,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.040876,
+      "mutationStrength": 0.131826,
+      "microWeight": 0.529902,
+      "mesoWeight": 0.252175,
+      "macroWeight": 0.217923,
+      "rhythmWeight": 0.417941,
+      "pitchWeight": 0.235245,
+      "soundWeight": 0.245985,
+      "developmentWeight": 0.100829
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-005",
+    "founderId": 5,
+    "family": "sparse-hypnotic",
+    "seed": "rebus-1452-founders-v1:005",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "C",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 2,
+      "steps": 16,
+      "hits": [
+        1,
+        4,
+        12
+      ],
+      "noteChoice": [
+        1,
+        0,
+        1
+      ],
+      "accents": [
+        0.549958,
+        0.997185,
+        0.918726
+      ],
+      "noteLengths": [
+        0.413756,
+        0.594785,
+        1.049634
+      ],
+      "gate": 0.454877,
+      "probability": 0.867946,
+      "rotation": 3,
+      "periodicVariation": {
+        "everyBars": 4,
+        "rotation": 1
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        0,
+        3,
+        4,
+        8,
+        9,
+        12,
+        16,
+        17,
+        21,
+        22
+      ],
+      "accents": [
+        0.783697,
+        0.516202,
+        0.580189,
+        0.680026,
+        0.597019,
+        0.931148,
+        0.917399,
+        0.587163,
+        0.490951,
+        0.516528
+      ],
+      "density": 0.4166666666666667,
+      "probability": 0.727277,
+      "rotation": 3,
+      "euclideanPulses": null,
+      "muteBars": [
+        10
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [
+        1,
+        6,
+        14
+      ],
+      "accents": [
+        0.534281,
+        0.658572,
+        0.848248
+      ],
+      "density": 0.1875,
+      "probability": 0.886067,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": [
+        9,
+        13
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 16,
+          "hits": [
+            12,
+            14
+          ],
+          "accents": [
+            0.818164,
+            0.81571
+          ],
+          "density": 0.125,
+          "probability": 0.884621,
+          "rotation": -4,
+          "euclideanPulses": 2,
+          "muteBars": [],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "C",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "triangle",
+      "filterCutoff": 6137.347877,
+      "resonance": 0.245759,
+      "drive": 0.153894,
+      "envelope": {
+        "attack": 0.217896,
+        "decay": 0.275016,
+        "sustain": 0.351235,
+        "release": 0.640728
+      },
+      "noiseAmount": 0.136748,
+      "reverbAmount": 0.775804,
+      "delayAmount": 0.329383
+    },
+    "development": {
+      "densityDelta": 0.031181,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": 0.125199,
+      "probabilityDelta": 0.051672,
+      "rotationDelta": 0,
+      "energyDelta": 0.128914
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.036311,
+      "openHatPercussionDucking": 0.170843,
+      "accentAlignment": 0.632146,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.135862,
+      "mutationStrength": 0.355743,
+      "microWeight": 0.473621,
+      "mesoWeight": 0.329745,
+      "macroWeight": 0.196634,
+      "rhythmWeight": 0.20282,
+      "pitchWeight": 0.069702,
+      "soundWeight": 0.403189,
+      "developmentWeight": 0.324289
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-006",
+    "founderId": 6,
+    "family": "sparse-hypnotic",
+    "seed": "rebus-1452-founders-v1:006",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "C#",
+      "pitchSet": [
+        0
+      ],
+      "octave": 1,
+      "steps": 24,
+      "hits": [
+        5,
+        7,
+        12,
+        20
+      ],
+      "noteChoice": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "accents": [
+        0.758859,
+        0.806692,
+        0.91501,
+        0.726371
+      ],
+      "noteLengths": [
+        0.414199,
+        1.085879,
+        0.941131,
+        1.036675
+      ],
+      "gate": 0.29338,
+      "probability": 0.750144,
+      "rotation": -3,
+      "periodicVariation": {
+        "everyBars": 2,
+        "rotation": -2
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        0,
+        8,
+        15,
+        17,
+        19,
+        20,
+        22,
+        23
+      ],
+      "accents": [
+        0.644784,
+        0.793118,
+        0.776326,
+        0.587605,
+        0.712879,
+        0.575716,
+        0.616417,
+        0.647335
+      ],
+      "density": 0.3333333333333333,
+      "probability": 0.91421,
+      "rotation": -2,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [
+        5,
+        12
+      ],
+      "accents": [
+        0.567081,
+        0.845995
+      ],
+      "density": 0.125,
+      "probability": 0.988348,
+      "rotation": 3,
+      "euclideanPulses": null,
+      "muteBars": [
+        14
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 32,
+          "hits": [
+            10,
+            22,
+            30
+          ],
+          "accents": [
+            0.879665,
+            0.598898,
+            0.601472
+          ],
+          "density": 0.09375,
+          "probability": 0.915826,
+          "rotation": -3,
+          "euclideanPulses": 3,
+          "muteBars": [
+            13
+          ],
+          "instrument": "tom"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "C#",
+      "pitchCollection": [
+        0
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "square",
+      "filterCutoff": 5789.483982,
+      "resonance": 0.154949,
+      "drive": 0.173066,
+      "envelope": {
+        "attack": 0.201173,
+        "decay": 0.084307,
+        "sustain": 0.648984,
+        "release": 1.228559
+      },
+      "noiseAmount": 0.110114,
+      "reverbAmount": 0.702791,
+      "delayAmount": 0.41315
+    },
+    "development": {
+      "densityDelta": -0.054344,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": -1,
+      "filterMovement": -0.088301,
+      "probabilityDelta": -0.016116,
+      "rotationDelta": 0,
+      "energyDelta": -0.124142
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.099279,
+      "openHatPercussionDucking": 0.08216,
+      "accentAlignment": 0.196849,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.120015,
+      "mutationStrength": 0.279918,
+      "microWeight": 0.619787,
+      "mesoWeight": 0.18064,
+      "macroWeight": 0.199573,
+      "rhythmWeight": 0.432535,
+      "pitchWeight": 0.14021,
+      "soundWeight": 0.138819,
+      "developmentWeight": 0.288436
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-007",
+    "founderId": 7,
+    "family": "groove-heavy",
+    "seed": "rebus-1452-founders-v1:007",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "A",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 2,
+      "steps": 8,
+      "hits": [
+        3,
+        5,
+        7
+      ],
+      "noteChoice": [
+        0,
+        1,
+        1
+      ],
+      "accents": [
+        0.753725,
+        0.491915,
+        0.832012
+      ],
+      "noteLengths": [
+        0.314689,
+        0.73877,
+        0.557398
+      ],
+      "gate": 0.82791,
+      "probability": 0.895925,
+      "rotation": 0,
+      "periodicVariation": {
+        "everyBars": 8,
+        "rotation": 2
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        0,
+        1,
+        2,
+        5,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        17,
+        18,
+        22,
+        23
+      ],
+      "accents": [
+        0.944796,
+        0.576409,
+        0.602633,
+        0.803894,
+        0.798801,
+        0.739317,
+        0.49504,
+        0.890384,
+        0.763861,
+        0.512182,
+        0.844022,
+        0.522496,
+        0.565212,
+        0.567897
+      ],
+      "density": 0.5833333333333334,
+      "probability": 0.805341,
+      "rotation": -4,
+      "euclideanPulses": null,
+      "muteBars": [
+        3
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [
+        2,
+        3,
+        5,
+        9
+      ],
+      "accents": [
+        0.554637,
+        0.755493,
+        0.560748,
+        0.84831
+      ],
+      "density": 0.25,
+      "probability": 0.961037,
+      "rotation": 2,
+      "euclideanPulses": null,
+      "muteBars": [
+        8
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 20,
+          "hits": [
+            1,
+            3,
+            5,
+            6,
+            13,
+            14,
+            15,
+            16,
+            19
+          ],
+          "accents": [
+            0.692813,
+            0.558276,
+            0.622901,
+            0.466161,
+            0.810502,
+            0.719994,
+            0.593887,
+            0.69857,
+            0.649923
+          ],
+          "density": 0.45,
+          "probability": 0.898279,
+          "rotation": -4,
+          "euclideanPulses": 9,
+          "muteBars": [],
+          "instrument": "noise"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "triangle",
+      "filterCutoff": 7381.773615,
+      "resonance": 0.127578,
+      "drive": 0.23613,
+      "envelope": {
+        "attack": 0.063395,
+        "decay": 0.656402,
+        "sustain": 0.362211,
+        "release": 0.774084
+      },
+      "noiseAmount": 0.221974,
+      "reverbAmount": 0.312737,
+      "delayAmount": 0.166832
+    },
+    "development": {
+      "densityDelta": 0.093871,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": -1,
+      "filterMovement": 0.204651,
+      "probabilityDelta": 0.060344,
+      "rotationDelta": 0,
+      "energyDelta": 0.192093
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.351306,
+      "openHatPercussionDucking": 0.167463,
+      "accentAlignment": 0.757112,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.15448,
+      "mutationStrength": 0.26887,
+      "microWeight": 0.491734,
+      "mesoWeight": 0.307915,
+      "macroWeight": 0.200351,
+      "rhythmWeight": 0.230561,
+      "pitchWeight": 0.059794,
+      "soundWeight": 0.399497,
+      "developmentWeight": 0.310148
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-008",
+    "founderId": 8,
+    "family": "groove-heavy",
+    "seed": "rebus-1452-founders-v1:008",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "C",
+      "pitchSet": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "octave": 1,
+      "steps": 32,
+      "hits": [
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        13,
+        15,
+        17,
+        18,
+        19,
+        23,
+        24,
+        26,
+        27,
+        28,
+        29,
+        31
+      ],
+      "noteChoice": [
+        0,
+        0,
+        1,
+        3,
+        2,
+        0,
+        3,
+        0,
+        3,
+        2,
+        0,
+        2,
+        2,
+        1,
+        2,
+        2,
+        3,
+        0
+      ],
+      "accents": [
+        0.8173,
+        0.642198,
+        0.699204,
+        0.665164,
+        0.616354,
+        0.578206,
+        0.877327,
+        0.879034,
+        0.849712,
+        0.525394,
+        0.475398,
+        0.539263,
+        0.80425,
+        0.662859,
+        0.652504,
+        0.968283,
+        0.823915,
+        0.862673
+      ],
+      "noteLengths": [
+        0.902424,
+        1.006225,
+        0.591081,
+        1.030341,
+        1.207751,
+        0.957471,
+        0.517528,
+        0.129887,
+        0.147052,
+        0.856913,
+        1.073701,
+        0.511784,
+        0.771642,
+        0.529321,
+        0.239249,
+        1.242024,
+        0.833649,
+        0.644769
+      ],
+      "gate": 0.835668,
+      "probability": 0.810946,
+      "rotation": -2,
+      "periodicVariation": {
+        "everyBars": 2,
+        "rotation": 2
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 12,
+      "hits": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        11
+      ],
+      "accents": [
+        0.856666,
+        0.837508,
+        0.736833,
+        0.69724,
+        0.760382,
+        0.61937
+      ],
+      "density": 0.5,
+      "probability": 0.95737,
+      "rotation": 0,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 24,
+      "hits": [
+        2,
+        3,
+        12,
+        13,
+        17,
+        21,
+        22
+      ],
+      "accents": [
+        0.63086,
+        0.760263,
+        0.827654,
+        0.525369,
+        0.806842,
+        0.795333,
+        0.723593
+      ],
+      "density": 0.2916666666666667,
+      "probability": 0.76141,
+      "rotation": -1,
+      "euclideanPulses": 7,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 32,
+          "hits": [
+            1,
+            2,
+            3,
+            5,
+            8,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            18,
+            21,
+            22,
+            23,
+            24,
+            27,
+            28,
+            29,
+            30
+          ],
+          "accents": [
+            0.591238,
+            0.628424,
+            0.807579,
+            0.661428,
+            0.82227,
+            0.837236,
+            0.633599,
+            0.971382,
+            0.781282,
+            0.609473,
+            0.569204,
+            0.833871,
+            0.61443,
+            0.454586,
+            0.629757,
+            0.937199,
+            0.874642,
+            0.957315,
+            0.795959,
+            0.72645
+          ],
+          "density": 0.625,
+          "probability": 0.875692,
+          "rotation": 4,
+          "euclideanPulses": 20,
+          "muteBars": [
+            5,
+            7
+          ],
+          "instrument": "clap"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "C",
+      "pitchCollection": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "sectionBPitchShift": 1
+    },
+    "sound": {
+      "oscillator": "saw",
+      "filterCutoff": 6626.886538,
+      "resonance": 0.481535,
+      "drive": 0.551999,
+      "envelope": {
+        "attack": 0.03719,
+        "decay": 0.353832,
+        "sustain": 0.087243,
+        "release": 0.598882
+      },
+      "noiseAmount": 0.42719,
+      "reverbAmount": 0.245251,
+      "delayAmount": 0.124929
+    },
+    "development": {
+      "densityDelta": 0.108591,
+      "bassVariation": false,
+      "hatVariation": false,
+      "percussionChange": -1,
+      "filterMovement": 0.248369,
+      "probabilityDelta": 0.112384,
+      "rotationDelta": 0,
+      "energyDelta": 0.322588
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.739558,
+      "openHatPercussionDucking": 0.154553,
+      "accentAlignment": 0.622921,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.130459,
+      "mutationStrength": 0.264004,
+      "microWeight": 0.378084,
+      "mesoWeight": 0.450552,
+      "macroWeight": 0.171364,
+      "rhythmWeight": 0.296913,
+      "pitchWeight": 0.208259,
+      "soundWeight": 0.193922,
+      "developmentWeight": 0.300906
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-009",
+    "founderId": 9,
+    "family": "groove-heavy",
+    "seed": "rebus-1452-founders-v1:009",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "D#",
+      "pitchSet": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "octave": 3,
+      "steps": 12,
+      "hits": [
+        1,
+        2,
+        5,
+        8,
+        9,
+        11
+      ],
+      "noteChoice": [
+        2,
+        0,
+        3,
+        0,
+        2,
+        0
+      ],
+      "accents": [
+        0.698254,
+        0.61258,
+        0.667509,
+        0.685502,
+        0.796766,
+        0.568508
+      ],
+      "noteLengths": [
+        0.981542,
+        0.463511,
+        1.124983,
+        0.742429,
+        0.180198,
+        0.26051
+      ],
+      "gate": 0.711365,
+      "probability": 0.860271,
+      "rotation": -4,
+      "periodicVariation": {
+        "everyBars": 2,
+        "rotation": 1
+      }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 12,
+      "hits": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        9
+      ],
+      "accents": [
+        0.692807,
+        0.642972,
+        0.859276,
+        0.876756,
+        0.649307,
+        0.450753
+      ],
+      "density": 0.5,
+      "probability": 0.96843,
+      "rotation": 3,
+      "euclideanPulses": 6,
+      "muteBars": [
+        11
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 8,
+      "hits": [
+        3,
+        5
+      ],
+      "accents": [
+        0.826981,
+        0.49943
+      ],
+      "density": 0.25,
+      "probability": 0.876829,
+      "rotation": 0,
+      "euclideanPulses": null,
+      "muteBars": [
+        9,
+        11
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [
+            0,
+            1,
+            4,
+            5,
+            6
+          ],
+          "accents": [
+            0.651212,
+            0.700953,
+            0.677497,
+            0.820393,
+            0.719894
+          ],
+          "density": 0.625,
+          "probability": 0.753339,
+          "rotation": 1,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "tom"
+        },
+        {
+          "mode": "euclidean",
+          "steps": 20,
+          "hits": [
+            4,
+            5,
+            8,
+            11,
+            13,
+            14,
+            15,
+            18,
+            19
+          ],
+          "accents": [
+            0.888514,
+            0.675899,
+            0.941609,
+            0.544113,
+            0.543651,
+            0.65897,
+            0.866445,
+            0.565606,
+            0.596415
+          ],
+          "density": 0.45,
+          "probability": 0.888968,
+          "rotation": -3,
+          "euclideanPulses": 9,
+          "muteBars": [
+            9,
+            10
+          ],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "D#",
+      "pitchCollection": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "sectionBPitchShift": 1
+    },
+    "sound": {
+      "oscillator": "square",
+      "filterCutoff": 6123.629398,
+      "resonance": 0.358495,
+      "drive": 0.448187,
+      "envelope": {
+        "attack": 0.044355,
+        "decay": 0.800473,
+        "sustain": 0.11908,
+        "release": 0.061674
+      },
+      "noiseAmount": 0.352705,
+      "reverbAmount": 0.204713,
+      "delayAmount": 0.089769
+    },
+    "development": {
+      "densityDelta": 0.125809,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 1,
+      "filterMovement": 0.207466,
+      "probabilityDelta": 0.041118,
+      "rotationDelta": 1,
+      "energyDelta": 0.297024
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.471067,
+      "openHatPercussionDucking": 0.232577,
+      "accentAlignment": 0.863026,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.120228,
+      "mutationStrength": 0.27754,
+      "microWeight": 0.523181,
+      "mesoWeight": 0.341395,
+      "macroWeight": 0.135424,
+      "rhythmWeight": 0.298687,
+      "pitchWeight": 0.245221,
+      "soundWeight": 0.121049,
+      "developmentWeight": 0.335043
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-010",
+    "founderId": 10,
+    "family": "groove-heavy",
+    "seed": "rebus-1452-founders-v1:010",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "D#",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 2,
+      "steps": 24,
+      "hits": [
+        4,
+        6,
+        9,
+        10,
+        11,
+        15,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "noteChoice": [
+        2,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        2,
+        1,
+        2,
+        2
+      ],
+      "accents": [
+        0.795229,
+        0.73257,
+        0.767324,
+        0.454397,
+        0.54356,
+        0.87955,
+        0.589554,
+        0.669178,
+        0.543401,
+        0.544564,
+        0.628215
+      ],
+      "noteLengths": [
+        0.662744,
+        1.151343,
+        0.647367,
+        0.682901,
+        0.656927,
+        0.132184,
+        0.977911,
+        0.281679,
+        0.366254,
+        0.32951,
+        0.880224
+      ],
+      "gate": 0.316965,
+      "probability": 0.897399,
+      "rotation": 4,
+      "periodicVariation": {
+        "everyBars": 2,
+        "rotation": 3
+      }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 20,
+      "hits": [
+        1,
+        3,
+        4,
+        7,
+        8,
+        14,
+        16,
+        18,
+        19
+      ],
+      "accents": [
+        0.523037,
+        0.538992,
+        0.769028,
+        0.75926,
+        0.78105,
+        0.535385,
+        0.80033,
+        0.498431,
+        0.672392
+      ],
+      "density": 0.45,
+      "probability": 0.92168,
+      "rotation": -1,
+      "euclideanPulses": 9,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 20,
+      "hits": [
+        2,
+        3,
+        9,
+        11
+      ],
+      "accents": [
+        0.87291,
+        0.593534,
+        0.715767,
+        0.673782
+      ],
+      "density": 0.2,
+      "probability": 0.742484,
+      "rotation": -3,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 20,
+          "hits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            11,
+            13,
+            14,
+            16
+          ],
+          "accents": [
+            0.715748,
+            0.700572,
+            0.485691,
+            0.669159,
+            0.989638,
+            0.619553,
+            0.611405,
+            0.77638,
+            0.853855,
+            0.455418,
+            0.578388
+          ],
+          "density": 0.55,
+          "probability": 0.715125,
+          "rotation": 0,
+          "euclideanPulses": 11,
+          "muteBars": [],
+          "instrument": "noise"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "D#",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "noise-blend",
+      "filterCutoff": 5713.700616,
+      "resonance": 0.33389,
+      "drive": 0.48529,
+      "envelope": {
+        "attack": 0.023877,
+        "decay": 0.371765,
+        "sustain": 0.233885,
+        "release": 0.770622
+      },
+      "noiseAmount": 0.164884,
+      "reverbAmount": 0.178378,
+      "delayAmount": 0.144855
+    },
+    "development": {
+      "densityDelta": 0.142037,
+      "bassVariation": false,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": 0.18035,
+      "probabilityDelta": 0.07423,
+      "rotationDelta": 3,
+      "energyDelta": 0.281252
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.46837,
+      "openHatPercussionDucking": 0.063385,
+      "accentAlignment": 0.352503,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.095365,
+      "mutationStrength": 0.231946,
+      "microWeight": 0.435886,
+      "mesoWeight": 0.29676,
+      "macroWeight": 0.267354,
+      "rhythmWeight": 0.356812,
+      "pitchWeight": 0.299159,
+      "soundWeight": 0.153707,
+      "developmentWeight": 0.190322
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-011",
+    "founderId": 11,
+    "family": "groove-heavy",
+    "seed": "rebus-1452-founders-v1:011",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "G#",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 3,
+      "steps": 12,
+      "hits": [
+        2,
+        6,
+        9,
+        10,
+        11
+      ],
+      "noteChoice": [
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      "accents": [
+        0.495864,
+        0.547704,
+        0.603767,
+        0.646833,
+        0.452673
+      ],
+      "noteLengths": [
+        1.048882,
+        0.816353,
+        1.100268,
+        0.575047,
+        0.430582
+      ],
+      "gate": 0.478583,
+      "probability": 0.943203,
+      "rotation": 0,
+      "periodicVariation": {
+        "everyBars": 8,
+        "rotation": -1
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7,
+        11,
+        13,
+        14,
+        15
+      ],
+      "accents": [
+        0.670628,
+        0.582612,
+        0.726438,
+        0.651569,
+        0.654919,
+        0.567032,
+        0.87901,
+        0.453664,
+        0.794565,
+        0.755353
+      ],
+      "density": 0.625,
+      "probability": 0.979471,
+      "rotation": 3,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        5,
+        7,
+        13,
+        21
+      ],
+      "accents": [
+        0.588136,
+        0.676053,
+        0.536801,
+        0.576631
+      ],
+      "density": 0.16666666666666666,
+      "probability": 0.933743,
+      "rotation": 0,
+      "euclideanPulses": null,
+      "muteBars": [
+        6,
+        7
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 12,
+          "hits": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            10
+          ],
+          "accents": [
+            0.67529,
+            0.739009,
+            0.756774,
+            0.611969,
+            0.875704,
+            0.69929
+          ],
+          "density": 0.5,
+          "probability": 0.780226,
+          "rotation": 3,
+          "euclideanPulses": null,
+          "muteBars": [
+            1,
+            2
+          ],
+          "instrument": "tom"
+        },
+        {
+          "mode": "grid",
+          "steps": 20,
+          "hits": [
+            3,
+            6,
+            7,
+            10,
+            13,
+            14,
+            15,
+            17
+          ],
+          "accents": [
+            0.747098,
+            0.521988,
+            0.642644,
+            0.859478,
+            0.820786,
+            0.645482,
+            0.619669,
+            0.501103
+          ],
+          "density": 0.4,
+          "probability": 0.940658,
+          "rotation": -2,
+          "euclideanPulses": null,
+          "muteBars": [
+            4
+          ],
+          "instrument": "clap"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "G#",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": 1
+    },
+    "sound": {
+      "oscillator": "triangle",
+      "filterCutoff": 8257.015426,
+      "resonance": 0.394862,
+      "drive": 0.420809,
+      "envelope": {
+        "attack": 0.074321,
+        "decay": 0.816196,
+        "sustain": 0.27639,
+        "release": 0.683491
+      },
+      "noiseAmount": 0.288048,
+      "reverbAmount": 0.394017,
+      "delayAmount": 0.236354
+    },
+    "development": {
+      "densityDelta": 0.097567,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": 0.250044,
+      "probabilityDelta": 0.028191,
+      "rotationDelta": 0,
+      "energyDelta": 0.246522
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.032809,
+      "openHatPercussionDucking": 0.112271,
+      "accentAlignment": 0.102647,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.199897,
+      "mutationStrength": 0.397224,
+      "microWeight": 0.694977,
+      "mesoWeight": 0.187045,
+      "macroWeight": 0.117978,
+      "rhythmWeight": 0.27212,
+      "pitchWeight": 0.332744,
+      "soundWeight": 0.136764,
+      "developmentWeight": 0.258372
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-012",
+    "founderId": 12,
+    "family": "groove-heavy",
+    "seed": "rebus-1452-founders-v1:012",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "E",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 2,
+      "steps": 12,
+      "hits": [
+        5,
+        7,
+        9,
+        10,
+        11
+      ],
+      "noteChoice": [
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "accents": [
+        0.510056,
+        0.865467,
+        0.511973,
+        0.66584,
+        0.830156
+      ],
+      "noteLengths": [
+        0.955774,
+        0.158613,
+        1.049813,
+        1.196853,
+        0.704817
+      ],
+      "gate": 0.352505,
+      "probability": 0.73557,
+      "rotation": 3,
+      "periodicVariation": {
+        "everyBars": 8,
+        "rotation": 1
+      }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 20,
+      "hits": [
+        0,
+        3,
+        4,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        17,
+        18
+      ],
+      "accents": [
+        0.616658,
+        0.859914,
+        0.922855,
+        0.550762,
+        0.865672,
+        0.825187,
+        0.598173,
+        0.856819,
+        0.817521,
+        0.586472,
+        0.487279,
+        0.734593
+      ],
+      "density": 0.6,
+      "probability": 0.842143,
+      "rotation": -3,
+      "euclideanPulses": 12,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 20,
+      "hits": [
+        5,
+        13,
+        14,
+        18
+      ],
+      "accents": [
+        0.608052,
+        0.826675,
+        0.573574,
+        0.669366
+      ],
+      "density": 0.2,
+      "probability": 0.995988,
+      "rotation": -2,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 32,
+          "hits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10,
+            19,
+            21,
+            25,
+            27,
+            30
+          ],
+          "accents": [
+            0.987057,
+            0.769672,
+            0.674744,
+            0.687273,
+            0.621645,
+            0.757431,
+            0.635352,
+            0.864414,
+            0.868602,
+            0.774204,
+            0.585533,
+            0.473177,
+            0.502073,
+            0.837584
+          ],
+          "density": 0.4375,
+          "probability": 0.971603,
+          "rotation": -4,
+          "euclideanPulses": null,
+          "muteBars": [
+            6,
+            15
+          ],
+          "instrument": "clap"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "E",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": 2
+    },
+    "sound": {
+      "oscillator": "square",
+      "filterCutoff": 7737.690029,
+      "resonance": 0.21328,
+      "drive": 0.389453,
+      "envelope": {
+        "attack": 0.051168,
+        "decay": 0.760506,
+        "sustain": 0.323843,
+        "release": 0.54588
+      },
+      "noiseAmount": 0.126444,
+      "reverbAmount": 0.346534,
+      "delayAmount": 0.262683
+    },
+    "development": {
+      "densityDelta": 0.076432,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": 0.145213,
+      "probabilityDelta": 0.061836,
+      "rotationDelta": 1,
+      "energyDelta": 0.218693
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.732937,
+      "openHatPercussionDucking": 0.081397,
+      "accentAlignment": 0.428321,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.165305,
+      "mutationStrength": 0.295345,
+      "microWeight": 0.625662,
+      "mesoWeight": 0.202399,
+      "macroWeight": 0.171939,
+      "rhythmWeight": 0.252449,
+      "pitchWeight": 0.335697,
+      "soundWeight": 0.274885,
+      "developmentWeight": 0.136969
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-013",
+    "founderId": 13,
+    "family": "driving",
+    "seed": "rebus-1452-founders-v1:013",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "A",
+      "pitchSet": [
+        0
+      ],
+      "octave": 1,
+      "steps": 8,
+      "hits": [
+        4,
+        5,
+        7
+      ],
+      "noteChoice": [
+        0,
+        0,
+        0
+      ],
+      "accents": [
+        0.94532,
+        0.488569,
+        0.748525
+      ],
+      "noteLengths": [
+        0.352084,
+        0.547601,
+        1.15518
+      ],
+      "gate": 0.506612,
+      "probability": 0.985984,
+      "rotation": 4,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 16,
+      "hits": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "accents": [
+        0.699565,
+        0.83465,
+        0.797254,
+        0.725242,
+        0.5105,
+        0.732967,
+        0.571526,
+        0.700582,
+        0.588397,
+        0.57678,
+        0.754528,
+        0.511047,
+        0.563684
+      ],
+      "density": 0.8125,
+      "probability": 0.725846,
+      "rotation": -1,
+      "euclideanPulses": 13,
+      "muteBars": [
+        5
+      ]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 16,
+      "hits": [
+        1,
+        3,
+        5,
+        7,
+        11,
+        12,
+        15
+      ],
+      "accents": [
+        0.552228,
+        0.842026,
+        0.763893,
+        0.863994,
+        0.824252,
+        0.681917,
+        0.498373
+      ],
+      "density": 0.4375,
+      "probability": 0.992071,
+      "rotation": 1,
+      "euclideanPulses": 7,
+      "muteBars": [
+        0,
+        1
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 16,
+          "hits": [
+            0,
+            4,
+            7,
+            11,
+            15
+          ],
+          "accents": [
+            0.746813,
+            0.958454,
+            0.521277,
+            0.773735,
+            0.738437
+          ],
+          "density": 0.3125,
+          "probability": 0.923425,
+          "rotation": -1,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "noise"
+        },
+        {
+          "mode": "grid",
+          "steps": 16,
+          "hits": [
+            3,
+            4,
+            11
+          ],
+          "accents": [
+            0.460516,
+            0.674279,
+            0.463253
+          ],
+          "density": 0.1875,
+          "probability": 0.821267,
+          "rotation": 2,
+          "euclideanPulses": null,
+          "muteBars": [
+            9,
+            10
+          ],
+          "instrument": "tom"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A",
+      "pitchCollection": [
+        0
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "noise-blend",
+      "filterCutoff": 9216.309458,
+      "resonance": 0.243295,
+      "drive": 0.278408,
+      "envelope": {
+        "attack": 0.066005,
+        "decay": 0.575492,
+        "sustain": 0.696526,
+        "release": 0.211069
+      },
+      "noiseAmount": 0.27723,
+      "reverbAmount": 0.195196,
+      "delayAmount": 0.123998
+    },
+    "development": {
+      "densityDelta": 0.150181,
+      "bassVariation": false,
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": 0.1628,
+      "probabilityDelta": 0.069916,
+      "rotationDelta": 1,
+      "energyDelta": 0.317881
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.425661,
+      "openHatPercussionDucking": 0.226619,
+      "accentAlignment": 0.679169,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.17836,
+      "mutationStrength": 0.297882,
+      "microWeight": 0.516778,
+      "mesoWeight": 0.22445,
+      "macroWeight": 0.258772,
+      "rhythmWeight": 0.356065,
+      "pitchWeight": 0.21553,
+      "soundWeight": 0.142021,
+      "developmentWeight": 0.286384
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-014",
+    "founderId": 14,
+    "family": "driving",
+    "seed": "rebus-1452-founders-v1:014",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "D#",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 3,
+      "steps": 16,
+      "hits": [
+        0,
+        4,
+        8,
+        9,
+        11,
+        12,
+        13,
+        15
+      ],
+      "noteChoice": [
+        0,
+        2,
+        1,
+        1,
+        2,
+        2,
+        0,
+        2
+      ],
+      "accents": [
+        0.617176,
+        0.765003,
+        0.598636,
+        0.62061,
+        0.455888,
+        0.826043,
+        0.482792,
+        0.776469
+      ],
+      "noteLengths": [
+        0.832049,
+        0.72479,
+        0.922447,
+        0.270235,
+        0.977329,
+        1.120003,
+        0.451904,
+        0.502571
+      ],
+      "gate": 0.559412,
+      "probability": 0.738418,
+      "rotation": 1,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 8,
+      "hits": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "accents": [
+        0.796252,
+        0.659776,
+        0.828857,
+        0.742583,
+        0.801128,
+        0.869056
+      ],
+      "density": 0.75,
+      "probability": 0.888554,
+      "rotation": 1,
+      "euclideanPulses": null,
+      "muteBars": [
+        15
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 8,
+      "hits": [
+        0,
+        4,
+        6
+      ],
+      "accents": [
+        0.834404,
+        0.648913,
+        0.536728
+      ],
+      "density": 0.375,
+      "probability": 0.809279,
+      "rotation": 1,
+      "euclideanPulses": null,
+      "muteBars": [
+        5,
+        13
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "accents": [
+            0.991925,
+            0.715173,
+            0.62452,
+            0.728953
+          ],
+          "density": 0.5,
+          "probability": 0.949576,
+          "rotation": -4,
+          "euclideanPulses": null,
+          "muteBars": [
+            9,
+            14
+          ],
+          "instrument": "rim"
+        },
+        {
+          "mode": "euclidean",
+          "steps": 8,
+          "hits": [
+            0,
+            1,
+            7
+          ],
+          "accents": [
+            0.738676,
+            0.569226,
+            0.722472
+          ],
+          "density": 0.375,
+          "probability": 0.830387,
+          "rotation": -4,
+          "euclideanPulses": 3,
+          "muteBars": [
+            1,
+            14
+          ],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "D#",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": -2
+    },
+    "sound": {
+      "oscillator": "sine",
+      "filterCutoff": 8407.765818,
+      "resonance": 0.521827,
+      "drive": 0.613352,
+      "envelope": {
+        "attack": 0.059567,
+        "decay": 0.122834,
+        "sustain": 0.0911,
+        "release": 0.270675
+      },
+      "noiseAmount": 0.329413,
+      "reverbAmount": 0.155468,
+      "delayAmount": 0.116703
+    },
+    "development": {
+      "densityDelta": -0.131187,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": -1,
+      "filterMovement": -0.245423,
+      "probabilityDelta": -0.127839,
+      "rotationDelta": -2,
+      "energyDelta": -0.470862
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.410422,
+      "openHatPercussionDucking": 0.28905,
+      "accentAlignment": 0.685107,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.155204,
+      "mutationStrength": 0.361477,
+      "microWeight": 0.49216,
+      "mesoWeight": 0.244268,
+      "macroWeight": 0.263572,
+      "rhythmWeight": 0.224555,
+      "pitchWeight": 0.184583,
+      "soundWeight": 0.285404,
+      "developmentWeight": 0.305458
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-015",
+    "founderId": 15,
+    "family": "driving",
+    "seed": "rebus-1452-founders-v1:015",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "A#",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 3,
+      "steps": 8,
+      "hits": [
+        0,
+        2,
+        4,
+        7
+      ],
+      "noteChoice": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "accents": [
+        0.708451,
+        0.87583,
+        0.727425,
+        0.820387
+      ],
+      "noteLengths": [
+        0.473316,
+        1.131571,
+        0.762791,
+        0.855124
+      ],
+      "gate": 0.398359,
+      "probability": 0.734008,
+      "rotation": -3,
+      "periodicVariation": {
+        "everyBars": 8,
+        "rotation": -3
+      }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 8,
+      "hits": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7
+      ],
+      "accents": [
+        0.671031,
+        0.683317,
+        0.649436,
+        0.775528,
+        0.655097,
+        0.726258
+      ],
+      "density": 0.75,
+      "probability": 0.749498,
+      "rotation": -4,
+      "euclideanPulses": 6,
+      "muteBars": [
+        3
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [
+        0,
+        2,
+        4,
+        11,
+        12,
+        13,
+        15
+      ],
+      "accents": [
+        0.791843,
+        0.768583,
+        0.974939,
+        0.688911,
+        0.964761,
+        0.62288,
+        0.846594
+      ],
+      "density": 0.4375,
+      "probability": 0.720287,
+      "rotation": 0,
+      "euclideanPulses": null,
+      "muteBars": [
+        6,
+        12
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 8,
+          "hits": [
+            1,
+            5,
+            6
+          ],
+          "accents": [
+            0.510545,
+            0.545782,
+            0.608005
+          ],
+          "density": 0.375,
+          "probability": 0.698048,
+          "rotation": -2,
+          "euclideanPulses": 3,
+          "muteBars": [],
+          "instrument": "noise"
+        },
+        {
+          "mode": "euclidean",
+          "steps": 16,
+          "hits": [
+            0,
+            4,
+            7,
+            10,
+            15
+          ],
+          "accents": [
+            0.583934,
+            0.742049,
+            0.528823,
+            0.793087,
+            0.555528
+          ],
+          "density": 0.3125,
+          "probability": 0.966453,
+          "rotation": -2,
+          "euclideanPulses": 5,
+          "muteBars": [],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A#",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "sine",
+      "filterCutoff": 7664.510251,
+      "resonance": 0.313104,
+      "drive": 0.520294,
+      "envelope": {
+        "attack": 0.022178,
+        "decay": 0.376845,
+        "sustain": 0.238109,
+        "release": 0.465683
+      },
+      "noiseAmount": 0.379069,
+      "reverbAmount": 0.112957,
+      "delayAmount": 0.099207
+    },
+    "development": {
+      "densityDelta": 0.168392,
+      "bassVariation": false,
+      "hatVariation": true,
+      "percussionChange": -1,
+      "filterMovement": 0.331038,
+      "probabilityDelta": 0.185091,
+      "rotationDelta": 3,
+      "energyDelta": 0.422352
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.564276,
+      "openHatPercussionDucking": 0.256918,
+      "accentAlignment": 0.294353,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.135355,
+      "mutationStrength": 0.358327,
+      "microWeight": 0.395802,
+      "mesoWeight": 0.381794,
+      "macroWeight": 0.222404,
+      "rhythmWeight": 0.20877,
+      "pitchWeight": 0.174889,
+      "soundWeight": 0.295264,
+      "developmentWeight": 0.321077
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-016",
+    "founderId": 16,
+    "family": "driving",
+    "seed": "rebus-1452-founders-v1:016",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "G",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 3,
+      "steps": 16,
+      "hits": [
+        0,
+        3,
+        4,
+        8,
+        11,
+        12,
+        14
+      ],
+      "noteChoice": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "accents": [
+        0.895325,
+        0.704759,
+        0.912791,
+        0.824392,
+        0.586529,
+        0.592489,
+        0.824559
+      ],
+      "noteLengths": [
+        0.598846,
+        0.409525,
+        1.087801,
+        0.968867,
+        0.251182,
+        0.157791,
+        0.148724
+      ],
+      "gate": 0.720041,
+      "probability": 0.763757,
+      "rotation": -4,
+      "periodicVariation": {
+        "everyBars": 4,
+        "rotation": -3
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 8,
+      "hits": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "accents": [
+        0.843327,
+        0.483515,
+        0.761708,
+        0.67628,
+        0.553329,
+        0.541438
+      ],
+      "density": 0.75,
+      "probability": 0.907601,
+      "rotation": 4,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 8,
+      "hits": [
+        0,
+        1
+      ],
+      "accents": [
+        0.855241,
+        0.479057
+      ],
+      "density": 0.25,
+      "probability": 0.742458,
+      "rotation": 0,
+      "euclideanPulses": 2,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 16,
+          "hits": [
+            0,
+            4,
+            6,
+            8,
+            10,
+            11
+          ],
+          "accents": [
+            0.59996,
+            0.691524,
+            0.866709,
+            0.895327,
+            0.540499,
+            0.599757
+          ],
+          "density": 0.375,
+          "probability": 0.861094,
+          "rotation": -2,
+          "euclideanPulses": 6,
+          "muteBars": [
+            11
+          ],
+          "instrument": "rim"
+        },
+        {
+          "mode": "grid",
+          "steps": 16,
+          "hits": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "accents": [
+            0.825241,
+            0.951579,
+            0.577215,
+            0.764381
+          ],
+          "density": 0.25,
+          "probability": 0.769264,
+          "rotation": 1,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "noise"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "G",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "saw",
+      "filterCutoff": 7620.369075,
+      "resonance": 0.30233,
+      "drive": 0.418696,
+      "envelope": {
+        "attack": 0.010454,
+        "decay": 0.83184,
+        "sustain": 0.367961,
+        "release": 0.056206
+      },
+      "noiseAmount": 0.412483,
+      "reverbAmount": 0.092802,
+      "delayAmount": 0.055985
+    },
+    "development": {
+      "densityDelta": 0.197426,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": 0.204645,
+      "probabilityDelta": 0.136642,
+      "rotationDelta": 1,
+      "energyDelta": 0.403547
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.667922,
+      "openHatPercussionDucking": 0.128122,
+      "accentAlignment": 0.668695,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.114961,
+      "mutationStrength": 0.27171,
+      "microWeight": 0.401266,
+      "mesoWeight": 0.387828,
+      "macroWeight": 0.210906,
+      "rhythmWeight": 0.346876,
+      "pitchWeight": 0.180668,
+      "soundWeight": 0.270181,
+      "developmentWeight": 0.202275
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-017",
+    "founderId": 17,
+    "family": "driving",
+    "seed": "rebus-1452-founders-v1:017",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "A",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 3,
+      "steps": 8,
+      "hits": [
+        2,
+        4,
+        5
+      ],
+      "noteChoice": [
+        1,
+        1,
+        0
+      ],
+      "accents": [
+        0.516415,
+        0.790238,
+        0.700254
+      ],
+      "noteLengths": [
+        0.276103,
+        0.964998,
+        0.941342
+      ],
+      "gate": 0.8043,
+      "probability": 0.849369,
+      "rotation": 3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 8,
+      "hits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7
+      ],
+      "accents": [
+        0.873043,
+        0.816346,
+        0.737268,
+        0.844742,
+        0.723761,
+        0.55178,
+        0.652428
+      ],
+      "density": 0.875,
+      "probability": 0.990095,
+      "rotation": -1,
+      "euclideanPulses": 7,
+      "muteBars": [
+        15
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 8,
+      "hits": [
+        2,
+        3,
+        7
+      ],
+      "accents": [
+        0.648734,
+        0.567886,
+        0.672063
+      ],
+      "density": 0.375,
+      "probability": 0.860729,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [
+            1,
+            4,
+            5
+          ],
+          "accents": [
+            0.547348,
+            0.997855,
+            0.507184
+          ],
+          "density": 0.375,
+          "probability": 0.774603,
+          "rotation": -3,
+          "euclideanPulses": null,
+          "muteBars": [
+            8,
+            10
+          ],
+          "instrument": "tom"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "fm",
+      "filterCutoff": 10037.229382,
+      "resonance": 0.391083,
+      "drive": 0.388933,
+      "envelope": {
+        "attack": 0.036762,
+        "decay": 0.283559,
+        "sustain": 0.151111,
+        "release": 0.457136
+      },
+      "noiseAmount": 0.213457,
+      "reverbAmount": 0.252297,
+      "delayAmount": 0.119143
+    },
+    "development": {
+      "densityDelta": 0.109188,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": -1,
+      "filterMovement": 0.386639,
+      "probabilityDelta": 0.099112,
+      "rotationDelta": 1,
+      "energyDelta": 0.373275
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.804396,
+      "openHatPercussionDucking": 0.152125,
+      "accentAlignment": 0.293055,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.215585,
+      "mutationStrength": 0.424529,
+      "microWeight": 0.374928,
+      "mesoWeight": 0.347177,
+      "macroWeight": 0.277895,
+      "rhythmWeight": 0.382897,
+      "pitchWeight": 0.165302,
+      "soundWeight": 0.105231,
+      "developmentWeight": 0.34657
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-018",
+    "founderId": 18,
+    "family": "driving",
+    "seed": "rebus-1452-founders-v1:018",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "A",
+      "pitchSet": [
+        0
+      ],
+      "octave": 1,
+      "steps": 8,
+      "hits": [
+        2,
+        3,
+        7
+      ],
+      "noteChoice": [
+        0,
+        0,
+        0
+      ],
+      "accents": [
+        0.672582,
+        0.63989,
+        0.470266
+      ],
+      "noteLengths": [
+        0.624417,
+        0.620295,
+        0.832381
+      ],
+      "gate": 0.418362,
+      "probability": 0.972117,
+      "rotation": 2,
+      "periodicVariation": {
+        "everyBars": 2,
+        "rotation": -3
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 8,
+      "hits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "accents": [
+        0.690316,
+        0.492269,
+        0.606878,
+        0.70658,
+        0.617826,
+        0.650059,
+        0.707291
+      ],
+      "density": 0.875,
+      "probability": 0.794886,
+      "rotation": 3,
+      "euclideanPulses": null,
+      "muteBars": [
+        7
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [
+        0,
+        1,
+        2,
+        9,
+        12,
+        15
+      ],
+      "accents": [
+        0.857743,
+        0.865791,
+        0.817837,
+        0.585053,
+        0.841838,
+        0.564504
+      ],
+      "density": 0.375,
+      "probability": 0.850777,
+      "rotation": 1,
+      "euclideanPulses": null,
+      "muteBars": [
+        2,
+        14
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [
+            0,
+            2,
+            3
+          ],
+          "accents": [
+            0.824945,
+            0.653269,
+            0.586522
+          ],
+          "density": 0.375,
+          "probability": 0.759271,
+          "rotation": 3,
+          "euclideanPulses": null,
+          "muteBars": [
+            5
+          ],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A",
+      "pitchCollection": [
+        0
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "triangle",
+      "filterCutoff": 9704.275672,
+      "resonance": 0.330324,
+      "drive": 0.320532,
+      "envelope": {
+        "attack": 0.044988,
+        "decay": 0.510376,
+        "sustain": 0.424216,
+        "release": 0.305388
+      },
+      "noiseAmount": 0.172703,
+      "reverbAmount": 0.223713,
+      "delayAmount": 0.179157
+    },
+    "development": {
+      "densityDelta": -0.169663,
+      "bassVariation": false,
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": -0.318135,
+      "probabilityDelta": -0.136783,
+      "rotationDelta": 0,
+      "energyDelta": -0.33971
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.699649,
+      "openHatPercussionDucking": 0.312729,
+      "accentAlignment": 0.40612,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.189551,
+      "mutationStrength": 0.461915,
+      "microWeight": 0.387703,
+      "mesoWeight": 0.327225,
+      "macroWeight": 0.285072,
+      "rhythmWeight": 0.379011,
+      "pitchWeight": 0.063688,
+      "soundWeight": 0.232404,
+      "developmentWeight": 0.324897
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-019",
+    "founderId": 19,
+    "family": "bass-led",
+    "seed": "rebus-1452-founders-v1:019",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "A",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 1,
+      "steps": 12,
+      "hits": [
+        0,
+        3,
+        6,
+        9,
+        11
+      ],
+      "noteChoice": [
+        0,
+        1,
+        1,
+        2,
+        0
+      ],
+      "accents": [
+        0.628107,
+        0.821497,
+        0.5023,
+        0.461871,
+        0.485407
+      ],
+      "noteLengths": [
+        1.148452,
+        0.515543,
+        0.140235,
+        0.188784,
+        1.101887
+      ],
+      "gate": 0.416449,
+      "probability": 0.739797,
+      "rotation": 4,
+      "periodicVariation": {
+        "everyBars": 2,
+        "rotation": -3
+      }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 16,
+      "hits": [
+        1,
+        3,
+        4,
+        7,
+        8,
+        12,
+        15
+      ],
+      "accents": [
+        0.497624,
+        0.488304,
+        0.625223,
+        0.465141,
+        0.810707,
+        0.876433,
+        0.873936
+      ],
+      "density": 0.4375,
+      "probability": 0.965711,
+      "rotation": 4,
+      "euclideanPulses": 7,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 12,
+      "hits": [
+        3,
+        6
+      ],
+      "accents": [
+        0.495544,
+        0.576614
+      ],
+      "density": 0.16666666666666666,
+      "probability": 0.696625,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": [
+        2,
+        14
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 12,
+          "hits": [
+            10
+          ],
+          "accents": [
+            0.85431
+          ],
+          "density": 0.08333333333333333,
+          "probability": 0.822193,
+          "rotation": 4,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "rim"
+        },
+        {
+          "mode": "grid",
+          "steps": 12,
+          "hits": [
+            0
+          ],
+          "accents": [
+            0.578894
+          ],
+          "density": 0.08333333333333333,
+          "probability": 0.840168,
+          "rotation": -1,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "tom"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": 1
+    },
+    "sound": {
+      "oscillator": "triangle",
+      "filterCutoff": 6491.725844,
+      "resonance": 0.095885,
+      "drive": 0.162784,
+      "envelope": {
+        "attack": 0.076108,
+        "decay": 0.419328,
+        "sustain": 0.40647,
+        "release": 0.389942
+      },
+      "noiseAmount": 0.132522,
+      "reverbAmount": 0.346583,
+      "delayAmount": 0.249221
+    },
+    "development": {
+      "densityDelta": 0.083464,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": 0.129569,
+      "probabilityDelta": 0.038392,
+      "rotationDelta": 0,
+      "energyDelta": 0.218574
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.586342,
+      "openHatPercussionDucking": 0.129776,
+      "accentAlignment": 0.279521,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.209292,
+      "mutationStrength": 0.452129,
+      "microWeight": 0.471798,
+      "mesoWeight": 0.224224,
+      "macroWeight": 0.303978,
+      "rhythmWeight": 0.297104,
+      "pitchWeight": 0.113149,
+      "soundWeight": 0.350699,
+      "developmentWeight": 0.239048
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-020",
+    "founderId": 20,
+    "family": "bass-led",
+    "seed": "rebus-1452-founders-v1:020",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "G#",
+      "pitchSet": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        10
+      ],
+      "octave": 1,
+      "steps": 24,
+      "hits": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23
+      ],
+      "noteChoice": [
+        2,
+        0,
+        2,
+        1,
+        5,
+        3,
+        5,
+        3,
+        2,
+        1,
+        0,
+        1,
+        0,
+        5,
+        4,
+        2,
+        4
+      ],
+      "accents": [
+        0.722243,
+        0.619049,
+        0.571169,
+        0.804356,
+        0.521295,
+        0.853276,
+        0.560056,
+        0.704059,
+        0.877444,
+        0.575122,
+        0.671863,
+        0.579065,
+        0.772789,
+        0.637416,
+        0.56209,
+        0.578652,
+        0.612868
+      ],
+      "noteLengths": [
+        0.694412,
+        0.743346,
+        0.966439,
+        0.474713,
+        0.504546,
+        1.12642,
+        1.13246,
+        0.458871,
+        0.390934,
+        1.046362,
+        0.336426,
+        0.751905,
+        0.650768,
+        0.81454,
+        0.69864,
+        0.3335,
+        1.180147
+      ],
+      "gate": 0.752977,
+      "probability": 0.886679,
+      "rotation": -1,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        3,
+        4,
+        7,
+        8,
+        10,
+        16,
+        17,
+        19,
+        21
+      ],
+      "accents": [
+        0.491977,
+        0.99378,
+        0.649868,
+        0.916712,
+        0.812124,
+        0.723499,
+        0.684832,
+        0.797288,
+        0.622791
+      ],
+      "density": 0.375,
+      "probability": 0.780603,
+      "rotation": 4,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 8,
+      "hits": [
+        2
+      ],
+      "accents": [
+        0.812867
+      ],
+      "density": 0.125,
+      "probability": 0.99959,
+      "rotation": 2,
+      "euclideanPulses": null,
+      "muteBars": [
+        6
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 32,
+          "hits": [
+            2,
+            14,
+            15,
+            17,
+            21,
+            26,
+            27,
+            28,
+            30
+          ],
+          "accents": [
+            0.596714,
+            0.706317,
+            0.671574,
+            0.648839,
+            0.84462,
+            0.838831,
+            0.649203,
+            0.874757,
+            0.575723
+          ],
+          "density": 0.28125,
+          "probability": 0.892858,
+          "rotation": -3,
+          "euclideanPulses": 9,
+          "muteBars": [],
+          "instrument": "rim"
+        },
+        {
+          "mode": "euclidean",
+          "steps": 32,
+          "hits": [
+            15,
+            17,
+            18,
+            19,
+            25,
+            30
+          ],
+          "accents": [
+            0.486437,
+            0.613726,
+            0.859003,
+            0.666605,
+            0.681867,
+            0.627015
+          ],
+          "density": 0.1875,
+          "probability": 0.948339,
+          "rotation": 4,
+          "euclideanPulses": 6,
+          "muteBars": [
+            4
+          ],
+          "instrument": "tom"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "G#",
+      "pitchCollection": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        10
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "square",
+      "filterCutoff": 5749.239735,
+      "resonance": 0.411191,
+      "drive": 0.472455,
+      "envelope": {
+        "attack": 0.074073,
+        "decay": 0.7158,
+        "sustain": 0.166849,
+        "release": 0.305026
+      },
+      "noiseAmount": 0.249731,
+      "reverbAmount": 0.313631,
+      "delayAmount": 0.265411
+    },
+    "development": {
+      "densityDelta": 0.177094,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": -1,
+      "filterMovement": 0.199189,
+      "probabilityDelta": 0.052476,
+      "rotationDelta": 1,
+      "energyDelta": 0.373783
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.836658,
+      "openHatPercussionDucking": 0.116046,
+      "accentAlignment": 0.750151,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.196508,
+      "mutationStrength": 0.371276,
+      "microWeight": 0.627672,
+      "mesoWeight": 0.196643,
+      "macroWeight": 0.175685,
+      "rhythmWeight": 0.398651,
+      "pitchWeight": 0.096802,
+      "soundWeight": 0.377216,
+      "developmentWeight": 0.127331
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-021",
+    "founderId": 21,
+    "family": "bass-led",
+    "seed": "rebus-1452-founders-v1:021",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "C",
+      "pitchSet": [
+        0,
+        2,
+        3,
+        5,
+        7
+      ],
+      "octave": 2,
+      "steps": 24,
+      "hits": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        19,
+        21
+      ],
+      "noteChoice": [
+        3,
+        1,
+        2,
+        0,
+        1,
+        3,
+        0,
+        2,
+        0,
+        1,
+        1,
+        4,
+        2,
+        4,
+        4,
+        1
+      ],
+      "accents": [
+        0.988202,
+        0.72981,
+        0.828801,
+        0.587236,
+        0.746712,
+        0.608638,
+        0.582586,
+        0.795117,
+        0.771243,
+        0.523055,
+        0.76142,
+        0.794434,
+        0.781671,
+        0.762277,
+        0.858372,
+        0.689248
+      ],
+      "noteLengths": [
+        0.748503,
+        0.87374,
+        1.038531,
+        1.175453,
+        0.846609,
+        0.272472,
+        1.019993,
+        0.297703,
+        1.128361,
+        0.956909,
+        1.06563,
+        0.809934,
+        0.323527,
+        1.183214,
+        0.793098,
+        0.588422
+      ],
+      "gate": 0.418467,
+      "probability": 0.892617,
+      "rotation": 0,
+      "periodicVariation": {
+        "everyBars": 2,
+        "rotation": -2
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 20,
+      "hits": [
+        3,
+        8,
+        12,
+        13,
+        14,
+        18,
+        19
+      ],
+      "accents": [
+        0.553845,
+        0.924313,
+        0.74323,
+        0.554291,
+        0.830291,
+        0.878354,
+        0.724761
+      ],
+      "density": 0.35,
+      "probability": 0.859669,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": [
+        4
+      ]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 8,
+      "hits": [
+        3
+      ],
+      "accents": [
+        0.843607
+      ],
+      "density": 0.125,
+      "probability": 0.783792,
+      "rotation": 4,
+      "euclideanPulses": 1,
+      "muteBars": [
+        7,
+        9
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 20,
+          "hits": [
+            0,
+            6,
+            8,
+            14,
+            17
+          ],
+          "accents": [
+            0.741503,
+            0.472276,
+            0.813309,
+            0.575964,
+            0.605003
+          ],
+          "density": 0.25,
+          "probability": 0.846299,
+          "rotation": 0,
+          "euclideanPulses": null,
+          "muteBars": [
+            5,
+            6
+          ],
+          "instrument": "clap"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "C",
+      "pitchCollection": [
+        0,
+        2,
+        3,
+        5,
+        7
+      ],
+      "sectionBPitchShift": 1
+    },
+    "sound": {
+      "oscillator": "sine",
+      "filterCutoff": 4790.29579,
+      "resonance": 0.489806,
+      "drive": 0.470225,
+      "envelope": {
+        "attack": 0.013933,
+        "decay": 0.501002,
+        "sustain": 0.653665,
+        "release": 0.075188
+      },
+      "noiseAmount": 0.275397,
+      "reverbAmount": 0.240044,
+      "delayAmount": 0.107268
+    },
+    "development": {
+      "densityDelta": 0.173192,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 1,
+      "filterMovement": 0.159999,
+      "probabilityDelta": 0.152916,
+      "rotationDelta": 2,
+      "energyDelta": 0.360056
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.353881,
+      "openHatPercussionDucking": 0.086448,
+      "accentAlignment": 0.241001,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.174137,
+      "mutationStrength": 0.384332,
+      "microWeight": 0.296569,
+      "mesoWeight": 0.417579,
+      "macroWeight": 0.285852,
+      "rhythmWeight": 0.272723,
+      "pitchWeight": 0.204905,
+      "soundWeight": 0.360403,
+      "developmentWeight": 0.161969
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-022",
+    "founderId": 22,
+    "family": "bass-led",
+    "seed": "rebus-1452-founders-v1:022",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "F",
+      "pitchSet": [
+        0,
+        2,
+        3,
+        5,
+        7
+      ],
+      "octave": 1,
+      "steps": 20,
+      "hits": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17
+      ],
+      "noteChoice": [
+        2,
+        2,
+        3,
+        1,
+        0,
+        2,
+        4,
+        3,
+        1,
+        4,
+        3,
+        0,
+        3
+      ],
+      "accents": [
+        0.845773,
+        0.483006,
+        0.628114,
+        0.817803,
+        0.45822,
+        0.918141,
+        0.583081,
+        0.624512,
+        0.614064,
+        0.628326,
+        0.82164,
+        0.785888,
+        0.527877
+      ],
+      "noteLengths": [
+        0.924406,
+        0.652132,
+        0.638248,
+        0.474738,
+        0.70003,
+        1.051842,
+        0.248459,
+        0.466872,
+        1.185405,
+        0.147465,
+        1.031731,
+        0.512794,
+        0.617122
+      ],
+      "gate": 0.542603,
+      "probability": 0.799644,
+      "rotation": 0,
+      "periodicVariation": {
+        "everyBars": 4,
+        "rotation": -3
+      }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 12,
+      "hits": [
+        5,
+        6,
+        7
+      ],
+      "accents": [
+        0.677384,
+        0.56733,
+        0.740153
+      ],
+      "density": 0.25,
+      "probability": 0.933175,
+      "rotation": -2,
+      "euclideanPulses": 3,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 32,
+      "hits": [
+        5,
+        6,
+        21,
+        31
+      ],
+      "accents": [
+        0.498757,
+        0.763294,
+        0.664939,
+        0.470994
+      ],
+      "density": 0.125,
+      "probability": 0.923925,
+      "rotation": 1,
+      "euclideanPulses": 4,
+      "muteBars": [
+        2,
+        5
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 16,
+          "hits": [
+            2,
+            9,
+            11
+          ],
+          "accents": [
+            0.60913,
+            0.591291,
+            0.749223
+          ],
+          "density": 0.1875,
+          "probability": 0.883853,
+          "rotation": -1,
+          "euclideanPulses": 3,
+          "muteBars": [
+            3
+          ],
+          "instrument": "clap"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "F",
+      "pitchCollection": [
+        0,
+        2,
+        3,
+        5,
+        7
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "saw",
+      "filterCutoff": 3819.273268,
+      "resonance": 0.387377,
+      "drive": 0.387924,
+      "envelope": {
+        "attack": 0.039942,
+        "decay": 0.534673,
+        "sustain": 0.086828,
+        "release": 0.17106
+      },
+      "noiseAmount": 0.336962,
+      "reverbAmount": 0.220155,
+      "delayAmount": 0.111508
+    },
+    "development": {
+      "densityDelta": 0.163734,
+      "bassVariation": false,
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": 0.351397,
+      "probabilityDelta": 0.032428,
+      "rotationDelta": 4,
+      "energyDelta": 0.322904
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.133252,
+      "openHatPercussionDucking": 0.084943,
+      "accentAlignment": 0.45263,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.142662,
+      "mutationStrength": 0.344106,
+      "microWeight": 0.690136,
+      "mesoWeight": 0.169649,
+      "macroWeight": 0.140215,
+      "rhythmWeight": 0.29108,
+      "pitchWeight": 0.229287,
+      "soundWeight": 0.176461,
+      "developmentWeight": 0.303172
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-023",
+    "founderId": 23,
+    "family": "bass-led",
+    "seed": "rebus-1452-founders-v1:023",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "E",
+      "pitchSet": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "octave": 2,
+      "steps": 20,
+      "hits": [
+        0,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        11,
+        14,
+        17,
+        18
+      ],
+      "noteChoice": [
+        1,
+        3,
+        2,
+        3,
+        0,
+        3,
+        0,
+        2,
+        2,
+        0,
+        0
+      ],
+      "accents": [
+        0.874875,
+        0.759745,
+        0.555154,
+        0.771341,
+        0.48663,
+        0.861843,
+        0.722117,
+        0.843823,
+        0.766911,
+        0.465264,
+        0.725459
+      ],
+      "noteLengths": [
+        1.086858,
+        0.886403,
+        0.297689,
+        0.355645,
+        0.990197,
+        0.750344,
+        0.855009,
+        0.406424,
+        1.049665,
+        0.756174,
+        0.6705
+      ],
+      "gate": 0.792311,
+      "probability": 0.968084,
+      "rotation": 3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 8,
+      "hits": [
+        1,
+        3,
+        5,
+        6
+      ],
+      "accents": [
+        0.771475,
+        0.845261,
+        0.695769,
+        0.712301
+      ],
+      "density": 0.5,
+      "probability": 0.769718,
+      "rotation": 4,
+      "euclideanPulses": 4,
+      "muteBars": [
+        12
+      ]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 16,
+      "hits": [
+        2,
+        3,
+        6,
+        7,
+        15
+      ],
+      "accents": [
+        0.478563,
+        0.780829,
+        0.519865,
+        0.800193,
+        0.873159
+      ],
+      "density": 0.3125,
+      "probability": 0.819844,
+      "rotation": 3,
+      "euclideanPulses": 5,
+      "muteBars": [
+        1,
+        11
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 16,
+          "hits": [
+            10,
+            13,
+            15
+          ],
+          "accents": [
+            0.811296,
+            0.634601,
+            0.60942
+          ],
+          "density": 0.1875,
+          "probability": 0.687559,
+          "rotation": -3,
+          "euclideanPulses": null,
+          "muteBars": [
+            12
+          ],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "E",
+      "pitchCollection": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "square",
+      "filterCutoff": 7598.750335,
+      "resonance": 0.157564,
+      "drive": 0.27289,
+      "envelope": {
+        "attack": 0.008863,
+        "decay": 0.465894,
+        "sustain": 0.454232,
+        "release": 0.72614
+      },
+      "noiseAmount": 0.222569,
+      "reverbAmount": 0.475023,
+      "delayAmount": 0.347384
+    },
+    "development": {
+      "densityDelta": -0.129167,
+      "bassVariation": false,
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": -0.225778,
+      "probabilityDelta": -0.078693,
+      "rotationDelta": 0,
+      "energyDelta": -0.280985
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.777976,
+      "openHatPercussionDucking": 0.158295,
+      "accentAlignment": 0.822097,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.276288,
+      "mutationStrength": 0.564593,
+      "microWeight": 0.511591,
+      "mesoWeight": 0.209689,
+      "macroWeight": 0.27872,
+      "rhythmWeight": 0.384209,
+      "pitchWeight": 0.114899,
+      "soundWeight": 0.333003,
+      "developmentWeight": 0.167889
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-024",
+    "founderId": 24,
+    "family": "bass-led",
+    "seed": "rebus-1452-founders-v1:024",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "C#",
+      "pitchSet": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "octave": 1,
+      "steps": 20,
+      "hits": [
+        1,
+        5,
+        6,
+        9,
+        10,
+        11,
+        14,
+        17,
+        18,
+        19
+      ],
+      "noteChoice": [
+        1,
+        2,
+        3,
+        3,
+        2,
+        3,
+        2,
+        0,
+        2,
+        1
+      ],
+      "accents": [
+        0.846754,
+        0.833892,
+        0.528793,
+        0.738322,
+        0.854248,
+        0.793004,
+        0.878181,
+        0.457892,
+        0.649329,
+        0.599008
+      ],
+      "noteLengths": [
+        1.063198,
+        0.700656,
+        1.067438,
+        0.26427,
+        0.590956,
+        1.122769,
+        0.483288,
+        0.583928,
+        0.865429,
+        1.223025
+      ],
+      "gate": 0.728555,
+      "probability": 0.75468,
+      "rotation": -3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 16,
+      "hits": [
+        1,
+        5,
+        9,
+        10,
+        11,
+        12,
+        13,
+        15
+      ],
+      "accents": [
+        0.517535,
+        0.463318,
+        0.531726,
+        0.576671,
+        0.545689,
+        0.871622,
+        0.730622,
+        0.645988
+      ],
+      "density": 0.5,
+      "probability": 0.87144,
+      "rotation": -4,
+      "euclideanPulses": 8,
+      "muteBars": [
+        9
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        1,
+        3,
+        5,
+        9,
+        13,
+        17
+      ],
+      "accents": [
+        0.510171,
+        0.591352,
+        0.777358,
+        0.812096,
+        0.760749,
+        0.834923
+      ],
+      "density": 0.25,
+      "probability": 0.788656,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": [
+        9
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 12,
+          "hits": [
+            9,
+            11
+          ],
+          "accents": [
+            0.76983,
+            0.860433
+          ],
+          "density": 0.16666666666666666,
+          "probability": 0.774004,
+          "rotation": 0,
+          "euclideanPulses": null,
+          "muteBars": [
+            13
+          ],
+          "instrument": "cowbell"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "C#",
+      "pitchCollection": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "saw",
+      "filterCutoff": 6538.153989,
+      "resonance": 0.25881,
+      "drive": 0.327415,
+      "envelope": {
+        "attack": 0.060211,
+        "decay": 0.06019,
+        "sustain": 0.421098,
+        "release": 0.785715
+      },
+      "noiseAmount": 0.209879,
+      "reverbAmount": 0.409172,
+      "delayAmount": 0.299282
+    },
+    "development": {
+      "densityDelta": -0.105501,
+      "bassVariation": false,
+      "hatVariation": false,
+      "percussionChange": 1,
+      "filterMovement": -0.259396,
+      "probabilityDelta": -0.055014,
+      "rotationDelta": 0,
+      "energyDelta": -0.262774
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.460292,
+      "openHatPercussionDucking": 0.153773,
+      "accentAlignment": 0.835207,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.241241,
+      "mutationStrength": 0.583931,
+      "microWeight": 0.537313,
+      "mesoWeight": 0.307588,
+      "macroWeight": 0.155099,
+      "rhythmWeight": 0.3982,
+      "pitchWeight": 0.239856,
+      "soundWeight": 0.162748,
+      "developmentWeight": 0.199196
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-025",
+    "founderId": 25,
+    "family": "percussion-led",
+    "seed": "rebus-1452-founders-v1:025",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "C#",
+      "pitchSet": [
+        0
+      ],
+      "octave": 1,
+      "steps": 20,
+      "hits": [
+        9,
+        13,
+        15
+      ],
+      "noteChoice": [
+        0,
+        0,
+        0
+      ],
+      "accents": [
+        0.859498,
+        0.586803,
+        0.47495
+      ],
+      "noteLengths": [
+        0.259352,
+        0.264705,
+        0.454673
+      ],
+      "gate": 0.538763,
+      "probability": 0.849059,
+      "rotation": -3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 8,
+      "hits": [
+        1,
+        3,
+        4,
+        5,
+        7
+      ],
+      "accents": [
+        0.770839,
+        0.836989,
+        0.936136,
+        0.510676,
+        0.4839
+      ],
+      "density": 0.625,
+      "probability": 0.854897,
+      "rotation": -4,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 24,
+      "hits": [
+        5,
+        6,
+        7,
+        9,
+        11,
+        14,
+        15,
+        17
+      ],
+      "accents": [
+        0.755208,
+        0.627188,
+        0.773155,
+        0.4702,
+        0.796722,
+        0.691892,
+        0.464061,
+        0.483121
+      ],
+      "density": 0.3333333333333333,
+      "probability": 0.790586,
+      "rotation": 3,
+      "euclideanPulses": 8,
+      "muteBars": [
+        0
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 32,
+          "hits": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            11,
+            15,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            26,
+            29,
+            30,
+            31
+          ],
+          "accents": [
+            0.80947,
+            0.826557,
+            0.830543,
+            0.782324,
+            0.651611,
+            0.620311,
+            0.683858,
+            0.844316,
+            0.647728,
+            0.554686,
+            0.803121,
+            0.68049,
+            0.500202,
+            0.833404,
+            0.520703,
+            0.768852,
+            0.655434,
+            0.822423,
+            0.590126
+          ],
+          "density": 0.59375,
+          "probability": 0.955278,
+          "rotation": -1,
+          "euclideanPulses": null,
+          "muteBars": [
+            1
+          ],
+          "instrument": "noise"
+        },
+        {
+          "mode": "grid",
+          "steps": 32,
+          "hits": [
+            1,
+            2,
+            6,
+            7,
+            8,
+            9,
+            10,
+            21,
+            23,
+            26,
+            29,
+            30,
+            31
+          ],
+          "accents": [
+            0.563554,
+            0.757079,
+            0.749565,
+            0.86056,
+            0.936249,
+            0.780171,
+            0.619952,
+            0.675441,
+            0.688148,
+            0.84629,
+            0.590989,
+            0.532315,
+            0.66314
+          ],
+          "density": 0.40625,
+          "probability": 0.80162,
+          "rotation": -4,
+          "euclideanPulses": null,
+          "muteBars": [
+            3
+          ],
+          "instrument": "noise"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "C#",
+      "pitchCollection": [
+        0
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "fm",
+      "filterCutoff": 7571.099684,
+      "resonance": 0.307115,
+      "drive": 0.351942,
+      "envelope": {
+        "attack": 0.034625,
+        "decay": 0.052161,
+        "sustain": 0.424402,
+        "release": 0.43193
+      },
+      "noiseAmount": 0.216309,
+      "reverbAmount": 0.378339,
+      "delayAmount": 0.317385
+    },
+    "development": {
+      "densityDelta": 0.151362,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 1,
+      "filterMovement": 0.109285,
+      "probabilityDelta": 0.078314,
+      "rotationDelta": 0,
+      "energyDelta": 0.256773
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.62848,
+      "openHatPercussionDucking": 0.233128,
+      "accentAlignment": 0.517707,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.234275,
+      "mutationStrength": 0.510704,
+      "microWeight": 0.428782,
+      "mesoWeight": 0.333541,
+      "macroWeight": 0.237677,
+      "rhythmWeight": 0.260103,
+      "pitchWeight": 0.115313,
+      "soundWeight": 0.259036,
+      "developmentWeight": 0.365548
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-026",
+    "founderId": 26,
+    "family": "percussion-led",
+    "seed": "rebus-1452-founders-v1:026",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "G#",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 3,
+      "steps": 16,
+      "hits": [
+        1,
+        9,
+        10,
+        11,
+        15
+      ],
+      "noteChoice": [
+        2,
+        2,
+        2,
+        1,
+        2
+      ],
+      "accents": [
+        0.779397,
+        0.52242,
+        0.721877,
+        0.529482,
+        0.774264
+      ],
+      "noteLengths": [
+        0.814496,
+        0.80235,
+        0.730283,
+        0.886783,
+        0.642636
+      ],
+      "gate": 0.292823,
+      "probability": 0.901153,
+      "rotation": -3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 24,
+      "hits": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        12,
+        14,
+        18,
+        20,
+        21,
+        23
+      ],
+      "accents": [
+        0.787376,
+        0.726483,
+        0.610679,
+        0.470834,
+        0.749877,
+        0.834328,
+        0.729256,
+        0.662189,
+        0.860833,
+        0.601688,
+        0.504884,
+        0.840688,
+        0.531517,
+        0.634931
+      ],
+      "density": 0.5833333333333334,
+      "probability": 0.73599,
+      "rotation": 4,
+      "euclideanPulses": 14,
+      "muteBars": [
+        11
+      ]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 32,
+      "hits": [
+        2,
+        4,
+        5,
+        11,
+        15,
+        19,
+        22,
+        25,
+        27,
+        29
+      ],
+      "accents": [
+        0.861393,
+        0.929454,
+        0.508423,
+        0.634,
+        0.563223,
+        0.825033,
+        0.778366,
+        0.7339,
+        0.778444,
+        0.499602
+      ],
+      "density": 0.3125,
+      "probability": 0.844479,
+      "rotation": -4,
+      "euclideanPulses": 10,
+      "muteBars": [
+        12,
+        14
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 8,
+          "hits": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7
+          ],
+          "accents": [
+            0.686137,
+            0.679018,
+            0.555992,
+            0.518982,
+            0.696485,
+            0.709568
+          ],
+          "density": 0.75,
+          "probability": 0.944869,
+          "rotation": -3,
+          "euclideanPulses": 6,
+          "muteBars": [
+            4
+          ],
+          "instrument": "clap"
+        },
+        {
+          "mode": "grid",
+          "steps": 20,
+          "hits": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            9,
+            11,
+            14,
+            15,
+            16,
+            17
+          ],
+          "accents": [
+            0.860682,
+            0.589505,
+            0.826213,
+            0.507131,
+            0.577456,
+            0.585805,
+            0.667839,
+            0.654856,
+            0.848121,
+            0.654068,
+            0.85977
+          ],
+          "density": 0.55,
+          "probability": 0.692602,
+          "rotation": -4,
+          "euclideanPulses": null,
+          "muteBars": [
+            6
+          ],
+          "instrument": "clap"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "G#",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": -1
+    },
+    "sound": {
+      "oscillator": "sine",
+      "filterCutoff": 6539.045529,
+      "resonance": 0.437021,
+      "drive": 0.666834,
+      "envelope": {
+        "attack": 0.001708,
+        "decay": 0.564947,
+        "sustain": 0.517077,
+        "release": 0.293252
+      },
+      "noiseAmount": 0.289748,
+      "reverbAmount": 0.340288,
+      "delayAmount": 0.243689
+    },
+    "development": {
+      "densityDelta": 0.134396,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 1,
+      "filterMovement": 0.313709,
+      "probabilityDelta": 0.165354,
+      "rotationDelta": 3,
+      "energyDelta": 0.437985
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.551474,
+      "openHatPercussionDucking": 0.17281,
+      "accentAlignment": 0.141596,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.196602,
+      "mutationStrength": 0.340603,
+      "microWeight": 0.364981,
+      "mesoWeight": 0.41325,
+      "macroWeight": 0.221769,
+      "rhythmWeight": 0.353672,
+      "pitchWeight": 0.261944,
+      "soundWeight": 0.198964,
+      "developmentWeight": 0.18542
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-027",
+    "founderId": 27,
+    "family": "percussion-led",
+    "seed": "rebus-1452-founders-v1:027",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "G#",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 3,
+      "steps": 16,
+      "hits": [
+        2,
+        3,
+        8,
+        10,
+        13
+      ],
+      "noteChoice": [
+        2,
+        2,
+        2,
+        0,
+        2
+      ],
+      "accents": [
+        0.463606,
+        0.832031,
+        0.791634,
+        0.686927,
+        0.681919
+      ],
+      "noteLengths": [
+        1.081044,
+        0.859143,
+        0.566397,
+        0.129241,
+        0.884448
+      ],
+      "gate": 0.589238,
+      "probability": 0.744228,
+      "rotation": 3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        0,
+        1,
+        4,
+        6,
+        8,
+        10,
+        12,
+        15,
+        16,
+        20,
+        21,
+        22,
+        23
+      ],
+      "accents": [
+        0.654347,
+        0.573651,
+        0.762863,
+        0.65394,
+        0.680725,
+        0.759669,
+        0.792261,
+        0.766479,
+        0.687593,
+        0.786554,
+        0.568693,
+        0.636254,
+        0.563019
+      ],
+      "density": 0.5416666666666666,
+      "probability": 0.723702,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 20,
+      "hits": [
+        3,
+        9,
+        11,
+        18
+      ],
+      "accents": [
+        0.786198,
+        0.711537,
+        0.48019,
+        0.62216
+      ],
+      "density": 0.2,
+      "probability": 0.832819,
+      "rotation": -4,
+      "euclideanPulses": 4,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 24,
+          "hits": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            10,
+            11,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            21,
+            23
+          ],
+          "accents": [
+            0.555637,
+            0.463175,
+            0.83389,
+            0.762605,
+            0.747401,
+            0.51825,
+            0.607592,
+            0.648655,
+            0.470814,
+            0.798095,
+            0.768617,
+            0.459572,
+            0.578223,
+            0.561905,
+            0.499303,
+            0.670008,
+            0.564428,
+            0.815541
+          ],
+          "density": 0.75,
+          "probability": 0.931288,
+          "rotation": -2,
+          "euclideanPulses": null,
+          "muteBars": [
+            0,
+            3
+          ],
+          "instrument": "clap"
+        },
+        {
+          "mode": "grid",
+          "steps": 12,
+          "hits": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            11
+          ],
+          "accents": [
+            0.828862,
+            0.477934,
+            0.450491,
+            0.867288,
+            0.741186,
+            0.743223
+          ],
+          "density": 0.5,
+          "probability": 0.839085,
+          "rotation": -3,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "G#",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "square",
+      "filterCutoff": 6377.251887,
+      "resonance": 0.334176,
+      "drive": 0.551669,
+      "envelope": {
+        "attack": 0.025775,
+        "decay": 0.741185,
+        "sustain": 0.305907,
+        "release": 0.302105
+      },
+      "noiseAmount": 0.41769,
+      "reverbAmount": 0.270372,
+      "delayAmount": 0.116872
+    },
+    "development": {
+      "densityDelta": 0.245331,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 1,
+      "filterMovement": 0.257749,
+      "probabilityDelta": 0.104202,
+      "rotationDelta": 2,
+      "energyDelta": 0.410514
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.748317,
+      "openHatPercussionDucking": 0.069124,
+      "accentAlignment": 0.33244,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.189914,
+      "mutationStrength": 0.440188,
+      "microWeight": 0.379453,
+      "mesoWeight": 0.299776,
+      "macroWeight": 0.320771,
+      "rhythmWeight": 0.243695,
+      "pitchWeight": 0.275385,
+      "soundWeight": 0.123474,
+      "developmentWeight": 0.357446
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-028",
+    "founderId": 28,
+    "family": "percussion-led",
+    "seed": "rebus-1452-founders-v1:028",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "F#",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 3,
+      "steps": 8,
+      "hits": [
+        5,
+        7
+      ],
+      "noteChoice": [
+        0,
+        0
+      ],
+      "accents": [
+        0.690912,
+        0.605888
+      ],
+      "noteLengths": [
+        1.118763,
+        0.839383
+      ],
+      "gate": 0.811915,
+      "probability": 0.976613,
+      "rotation": -3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 32,
+      "hits": [
+        1,
+        3,
+        7,
+        8,
+        11,
+        13,
+        14,
+        19,
+        23,
+        24,
+        26,
+        27,
+        29,
+        30,
+        31
+      ],
+      "accents": [
+        0.805597,
+        0.7733,
+        0.520552,
+        0.576535,
+        0.55698,
+        0.872891,
+        0.636167,
+        0.65069,
+        0.515316,
+        0.713305,
+        0.758553,
+        0.770082,
+        0.555307,
+        0.823514,
+        0.536054
+      ],
+      "density": 0.46875,
+      "probability": 0.805128,
+      "rotation": 0,
+      "euclideanPulses": null,
+      "muteBars": [
+        11
+      ]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 8,
+      "hits": [
+        7
+      ],
+      "accents": [
+        0.776481
+      ],
+      "density": 0.125,
+      "probability": 0.786278,
+      "rotation": 1,
+      "euclideanPulses": 1,
+      "muteBars": [
+        7
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 16,
+          "hits": [
+            0,
+            1,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            14,
+            15
+          ],
+          "accents": [
+            0.879015,
+            0.874568,
+            0.949807,
+            0.656949,
+            0.557205,
+            0.816407,
+            0.777548,
+            0.833516,
+            0.476548,
+            0.670105,
+            0.774986
+          ],
+          "density": 0.6875,
+          "probability": 0.71496,
+          "rotation": -1,
+          "euclideanPulses": 11,
+          "muteBars": [
+            6
+          ],
+          "instrument": "rim"
+        },
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "accents": [
+            0.457667,
+            0.766764,
+            0.855196,
+            0.538919
+          ],
+          "density": 0.5,
+          "probability": 0.728555,
+          "rotation": 0,
+          "euclideanPulses": null,
+          "muteBars": [
+            0
+          ],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "F#",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "noise-blend",
+      "filterCutoff": 5489.699421,
+      "resonance": 0.358307,
+      "drive": 0.517474,
+      "envelope": {
+        "attack": 0.007088,
+        "decay": 0.500551,
+        "sustain": 0.689879,
+        "release": 0.155489
+      },
+      "noiseAmount": 0.262403,
+      "reverbAmount": 0.223805,
+      "delayAmount": 0.176118
+    },
+    "development": {
+      "densityDelta": 0.127325,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 1,
+      "filterMovement": 0.264011,
+      "probabilityDelta": 0.047693,
+      "rotationDelta": 3,
+      "energyDelta": 0.35771
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.387577,
+      "openHatPercussionDucking": 0.093318,
+      "accentAlignment": 0.817713,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.154864,
+      "mutationStrength": 0.378975,
+      "microWeight": 0.454947,
+      "mesoWeight": 0.325258,
+      "macroWeight": 0.219795,
+      "rhythmWeight": 0.320063,
+      "pitchWeight": 0.272854,
+      "soundWeight": 0.230356,
+      "developmentWeight": 0.176727
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-029",
+    "founderId": 29,
+    "family": "percussion-led",
+    "seed": "rebus-1452-founders-v1:029",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "B",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 2,
+      "steps": 32,
+      "hits": [
+        2,
+        9,
+        11,
+        13,
+        18,
+        19,
+        21,
+        31
+      ],
+      "noteChoice": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "accents": [
+        0.824168,
+        0.730927,
+        0.479403,
+        0.845752,
+        0.817106,
+        0.473483,
+        0.617146,
+        0.463048
+      ],
+      "noteLengths": [
+        0.91271,
+        0.665473,
+        0.379026,
+        0.299919,
+        0.650383,
+        0.766676,
+        0.986575,
+        0.990745
+      ],
+      "gate": 0.86003,
+      "probability": 0.883975,
+      "rotation": -3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 8,
+      "hits": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "accents": [
+        0.515226,
+        0.727551,
+        0.708586,
+        0.779196,
+        0.73928,
+        0.772494
+      ],
+      "density": 0.75,
+      "probability": 0.899096,
+      "rotation": 0,
+      "euclideanPulses": 6,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 32,
+      "hits": [
+        1,
+        15,
+        18,
+        19,
+        22,
+        23,
+        26,
+        29,
+        31
+      ],
+      "accents": [
+        0.483575,
+        0.695344,
+        0.534132,
+        0.752564,
+        0.541532,
+        0.579211,
+        0.791764,
+        0.569723,
+        0.641694
+      ],
+      "density": 0.28125,
+      "probability": 0.785705,
+      "rotation": -3,
+      "euclideanPulses": 9,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 16,
+          "hits": [
+            0,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            12,
+            13,
+            14,
+            15
+          ],
+          "accents": [
+            0.904352,
+            0.723453,
+            0.549401,
+            0.8682,
+            0.809313,
+            0.683318,
+            0.572101,
+            0.889983,
+            0.770859,
+            0.51064,
+            0.554792
+          ],
+          "density": 0.6875,
+          "probability": 0.959256,
+          "rotation": -1,
+          "euclideanPulses": null,
+          "muteBars": [
+            4,
+            8
+          ],
+          "instrument": "rim"
+        },
+        {
+          "mode": "grid",
+          "steps": 24,
+          "hits": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            13,
+            14,
+            15,
+            18,
+            19,
+            21,
+            22
+          ],
+          "accents": [
+            0.574047,
+            0.825913,
+            0.720623,
+            0.730581,
+            0.870258,
+            0.710897,
+            0.769697,
+            0.56519,
+            0.630212,
+            0.673751,
+            0.526033,
+            0.538708
+          ],
+          "density": 0.5,
+          "probability": 0.786038,
+          "rotation": -3,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "cowbell"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "B",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "triangle",
+      "filterCutoff": 8828.090082,
+      "resonance": 0.42599,
+      "drive": 0.455509,
+      "envelope": {
+        "attack": 0.07519,
+        "decay": 0.261442,
+        "sustain": 0.071264,
+        "release": 0.28139
+      },
+      "noiseAmount": 0.179585,
+      "reverbAmount": 0.512396,
+      "delayAmount": 0.404337
+    },
+    "development": {
+      "densityDelta": 0.12626,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": -1,
+      "filterMovement": 0.226173,
+      "probabilityDelta": 0.057497,
+      "rotationDelta": 0,
+      "energyDelta": 0.342983
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.536502,
+      "openHatPercussionDucking": 0.167158,
+      "accentAlignment": 0.675585,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.289694,
+      "mutationStrength": 0.50545,
+      "microWeight": 0.482283,
+      "mesoWeight": 0.295492,
+      "macroWeight": 0.222225,
+      "rhythmWeight": 0.299147,
+      "pitchWeight": 0.146752,
+      "soundWeight": 0.359241,
+      "developmentWeight": 0.19486
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-030",
+    "founderId": 30,
+    "family": "percussion-led",
+    "seed": "rebus-1452-founders-v1:030",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "A#",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 3,
+      "steps": 8,
+      "hits": [
+        3,
+        7
+      ],
+      "noteChoice": [
+        0,
+        0
+      ],
+      "accents": [
+        0.774829,
+        0.588291
+      ],
+      "noteLengths": [
+        0.67336,
+        0.700685
+      ],
+      "gate": 0.648274,
+      "probability": 0.834903,
+      "rotation": -2,
+      "periodicVariation": {
+        "everyBars": 8,
+        "rotation": -3
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        1,
+        4,
+        5,
+        7,
+        9,
+        10,
+        11,
+        12,
+        14,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "accents": [
+        0.509277,
+        0.867932,
+        0.737018,
+        0.536103,
+        0.699803,
+        0.47851,
+        0.718967,
+        0.869521,
+        0.50592,
+        0.574801,
+        0.838198,
+        0.459496,
+        0.88405,
+        0.834911,
+        0.470508,
+        0.731029
+      ],
+      "density": 0.6666666666666666,
+      "probability": 0.796625,
+      "rotation": 0,
+      "euclideanPulses": null,
+      "muteBars": [
+        11
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 12,
+      "hits": [
+        1,
+        2,
+        7,
+        10
+      ],
+      "accents": [
+        0.594611,
+        0.456286,
+        0.819008,
+        0.734662
+      ],
+      "density": 0.3333333333333333,
+      "probability": 0.90813,
+      "rotation": 3,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 32,
+          "hits": [
+            2,
+            3,
+            4,
+            7,
+            10,
+            13,
+            14,
+            15,
+            17,
+            18,
+            20,
+            21,
+            22,
+            23,
+            24,
+            26,
+            27,
+            30,
+            31
+          ],
+          "accents": [
+            0.852621,
+            0.878105,
+            0.916044,
+            0.45246,
+            0.728509,
+            0.559954,
+            0.594116,
+            0.615985,
+            0.500114,
+            0.845128,
+            0.987166,
+            0.722968,
+            0.470087,
+            0.857579,
+            0.660104,
+            0.450605,
+            0.605997,
+            0.76595,
+            0.850123
+          ],
+          "density": 0.59375,
+          "probability": 0.815419,
+          "rotation": 2,
+          "euclideanPulses": 19,
+          "muteBars": [
+            11
+          ],
+          "instrument": "clap"
+        },
+        {
+          "mode": "grid",
+          "steps": 12,
+          "hits": [
+            1,
+            6,
+            7,
+            9,
+            11
+          ],
+          "accents": [
+            0.517228,
+            0.814192,
+            0.484667,
+            0.706364,
+            0.518595
+          ],
+          "density": 0.4166666666666667,
+          "probability": 0.707205,
+          "rotation": -2,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "cowbell"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A#",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "sine",
+      "filterCutoff": 8426.538875,
+      "resonance": 0.319848,
+      "drive": 0.394279,
+      "envelope": {
+        "attack": 0.004491,
+        "decay": 0.175513,
+        "sustain": 0.168362,
+        "release": 0.139867
+      },
+      "noiseAmount": 0.190756,
+      "reverbAmount": 0.468312,
+      "delayAmount": 0.256382
+    },
+    "development": {
+      "densityDelta": 0.17841,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": 0.168503,
+      "probabilityDelta": 0.035512,
+      "rotationDelta": 0,
+      "energyDelta": 0.289607
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.627993,
+      "openHatPercussionDucking": 0.147654,
+      "accentAlignment": 0.318923,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.251171,
+      "mutationStrength": 0.570704,
+      "microWeight": 0.540263,
+      "mesoWeight": 0.226639,
+      "macroWeight": 0.233098,
+      "rhythmWeight": 0.413487,
+      "pitchWeight": 0.262825,
+      "soundWeight": 0.147779,
+      "developmentWeight": 0.175909
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-031",
+    "founderId": 31,
+    "family": "dark-industrial",
+    "seed": "rebus-1452-founders-v1:031",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "G",
+      "pitchSet": [
+        0
+      ],
+      "octave": 3,
+      "steps": 16,
+      "hits": [
+        2,
+        8,
+        13,
+        14
+      ],
+      "noteChoice": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "accents": [
+        0.452158,
+        0.956818,
+        0.564204,
+        0.571646
+      ],
+      "noteLengths": [
+        0.161368,
+        0.373449,
+        0.620636,
+        0.160082
+      ],
+      "gate": 0.820705,
+      "probability": 0.738905,
+      "rotation": 2,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 12,
+      "hits": [
+        0,
+        2,
+        5,
+        7,
+        8,
+        9,
+        11
+      ],
+      "accents": [
+        0.98068,
+        0.624146,
+        0.826068,
+        0.563304,
+        0.765935,
+        0.641784,
+        0.556206
+      ],
+      "density": 0.5833333333333334,
+      "probability": 0.92797,
+      "rotation": -4,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 20,
+      "hits": [
+        4,
+        7,
+        10,
+        13,
+        18
+      ],
+      "accents": [
+        0.857464,
+        0.67299,
+        0.520928,
+        0.487326,
+        0.617143
+      ],
+      "density": 0.25,
+      "probability": 0.954491,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": [
+        15
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 20,
+          "hits": [
+            3,
+            6,
+            11,
+            12,
+            13,
+            15,
+            17
+          ],
+          "accents": [
+            0.517384,
+            0.506336,
+            0.772534,
+            0.841838,
+            0.600913,
+            0.70315,
+            0.550371
+          ],
+          "density": 0.35,
+          "probability": 0.894854,
+          "rotation": 1,
+          "euclideanPulses": 7,
+          "muteBars": [
+            3
+          ],
+          "instrument": "rim"
+        },
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [
+            1,
+            5
+          ],
+          "accents": [
+            0.873829,
+            0.858235
+          ],
+          "density": 0.25,
+          "probability": 0.7137,
+          "rotation": -3,
+          "euclideanPulses": null,
+          "muteBars": [
+            10
+          ],
+          "instrument": "tom"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "G",
+      "pitchCollection": [
+        0
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "fm",
+      "filterCutoff": 4154.605497,
+      "resonance": 0.524967,
+      "drive": 0.685409,
+      "envelope": {
+        "attack": 0.07083,
+        "decay": 0.583435,
+        "sustain": 0.208648,
+        "release": 0.065042
+      },
+      "noiseAmount": 0.5344,
+      "reverbAmount": 0.406772,
+      "delayAmount": 0.265663
+    },
+    "development": {
+      "densityDelta": 0.147087,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": 0.094863,
+      "probabilityDelta": 0.04836,
+      "rotationDelta": 0,
+      "energyDelta": 0.238422
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.03221,
+      "openHatPercussionDucking": 0.228712,
+      "accentAlignment": 0.859302,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.278407,
+      "mutationStrength": 0.530909,
+      "microWeight": 0.404444,
+      "mesoWeight": 0.470503,
+      "macroWeight": 0.125053,
+      "rhythmWeight": 0.36062,
+      "pitchWeight": 0.104967,
+      "soundWeight": 0.209367,
+      "developmentWeight": 0.325046
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-032",
+    "founderId": 32,
+    "family": "dark-industrial",
+    "seed": "rebus-1452-founders-v1:032",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "E",
+      "pitchSet": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "octave": 3,
+      "steps": 12,
+      "hits": [
+        0,
+        1,
+        3,
+        4,
+        8,
+        9
+      ],
+      "noteChoice": [
+        0,
+        3,
+        3,
+        3,
+        0,
+        0
+      ],
+      "accents": [
+        0.860234,
+        0.558001,
+        0.822902,
+        0.656201,
+        0.880807,
+        0.811006
+      ],
+      "noteLengths": [
+        0.18708,
+        0.259462,
+        0.731368,
+        1.111173,
+        0.585619,
+        0.906647
+      ],
+      "gate": 0.809722,
+      "probability": 0.760342,
+      "rotation": 1,
+      "periodicVariation": {
+        "everyBars": 4,
+        "rotation": 2
+      }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 32,
+      "hits": [
+        2,
+        4,
+        5,
+        6,
+        8,
+        11,
+        12,
+        16,
+        19,
+        20,
+        21,
+        25,
+        26,
+        27,
+        29,
+        31
+      ],
+      "accents": [
+        0.495069,
+        0.831697,
+        0.746365,
+        0.595945,
+        0.75377,
+        0.58476,
+        0.915472,
+        0.753501,
+        0.829269,
+        0.5994,
+        0.580294,
+        0.717176,
+        0.621498,
+        0.813463,
+        0.485267,
+        0.457858
+      ],
+      "density": 0.5,
+      "probability": 0.804689,
+      "rotation": -4,
+      "euclideanPulses": 16,
+      "muteBars": [
+        12
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 12,
+      "hits": [
+        2,
+        10
+      ],
+      "accents": [
+        0.61451,
+        0.523484
+      ],
+      "density": 0.16666666666666666,
+      "probability": 0.996256,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": [
+        8,
+        9
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 16,
+          "hits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            11,
+            14,
+            15
+          ],
+          "accents": [
+            0.980884,
+            0.49397,
+            0.700288,
+            0.73502,
+            0.655748,
+            0.805214,
+            0.77478,
+            0.590133,
+            0.773183,
+            0.53153
+          ],
+          "density": 0.625,
+          "probability": 0.789652,
+          "rotation": 3,
+          "euclideanPulses": null,
+          "muteBars": [
+            0
+          ],
+          "instrument": "cowbell"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "E",
+      "pitchCollection": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "noise-blend",
+      "filterCutoff": 3377.643158,
+      "resonance": 0.690619,
+      "drive": 0.856673,
+      "envelope": {
+        "attack": 0.015469,
+        "decay": 0.43111,
+        "sustain": 0.629093,
+        "release": 0.191557
+      },
+      "noiseAmount": 0.70457,
+      "reverbAmount": 0.304404,
+      "delayAmount": 0.218251
+    },
+    "development": {
+      "densityDelta": 0.17919,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 1,
+      "filterMovement": 0.331137,
+      "probabilityDelta": 0.118059,
+      "rotationDelta": 2,
+      "energyDelta": 0.397388
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.326058,
+      "openHatPercussionDucking": 0.134688,
+      "accentAlignment": 0.468479,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.250895,
+      "mutationStrength": 0.43126,
+      "microWeight": 0.594355,
+      "mesoWeight": 0.180179,
+      "macroWeight": 0.225466,
+      "rhythmWeight": 0.279247,
+      "pitchWeight": 0.177455,
+      "soundWeight": 0.140656,
+      "developmentWeight": 0.402642
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-033",
+    "founderId": 33,
+    "family": "dark-industrial",
+    "seed": "rebus-1452-founders-v1:033",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "C",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 2,
+      "steps": 12,
+      "hits": [
+        0,
+        1,
+        3,
+        4,
+        8
+      ],
+      "noteChoice": [
+        2,
+        1,
+        2,
+        2,
+        1
+      ],
+      "accents": [
+        0.932387,
+        0.873793,
+        0.811981,
+        0.959083,
+        0.946317
+      ],
+      "noteLengths": [
+        0.276366,
+        0.154183,
+        0.164267,
+        0.362761,
+        0.160813
+      ],
+      "gate": 0.780013,
+      "probability": 0.757845,
+      "rotation": 3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 20,
+      "hits": [
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        12,
+        15
+      ],
+      "accents": [
+        0.921338,
+        0.584628,
+        0.775142,
+        0.737693,
+        0.821432,
+        0.521536,
+        0.663486,
+        0.521793
+      ],
+      "density": 0.4,
+      "probability": 0.773913,
+      "rotation": -3,
+      "euclideanPulses": 8,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 12,
+      "hits": [
+        5,
+        6
+      ],
+      "accents": [
+        0.45128,
+        0.54146
+      ],
+      "density": 0.16666666666666666,
+      "probability": 0.8521,
+      "rotation": -4,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 16,
+          "hits": [
+            0,
+            1,
+            2,
+            5,
+            7,
+            9,
+            11,
+            12,
+            15
+          ],
+          "accents": [
+            0.815944,
+            0.678697,
+            0.868867,
+            0.742997,
+            0.465974,
+            0.690034,
+            0.710176,
+            0.705782,
+            0.697881
+          ],
+          "density": 0.5625,
+          "probability": 0.993996,
+          "rotation": -3,
+          "euclideanPulses": 9,
+          "muteBars": [
+            9,
+            14
+          ],
+          "instrument": "noise"
+        },
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [
+            2,
+            3,
+            7
+          ],
+          "accents": [
+            0.692474,
+            0.473456,
+            0.6323
+          ],
+          "density": 0.375,
+          "probability": 0.749667,
+          "rotation": 0,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "tom"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "C",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "fm",
+      "filterCutoff": 2866.170442,
+      "resonance": 0.691569,
+      "drive": 0.76165,
+      "envelope": {
+        "attack": 0.073348,
+        "decay": 0.777221,
+        "sustain": 0.084069,
+        "release": 0.732487
+      },
+      "noiseAmount": 0.321203,
+      "reverbAmount": 0.271666,
+      "delayAmount": 0.119636
+    },
+    "development": {
+      "densityDelta": -0.109316,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 1,
+      "filterMovement": -0.36201,
+      "probabilityDelta": -0.062955,
+      "rotationDelta": -3,
+      "energyDelta": -0.371571
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.121948,
+      "openHatPercussionDucking": 0.112966,
+      "accentAlignment": 0.270498,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.221459,
+      "mutationStrength": 0.447689,
+      "microWeight": 0.500331,
+      "mesoWeight": 0.193145,
+      "macroWeight": 0.306524,
+      "rhythmWeight": 0.285565,
+      "pitchWeight": 0.303501,
+      "soundWeight": 0.167391,
+      "developmentWeight": 0.243543
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-034",
+    "founderId": 34,
+    "family": "dark-industrial",
+    "seed": "rebus-1452-founders-v1:034",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "F#",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 2,
+      "steps": 32,
+      "hits": [
+        0,
+        1,
+        5,
+        7,
+        12,
+        15,
+        17,
+        19,
+        20,
+        21,
+        23,
+        28,
+        29
+      ],
+      "noteChoice": [
+        2,
+        2,
+        2,
+        1,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "accents": [
+        0.601809,
+        0.827523,
+        0.82907,
+        0.81761,
+        0.898668,
+        0.566576,
+        0.693069,
+        0.464728,
+        0.590125,
+        0.665492,
+        0.527092,
+        0.895371,
+        0.869667
+      ],
+      "noteLengths": [
+        0.615446,
+        1.037639,
+        0.863927,
+        1.180736,
+        0.535767,
+        0.551249,
+        0.778203,
+        0.779745,
+        0.210026,
+        1.043167,
+        0.60484,
+        1.046166,
+        0.295294
+      ],
+      "gate": 0.384174,
+      "probability": 0.720204,
+      "rotation": -3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [
+        0,
+        2,
+        7,
+        10,
+        11,
+        12
+      ],
+      "accents": [
+        0.72089,
+        0.739793,
+        0.678141,
+        0.455236,
+        0.531023,
+        0.909256
+      ],
+      "density": 0.375,
+      "probability": 0.770739,
+      "rotation": 1,
+      "euclideanPulses": null,
+      "muteBars": [
+        11
+      ]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 32,
+      "hits": [
+        21,
+        22,
+        25,
+        26,
+        29
+      ],
+      "accents": [
+        0.703638,
+        0.510908,
+        0.673877,
+        0.877985,
+        0.462842
+      ],
+      "density": 0.15625,
+      "probability": 0.963898,
+      "rotation": 3,
+      "euclideanPulses": 5,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [
+            0,
+            3,
+            5,
+            7
+          ],
+          "accents": [
+            0.957447,
+            0.819443,
+            0.471888,
+            0.472439
+          ],
+          "density": 0.5,
+          "probability": 0.869458,
+          "rotation": 4,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "rim"
+        },
+        {
+          "mode": "grid",
+          "steps": 24,
+          "hits": [
+            0,
+            2,
+            3,
+            4,
+            7,
+            15,
+            20,
+            21,
+            23
+          ],
+          "accents": [
+            0.634397,
+            0.844419,
+            0.704941,
+            0.81663,
+            0.541472,
+            0.677352,
+            0.692228,
+            0.632869,
+            0.497842
+          ],
+          "density": 0.375,
+          "probability": 0.816531,
+          "rotation": 3,
+          "euclideanPulses": null,
+          "muteBars": [
+            7,
+            11
+          ],
+          "instrument": "clap"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "F#",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "square",
+      "filterCutoff": 2149.332974,
+      "resonance": 0.556048,
+      "drive": 0.739632,
+      "envelope": {
+        "attack": 0.058617,
+        "decay": 0.06208,
+        "sustain": 0.536999,
+        "release": 0.180944
+      },
+      "noiseAmount": 0.55847,
+      "reverbAmount": 0.211138,
+      "delayAmount": 0.173489
+    },
+    "development": {
+      "densityDelta": 0.176646,
+      "bassVariation": false,
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": 0.13458,
+      "probabilityDelta": 0.067445,
+      "rotationDelta": 0,
+      "energyDelta": 0.332077
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.486769,
+      "openHatPercussionDucking": 0.06827,
+      "accentAlignment": 0.30116,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.19203,
+      "mutationStrength": 0.385237,
+      "microWeight": 0.382642,
+      "mesoWeight": 0.217445,
+      "macroWeight": 0.399913,
+      "rhythmWeight": 0.212132,
+      "pitchWeight": 0.094979,
+      "soundWeight": 0.254388,
+      "developmentWeight": 0.438501
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-035",
+    "founderId": 35,
+    "family": "dark-industrial",
+    "seed": "rebus-1452-founders-v1:035",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "D#",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 2,
+      "steps": 12,
+      "hits": [
+        3,
+        4,
+        5,
+        7
+      ],
+      "noteChoice": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "accents": [
+        0.846274,
+        0.973163,
+        0.484283,
+        0.655779
+      ],
+      "noteLengths": [
+        0.912135,
+        0.345487,
+        0.850584,
+        0.758026
+      ],
+      "gate": 0.430181,
+      "probability": 0.928504,
+      "rotation": 1,
+      "periodicVariation": {
+        "everyBars": 8,
+        "rotation": 2
+      }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 12,
+      "hits": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        7,
+        8,
+        10
+      ],
+      "accents": [
+        0.954417,
+        0.524491,
+        0.582195,
+        0.755941,
+        0.474739,
+        0.61925,
+        0.657176,
+        0.746547
+      ],
+      "density": 0.6666666666666666,
+      "probability": 0.871416,
+      "rotation": 2,
+      "euclideanPulses": 8,
+      "muteBars": [
+        1
+      ]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 8,
+      "hits": [
+        2,
+        7
+      ],
+      "accents": [
+        0.834129,
+        0.84925
+      ],
+      "density": 0.25,
+      "probability": 0.848328,
+      "rotation": -1,
+      "euclideanPulses": 2,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 24,
+          "hits": [
+            0,
+            1,
+            2,
+            7,
+            13,
+            14,
+            17,
+            18,
+            19,
+            22
+          ],
+          "accents": [
+            0.82315,
+            0.739415,
+            0.804761,
+            0.817145,
+            0.776063,
+            0.791564,
+            0.726639,
+            0.746318,
+            0.493212,
+            0.67304
+          ],
+          "density": 0.4166666666666667,
+          "probability": 0.837593,
+          "rotation": 0,
+          "euclideanPulses": 10,
+          "muteBars": [
+            11
+          ],
+          "instrument": "cowbell"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "D#",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "saw",
+      "filterCutoff": 5031.744767,
+      "resonance": 0.627367,
+      "drive": 0.725413,
+      "envelope": {
+        "attack": 0.062532,
+        "decay": 0.338283,
+        "sustain": 0.268582,
+        "release": 0.148307
+      },
+      "noiseAmount": 0.69756,
+      "reverbAmount": 0.525508,
+      "delayAmount": 0.288167
+    },
+    "development": {
+      "densityDelta": -0.068746,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": -1,
+      "filterMovement": -0.142139,
+      "probabilityDelta": -0.122829,
+      "rotationDelta": -3,
+      "energyDelta": -0.29762
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.761232,
+      "openHatPercussionDucking": 0.092324,
+      "accentAlignment": 0.500195,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.32216,
+      "mutationStrength": 0.59542,
+      "microWeight": 0.351454,
+      "mesoWeight": 0.375302,
+      "macroWeight": 0.273244,
+      "rhythmWeight": 0.231514,
+      "pitchWeight": 0.242319,
+      "soundWeight": 0.184058,
+      "developmentWeight": 0.342109
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-036",
+    "founderId": 36,
+    "family": "dark-industrial",
+    "seed": "rebus-1452-founders-v1:036",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "E",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 3,
+      "steps": 32,
+      "hits": [
+        0,
+        1,
+        3,
+        5,
+        9,
+        13,
+        15,
+        23,
+        27,
+        29
+      ],
+      "noteChoice": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "accents": [
+        0.719087,
+        0.849894,
+        0.841455,
+        0.725528,
+        0.803578,
+        0.741268,
+        0.858174,
+        0.464449,
+        0.778302,
+        0.699287
+      ],
+      "noteLengths": [
+        0.979686,
+        0.954457,
+        0.258205,
+        0.165808,
+        0.757332,
+        0.613425,
+        0.835766,
+        1.072406,
+        1.040913,
+        0.965247
+      ],
+      "gate": 0.295909,
+      "probability": 0.908148,
+      "rotation": 2,
+      "periodicVariation": {
+        "everyBars": 4,
+        "rotation": -1
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        11,
+        15,
+        16,
+        17,
+        20,
+        21,
+        22
+      ],
+      "accents": [
+        0.861196,
+        0.776298,
+        0.551931,
+        0.86566,
+        0.501829,
+        0.744333,
+        0.898542,
+        0.479465,
+        0.735781,
+        0.743721,
+        0.620087,
+        0.521294,
+        0.972365,
+        0.840109,
+        0.63194
+      ],
+      "density": 0.625,
+      "probability": 0.978602,
+      "rotation": 1,
+      "euclideanPulses": null,
+      "muteBars": [
+        2
+      ]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 20,
+      "hits": [
+        3,
+        9,
+        11,
+        19
+      ],
+      "accents": [
+        0.874688,
+        0.864109,
+        0.708222,
+        0.535241
+      ],
+      "density": 0.2,
+      "probability": 0.701922,
+      "rotation": 2,
+      "euclideanPulses": 4,
+      "muteBars": [
+        5,
+        13
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 8,
+          "hits": [
+            1,
+            3,
+            7
+          ],
+          "accents": [
+            0.702137,
+            0.6376,
+            0.624355
+          ],
+          "density": 0.375,
+          "probability": 0.819741,
+          "rotation": 4,
+          "euclideanPulses": 3,
+          "muteBars": [
+            4
+          ],
+          "instrument": "rim"
+        },
+        {
+          "mode": "grid",
+          "steps": 16,
+          "hits": [
+            1,
+            5,
+            6,
+            9,
+            11
+          ],
+          "accents": [
+            0.520001,
+            0.813656,
+            0.476035,
+            0.632354,
+            0.571097
+          ],
+          "density": 0.3125,
+          "probability": 0.871416,
+          "rotation": -2,
+          "euclideanPulses": null,
+          "muteBars": [
+            8,
+            12
+          ],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "E",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": -2
+    },
+    "sound": {
+      "oscillator": "square",
+      "filterCutoff": 4803.315003,
+      "resonance": 0.489622,
+      "drive": 0.73805,
+      "envelope": {
+        "attack": 0.028312,
+        "decay": 0.552896,
+        "sustain": 0.224384,
+        "release": 0.585523
+      },
+      "noiseAmount": 0.625799,
+      "reverbAmount": 0.455772,
+      "delayAmount": 0.377068
+    },
+    "development": {
+      "densityDelta": 0.13074,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": 0.24261,
+      "probabilityDelta": 0.1109,
+      "rotationDelta": 0,
+      "energyDelta": 0.292295
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.763399,
+      "openHatPercussionDucking": 0.15064,
+      "accentAlignment": 0.6489,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.301991,
+      "mutationStrength": 0.461396,
+      "microWeight": 0.363371,
+      "mesoWeight": 0.374025,
+      "macroWeight": 0.262604,
+      "rhythmWeight": 0.329476,
+      "pitchWeight": 0.127168,
+      "soundWeight": 0.301917,
+      "developmentWeight": 0.241439
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-037",
+    "founderId": 37,
+    "family": "wild-outliers",
+    "seed": "rebus-1452-founders-v1:037",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "F#",
+      "pitchSet": [
+        0,
+        3
+      ],
+      "octave": 2,
+      "steps": 32,
+      "hits": [
+        3,
+        6,
+        10,
+        22,
+        23,
+        29
+      ],
+      "noteChoice": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "accents": [
+        0.801518,
+        0.641963,
+        0.498127,
+        0.720163,
+        0.844473,
+        0.654905
+      ],
+      "noteLengths": [
+        0.248584,
+        0.856089,
+        0.901152,
+        0.302052,
+        0.394743,
+        0.18272
+      ],
+      "gate": 0.747976,
+      "probability": 0.861863,
+      "rotation": 3,
+      "periodicVariation": {
+        "everyBars": 8,
+        "rotation": 2
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        10,
+        14,
+        18,
+        20,
+        21,
+        23
+      ],
+      "accents": [
+        0.977042,
+        0.572132,
+        0.74233,
+        0.750062,
+        0.638135,
+        0.784223,
+        0.975896,
+        0.536423,
+        0.706183,
+        0.729086,
+        0.883929,
+        0.704495,
+        0.740541
+      ],
+      "density": 0.5416666666666666,
+      "probability": 0.850617,
+      "rotation": 3,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 12,
+      "hits": [
+        5,
+        6,
+        7,
+        10
+      ],
+      "accents": [
+        0.77609,
+        0.67533,
+        0.744112,
+        0.54511
+      ],
+      "density": 0.3333333333333333,
+      "probability": 0.824327,
+      "rotation": -3,
+      "euclideanPulses": 4,
+      "muteBars": [
+        12
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 20,
+          "hits": [
+            1,
+            2,
+            5,
+            9
+          ],
+          "accents": [
+            0.492582,
+            0.747543,
+            0.874816,
+            0.631231
+          ],
+          "density": 0.2,
+          "probability": 0.781063,
+          "rotation": -2,
+          "euclideanPulses": 4,
+          "muteBars": [
+            6
+          ],
+          "instrument": "tom"
+        },
+        {
+          "mode": "grid",
+          "steps": 32,
+          "hits": [
+            5,
+            14,
+            15,
+            18
+          ],
+          "accents": [
+            0.658145,
+            0.541645,
+            0.472886,
+            0.822495
+          ],
+          "density": 0.125,
+          "probability": 0.686492,
+          "rotation": -2,
+          "euclideanPulses": null,
+          "muteBars": [
+            0,
+            13
+          ],
+          "instrument": "tom"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "F#",
+      "pitchCollection": [
+        0,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "saw",
+      "filterCutoff": 7081.856204,
+      "resonance": 0.113285,
+      "drive": 0.192223,
+      "envelope": {
+        "attack": 0.008534,
+        "decay": 0.240838,
+        "sustain": 0.41948,
+        "release": 0.759729
+      },
+      "noiseAmount": 0.150266,
+      "reverbAmount": 0.521894,
+      "delayAmount": 0.312492
+    },
+    "development": {
+      "densityDelta": 0.078476,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": 0.196112,
+      "probabilityDelta": 0.094989,
+      "rotationDelta": 1,
+      "energyDelta": 0.288493
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.68948,
+      "openHatPercussionDucking": 0.236734,
+      "accentAlignment": 0.399058,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.308847,
+      "mutationStrength": 0.543929,
+      "microWeight": 0.576103,
+      "mesoWeight": 0.309158,
+      "macroWeight": 0.114739,
+      "rhythmWeight": 0.241568,
+      "pitchWeight": 0.277686,
+      "soundWeight": 0.177805,
+      "developmentWeight": 0.302941
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-038",
+    "founderId": 38,
+    "family": "wild-outliers",
+    "seed": "rebus-1452-founders-v1:038",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "D#",
+      "pitchSet": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        10
+      ],
+      "octave": 2,
+      "steps": 24,
+      "hits": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "noteChoice": [
+        4,
+        0,
+        1,
+        0,
+        5,
+        1,
+        1,
+        4,
+        3,
+        2,
+        5,
+        1,
+        3,
+        1,
+        3,
+        5
+      ],
+      "accents": [
+        0.483799,
+        0.76351,
+        0.695909,
+        0.676383,
+        0.634546,
+        0.802051,
+        0.489472,
+        0.455267,
+        0.503535,
+        0.606536,
+        0.772193,
+        0.485642,
+        0.55948,
+        0.657474,
+        0.478175,
+        0.52738
+      ],
+      "noteLengths": [
+        0.907521,
+        0.861289,
+        0.36385,
+        0.993869,
+        0.501853,
+        0.571033,
+        0.69238,
+        0.782462,
+        0.686006,
+        0.963641,
+        0.970046,
+        0.295014,
+        0.538445,
+        0.602299,
+        1.22213,
+        0.910355
+      ],
+      "gate": 0.634311,
+      "probability": 0.851289,
+      "rotation": -1,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 24,
+      "hits": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        8,
+        9,
+        14,
+        18,
+        23
+      ],
+      "accents": [
+        0.631871,
+        0.588868,
+        0.516953,
+        0.674352,
+        0.823006,
+        0.666886,
+        0.453603,
+        0.664226,
+        0.530351,
+        0.489379
+      ],
+      "density": 0.4166666666666667,
+      "probability": 0.973992,
+      "rotation": 1,
+      "euclideanPulses": 10,
+      "muteBars": [
+        9
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        2,
+        7,
+        14,
+        17,
+        21,
+        22
+      ],
+      "accents": [
+        0.555677,
+        0.630124,
+        0.815177,
+        0.73268,
+        0.581077,
+        0.600728
+      ],
+      "density": 0.25,
+      "probability": 0.760766,
+      "rotation": -2,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 12,
+          "hits": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7,
+            8,
+            9,
+            10
+          ],
+          "accents": [
+            0.898278,
+            0.86617,
+            0.558845,
+            0.61133,
+            0.633337,
+            0.472493,
+            0.743488,
+            0.80539,
+            0.717942
+          ],
+          "density": 0.75,
+          "probability": 0.740598,
+          "rotation": 3,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "noise"
+        },
+        {
+          "mode": "euclidean",
+          "steps": 24,
+          "hits": [
+            2,
+            5,
+            6,
+            9,
+            13,
+            15,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "accents": [
+            0.523506,
+            0.659983,
+            0.868346,
+            0.580024,
+            0.548396,
+            0.542295,
+            0.850434,
+            0.614737,
+            0.819253,
+            0.690989,
+            0.723871,
+            0.811488,
+            0.590878
+          ],
+          "density": 0.5416666666666666,
+          "probability": 0.732597,
+          "rotation": -2,
+          "euclideanPulses": 13,
+          "muteBars": [
+            5,
+            12
+          ],
+          "instrument": "noise"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "D#",
+      "pitchCollection": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        10
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "saw",
+      "filterCutoff": 5606.317493,
+      "resonance": 0.596008,
+      "drive": 0.830736,
+      "envelope": {
+        "attack": 0.051643,
+        "decay": 0.171347,
+        "sustain": 0.358986,
+        "release": 0.080082
+      },
+      "noiseAmount": 0.681872,
+      "reverbAmount": 0.409723,
+      "delayAmount": 0.331197
+    },
+    "development": {
+      "densityDelta": 0.236694,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": 0.435896,
+      "probabilityDelta": 0.055311,
+      "rotationDelta": 1,
+      "energyDelta": 0.501349
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.259901,
+      "openHatPercussionDucking": 0.181436,
+      "accentAlignment": 0.418328,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.285628,
+      "mutationStrength": 0.601843,
+      "microWeight": 0.425092,
+      "mesoWeight": 0.239519,
+      "macroWeight": 0.335389,
+      "rhythmWeight": 0.238738,
+      "pitchWeight": 0.157724,
+      "soundWeight": 0.214335,
+      "developmentWeight": 0.389203
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-039",
+    "founderId": 39,
+    "family": "wild-outliers",
+    "seed": "rebus-1452-founders-v1:039",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "D",
+      "pitchSet": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        10
+      ],
+      "octave": 3,
+      "steps": 20,
+      "hits": [
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        17,
+        18
+      ],
+      "noteChoice": [
+        5,
+        0,
+        3,
+        2,
+        1,
+        4,
+        5,
+        2,
+        3,
+        5,
+        3,
+        4
+      ],
+      "accents": [
+        0.648043,
+        0.535229,
+        0.77823,
+        0.65247,
+        0.669505,
+        0.560051,
+        0.854895,
+        0.55606,
+        0.58402,
+        0.457663,
+        0.61104,
+        0.800209
+      ],
+      "noteLengths": [
+        0.391295,
+        0.629083,
+        0.345105,
+        0.452788,
+        0.364136,
+        0.141371,
+        0.588293,
+        0.849458,
+        0.772063,
+        0.48178,
+        0.751151,
+        0.502352
+      ],
+      "gate": 0.907864,
+      "probability": 0.901557,
+      "rotation": 3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 12,
+      "hits": [
+        5,
+        7,
+        9
+      ],
+      "accents": [
+        0.864022,
+        0.61825,
+        0.477047
+      ],
+      "density": 0.25,
+      "probability": 0.725435,
+      "rotation": -2,
+      "euclideanPulses": null,
+      "muteBars": [
+        15
+      ]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 20,
+      "hits": [
+        7,
+        13,
+        18
+      ],
+      "accents": [
+        0.603432,
+        0.516866,
+        0.479704
+      ],
+      "density": 0.15,
+      "probability": 0.999685,
+      "rotation": 0,
+      "euclideanPulses": null,
+      "muteBars": [
+        14
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 24,
+          "hits": [
+            1,
+            2,
+            3,
+            4,
+            7,
+            9,
+            13,
+            15,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "accents": [
+            0.576776,
+            0.753745,
+            0.704555,
+            0.700175,
+            0.622584,
+            0.616294,
+            0.487258,
+            0.796946,
+            0.669284,
+            0.593221,
+            0.587049,
+            0.597935,
+            0.605004,
+            0.457519
+          ],
+          "density": 0.5833333333333334,
+          "probability": 0.792953,
+          "rotation": 1,
+          "euclideanPulses": 14,
+          "muteBars": [],
+          "instrument": "cowbell"
+        },
+        {
+          "mode": "grid",
+          "steps": 24,
+          "hits": [
+            1,
+            3,
+            5,
+            9,
+            10,
+            15,
+            17,
+            21,
+            22,
+            23
+          ],
+          "accents": [
+            0.554086,
+            0.61892,
+            0.674527,
+            0.588451,
+            0.487561,
+            0.681495,
+            0.76366,
+            0.656076,
+            0.587874,
+            0.454312
+          ],
+          "density": 0.4166666666666667,
+          "probability": 0.695922,
+          "rotation": 3,
+          "euclideanPulses": null,
+          "muteBars": [
+            6,
+            10
+          ],
+          "instrument": "noise"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "D",
+      "pitchCollection": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        10
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "triangle",
+      "filterCutoff": 4422.043749,
+      "resonance": 0.533093,
+      "drive": 0.769671,
+      "envelope": {
+        "attack": 0.062825,
+        "decay": 0.409798,
+        "sustain": 0.63189,
+        "release": 0.067829
+      },
+      "noiseAmount": 0.396593,
+      "reverbAmount": 0.195193,
+      "delayAmount": 0.140515
+    },
+    "development": {
+      "densityDelta": 0.258638,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 1,
+      "filterMovement": 0.443359,
+      "probabilityDelta": 0.067856,
+      "rotationDelta": 1,
+      "energyDelta": 0.469962
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.028292,
+      "openHatPercussionDucking": 0.138335,
+      "accentAlignment": 0.875137,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.274985,
+      "mutationStrength": 0.656357,
+      "microWeight": 0.409073,
+      "mesoWeight": 0.284345,
+      "macroWeight": 0.306582,
+      "rhythmWeight": 0.336831,
+      "pitchWeight": 0.229547,
+      "soundWeight": 0.248228,
+      "developmentWeight": 0.185394
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-040",
+    "founderId": 40,
+    "family": "wild-outliers",
+    "seed": "rebus-1452-founders-v1:040",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "E",
+      "pitchSet": [
+        0,
+        2,
+        3,
+        5,
+        7
+      ],
+      "octave": 3,
+      "steps": 24,
+      "hits": [
+        2,
+        3,
+        5,
+        6,
+        9,
+        10,
+        13,
+        15,
+        16,
+        17,
+        18
+      ],
+      "noteChoice": [
+        0,
+        4,
+        3,
+        1,
+        0,
+        2,
+        4,
+        0,
+        2,
+        4,
+        4
+      ],
+      "accents": [
+        0.487199,
+        0.54521,
+        0.860372,
+        0.588462,
+        0.524974,
+        0.600754,
+        0.515143,
+        0.851226,
+        0.628598,
+        0.795704,
+        0.548811
+      ],
+      "noteLengths": [
+        0.564842,
+        1.144783,
+        1.051202,
+        1.217717,
+        0.45122,
+        1.227078,
+        0.145062,
+        0.463793,
+        0.92503,
+        0.524466,
+        0.655476
+      ],
+      "gate": 0.475627,
+      "probability": 0.910606,
+      "rotation": -4,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 12,
+      "hits": [
+        0,
+        9
+      ],
+      "accents": [
+        0.898821,
+        0.55976
+      ],
+      "density": 0.16666666666666666,
+      "probability": 0.861455,
+      "rotation": -3,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        14
+      ],
+      "accents": [
+        0.622911
+      ],
+      "density": 0.041666666666666664,
+      "probability": 0.700816,
+      "rotation": -4,
+      "euclideanPulses": null,
+      "muteBars": [
+        13,
+        14
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 32,
+          "hits": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            25,
+            26,
+            27
+          ],
+          "accents": [
+            0.75908,
+            0.696484,
+            0.81099,
+            0.455028,
+            0.594475,
+            0.86185,
+            0.518753,
+            0.738312,
+            0.678701,
+            0.511722,
+            0.764499,
+            0.565022,
+            0.78123,
+            0.511749,
+            0.620579,
+            0.487624,
+            0.853579
+          ],
+          "density": 0.53125,
+          "probability": 0.68277,
+          "rotation": -1,
+          "euclideanPulses": null,
+          "muteBars": [
+            12
+          ],
+          "instrument": "tom"
+        },
+        {
+          "mode": "euclidean",
+          "steps": 20,
+          "hits": [
+            3,
+            5,
+            6,
+            10,
+            14,
+            17,
+            18,
+            19
+          ],
+          "accents": [
+            0.458668,
+            0.684156,
+            0.783602,
+            0.798319,
+            0.744822,
+            0.490197,
+            0.78298,
+            0.683239
+          ],
+          "density": 0.4,
+          "probability": 0.75918,
+          "rotation": -1,
+          "euclideanPulses": 8,
+          "muteBars": [],
+          "instrument": "clap"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "E",
+      "pitchCollection": [
+        0,
+        2,
+        3,
+        5,
+        7
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "square",
+      "filterCutoff": 2281.995149,
+      "resonance": 0.443448,
+      "drive": 0.644865,
+      "envelope": {
+        "attack": 0.03465,
+        "decay": 0.39568,
+        "sustain": 0.339493,
+        "release": 0.571428
+      },
+      "noiseAmount": 0.468361,
+      "reverbAmount": 0.095503,
+      "delayAmount": 0.057595
+    },
+    "development": {
+      "densityDelta": 0.244338,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 1,
+      "filterMovement": 0.327238,
+      "probabilityDelta": 0.139767,
+      "rotationDelta": 0,
+      "energyDelta": 0.440804
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.692047,
+      "openHatPercussionDucking": 0.017218,
+      "accentAlignment": 0.555143,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.260226,
+      "mutationStrength": 0.537237,
+      "microWeight": 0.41569,
+      "mesoWeight": 0.271398,
+      "macroWeight": 0.312912,
+      "rhythmWeight": 0.197668,
+      "pitchWeight": 0.405024,
+      "soundWeight": 0.222942,
+      "developmentWeight": 0.174366
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-041",
+    "founderId": 41,
+    "family": "wild-outliers",
+    "seed": "rebus-1452-founders-v1:041",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "G#",
+      "pitchSet": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "octave": 3,
+      "steps": 20,
+      "hits": [
+        2,
+        6,
+        7,
+        9,
+        10,
+        15,
+        17,
+        19
+      ],
+      "noteChoice": [
+        0,
+        3,
+        3,
+        0,
+        2,
+        0,
+        3,
+        0
+      ],
+      "accents": [
+        0.648576,
+        0.697186,
+        0.480625,
+        0.518725,
+        0.701969,
+        0.750439,
+        0.83463,
+        0.816366
+      ],
+      "noteLengths": [
+        0.456363,
+        1.222337,
+        0.273934,
+        0.842421,
+        0.648767,
+        0.584244,
+        1.160583,
+        0.678477
+      ],
+      "gate": 0.865831,
+      "probability": 0.99181,
+      "rotation": -1,
+      "periodicVariation": {
+        "everyBars": 8,
+        "rotation": 2
+      }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        21,
+        22,
+        23
+      ],
+      "accents": [
+        0.900018,
+        0.680109,
+        0.853675,
+        0.697092,
+        0.53709,
+        0.758648,
+        0.762365,
+        0.72816,
+        0.698432,
+        0.628971,
+        0.473886,
+        0.724478,
+        0.855932,
+        0.800272,
+        0.699717,
+        0.735657,
+        0.798829,
+        0.68505,
+        0.529527,
+        0.557885,
+        0.796278
+      ],
+      "density": 0.875,
+      "probability": 0.931346,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 32,
+      "hits": [
+        1,
+        2,
+        5,
+        6,
+        9,
+        11,
+        18,
+        19,
+        21,
+        22,
+        23,
+        25,
+        26,
+        29
+      ],
+      "accents": [
+        0.786289,
+        0.575979,
+        0.673359,
+        0.537364,
+        0.79353,
+        0.451399,
+        0.564609,
+        0.635117,
+        0.484184,
+        0.766573,
+        0.768143,
+        0.633019,
+        0.460653,
+        0.83203
+      ],
+      "density": 0.4375,
+      "probability": 0.939349,
+      "rotation": 4,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 32,
+          "hits": [
+            3,
+            7,
+            9,
+            11,
+            14,
+            17,
+            18,
+            19,
+            21,
+            26,
+            27,
+            30
+          ],
+          "accents": [
+            0.828534,
+            0.571294,
+            0.783735,
+            0.736787,
+            0.785818,
+            0.853058,
+            0.711426,
+            0.541708,
+            0.807242,
+            0.71727,
+            0.6776,
+            0.485018
+          ],
+          "density": 0.375,
+          "probability": 0.797236,
+          "rotation": 1,
+          "euclideanPulses": 12,
+          "muteBars": [],
+          "instrument": "rim"
+        },
+        {
+          "mode": "euclidean",
+          "steps": 24,
+          "hits": [
+            6,
+            9,
+            11,
+            14,
+            18,
+            23
+          ],
+          "accents": [
+            0.835017,
+            0.463873,
+            0.695236,
+            0.733043,
+            0.65622,
+            0.778627
+          ],
+          "density": 0.25,
+          "probability": 0.808703,
+          "rotation": -4,
+          "euclideanPulses": 6,
+          "muteBars": [
+            2,
+            7
+          ],
+          "instrument": "clap"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "G#",
+      "pitchCollection": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "sine",
+      "filterCutoff": 11076.534111,
+      "resonance": 0.265205,
+      "drive": 0.411453,
+      "envelope": {
+        "attack": 0.060336,
+        "decay": 0.254973,
+        "sustain": 0.682657,
+        "release": 0.096963
+      },
+      "noiseAmount": 0.351783,
+      "reverbAmount": 0.66639,
+      "delayAmount": 0.473603
+    },
+    "development": {
+      "densityDelta": 0.170976,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 1,
+      "filterMovement": 0.23888,
+      "probabilityDelta": 0.10251,
+      "rotationDelta": 4,
+      "energyDelta": 0.403483
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.018683,
+      "openHatPercussionDucking": 0.258582,
+      "accentAlignment": 0.533114,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.343804,
+      "mutationStrength": 0.729869,
+      "microWeight": 0.413167,
+      "mesoWeight": 0.28015,
+      "macroWeight": 0.306683,
+      "rhythmWeight": 0.428856,
+      "pitchWeight": 0.137592,
+      "soundWeight": 0.258122,
+      "developmentWeight": 0.17543
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "founder-042",
+    "founderId": 42,
+    "family": "wild-outliers",
+    "seed": "rebus-1452-founders-v1:042",
+    "global": {
+      "bpm": 120,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [
+        8,
+        8
+      ]
+    },
+    "bass": {
+      "root": "D#",
+      "pitchSet": [
+        0,
+        2,
+        3
+      ],
+      "octave": 2,
+      "steps": 32,
+      "hits": [
+        6,
+        10,
+        14,
+        15,
+        18,
+        21,
+        23,
+        25,
+        27,
+        30,
+        31
+      ],
+      "noteChoice": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1,
+        1,
+        0
+      ],
+      "accents": [
+        0.643268,
+        0.864708,
+        0.827233,
+        0.465455,
+        0.722689,
+        0.539623,
+        0.773502,
+        0.682705,
+        0.507032,
+        0.600452,
+        0.564416
+      ],
+      "noteLengths": [
+        0.758709,
+        0.642337,
+        0.313409,
+        0.645632,
+        1.128612,
+        0.191183,
+        0.147721,
+        0.127404,
+        0.276664,
+        0.305421,
+        0.584461
+      ],
+      "gate": 0.740999,
+      "probability": 0.738557,
+      "rotation": -2,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 24,
+      "hits": [
+        0,
+        4,
+        5,
+        7,
+        8,
+        10,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "accents": [
+        0.971222,
+        0.738119,
+        0.717282,
+        0.835248,
+        0.846268,
+        0.595543,
+        0.562944,
+        0.610654,
+        0.866951,
+        0.965484,
+        0.488462,
+        0.746926,
+        0.662208,
+        0.845196,
+        0.710924,
+        0.586745
+      ],
+      "density": 0.6666666666666666,
+      "probability": 0.913078,
+      "rotation": 0,
+      "euclideanPulses": 16,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 32,
+      "hits": [
+        1,
+        5,
+        7,
+        9,
+        14,
+        23,
+        25,
+        27,
+        31
+      ],
+      "accents": [
+        0.541902,
+        0.62897,
+        0.505222,
+        0.596182,
+        0.571446,
+        0.800942,
+        0.877311,
+        0.755221,
+        0.477543
+      ],
+      "density": 0.28125,
+      "probability": 0.854455,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": [
+        8,
+        9
+      ]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 24,
+          "hits": [
+            1,
+            2,
+            6,
+            14,
+            15,
+            18,
+            19,
+            21
+          ],
+          "accents": [
+            0.750705,
+            0.631481,
+            0.860018,
+            0.460833,
+            0.846296,
+            0.504362,
+            0.647826,
+            0.797018
+          ],
+          "density": 0.3333333333333333,
+          "probability": 0.98705,
+          "rotation": 4,
+          "euclideanPulses": 8,
+          "muteBars": [
+            1
+          ],
+          "instrument": "tom"
+        },
+        {
+          "mode": "grid",
+          "steps": 32,
+          "hits": [
+            2,
+            6,
+            10,
+            15,
+            22,
+            23,
+            25,
+            31
+          ],
+          "accents": [
+            0.638634,
+            0.854685,
+            0.877278,
+            0.6212,
+            0.529798,
+            0.741128,
+            0.495998,
+            0.778603
+          ],
+          "density": 0.25,
+          "probability": 0.956398,
+          "rotation": 4,
+          "euclideanPulses": null,
+          "muteBars": [
+            13
+          ],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "D#",
+      "pitchCollection": [
+        0,
+        2,
+        3
+      ],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "fm",
+      "filterCutoff": 9130.569367,
+      "resonance": 0.296232,
+      "drive": 0.372497,
+      "envelope": {
+        "attack": 0.066316,
+        "decay": 0.306693,
+        "sustain": 0.426808,
+        "release": 0.732818
+      },
+      "noiseAmount": 0.304825,
+      "reverbAmount": 0.615897,
+      "delayAmount": 0.387567
+    },
+    "development": {
+      "densityDelta": 0.126738,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": 0.202338,
+      "probabilityDelta": 0.137829,
+      "rotationDelta": 3,
+      "energyDelta": 0.335079
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.786706,
+      "openHatPercussionDucking": 0.174359,
+      "accentAlignment": 0.415677,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.3213,
+      "mutationStrength": 0.537507,
+      "microWeight": 0.472197,
+      "mesoWeight": 0.298809,
+      "macroWeight": 0.228994,
+      "rhythmWeight": 0.334989,
+      "pitchWeight": 0.271153,
+      "soundWeight": 0.112013,
+      "developmentWeight": 0.281845
+    },
+    "lineage": {
+      "parents": [],
+      "generation": 0,
+      "isFounder": true
+    }
+  }
+]
