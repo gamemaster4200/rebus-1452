@@ -54,6 +54,18 @@ describe('StrudelCompiler', () => {
   });
 
   it('keeps every founder inside the technical mix envelope', () => {
+    const expensivePerEventControls = [
+      'compressor',
+      'compressorRatio',
+      'compressorKnee',
+      'compressorAttack',
+      'compressorRelease',
+      'distort',
+      'postgain',
+      'room',
+      'delay',
+    ];
+
     founders.forEach((founder) => {
       const compiled = compileGenomeToStrudel(founder);
       const bass = compiled.events.filter((event) => event.voice === 'bass');
@@ -65,17 +77,28 @@ describe('StrudelCompiler', () => {
         expect(['white', 'pink', 'brown']).not.toContain(event.controls.s);
         expect(event.controls.attack).toBeLessThanOrEqual(0.025);
         expect(event.controls.release).toBeLessThanOrEqual(0.16);
-        expect(event.controls.room).toBeLessThanOrEqual(0.12);
-        expect(event.controls.delay).toBeLessThanOrEqual(0.08);
-        expect(event.controls.orbit).toBe(1);
+        expect(event.controls.clip).toBeGreaterThanOrEqual(0.55);
       });
 
       hats.forEach((event) => {
-        expect(event.controls.hcutoff).toBeGreaterThanOrEqual(3_200);
-        expect(event.controls.room).toBeLessThanOrEqual(0.06);
-        expect(event.controls.delay).toBeLessThanOrEqual(0.034);
-        expect(event.controls.orbit).toBe(2);
+        expect(event.controls.hcutoff).toBeGreaterThanOrEqual(6_000);
+        expect(event.controls.sustain).toBe(0);
+        expect(event.controls.release).toBeLessThanOrEqual(0.03);
       });
+
+      compiled.events.forEach((event) => {
+        expensivePerEventControls.forEach((control) => {
+          expect(event.controls).not.toHaveProperty(control);
+        });
+      });
+
+      const summedGainByStep = new Map<string, number>();
+      compiled.events.forEach((event) => {
+        const key = `${event.bar}:${event.step}`;
+        const eventGain = event.controls.gain * event.controls.velocity;
+        summedGainByStep.set(key, (summedGainByStep.get(key) ?? 0) + eventGain);
+      });
+      expect(Math.max(...summedGainByStep.values())).toBeLessThanOrEqual(0.6);
     });
   });
 });

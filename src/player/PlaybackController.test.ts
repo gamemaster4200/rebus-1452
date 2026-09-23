@@ -55,7 +55,7 @@ class FakeScheduler implements PlaybackScheduler {
 
 function compiled(genomeId: string): CompiledStrudelPattern {
   return {
-    compilerVersion: 'strudel-compiler-v2',
+    compilerVersion: 'strudel-compiler-v3',
     genomeId,
     genomeSeed: genomeId,
     bpm: 120,

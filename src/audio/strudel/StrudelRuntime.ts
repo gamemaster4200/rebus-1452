@@ -21,9 +21,8 @@ interface Disconnectable {
   disconnect(): void;
 }
 
-interface MasterGainNode extends Disconnectable {
+interface MasterGainNode {
   readonly gain: AudioParamLike;
-  connect(destination: AudioNode): AudioNode;
 }
 
 interface SuperdoughAudioController {
@@ -91,10 +90,6 @@ export class StrudelAudioEngine implements CompiledAudioEngine {
   private initialization: Promise<void> | null = null;
   private activeController: SuperdoughAudioController | null = null;
   private readonly retiredControllers = new WeakSet<object>();
-  private readonly masterLimiters = new WeakMap<
-    object,
-    DynamicsCompressorNode
-  >();
   private operation = 0;
 
   constructor(
@@ -116,7 +111,7 @@ export class StrudelAudioEngine implements CompiledAudioEngine {
     module.setTime(() => repl.scheduler.now());
     await Promise.all([
       module.defaultPrebake(),
-      module.initAudio({ maxPolyphony: 48 }),
+      module.initAudio({ maxPolyphony: 32 }),
     ]);
     repl.setCps(0.5);
     this.repl = repl;
@@ -160,31 +155,19 @@ export class StrudelAudioEngine implements CompiledAudioEngine {
     const previous = module.getSuperdoughAudioController();
     module.setSuperdoughAudioController(null);
     const next = module.getSuperdoughAudioController();
-    this.installMasterLimiter(module, next);
+    this.setReferenceOutputGain(module, next);
     this.retireController(previous);
     return next;
   }
 
-  private installMasterLimiter(
+  private setReferenceOutputGain(
     module: StrudelModule,
     controller: SuperdoughAudioController,
   ): void {
     const context = module.getAudioContext();
     const output = controller.output.destinationGain;
     if (!output) throw new Error('SuperDough created no master output node.');
-
-    const limiter = context.createDynamicsCompressor();
-    limiter.threshold.value = -8;
-    limiter.knee.value = 3;
-    limiter.ratio.value = 20;
-    limiter.attack.value = 0.003;
-    limiter.release.value = 0.12;
-
-    output.disconnect();
-    output.gain.setValueAtTime(0.78, context.currentTime);
-    output.connect(limiter);
-    limiter.connect(context.destination);
-    this.masterLimiters.set(controller, limiter);
+    output.gain.setValueAtTime(0.55, context.currentTime);
   }
 
   private halt(): void {
@@ -209,7 +192,5 @@ export class StrudelAudioEngine implements CompiledAudioEngine {
     Object.values(controller.nodes).forEach((node) => node.disconnect());
     Object.values(controller.buses).forEach((node) => node.disconnect());
     controller.output.disconnect();
-    this.masterLimiters.get(controller)?.disconnect();
-    this.masterLimiters.delete(controller);
   }
 }

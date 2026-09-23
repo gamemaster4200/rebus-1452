@@ -1,4 +1,4 @@
-export const STRUDEL_COMPILER_VERSION = 'strudel-compiler-v2';
+export const STRUDEL_COMPILER_VERSION = 'strudel-compiler-v3';
 export const ORGANISM_DURATION_SECONDS = 32;
 export const ORGANISM_BARS = 16;
 export const STEPS_PER_BAR = 16;
@@ -13,34 +13,15 @@ export interface StrudelEventControls {
   readonly note?: number;
   readonly gain: number;
   readonly velocity: number;
-  readonly clip: number;
+  readonly clip?: number;
   readonly cutoff?: number;
   readonly resonance?: number;
   readonly hcutoff?: number;
   readonly hresonance?: number;
-  readonly drive?: number;
   readonly attack?: number;
   readonly decay?: number;
   readonly sustain?: number;
   readonly release?: number;
-  readonly room?: number;
-  readonly roomsize?: number;
-  readonly roomfade?: number;
-  readonly roomlp?: number;
-  readonly roomdim?: number;
-  readonly delay?: number;
-  readonly delayfeedback?: number;
-  readonly delaysync?: number;
-  readonly distort?: number;
-  readonly fmi?: number;
-  readonly compressor: number;
-  readonly compressorRatio: number;
-  readonly compressorKnee: number;
-  readonly compressorAttack: number;
-  readonly compressorRelease: number;
-  readonly postgain: number;
-  readonly orbit: number;
-  readonly cps: 0.5;
 }
 
 export interface CompiledStrudelEvent {

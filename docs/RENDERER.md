@@ -27,17 +27,18 @@ the canonical smoke test requires 42 distinct post-compilation fingerprints.
 materializes the event plan through Strudel's structured pattern API (`pure`,
 `stack`, `sequence`, and `slowcat`) and never evaluates genome-provided code.
 
-Safety is applied at compilation and runtime: gains and synthesis controls are
-clamped, short bass envelopes fit the 16th-note grid, noise percussion is
-high-pass filtered, effect tails and feedback are bounded, and voices use
-separate effect orbits. A master limiter protects the summed output, while
-Strudel polyphony is capped at 48 voices. This reduces surprises but does not
-replace normal listening care; start at a modest system volume.
+Safety follows Strudel's native signal path: gains and synthesis controls are
+clamped, short bass envelopes fit the 16th-note grid, and hats use the same
+short noise envelope recommended in the official Strudel synth documentation.
+The compiler does not attach a compressor, distortion AudioWorklet, reverb, or
+delay to every event. Those controls make SuperDough allocate processing per
+note or mutate shared orbit effects and were the source of overload and
+unpredictable playback in compiler v2. The native SuperDough output is retained
+at a conservative gain of 0.55, and polyphony is capped at 32 voices.
 
-Noise timbres use Strudel's dedicated white, pink, and brown synths. The
-SuperDough oscillator/noise crossfade control is deliberately excluded because
-its current teardown path can disconnect the same AudioNode twice during rapid
-pattern replacement.
+Only closed and open hats use Strudel's white and pink noise synths, with zero
+sustain and releases of at most 30 ms. Bass and percussion are pitched sources.
+The SuperDough oscillator/noise crossfade control is deliberately excluded.
 
 `PlaybackController` loops the 16-bar form until an explicit stop or founder
 change. Its A/B progress display wraps every 32 seconds. The runtime starts
