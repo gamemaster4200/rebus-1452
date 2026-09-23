@@ -1,8 +1,7 @@
 import type { CompiledAudioEngine } from '../audio/strudel/StrudelRuntime';
 import type { CompiledStrudelPattern } from '../audio/strudel/CompiledStrudelPattern';
 
-export type PlaybackStatus =
-  'idle' | 'loading' | 'playing' | 'stopped' | 'finished';
+export type PlaybackStatus = 'idle' | 'loading' | 'playing' | 'stopped';
 
 export interface PlaybackState {
   readonly status: PlaybackStatus;
@@ -13,16 +12,12 @@ export interface PlaybackState {
 
 export interface PlaybackScheduler {
   now(): number;
-  setTimeout(callback: () => void, delayMs: number): number;
-  clearTimeout(id: number): void;
   setInterval(callback: () => void, delayMs: number): number;
   clearInterval(id: number): void;
 }
 
 export const browserPlaybackScheduler: PlaybackScheduler = {
   now: () => performance.now(),
-  setTimeout: (callback, delayMs) => window.setTimeout(callback, delayMs),
-  clearTimeout: (id) => window.clearTimeout(id),
   setInterval: (callback, delayMs) => window.setInterval(callback, delayMs),
   clearInterval: (id) => window.clearInterval(id),
 };
@@ -40,7 +35,6 @@ export class PlaybackController {
   private readonly listeners = new Set<PlaybackListener>();
   private startedAt = 0;
   private tickTimer: number | null = null;
-  private finishTimer: number | null = null;
   private operation = 0;
 
   constructor(
@@ -99,10 +93,6 @@ export class PlaybackController {
       section: 'A',
     });
     this.tickTimer = this.scheduler.setInterval(() => this.tick(), 100);
-    this.finishTimer = this.scheduler.setTimeout(
-      () => this.finish(operation),
-      this.state.totalMs,
-    );
   }
 
   async restart(): Promise<void> {
@@ -130,10 +120,8 @@ export class PlaybackController {
   }
 
   private tick(): void {
-    const elapsedMs = Math.min(
-      this.state.totalMs,
-      Math.max(0, this.scheduler.now() - this.startedAt),
-    );
+    const elapsedMs =
+      Math.max(0, this.scheduler.now() - this.startedAt) % this.state.totalMs;
     this.publish({
       ...this.state,
       elapsedMs,
@@ -141,24 +129,9 @@ export class PlaybackController {
     });
   }
 
-  private finish(operation: number): void {
-    if (operation !== this.operation) return;
-    this.stopTimers();
-    this.engine.stop();
-    this.publish({
-      ...this.state,
-      status: 'finished',
-      elapsedMs: this.state.totalMs,
-      section: 'B',
-    });
-  }
-
   private stopTimers(): void {
     if (this.tickTimer !== null) this.scheduler.clearInterval(this.tickTimer);
-    if (this.finishTimer !== null)
-      this.scheduler.clearTimeout(this.finishTimer);
     this.tickTimer = null;
-    this.finishTimer = null;
   }
 
   private publish(state: PlaybackState): void {

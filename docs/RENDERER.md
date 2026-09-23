@@ -5,7 +5,7 @@
 `compileGenomeToStrudel` accepts a valid `MusicGenome v0.1` and returns a
 `CompiledStrudelPattern`. The result is structured data, not executable source.
 It always describes 16 bars at 120 BPM: section A occupies bars 1–8, section B
-bars 9–16, and the total listening window is 32 seconds.
+bars 9–16, and one complete loop is 32 seconds.
 
 The plan records each event's bar, 16th-note step, logical voice, and a bounded
 subset of Strudel/SuperDough controls. `debugCompiledGenome` provides a stable,
@@ -38,13 +38,15 @@ SuperDough oscillator/noise crossfade control is deliberately excluded because
 its current teardown path can disconnect the same AudioNode twice during rapid
 pattern replacement.
 
-`PlaybackController` owns the 32-second wall-clock lifecycle. Stop, restart, or
-founder navigation clears timers and resets the complete SuperDough output graph:
-orbits, reverb, delay, buses, and destination routing are disconnected and
-recreated. Scheduled sources from the former graph may finish internally, but
-they no longer have a route to the audio destination and cannot leak between
-organisms. The browser `AudioContext` stays alive so Strudel's AudioWorklets do
-not need unsafe repeated registration. Fake scheduler and runtime-module tests
+`PlaybackController` loops the 16-bar form until an explicit stop or founder
+change. Its A/B progress display wraps every 32 seconds. The runtime starts
+prebaking sounds and loading AudioWorklets during the first Play gesture instead
+of waiting for a second click. Each preview receives a new SuperDough output
+controller. Stop, restart, or founder navigation first mutes the old controller,
+then disconnects its orbits, reverb, delay, buses, and destination routing.
+In-flight async sources retain only that retired, permanently silent graph and
+cannot reconnect to the following preview. The browser `AudioContext` stays alive
+so AudioWorklets are registered once. Fake scheduler and runtime-module tests
 exercise these rules without WebAudio.
 
 ## Ratings

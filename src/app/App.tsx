@@ -56,7 +56,6 @@ function downloadRatings(ratings: ReadonlyMap<string, FounderRating>): void {
 export function App() {
   const [founderIndex, setFounderIndex] = useState(0);
   const [playback, setPlayback] = useState(initialPlaybackState);
-  const [autoNext, setAutoNext] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const repository = useMemo(
     () => new RatingRepository(window.localStorage),
@@ -84,18 +83,6 @@ export function App() {
     },
     [controller],
   );
-
-  useEffect(() => {
-    if (
-      playback.status !== 'finished' ||
-      !autoNext ||
-      !ratings.has(founder.id)
-    ) {
-      return;
-    }
-    const next = findNextUnratedIndex(founders, ratings, founderIndex);
-    if (next !== null) queueMicrotask(() => setFounderIndex(next));
-  }, [autoNext, founder.id, founderIndex, playback.status, ratings]);
 
   const selectRelative = (delta: number) => {
     setError(null);
@@ -176,7 +163,7 @@ export function App() {
 
         <div
           className="timeline"
-          aria-label="16 тактов: секция A, затем секция B"
+          aria-label="Зацикленные 16 тактов: секция A, затем секция B"
         >
           <div className="timeline-labels">
             <span>A · bars 1–8</span>
@@ -208,7 +195,7 @@ export function App() {
               playback.status === 'loading' || playback.status === 'playing'
             }
           >
-            {playback.status === 'loading' ? 'Loading…' : 'Play 32s'}
+            {playback.status === 'loading' ? 'Loading…' : 'Play loop'}
           </button>
           <button type="button" onClick={() => controller.stop()}>
             Stop
@@ -255,14 +242,6 @@ export function App() {
           >
             Next unrated
           </button>
-          <label className="auto-next">
-            <input
-              type="checkbox"
-              checked={autoNext}
-              onChange={(event) => setAutoNext(event.target.checked)}
-            />
-            После прослушивания перейти к следующему неоценённому
-          </label>
           <button
             type="button"
             className="export"
@@ -274,7 +253,9 @@ export function App() {
         </div>
       </section>
 
-      <footer>120 BPM · 4/4 · 16 bars · deterministic Strudel compiler</footer>
+      <footer>
+        120 BPM · 4/4 · 16-bar loop · deterministic Strudel compiler
+      </footer>
     </main>
   );
 }

@@ -1,3 +1,4 @@
+import * as bundledStrudel from '@strudel/web';
 import type { CompiledStrudelPattern } from './CompiledStrudelPattern';
 
 interface StrudelPattern {
@@ -5,33 +6,57 @@ interface StrudelPattern {
 }
 
 interface StrudelRepl {
+  readonly scheduler: { now(): number };
   setCps(cps: number): void;
   setPattern(pattern: StrudelPattern, autostart?: boolean): Promise<unknown>;
   stop(): void;
 }
 
-export interface StrudelModule {
-  initStrudel(options?: { miniAllStrings?: boolean }): Promise<StrudelRepl>;
-  resetGlobalEffects(): void;
-  pure(value: Readonly<Record<string, unknown>>): StrudelPattern;
-  sequence(...patterns: StrudelPattern[]): StrudelPattern;
-  stack(...patterns: StrudelPattern[]): StrudelPattern;
-  slowcat(...patterns: StrudelPattern[]): StrudelPattern;
-  silence: StrudelPattern;
-  setMaxPolyphony(value: number): void;
+interface AudioParamLike {
+  cancelScheduledValues(time: number): void;
+  setValueAtTime(value: number, time: number): void;
 }
 
-export type StrudelModuleLoader = () => Promise<StrudelModule>;
+interface Disconnectable {
+  disconnect(): void;
+}
+
+interface SuperdoughAudioController {
+  readonly output: {
+    readonly destinationGain: { readonly gain: AudioParamLike } | null;
+    disconnect(): void;
+  };
+  readonly nodes: Readonly<Record<string, Disconnectable>>;
+  readonly buses: Readonly<Record<string, Disconnectable>>;
+}
+
+export interface StrudelModule {
+  defaultPrebake(): Promise<void>;
+  getAudioContext(): AudioContext;
+  getSuperdoughAudioController(): SuperdoughAudioController;
+  initAudio(options?: { maxPolyphony?: number }): Promise<void>;
+  pure(value: Readonly<Record<string, unknown>>): StrudelPattern;
+  sequence(...patterns: StrudelPattern[]): StrudelPattern;
+  setSuperdoughAudioController(
+    controller: SuperdoughAudioController | null,
+  ): SuperdoughAudioController | null;
+  setTime(getTime: () => number): void;
+  slowcat(...patterns: StrudelPattern[]): StrudelPattern;
+  stack(...patterns: StrudelPattern[]): StrudelPattern;
+  readonly silence: StrudelPattern;
+  readonly transpiler: unknown;
+  webaudioRepl(options: { transpiler: unknown }): StrudelRepl;
+}
+
+export type StrudelModuleLoader = () => StrudelModule;
 
 export interface CompiledAudioEngine {
   play(compiled: CompiledStrudelPattern): Promise<void>;
   stop(): void;
 }
 
-const loadStrudelModule: StrudelModuleLoader = async () => {
-  const imported: unknown = await import('@strudel/web');
-  return imported as StrudelModule;
-};
+const loadStrudelModule: StrudelModuleLoader = () =>
+  bundledStrudel as StrudelModule;
 
 function buildBarPattern(
   module: StrudelModule,
@@ -58,35 +83,41 @@ function buildBarPattern(
 export class StrudelAudioEngine implements CompiledAudioEngine {
   private module: StrudelModule | null = null;
   private repl: StrudelRepl | null = null;
+  private initialization: Promise<void> | null = null;
+  private activeController: SuperdoughAudioController | null = null;
+  private readonly retiredControllers = new WeakSet<object>();
   private operation = 0;
 
   constructor(
     private readonly loadModule: StrudelModuleLoader = loadStrudelModule,
   ) {}
 
-  private async initialize(operation: number): Promise<boolean> {
-    if (!this.module) this.module = await this.loadModule();
-    if (operation !== this.operation) return false;
-    if (this.repl) return true;
+  private initialize(): Promise<void> {
+    this.initialization ??= this.createRuntime();
+    return this.initialization;
+  }
 
-    const module = this.module;
-    const repl = await module.initStrudel({ miniAllStrings: false });
-    if (operation !== this.operation) {
-      repl.stop();
-      module.resetGlobalEffects();
-      return false;
-    }
+  private async createRuntime(): Promise<void> {
+    const module = this.loadModule();
+    this.module = module;
 
-    this.repl = repl;
-    module.setMaxPolyphony(48);
+    // Do not use initStrudel here: it defers audio initialization until the
+    // *next* mousedown. The first Play click must initialize the full engine.
+    const repl = module.webaudioRepl({ transpiler: module.transpiler });
+    module.setTime(() => repl.scheduler.now());
+    await Promise.all([
+      module.defaultPrebake(),
+      module.initAudio({ maxPolyphony: 48 }),
+    ]);
     repl.setCps(0.5);
-    return true;
+    this.repl = repl;
   }
 
   async play(compiled: CompiledStrudelPattern): Promise<void> {
     const operation = ++this.operation;
-    this.resetAudioGraph();
-    if (!(await this.initialize(operation))) return;
+    this.halt();
+    await this.initialize();
+    if (operation !== this.operation) return;
 
     const module = this.module;
     const repl = this.repl;
@@ -94,25 +125,57 @@ export class StrudelAudioEngine implements CompiledAudioEngine {
       throw new Error('Strudel runtime failed to initialize.');
 
     repl.setCps(0.5);
+    this.activeController = this.createAudioGeneration(module);
     const bars = Array.from({ length: compiled.bars }, (_, bar) =>
       buildBarPattern(module, compiled, bar),
     );
-    await repl.setPattern(module.slowcat(...bars), true);
 
-    if (operation !== this.operation) this.resetAudioGraph();
+    try {
+      await repl.setPattern(module.slowcat(...bars), true);
+    } catch (error) {
+      if (operation === this.operation) this.halt();
+      throw error;
+    }
+
+    if (operation !== this.operation) this.halt();
   }
 
   stop(): void {
     this.operation += 1;
-    this.resetAudioGraph();
+    this.halt();
+  }
+
+  private createAudioGeneration(
+    module: StrudelModule,
+  ): SuperdoughAudioController {
+    const previous = module.getSuperdoughAudioController();
+    module.setSuperdoughAudioController(null);
+    const next = module.getSuperdoughAudioController();
+    this.retireController(previous);
+    return next;
+  }
+
+  private halt(): void {
+    this.repl?.stop();
+    if (!this.activeController) return;
+    this.retireController(this.activeController);
+    this.activeController = null;
   }
 
   /**
-   * Disconnects every SuperDough orbit/effect/output node. Scheduled sources may
-   * finish internally, but their former graph no longer reaches the destination.
+   * Mutes and disconnects one playback generation without mutating the global
+   * controller. In-flight async notes keep their old, permanently silent graph.
    */
-  private resetAudioGraph(): void {
-    this.repl?.stop();
-    this.module?.resetGlobalEffects();
+  private retireController(controller: SuperdoughAudioController): void {
+    if (this.retiredControllers.has(controller)) return;
+    this.retiredControllers.add(controller);
+
+    const now = this.module?.getAudioContext().currentTime ?? 0;
+    const gain = controller.output.destinationGain?.gain;
+    gain?.cancelScheduledValues(now);
+    gain?.setValueAtTime(0, now);
+    Object.values(controller.nodes).forEach((node) => node.disconnect());
+    Object.values(controller.buses).forEach((node) => node.disconnect());
+    controller.output.disconnect();
   }
 }

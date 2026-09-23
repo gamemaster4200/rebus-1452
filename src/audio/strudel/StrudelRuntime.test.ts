@@ -19,48 +19,134 @@ function compiled(genomeId: string): CompiledStrudelPattern {
   };
 }
 
+class FakeController {
+  readonly cancelScheduledValues = vi.fn();
+  readonly setValueAtTime = vi.fn();
+  readonly orbitDisconnect = vi.fn();
+  readonly busDisconnect = vi.fn();
+  readonly outputDisconnect = vi.fn();
+  readonly output = {
+    destinationGain: {
+      gain: {
+        cancelScheduledValues: this.cancelScheduledValues,
+        setValueAtTime: this.setValueAtTime,
+      },
+    },
+    disconnect: this.outputDisconnect,
+  };
+  readonly nodes = { 1: { disconnect: this.orbitDisconnect } };
+  readonly buses = { 1: { disconnect: this.busDisconnect } };
+
+  constructor(readonly audioContext: AudioContext) {}
+}
+
 function setup() {
-  const resetGlobalEffects = vi.fn();
-  const replStop = vi.fn();
+  const context = { currentTime: 12 } as AudioContext;
+  const controllers: FakeController[] = [new FakeController(context)];
+  let currentController: FakeController | null = controllers[0];
   const setPattern = vi.fn(() => Promise.resolve());
-  const initStrudel = vi.fn(() =>
-    Promise.resolve({ setCps: vi.fn(), setPattern, stop: replStop }),
+  const replStop = vi.fn();
+  const repl = {
+    scheduler: { now: vi.fn(() => 0) },
+    setCps: vi.fn(),
+    setPattern,
+    stop: replStop,
+  };
+  const defaultPrebake = vi.fn(() => Promise.resolve());
+  const initAudio = vi.fn(() => Promise.resolve());
+  type AudioController = ReturnType<
+    StrudelModule['getSuperdoughAudioController']
+  >;
+  const setSuperdoughAudioController = vi.fn(
+    (controller: AudioController | null) => {
+      currentController = controller as FakeController | null;
+      return controller;
+    },
   );
+  const getSuperdoughAudioController = vi.fn(() => {
+    if (!currentController) {
+      currentController = new FakeController(context);
+      controllers.push(currentController);
+    }
+    return currentController;
+  });
+  const webaudioRepl = vi.fn(() => repl);
   const module: StrudelModule = {
-    initStrudel,
-    resetGlobalEffects,
+    defaultPrebake,
+    getAudioContext: vi.fn(() => context),
+    getSuperdoughAudioController,
+    initAudio,
     pure: vi.fn(() => pattern),
     sequence: vi.fn(() => pattern),
-    stack: vi.fn(() => pattern),
+    setSuperdoughAudioController,
+    setTime: vi.fn(),
     slowcat: vi.fn(() => pattern),
+    stack: vi.fn(() => pattern),
     silence: pattern,
-    setMaxPolyphony: vi.fn(),
+    transpiler: vi.fn(),
+    webaudioRepl,
   };
-  const engine = new StrudelAudioEngine(() => Promise.resolve(module));
-  return { engine, initStrudel, replStop, resetGlobalEffects, setPattern };
+  const engine = new StrudelAudioEngine(() => module);
+  return {
+    controllers,
+    defaultPrebake,
+    engine,
+    initAudio,
+    module,
+    replStop,
+    setPattern,
+    setSuperdoughAudioController,
+    webaudioRepl,
+  };
 }
 
 describe('StrudelAudioEngine', () => {
-  it('disconnects the old output graph before the next preview', async () => {
-    const { engine, initStrudel, replStop, resetGlobalEffects, setPattern } =
+  it('initializes the complete audio engine on the first play', async () => {
+    const { defaultPrebake, engine, initAudio, setPattern, webaudioRepl } =
       setup();
+
     await engine.play(compiled('founder-001'));
+
+    expect(webaudioRepl).toHaveBeenCalledOnce();
+    expect(defaultPrebake).toHaveBeenCalledOnce();
+    expect(initAudio).toHaveBeenCalledWith({ maxPolyphony: 48 });
+    expect(setPattern).toHaveBeenCalledOnce();
+  });
+
+  it('isolates consecutive previews in separate output controllers', async () => {
+    const {
+      controllers,
+      engine,
+      initAudio,
+      replStop,
+      setPattern,
+      setSuperdoughAudioController,
+    } = setup();
+
+    await engine.play(compiled('founder-001'));
+    const firstPlayback = controllers[1];
     engine.stop();
     await engine.play(compiled('founder-002'));
 
-    expect(initStrudel).toHaveBeenCalledOnce();
+    expect(initAudio).toHaveBeenCalledOnce();
     expect(setPattern).toHaveBeenCalledTimes(2);
+    expect(setSuperdoughAudioController).toHaveBeenCalledTimes(2);
+    expect(firstPlayback.setValueAtTime).toHaveBeenCalledWith(0, 12);
+    expect(firstPlayback.orbitDisconnect).toHaveBeenCalledOnce();
+    expect(firstPlayback.busDisconnect).toHaveBeenCalledOnce();
+    expect(firstPlayback.outputDisconnect).toHaveBeenCalledOnce();
     expect(replStop).toHaveBeenCalledTimes(2);
-    expect(resetGlobalEffects).toHaveBeenCalledTimes(2);
   });
 
-  it('resets effects for stop and restart without rebuilding Strudel', async () => {
-    const { engine, initStrudel, resetGlobalEffects } = setup();
+  it('retires a stopped generation only once', async () => {
+    const { controllers, engine } = setup();
     await engine.play(compiled('founder-001'));
-    engine.stop();
-    await engine.play(compiled('founder-001'));
+    const playback = controllers[1];
 
-    expect(initStrudel).toHaveBeenCalledOnce();
-    expect(resetGlobalEffects).toHaveBeenCalledTimes(2);
+    engine.stop();
+    engine.stop();
+
+    expect(playback.outputDisconnect).toHaveBeenCalledOnce();
+    expect(playback.setValueAtTime).toHaveBeenCalledOnce();
   });
 });

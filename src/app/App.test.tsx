@@ -6,7 +6,7 @@ describe('App', () => {
   beforeEach(() => window.localStorage.clear());
   afterEach(cleanup);
 
-  it('shows the first founder and the fixed 32-second A/B form', () => {
+  it('shows the first founder and the looping 16-bar A/B form', () => {
     render(<App />);
 
     expect(
@@ -16,6 +16,7 @@ describe('App', () => {
     expect(screen.getByText('A · bars 1–8')).toBeVisible();
     expect(screen.getByText('B · bars 9–16')).toBeVisible();
     expect(screen.getByRole('status')).toHaveTextContent('0:00 / 0:32');
+    expect(screen.getByRole('button', { name: 'Play loop' })).toBeVisible();
   });
 
   it('persists a neutral rating and navigates to the next unrated founder', () => {

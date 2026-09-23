@@ -18,14 +18,6 @@ class FakeScheduler implements PlaybackScheduler {
     return this.time;
   }
 
-  setTimeout(callback: () => void, delayMs: number): number {
-    return this.add(callback, delayMs, null);
-  }
-
-  clearTimeout(id: number): void {
-    this.tasks.delete(id);
-  }
-
   setInterval(callback: () => void, delayMs: number): number {
     return this.add(callback, delayMs, delayMs);
   }
@@ -89,7 +81,7 @@ function setup() {
 }
 
 describe('PlaybackController', () => {
-  it('tracks the A/B boundary and stops after exactly 32 seconds', async () => {
+  it('tracks the A/B boundary and loops after exactly 32 seconds', async () => {
     const { controller, scheduler, stop } = setup();
     controller.select(compiled('founder-001'));
     await controller.play();
@@ -109,12 +101,12 @@ describe('PlaybackController', () => {
 
     scheduler.advanceBy(16_000);
     expect(controller.getState()).toEqual({
-      status: 'finished',
-      elapsedMs: 32_000,
+      status: 'playing',
+      elapsedMs: 0,
       totalMs: 32_000,
-      section: 'B',
+      section: 'A',
     });
-    expect(stop).toHaveBeenCalled();
+    expect(stop).toHaveBeenCalledTimes(2);
   });
 
   it('stops the previous pattern when the founder changes', async () => {
