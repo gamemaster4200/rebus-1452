@@ -10,9 +10,9 @@ interface StrudelRepl {
   stop(): void;
 }
 
-interface StrudelModule {
+export interface StrudelModule {
   initStrudel(options?: { miniAllStrings?: boolean }): Promise<StrudelRepl>;
-  hush(): void;
+  resetGlobalEffects(): void;
   pure(value: Readonly<Record<string, unknown>>): StrudelPattern;
   sequence(...patterns: StrudelPattern[]): StrudelPattern;
   stack(...patterns: StrudelPattern[]): StrudelPattern;
@@ -21,10 +21,17 @@ interface StrudelModule {
   setMaxPolyphony(value: number): void;
 }
 
+export type StrudelModuleLoader = () => Promise<StrudelModule>;
+
 export interface CompiledAudioEngine {
   play(compiled: CompiledStrudelPattern): Promise<void>;
   stop(): void;
 }
+
+const loadStrudelModule: StrudelModuleLoader = async () => {
+  const imported: unknown = await import('@strudel/web');
+  return imported as StrudelModule;
+};
 
 function buildBarPattern(
   module: StrudelModule,
@@ -51,32 +58,61 @@ function buildBarPattern(
 export class StrudelAudioEngine implements CompiledAudioEngine {
   private module: StrudelModule | null = null;
   private repl: StrudelRepl | null = null;
+  private operation = 0;
 
-  private async initialize(): Promise<void> {
-    if (this.module && this.repl) return;
-    const imported: unknown = await import('@strudel/web');
-    this.module = imported as StrudelModule;
-    this.repl = await this.module.initStrudel({ miniAllStrings: false });
-    this.module.setMaxPolyphony(48);
-    this.repl.setCps(0.5);
+  constructor(
+    private readonly loadModule: StrudelModuleLoader = loadStrudelModule,
+  ) {}
+
+  private async initialize(operation: number): Promise<boolean> {
+    if (!this.module) this.module = await this.loadModule();
+    if (operation !== this.operation) return false;
+    if (this.repl) return true;
+
+    const module = this.module;
+    const repl = await module.initStrudel({ miniAllStrings: false });
+    if (operation !== this.operation) {
+      repl.stop();
+      module.resetGlobalEffects();
+      return false;
+    }
+
+    this.repl = repl;
+    module.setMaxPolyphony(48);
+    repl.setCps(0.5);
+    return true;
   }
 
   async play(compiled: CompiledStrudelPattern): Promise<void> {
-    await this.initialize();
+    const operation = ++this.operation;
+    this.resetAudioGraph();
+    if (!(await this.initialize(operation))) return;
+
     const module = this.module;
     const repl = this.repl;
     if (!module || !repl)
       throw new Error('Strudel runtime failed to initialize.');
 
-    repl.stop();
     repl.setCps(0.5);
     const bars = Array.from({ length: compiled.bars }, (_, bar) =>
       buildBarPattern(module, compiled, bar),
     );
     await repl.setPattern(module.slowcat(...bars), true);
+
+    if (operation !== this.operation) this.resetAudioGraph();
   }
 
   stop(): void {
+    this.operation += 1;
+    this.resetAudioGraph();
+  }
+
+  /**
+   * Disconnects every SuperDough orbit/effect/output node. Scheduled sources may
+   * finish internally, but their former graph no longer reaches the destination.
+   */
+  private resetAudioGraph(): void {
     this.repl?.stop();
+    this.module?.resetGlobalEffects();
   }
 }

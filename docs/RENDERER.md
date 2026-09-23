@@ -39,8 +39,13 @@ its current teardown path can disconnect the same AudioNode twice during rapid
 pattern replacement.
 
 `PlaybackController` owns the 32-second wall-clock lifecycle. Stop, restart, or
-founder navigation clears timers and stops the active Strudel pattern. A fake
-scheduler exercises these rules without WebAudio in unit tests.
+founder navigation clears timers and resets the complete SuperDough output graph:
+orbits, reverb, delay, buses, and destination routing are disconnected and
+recreated. Scheduled sources from the former graph may finish internally, but
+they no longer have a route to the audio destination and cannot leak between
+organisms. The browser `AudioContext` stays alive so Strudel's AudioWorklets do
+not need unsafe repeated registration. Fake scheduler and runtime-module tests
+exercise these rules without WebAudio.
 
 ## Ratings
 
