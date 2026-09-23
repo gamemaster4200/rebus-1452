@@ -33,6 +33,11 @@ feedback is bounded, and Strudel polyphony is capped at 48 voices. This reduces
 surprises but does not replace normal listening care; start at a modest system
 volume.
 
+Noise timbres use Strudel's dedicated white, pink, and brown synths. The
+SuperDough oscillator/noise crossfade control is deliberately excluded because
+its current teardown path can disconnect the same AudioNode twice during rapid
+pattern replacement.
+
 `PlaybackController` owns the 32-second wall-clock lifecycle. Stop, restart, or
 founder navigation clears timers and stops the active Strudel pattern. A fake
 scheduler exercises these rules without WebAudio in unit tests.

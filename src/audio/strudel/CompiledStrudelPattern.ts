@@ -21,7 +21,6 @@ export interface StrudelEventControls {
   readonly decay?: number;
   readonly sustain?: number;
   readonly release?: number;
-  readonly noise?: number;
   readonly room?: number;
   readonly delay?: number;
   readonly delayfeedback?: number;

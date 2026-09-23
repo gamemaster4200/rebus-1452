@@ -38,8 +38,8 @@ The first compiler maps hereditary traits into a 16-bar Strudel event plan:
 - closed/open hats and percussion retain their logical grids, mute bars, accents,
   rotations, probabilities, instruments, and layer changes;
 - harmony selects absolute MIDI notes and the optional section-B shift;
-- oscillator, filter, envelope, noise, space, delay, and drive become bounded
-  SuperDough controls;
+- oscillator, filter, envelope, space, delay, and drive become bounded SuperDough
+  controls; noise traits select dedicated white, pink, or brown noise synths;
 - development traits transform bars 9–16 through density, probability, rotation,
   pitch, percussion, filter, and energy changes;
 - interactions influence kick/bass balance, open-hat ducking, and aligned accents.

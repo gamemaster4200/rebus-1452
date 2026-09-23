@@ -75,7 +75,7 @@ function soundName(genome: MusicGenome): string {
     case 'fm':
       return 'sine';
     case 'noise-blend':
-      return 'sawtooth';
+      return genome.sound.noiseAmount >= 0.5 ? 'pink' : 'white';
     default:
       return genome.sound.oscillator;
   }
@@ -95,14 +95,6 @@ function safeCommonControls(
     decay: round(clamp(genome.sound.envelope.decay, 0.02, 1)),
     sustain: round(clamp(genome.sound.envelope.sustain, 0, 0.85)),
     release: round(clamp(genome.sound.envelope.release, 0.02, 1)),
-    noise: round(
-      clamp(
-        genome.sound.noiseAmount +
-          (genome.sound.oscillator === 'noise-blend' ? 0.28 : 0),
-        0,
-        0.8,
-      ),
-    ),
     room: round(clamp(genome.sound.reverbAmount * 0.58, 0, 0.5)),
     delay: round(clamp(genome.sound.delayAmount * 0.42, 0, 0.3)),
     delayfeedback: round(
@@ -318,7 +310,14 @@ function compileRhythmVoice(
       voice,
       controls: {
         ...common,
-        s: isOpen ? 'sawtooth' : 'square',
+        s:
+          genome.sound.noiseAmount >= 0.5
+            ? isOpen
+              ? 'pink'
+              : 'white'
+            : isOpen
+              ? 'white'
+              : 'pink',
         note: isOpen ? 91 : 103,
         gain: round(
           clamp(
@@ -337,7 +336,6 @@ function compileRhythmVoice(
         decay: isOpen ? 0.16 : 0.035,
         sustain: 0,
         release: isOpen ? 0.15 : 0.025,
-        noise: round(clamp(0.38 + genome.sound.noiseAmount * 0.5, 0.38, 0.82)),
         distort: round(clamp(genome.sound.drive * 0.28, 0, 0.24)),
       },
     });
@@ -350,15 +348,14 @@ const PERCUSSION_SOUND: Record<
   {
     readonly s: string;
     readonly note: number;
-    readonly noise: number;
     readonly clip: number;
   }
 > = {
-  rim: { s: 'square', note: 88, noise: 0.18, clip: 0.3 },
-  clap: { s: 'sawtooth', note: 76, noise: 0.68, clip: 0.5 },
-  tom: { s: 'sine', note: 45, noise: 0.08, clip: 0.9 },
-  cowbell: { s: 'square', note: 79, noise: 0.12, clip: 0.56 },
-  noise: { s: 'sawtooth', note: 96, noise: 0.78, clip: 0.42 },
+  rim: { s: 'square', note: 88, clip: 0.3 },
+  clap: { s: 'white', note: 76, clip: 0.5 },
+  tom: { s: 'sine', note: 45, clip: 0.9 },
+  cowbell: { s: 'square', note: 79, clip: 0.56 },
+  noise: { s: 'pink', note: 96, clip: 0.42 },
 };
 
 function compilePercussion(genome: MusicGenome): CompiledStrudelEvent[] {
@@ -408,7 +405,10 @@ function compilePercussion(genome: MusicGenome): CompiledStrudelEvent[] {
         voice: `percussion-${layerIndex}`,
         controls: {
           ...common,
-          s: sound.s,
+          s:
+            layer.instrument === 'noise' && genome.sound.noiseAmount >= 0.55
+              ? 'brown'
+              : sound.s,
           note: sound.note,
           gain: round(
             clamp(
@@ -423,9 +423,6 @@ function compilePercussion(genome: MusicGenome): CompiledStrudelEvent[] {
           decay: layer.instrument === 'tom' ? 0.2 : 0.06,
           sustain: 0,
           release: layer.instrument === 'tom' ? 0.16 : 0.05,
-          noise: round(
-            clamp(sound.noise + genome.sound.noiseAmount * 0.22, 0, 0.86),
-          ),
           distort: round(clamp(genome.sound.drive * 0.36, 0, 0.32)),
         },
       });
