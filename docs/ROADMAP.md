@@ -1,6 +1,7 @@
 # Roadmap
 
-- **v0.1 — Artificial Selection:** establish genomes, playback, and listener-guided selection.
+- **v0.1 preparation — World Model + Founders:** Style Envelope, `MusicGenome v0.1`, deterministic PRNG, feature extraction, and 42 canonical founders are implemented.
+- **v0.1 — Artificial Selection:** compile genomes for playback and add listener-guided selection.
 - **v0.2 — Lineage + Hall of Fame:** preserve ancestry and notable organisms.
 - **v0.3 — Self-Adaptive Mutation:** let mutation behavior evolve with the organism.
 - **v0.4 — Transition Genome:** evolve relationships and movement between musical states.
