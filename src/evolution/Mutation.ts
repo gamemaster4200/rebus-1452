@@ -24,6 +24,8 @@ export interface MutationOptions {
   readonly operationCount?: number;
 }
 
+const MACRO_RARITY_FACTOR = 0.35;
+
 function round(value: number): number {
   return Number(value.toFixed(6));
 }
@@ -644,7 +646,11 @@ export function mutateGenome(
       options.forceScale ??
       pickWeighted(
         scales,
-        [strategy.microWeight, strategy.mesoWeight, strategy.macroWeight],
+        [
+          strategy.microWeight,
+          strategy.mesoWeight,
+          strategy.macroWeight * MACRO_RARITY_FACTOR,
+        ],
         operationRng.fork('scale'),
       );
     const category =

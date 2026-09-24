@@ -48,4 +48,14 @@ describe('Generation 1', () => {
       expect(JSON.stringify(compiled)).not.toMatch(/NaN|Infinity/);
     });
   });
+
+  it('keeps macro mutation rare across the canonical population', () => {
+    const mutations = canonical.flatMap(
+      (genome) => genome.lineage.mutations ?? [],
+    );
+    const macroCount = mutations.filter(
+      (mutation) => mutation.scale === 'macro',
+    ).length;
+    expect(macroCount / mutations.length).toBeLessThan(0.2);
+  });
 });
