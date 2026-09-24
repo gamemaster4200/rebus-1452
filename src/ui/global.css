@@ -7,8 +7,8 @@
     BlinkMacSystemFont,
     'Segoe UI',
     sans-serif;
-  color: #e8ebe9;
-  background: #101311;
+  color: #eff5f1;
+  background: #0a0d0b;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -21,61 +21,312 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 12%, rgb(68 122 92 / 18%), transparent 32rem),
+    #0a0d0b;
 }
 
 button,
 input {
   font: inherit;
 }
+button {
+  color: inherit;
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
 
 .shell {
-  display: grid;
+  width: min(76rem, 100%);
   min-height: 100vh;
-  place-items: center;
-  padding: 2rem;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vw, 3.5rem);
 }
 
-.intro {
-  width: min(42rem, 100%);
-  border-left: 2px solid #9ed7b7;
-  padding: 1rem 0 1rem 2rem;
+.masthead,
+.founder-heading,
+.time-row,
+.workflow-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
-.eyebrow {
-  margin: 0 0 0.75rem;
-  color: #9ed7b7;
+.masthead {
+  margin-bottom: clamp(2rem, 6vw, 4.75rem);
+}
+
+.eyebrow,
+.counter,
+dt,
+footer {
+  color: #8dcaab;
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
+.eyebrow,
+.counter {
+  margin: 0 0 0.6rem;
+}
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
 h1 {
-  margin: 0;
-  font-size: clamp(2.5rem, 9vw, 5.5rem);
+  margin-bottom: 0;
+  font-size: clamp(2rem, 6vw, 4.8rem);
   font-weight: 650;
-  letter-spacing: -0.055em;
-  line-height: 0.92;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
 }
 
-.description {
-  margin: 1.5rem 0 2.5rem;
-  color: #aeb6b1;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+h2 {
+  margin-bottom: 0;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: clamp(1.4rem, 3vw, 2.25rem);
+  font-weight: 520;
 }
 
-.status {
+.rated-counter {
+  display: grid;
+  min-width: 8.5rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid #355243;
+}
+
+.rated-counter strong {
+  color: #a9edc9;
+  font-size: 2rem;
+}
+.rated-counter span {
+  color: #87948c;
+  font-size: 0.8rem;
+}
+
+.player-card {
+  overflow: hidden;
+  border: 1px solid #27352d;
+  border-radius: 0.35rem;
+  background: rgb(15 20 17 / 90%);
+  box-shadow: 0 2rem 6rem rgb(0 0 0 / 42%);
+}
+
+.founder-heading,
+.timeline,
+.transport,
+.rating-panel,
+.workflow-actions {
+  padding: clamp(1.25rem, 3vw, 2.2rem);
+}
+
+.metadata {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  width: min(34rem, 60%);
+  margin: 0;
+}
+
+.metadata div {
+  min-width: 0;
+}
+dt {
+  margin-bottom: 0.35rem;
+}
+
+dd {
+  overflow: hidden;
+  margin: 0;
+  color: #bdc9c1;
+  font-size: 0.85rem;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.timeline {
+  border-top: 1px solid #27352d;
+  border-bottom: 1px solid #27352d;
+  background: #0b0f0c;
+}
+
+.timeline-labels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 0.65rem;
+  color: #718078;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.72rem;
+}
+
+.timeline-labels span:last-child {
+  text-align: right;
+}
+
+.progress-track {
+  position: relative;
+  height: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #355243;
+  background: #151d18;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #69c091, #bdde7b);
+  transition: width 100ms linear;
+}
+
+.section-boundary {
+  position: absolute;
+  top: -0.3rem;
+  bottom: -0.3rem;
+  left: 50%;
+  width: 2px;
+  background: #eff5f1;
+}
+
+.time-row {
+  margin-top: 0.7rem;
+  color: #8f9a93;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.transport {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 0.8fr 0.8fr 1fr;
+  gap: 0.75rem;
+}
+
+.transport button,
+.next-unrated,
+.export {
+  min-height: 3rem;
+  border: 1px solid #385144;
+  border-radius: 0.2rem;
+  background: transparent;
+}
+
+.transport button:hover:not(:disabled),
+.next-unrated:hover:not(:disabled),
+.export:hover:not(:disabled) {
+  border-color: #85c8a3;
+  background: #17251d;
+}
+
+.transport .play {
+  border-color: #8dcaab;
+  background: #8dcaab;
+  color: #07100a;
+  font-weight: 700;
+}
+
+.rating-panel {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid #27352d;
+}
+
+.rating-panel legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  color: #cbd5cf;
+}
+
+.score-buttons {
+  display: grid;
+  clear: both;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.6rem;
+}
+
+.score {
+  display: grid;
+  min-height: 5.5rem;
+  place-items: center;
+  gap: 0.25rem;
+  padding: 0.7rem 0.35rem;
+  border: 1px solid #303b34;
+  border-radius: 0.2rem;
+  background: #111612;
+}
+
+.score strong {
+  font-size: 1.35rem;
+}
+.score span {
+  color: #7f8c84;
+  font-size: 0.7rem;
+}
+.score:hover,
+.score[aria-pressed='true'] {
+  border-color: #9ad8b5;
+  background: #1b3023;
+}
+.score[aria-pressed='true'] strong {
+  color: #b9f1d1;
+}
+
+.workflow-actions {
+  flex-wrap: wrap;
+  border-top: 1px solid #27352d;
+}
+.next-unrated,
+.export {
+  padding: 0 1.1rem;
+}
+
+.auto-next {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  color: #cfd5d1;
-  font-size: 0.9rem;
+  gap: 0.6rem;
+  color: #8f9a93;
+  font-size: 0.82rem;
 }
 
-.status-dot {
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background: #9ed7b7;
-  box-shadow: 0 0 0.75rem rgb(158 215 183 / 55%);
+.auto-next input {
+  accent-color: #8dcaab;
+}
+.error {
+  margin: 0 2.2rem 1rem;
+  color: #ff9d8d;
+}
+footer {
+  margin-top: 1.5rem;
+  color: #56635b;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .masthead,
+  .founder-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .metadata {
+    width: 100%;
+  }
+  .transport {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .transport .play {
+    grid-column: span 2;
+    grid-row: 1;
+  }
+  .score-buttons {
+    grid-template-columns: repeat(5, minmax(3.25rem, 1fr));
+    overflow-x: auto;
+  }
 }

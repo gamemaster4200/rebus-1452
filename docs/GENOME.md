@@ -29,6 +29,26 @@ The top-level genome contains:
 
 Pitch values are semitone offsets from a pitch-class root. Rhythm hits are integer positions inside a finite cycle. These representations can be compiled into different renderers without changing the genome.
 
+## Audible phenotype
+
+The first compiler maps hereditary traits into a 16-bar Strudel event plan:
+
+- bass hits, rotation, probability, pitch choices, accents, note lengths, and gate
+  become timed synth notes;
+- closed/open hats and percussion retain their logical grids, mute bars, accents,
+  rotations, probabilities, instruments, and layer changes;
+- harmony selects absolute MIDI notes and the optional section-B shift;
+- oscillator, filter, envelope, and gain become bounded SuperDough controls;
+  drive and noise traits influence the safe filter mapping without allocating
+  per-note distortion processors; `noise-blend` basses use a pitched triangle
+  source, and dedicated noise synths are reserved for short hats;
+- development traits transform bars 9–16 through density, probability, rotation,
+  pitch, percussion, filter, and energy changes;
+- interactions influence kick/bass balance, open-hat ducking, and aligned accents.
+
+Mutation strategy remains hereditary metadata for future reproduction. It is not
+executed during playback, so listening to an organism cannot mutate its genome.
+
 ## Founders
 
 The canonical population contains 42 independent generation-zero ancestors. IDs are stable from `founder-001` to `founder-042`; every lineage has no parents and is marked as a founder.

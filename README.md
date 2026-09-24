@@ -23,4 +23,11 @@ npm run format:check
 npm run generate:founders
 ```
 
-See [Architecture](docs/ARCHITECTURE.md) and [Roadmap](docs/ROADMAP.md).
+The listening room presents every canonical founder as a looping 16-bar,
+32-second A/B fragment. Use the transport to compare organisms, rate them from
+-2 to +2, jump to the next unrated founder, and export the local rating set as
+JSON. Press **Play loop** to initialize WebAudio and keep the fragment playing
+until Stop or founder navigation.
+
+See [Architecture](docs/ARCHITECTURE.md), [Genome](docs/GENOME.md),
+[Renderer](docs/RENDERER.md), and [Roadmap](docs/ROADMAP.md).
