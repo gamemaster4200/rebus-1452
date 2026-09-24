@@ -52,13 +52,16 @@ export class PlaybackController {
     return () => this.listeners.delete(listener);
   }
 
-  select(compiled: CompiledStrudelPattern): void {
+  select(
+    compiled: CompiledStrudelPattern,
+    selectedStatus: Extract<PlaybackStatus, 'idle' | 'stopped'> = 'idle',
+  ): void {
     this.operation += 1;
     this.stopTimers();
     this.engine.stop();
     this.selected = compiled;
     this.publish({
-      status: 'idle',
+      status: selectedStatus,
       elapsedMs: 0,
       totalMs: compiled.durationSeconds * 1_000,
       section: 'A',

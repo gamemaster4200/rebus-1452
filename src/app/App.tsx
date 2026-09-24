@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { compileGenomeToStrudel } from '../audio/strudel/StrudelCompiler';
 import { StrudelAudioEngine } from '../audio/strudel/StrudelRuntime';
 import canonicalFounders from '../data/founders.v0.1.json';
@@ -121,6 +121,9 @@ function LineageSummary({ genome }: { readonly genome: MusicGenome }) {
 export function App() {
   const [generation, setGeneration] = useState<Generation>(0);
   const [genomeIndex, setGenomeIndex] = useState(0);
+  const selectedIndexRef = useRef(0);
+  const selectedGenomeIdRef = useRef<string | null>(null);
+  const playbackIntentRef = useRef(false);
   const [playback, setPlayback] = useState(initialPlaybackState);
   const [error, setError] = useState<string | null>(null);
   const repositories = useMemo(
@@ -147,7 +150,11 @@ export function App() {
   const currentRating = ratings.get(genome.id)?.score;
 
   useEffect(() => controller.subscribe(setPlayback), [controller]);
-  useEffect(() => controller.select(compiled), [compiled, controller]);
+  useEffect(() => {
+    if (selectedGenomeIdRef.current === compiled.genomeId) return;
+    selectedGenomeIdRef.current = compiled.genomeId;
+    controller.select(compiled);
+  }, [compiled, controller]);
   useEffect(
     () => () => {
       controller.dispose();
@@ -156,6 +163,9 @@ export function App() {
   );
 
   const switchGeneration = (next: Generation) => {
+    playbackIntentRef.current = false;
+    selectedIndexRef.current = 0;
+    selectedGenomeIdRef.current = null;
     controller.stop();
     setError(null);
     setGeneration(next);
@@ -164,30 +174,60 @@ export function App() {
 
   const selectRelative = (delta: number) => {
     setError(null);
-    setGenomeIndex(
-      (index) => (index + delta + genomes.length) % genomes.length,
-    );
+    const status = controller.getState().status;
+    const shouldResume =
+      playbackIntentRef.current &&
+      (status === 'playing' || status === 'loading');
+    const nextIndex =
+      (selectedIndexRef.current + delta + genomes.length) % genomes.length;
+    const nextCompiled = compileGenomeToStrudel(genomes[nextIndex]);
+
+    selectedIndexRef.current = nextIndex;
+    selectedGenomeIdRef.current = nextCompiled.genomeId;
+    controller.select(nextCompiled, status === 'stopped' ? 'stopped' : 'idle');
+    setGenomeIndex(nextIndex);
+
+    if (shouldResume) {
+      void controller.play().catch((reason: unknown) => {
+        playbackIntentRef.current = false;
+        controller.stop();
+        setError(
+          reason instanceof Error
+            ? reason.message
+            : 'Не удалось включить звук.',
+        );
+      });
+    }
   };
 
   const selectNextUnrated = () => {
     const next = findNextUnratedIndex(genomes, ratings, genomeIndex);
     if (next !== null) {
       setError(null);
+      playbackIntentRef.current = false;
+      selectedIndexRef.current = next;
       setGenomeIndex(next);
     }
   };
 
   const startPlayback = async (restart = false) => {
     setError(null);
+    playbackIntentRef.current = true;
     try {
       if (restart) await controller.restart();
       else await controller.play();
     } catch (reason) {
+      playbackIntentRef.current = false;
       controller.stop();
       setError(
         reason instanceof Error ? reason.message : 'Не удалось включить звук.',
       );
     }
+  };
+
+  const stopPlayback = () => {
+    playbackIntentRef.current = false;
+    controller.stop();
   };
 
   const rate = (score: FounderScore) => {
@@ -296,7 +336,7 @@ export function App() {
           >
             {playback.status === 'loading' ? 'Loading…' : 'Play loop'}
           </button>
-          <button type="button" onClick={() => controller.stop()}>
+          <button type="button" onClick={stopPlayback}>
             Stop
           </button>
           <button

@@ -122,6 +122,19 @@ describe('PlaybackController', () => {
     });
   });
 
+  it('can select a new pattern while preserving stopped intent', () => {
+    const { controller, play } = setup();
+    controller.select(compiled('founder-001'));
+    controller.stop();
+    controller.select(compiled('founder-002'), 'stopped');
+
+    expect(controller.getState()).toMatchObject({
+      status: 'stopped',
+      elapsedMs: 0,
+    });
+    expect(play).not.toHaveBeenCalled();
+  });
+
   it('can stop and restart from the beginning', async () => {
     const { controller, play, scheduler } = setup();
     controller.select(compiled('founder-001'));
