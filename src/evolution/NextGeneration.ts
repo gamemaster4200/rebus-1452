@@ -4,11 +4,10 @@ import { validateMusicGenome } from '../genome/validateMusicGenome';
 import { SeededRng } from '../random/SeededRng';
 import { crossoverGenomes } from './Crossover';
 import type { GenerationConfig, GenerationCounts } from './GenerationConfig';
-import type { PopulationRatingsDataset } from './GenerationTypes';
 import { generateImmigrant } from './Immigrant';
 import { mutateGenome } from './Mutation';
 import {
-  ratingMap,
+  selectEliteIds,
   selectParent,
   selectParentPair,
   type ParentUseCounts,
@@ -135,7 +134,7 @@ function immigrant(
 
 function validateInputs(
   sourcePopulation: readonly MusicGenome[],
-  sourceRatings: PopulationRatingsDataset,
+  baseFitnessByGenomeId: ReadonlyMap<string, number>,
   config: GenerationConfig,
 ): void {
   if (sourcePopulation.length === 0) {
@@ -155,9 +154,6 @@ function validateInputs(
   ) {
     throw new Error('Target generation must immediately follow the source.');
   }
-  if (sourceRatings.generation !== sourceGeneration) {
-    throw new Error('Ratings generation must match the source population.');
-  }
   const counts = [
     config.counts.elite,
     config.counts.crossover,
@@ -170,39 +166,56 @@ function validateInputs(
   ) {
     throw new Error('Generation counts must be non-negative integers.');
   }
-  if (config.eliteIds.length !== config.counts.elite) {
+  if (config.eliteIds && config.eliteIds.length !== config.counts.elite) {
     throw new Error('Elite IDs must match the configured elite count.');
   }
 
   const sourceIds = new Set(sourcePopulation.map((genome) => genome.id));
-  const ratingIds = new Set(
-    sourceRatings.ratings.map((rating) => rating.genomeId),
-  );
   if (
-    sourceRatings.ratings.length !== sourcePopulation.length ||
-    ratingIds.size !== sourcePopulation.length ||
-    [...ratingIds].some((id) => !sourceIds.has(id))
+    baseFitnessByGenomeId.size !== sourcePopulation.length ||
+    [...sourceIds].some((id) => {
+      const fitness = baseFitnessByGenomeId.get(id);
+      return fitness === undefined || !Number.isFinite(fitness) || fitness < 0;
+    }) ||
+    [...baseFitnessByGenomeId.keys()].some((id) => !sourceIds.has(id))
   ) {
-    throw new Error('Ratings must cover the source population exactly once.');
+    throw new Error(
+      'Base fitness must cover the source population exactly once.',
+    );
   }
-  config.eliteIds.forEach((id) => {
+  config.eliteIds?.forEach((id) => {
     if (!sourceIds.has(id)) throw new Error(`Elite ${id} is missing.`);
   });
+}
+
+function resolvedEliteIds(
+  sourcePopulation: readonly MusicGenome[],
+  baseFitnessByGenomeId: ReadonlyMap<string, number>,
+  config: GenerationConfig,
+): readonly string[] {
+  return (
+    config.eliteIds ??
+    selectEliteIds(sourcePopulation, baseFitnessByGenomeId, config.counts.elite)
+  );
 }
 
 /** Builds one deterministic generation from an arbitrary preceding population. */
 export function generateNextGeneration(
   sourcePopulation: readonly MusicGenome[],
-  sourceRatings: PopulationRatingsDataset,
+  baseFitnessByGenomeId: ReadonlyMap<string, number>,
   config: GenerationConfig,
 ): MusicGenome[] {
-  validateInputs(sourcePopulation, sourceRatings, config);
+  validateInputs(sourcePopulation, baseFitnessByGenomeId, config);
   const sourceById = new Map(
     sourcePopulation.map((genome) => [genome.id, genome]),
   );
-  const scores = ratingMap(sourceRatings.ratings);
   const usage: ParentUseCounts = new Map();
-  const population = config.eliteIds.map((id, index) =>
+  const eliteIds = resolvedEliteIds(
+    sourcePopulation,
+    baseFitnessByGenomeId,
+    config,
+  );
+  const population = eliteIds.map((id, index) =>
     eliteFromSource(sourceById.get(id) as MusicGenome, index + 1, config),
   );
 
@@ -211,7 +224,7 @@ export function generateNextGeneration(
     const seed = seedFor(index, 'crossover', config);
     const [left, right] = selectParentPair(
       sourcePopulation,
-      scores,
+      baseFitnessByGenomeId,
       usage,
       config,
       new SeededRng(`${seed}:selection`),
@@ -231,7 +244,7 @@ export function generateNextGeneration(
     const seed = seedFor(index, 'mutation', config);
     const parent = selectParent(
       sourcePopulation,
-      scores,
+      baseFitnessByGenomeId,
       usage,
       config,
       new SeededRng(`${seed}:selection`),
@@ -249,7 +262,12 @@ export function generateNextGeneration(
     population.push(immigrant(index, child, config));
   }
 
-  const errors = validateNextGeneration(population, sourcePopulation, config);
+  const errors = validateNextGeneration(
+    population,
+    sourcePopulation,
+    config,
+    eliteIds,
+  );
   if (errors.length > 0) {
     throw new Error(
       `Generation ${config.targetGeneration} validation failed: ${errors.join(' ')}`,
@@ -286,6 +304,12 @@ export function validateNextGeneration(
   generation: readonly MusicGenome[],
   sourcePopulation: readonly MusicGenome[],
   config: GenerationConfig,
+  eliteIds: readonly string[] = config.eliteIds ??
+    generation
+      .slice(0, config.counts.elite)
+      .map(
+        (genome) => genome.lineage.sourceGenomeId ?? genome.lineage.parents[0],
+      ),
 ): string[] {
   const errors: string[] = [];
   const sourceById = new Map(
@@ -370,7 +394,7 @@ export function validateNextGeneration(
     errors.push('Generation contains duplicate musical genomes.');
   }
 
-  config.eliteIds.forEach((sourceId, index) => {
+  eliteIds.forEach((sourceId, index) => {
     const source = sourceById.get(sourceId);
     const elite = generation[index];
     if (

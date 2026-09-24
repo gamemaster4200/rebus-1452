@@ -1,9 +1,7 @@
 import type { MusicGenome } from '../genome/MusicGenome';
-import type { FounderScore } from '../ratings/RatingRepository';
 import { genomeFeatureVector } from '../founders/GenomeFeatures';
 import { SeededRng } from '../random/SeededRng';
 import type { GenerationConfig } from './GenerationConfig';
-import type { CanonicalRatingInput } from './GenerationTypes';
 
 export type ParentUseCounts = Map<string, number>;
 
@@ -17,25 +15,18 @@ export function featureDistance(left: MusicGenome, right: MusicGenome): number {
   return Math.sqrt(squared / leftVector.length);
 }
 
-export function ratingMap(
-  ratings: readonly CanonicalRatingInput[],
-): ReadonlyMap<string, FounderScore> {
-  return new Map(ratings.map((rating) => [rating.genomeId, rating.score]));
-}
-
 export function selectionWeight(
   genome: MusicGenome,
-  score: FounderScore,
+  baseFitness: number,
   uses: number,
   familyUses: number,
   config: GenerationConfig,
   counterpart?: MusicGenome,
 ): number {
   if (uses >= config.maxParentUses) return 0;
-  const fitness = config.fitnessWeights[score];
   const usageProtection = 1 / (1 + uses * 0.9);
   const familyProtection = 1 / (1 + familyUses * 0.35);
-  if (!counterpart) return fitness * usageProtection * familyProtection;
+  if (!counterpart) return baseFitness * usageProtection * familyProtection;
 
   const distance = featureDistance(genome, counterpart);
   const diversity =
@@ -43,7 +34,9 @@ export function selectionWeight(
       ? 0.08
       : 0.55 + Math.min(distance, 0.75) * 1.8;
   const crossFamily = genome.family !== counterpart.family ? 1.3 : 0.72;
-  return fitness * usageProtection * familyProtection * diversity * crossFamily;
+  return (
+    baseFitness * usageProtection * familyProtection * diversity * crossFamily
+  );
 }
 
 function weightedPick(
@@ -76,7 +69,7 @@ function familyUseCount(
 
 export function selectParent(
   population: readonly MusicGenome[],
-  scores: ReadonlyMap<string, FounderScore>,
+  baseFitnessByGenomeId: ReadonlyMap<string, number>,
   usage: ParentUseCounts,
   config: GenerationConfig,
   rng: SeededRng,
@@ -86,12 +79,12 @@ export function selectParent(
     (genome) => genome.id !== counterpart?.id,
   );
   const weights = candidates.map((genome) => {
-    const score = scores.get(genome.id);
-    if (score === undefined)
-      throw new Error(`Missing rating for ${genome.id}.`);
+    const baseFitness = baseFitnessByGenomeId.get(genome.id);
+    if (baseFitness === undefined)
+      throw new Error(`Missing base fitness for ${genome.id}.`);
     return selectionWeight(
       genome,
-      score,
+      baseFitness,
       usage.get(genome.id) ?? 0,
       familyUseCount(population, usage, genome.family),
       config,
@@ -105,25 +98,50 @@ export function selectParent(
 
 export function selectParentPair(
   population: readonly MusicGenome[],
-  scores: ReadonlyMap<string, FounderScore>,
+  baseFitnessByGenomeId: ReadonlyMap<string, number>,
   usage: ParentUseCounts,
   config: GenerationConfig,
   rng: SeededRng,
 ): readonly [MusicGenome, MusicGenome] {
   const first = selectParent(
     population,
-    scores,
+    baseFitnessByGenomeId,
     usage,
     config,
     rng.fork('first'),
   );
   const second = selectParent(
     population,
-    scores,
+    baseFitnessByGenomeId,
     usage,
     config,
     rng.fork('second'),
     first,
   );
   return [first, second];
+}
+
+/** Stable deterministic ranking: fitness descending, then source order. */
+export function selectEliteIds(
+  population: readonly MusicGenome[],
+  baseFitnessByGenomeId: ReadonlyMap<string, number>,
+  count: number,
+): string[] {
+  if (!Number.isInteger(count) || count < 0 || count > population.length) {
+    throw new Error('Elite count must fit inside the source population.');
+  }
+  return population
+    .map((genome, sourceIndex) => {
+      const fitness = baseFitnessByGenomeId.get(genome.id);
+      if (fitness === undefined || !Number.isFinite(fitness) || fitness < 0) {
+        throw new Error(`Missing or invalid base fitness for ${genome.id}.`);
+      }
+      return { genome, sourceIndex, fitness };
+    })
+    .sort(
+      (left, right) =>
+        right.fitness - left.fitness || left.sourceIndex - right.sourceIndex,
+    )
+    .slice(0, count)
+    .map(({ genome }) => genome.id);
 }

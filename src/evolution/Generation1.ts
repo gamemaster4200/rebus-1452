@@ -2,6 +2,7 @@ import { analyzeFounderDiversity } from '../founders/Diversity';
 import type { MusicGenome } from '../genome/MusicGenome';
 import { GENERATION_1_CONFIG, type GenerationConfig } from './GenerationConfig';
 import type { CanonicalRatingsDataset } from './GenerationTypes';
+import { derivePopulationFitness } from './FitnessHistory';
 import {
   generateNextGeneration,
   validateNextGeneration,
@@ -23,7 +24,10 @@ export function generateGeneration1(
   ratings: CanonicalRatingsDataset,
   config: GenerationConfig = GENERATION_1_CONFIG,
 ): MusicGenome[] {
-  const generation = generateNextGeneration(founders, ratings, config);
+  const baseFitness = derivePopulationFitness(founders, [
+    { population: founders, ratings },
+  ]);
+  const generation = generateNextGeneration(founders, baseFitness, config);
   const errors = validateGeneration1(generation, founders, config);
   if (errors.length > 0) {
     throw new Error(`Generation 1 validation failed: ${errors.join(' ')}`);

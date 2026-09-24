@@ -3,6 +3,7 @@ import type { FounderScore } from '../ratings/RatingRepository';
 export interface CanonicalRatingInput {
   readonly genomeId: string;
   readonly score: FounderScore;
+  readonly ratedAt?: string;
 }
 
 export interface PopulationRatingsDataset {
@@ -15,7 +16,6 @@ export interface PopulationRatingsDataset {
 
 export interface CanonicalRatingsDataset extends PopulationRatingsDataset {
   readonly version: '1';
-  readonly generation: 0;
   readonly datasetVersion: 'v0.1';
 }
 
@@ -28,4 +28,12 @@ export interface GenerationDatasetMetadata {
   readonly sourceDatasetVersion: string;
   readonly sourceDatasetSha256: string;
   readonly ratingsDatasetVersion: string;
+}
+
+export interface Generation2DatasetMetadata extends GenerationDatasetMetadata {
+  readonly generation: 2;
+  readonly sourceRatingsDatasetVersion: string;
+  readonly sourceRatingsDatasetSha256: string;
+  readonly fitnessPolicyVersion: string;
+  readonly phenotypeCompilerVersion: string;
 }

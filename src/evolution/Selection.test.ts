@@ -4,11 +4,16 @@ import ratingsJson from '../data/generation-0-ratings.v1.json';
 import type { MusicGenome } from '../genome/MusicGenome';
 import { SeededRng } from '../random/SeededRng';
 import { FITNESS_WEIGHTS, GENERATION_1_CONFIG } from './GenerationConfig';
-import type { CanonicalRatingsDataset } from './GenerationTypes';
-import { ratingMap, selectParentPair, selectionWeight } from './Selection';
+import { selectParentPair, selectionWeight } from './Selection';
 
 const founders = foundersJson as unknown as MusicGenome[];
-const ratings = ratingsJson as CanonicalRatingsDataset;
+const ratings = ratingsJson;
+const baseFitness = new Map(
+  ratings.ratings.map((rating) => [
+    rating.genomeId,
+    FITNESS_WEIGHTS[rating.score as keyof typeof FITNESS_WEIGHTS],
+  ]),
+);
 
 describe('generation 1 selection', () => {
   it('uses the canonical human fitness weights', () => {
@@ -19,17 +24,16 @@ describe('generation 1 selection', () => {
       '1': 1.5,
       '2': 3,
     });
-    expect(selectionWeight(founders[3], 2, 0, 0, GENERATION_1_CONFIG)).toBe(3);
+    expect(selectionWeight(founders[3], 3, 0, 0, GENERATION_1_CONFIG)).toBe(3);
   });
 
   it('selects deterministically while enforcing parent-use caps', () => {
     const select = () => {
       const usage = new Map<string, number>();
-      const scores = ratingMap(ratings.ratings);
       const pairs = Array.from({ length: 20 }, (_, index) =>
         selectParentPair(
           founders,
-          scores,
+          baseFitness,
           usage,
           GENERATION_1_CONFIG,
           new SeededRng(`selection-test:${index}`),

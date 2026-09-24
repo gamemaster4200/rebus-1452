@@ -39,8 +39,7 @@ export interface GenerationConfig {
   readonly targetGeneration: number;
   readonly masterSeed: string;
   readonly counts: GenerationCounts;
-  readonly fitnessWeights: Readonly<Record<FounderScore, number>>;
-  readonly eliteIds: readonly string[];
+  readonly eliteIds?: readonly string[];
   readonly maxParentUses: number;
   readonly minimumPairDistance: number;
 }
@@ -49,7 +48,6 @@ export const GENERATION_1_CONFIG: GenerationConfig = {
   targetGeneration: 1,
   masterSeed: GENERATION_1_MASTER_SEED,
   counts: GENERATION_1_COUNTS,
-  fitnessWeights: FITNESS_WEIGHTS,
   eliteIds: CANONICAL_ELITE_IDS,
   maxParentUses: 4,
   minimumPairDistance: 0.12,

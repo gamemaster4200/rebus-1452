@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest';
+import { createHash } from 'node:crypto';
+import { format } from 'prettier';
 import foundersJson from '../data/founders.v0.1.json';
 import generationJson from '../data/generation-1.v0.1.json';
 import ratingsJson from '../data/generation-0-ratings.v1.json';
@@ -47,6 +49,16 @@ describe('Generation 1', () => {
       ...Array<string>(4).fill('immigrant'),
     ]);
     expect(new Set(generated.map((genome) => genome.id)).size).toBe(42);
+  });
+
+  it('retains the byte-equivalent canonical dataset SHA after fitness refactor', async () => {
+    const generated = generateGeneration1(founders, ratings);
+    const serialized = await format(JSON.stringify(generated), {
+      parser: 'json',
+    });
+    expect(
+      createHash('sha256').update(serialized).digest('hex').toUpperCase(),
+    ).toBe('107825B6EB43023F82517DF51BAB436B0CD3052BE2363D45B4D080D2F42C9A18');
   });
 
   it('preserves the complete musical phenotype of every canonical elite', () => {
