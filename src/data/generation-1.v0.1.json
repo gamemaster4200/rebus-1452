@@ -3,7 +3,7 @@
     "version": "0.1",
     "id": "gen1-001",
     "family": "sparse-hypnotic",
-    "seed": "rebus-1452-generation-1-v1:gen1-001:elite",
+    "seed": "rebus-1452-founders-v1:004",
     "global": {
       "bpm": 120,
       "meter": [4, 4],
@@ -126,7 +126,7 @@
     "version": "0.1",
     "id": "gen1-002",
     "family": "driving",
-    "seed": "rebus-1452-generation-1-v1:gen1-002:elite",
+    "seed": "rebus-1452-founders-v1:013",
     "global": {
       "bpm": 120,
       "meter": [4, 4],
@@ -266,7 +266,7 @@
     "version": "0.1",
     "id": "gen1-003",
     "family": "driving",
-    "seed": "rebus-1452-generation-1-v1:gen1-003:elite",
+    "seed": "rebus-1452-founders-v1:017",
     "global": {
       "bpm": 120,
       "meter": [4, 4],
@@ -391,7 +391,7 @@
     "version": "0.1",
     "id": "gen1-004",
     "family": "driving",
-    "seed": "rebus-1452-generation-1-v1:gen1-004:elite",
+    "seed": "rebus-1452-founders-v1:018",
     "global": {
       "bpm": 120,
       "meter": [4, 4],
@@ -516,7 +516,7 @@
     "version": "0.1",
     "id": "gen1-005",
     "family": "percussion-led",
-    "seed": "rebus-1452-generation-1-v1:gen1-005:elite",
+    "seed": "rebus-1452-founders-v1:025",
     "global": {
       "bpm": 120,
       "meter": [4, 4],
@@ -663,7 +663,7 @@
     "version": "0.1",
     "id": "gen1-006",
     "family": "percussion-led",
-    "seed": "rebus-1452-generation-1-v1:gen1-006:elite",
+    "seed": "rebus-1452-founders-v1:029",
     "global": {
       "bpm": 120,
       "meter": [4, 4],
@@ -813,7 +813,7 @@
     "version": "0.1",
     "id": "gen1-007",
     "family": "wild-outliers",
-    "seed": "rebus-1452-generation-1-v1:gen1-007:elite",
+    "seed": "rebus-1452-founders-v1:037",
     "global": {
       "bpm": 120,
       "meter": [4, 4],

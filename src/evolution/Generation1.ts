@@ -61,15 +61,11 @@ function musicalFingerprint(genome: MusicGenome): string {
   });
 }
 
-function eliteFromFounder(
-  founder: MusicGenome,
-  index: number,
-  config: GenerationConfig,
-): MusicGenome {
+function eliteFromFounder(founder: MusicGenome, index: number): MusicGenome {
   return {
     ...structuredClone(withoutFounderIdentity(founder)),
     id: generationId(index),
-    seed: seedFor(index, 'elite', config),
+    seed: founder.seed,
     lineage: {
       parents: [founder.id],
       generation: 1,
@@ -163,7 +159,7 @@ export function generateGeneration1(
   const scores = ratingMap(ratings.ratings);
   const usage: ParentUseCounts = new Map();
   const population: MusicGenome[] = config.eliteIds.map((id, index) =>
-    eliteFromFounder(foundersById.get(id) as MusicGenome, index + 1, config),
+    eliteFromFounder(foundersById.get(id) as MusicGenome, index + 1),
   );
 
   for (let child = 0; child < config.counts.crossover; child += 1) {

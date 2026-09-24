@@ -15,6 +15,26 @@ const founders = foundersJson as unknown as MusicGenome[];
 const ratings = ratingsJson as unknown as CanonicalRatingsDataset;
 const canonical = generationJson as unknown as MusicGenome[];
 
+function musicalFingerprint(genome: MusicGenome): unknown {
+  return {
+    global: genome.global,
+    bass: genome.bass,
+    closedHat: genome.closedHat,
+    openHat: genome.openHat,
+    percussion: genome.percussion,
+    harmony: genome.harmony,
+    sound: genome.sound,
+    development: genome.development,
+    interaction: genome.interaction,
+    mutationStrategy: genome.mutationStrategy,
+  };
+}
+
+function compiledPhenotype(genome: MusicGenome): unknown {
+  const compiled = compileGenomeToStrudel(genome);
+  return { ...compiled, genomeId: '<identity-only>' };
+}
+
 describe('Generation 1', () => {
   it('regenerates the exact canonical 42-organism population', () => {
     const generated = generateGeneration1(founders, ratings);
@@ -29,14 +49,17 @@ describe('Generation 1', () => {
     expect(new Set(generated.map((genome) => genome.id)).size).toBe(42);
   });
 
-  it('preserves every canonical elite musical genome', () => {
+  it('preserves the complete musical phenotype of every canonical elite', () => {
     CANONICAL_ELITE_IDS.forEach((id, index) => {
       const founder = founders.find((genome) => genome.id === id);
       const elite = canonical[index];
+      expect(founder).toBeDefined();
+      if (!founder) throw new Error(`Missing canonical elite source ${id}.`);
+
       expect(elite.lineage.sourceGenomeId).toBe(id);
-      expect(elite.bass).toEqual(founder?.bass);
-      expect(elite.sound).toEqual(founder?.sound);
-      expect(elite.development).toEqual(founder?.development);
+      expect(musicalFingerprint(elite)).toEqual(musicalFingerprint(founder));
+      expect(elite.seed).toBe(founder.seed);
+      expect(compiledPhenotype(elite)).toEqual(compiledPhenotype(founder));
     });
   });
 
