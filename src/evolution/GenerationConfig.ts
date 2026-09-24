@@ -44,6 +44,8 @@ export interface GenerationConfig {
   readonly eliteIds?: readonly string[];
   readonly maxParentUses: number;
   readonly minimumPairDistance: number;
+  /** Founder family labels are diversity scaffolding only for G0 -> G1. */
+  readonly useFounderFamilyPressure: boolean;
 }
 
 export const GENERATION_1_CONFIG: GenerationConfig = {
@@ -53,6 +55,7 @@ export const GENERATION_1_CONFIG: GenerationConfig = {
   eliteIds: CANONICAL_ELITE_IDS,
   maxParentUses: 4,
   minimumPairDistance: 0.12,
+  useFounderFamilyPressure: true,
 };
 
 export const GENERATION_2_CONFIG: GenerationConfig = {
@@ -61,4 +64,5 @@ export const GENERATION_2_CONFIG: GenerationConfig = {
   counts: GENERATION_1_COUNTS,
   maxParentUses: 4,
   minimumPairDistance: 0.12,
+  useFounderFamilyPressure: false,
 };

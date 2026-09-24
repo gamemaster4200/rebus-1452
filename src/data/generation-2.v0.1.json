@@ -975,53 +975,64 @@
       "octave": 1,
       "steps": 8,
       "hits": [4, 5, 7],
-      "noteChoice": [0, 0, 0],
+      "noteChoice": [0, 0, 1],
       "accents": [0.94532, 0.488569, 0.748525],
       "noteLengths": [0.352084, 0.547601, 1.15518],
-      "gate": 0.576907,
+      "gate": 0.579767,
       "probability": 0.985984,
       "rotation": 4,
       "periodicVariation": null
     },
     "closedHat": {
       "mode": "grid",
-      "steps": 32,
-      "hits": [1, 3, 7, 8, 11, 13, 14, 19, 23, 24, 26, 27, 29, 30, 31],
+      "steps": 24,
+      "hits": [0, 1, 2, 3, 6, 7, 8, 10, 14, 18, 20, 21, 23],
       "accents": [
-        0.805597, 0.7733, 0.520552, 0.576535, 0.55698, 0.872891, 0.636167,
-        0.65069, 0.515316, 0.713305, 0.758553, 0.770082, 0.555307, 0.823514,
-        0.536054
+        0.977042, 0.572132, 0.74233, 0.750062, 0.638135, 0.784223, 0.975896,
+        0.536423, 0.706183, 0.729086, 0.883929, 0.704495, 0.740541
       ],
-      "density": 0.46875,
-      "probability": 0.805128,
-      "rotation": 0,
+      "density": 0.5416666666666666,
+      "probability": 0.850617,
+      "rotation": 3,
       "euclideanPulses": null,
-      "muteBars": [11]
+      "muteBars": []
     },
     "openHat": {
       "mode": "euclidean",
-      "steps": 8,
-      "hits": [7],
-      "accents": [0.776481],
-      "density": 0.125,
-      "probability": 0.786278,
-      "rotation": 1,
-      "euclideanPulses": 1,
-      "muteBars": [7]
+      "steps": 12,
+      "hits": [5, 6, 7, 10],
+      "accents": [0.77609, 0.67533, 0.744112, 0.54511],
+      "density": 0.3333333333333333,
+      "probability": 0.824327,
+      "rotation": -3,
+      "euclideanPulses": 4,
+      "muteBars": [12]
     },
     "percussion": {
       "layers": [
         {
+          "mode": "euclidean",
+          "steps": 20,
+          "hits": [1, 2, 5, 9],
+          "accents": [0.492582, 0.747543, 0.874816, 0.631231],
+          "density": 0.2,
+          "probability": 0.781063,
+          "rotation": -2,
+          "euclideanPulses": 4,
+          "muteBars": [6],
+          "instrument": "tom"
+        },
+        {
           "mode": "grid",
-          "steps": 8,
-          "hits": [2, 3, 5, 7],
-          "accents": [0.457667, 0.766764, 0.855196, 0.538919],
-          "density": 0.5,
-          "probability": 0.728555,
-          "rotation": 0,
+          "steps": 32,
+          "hits": [5, 14, 15, 18],
+          "accents": [0.658145, 0.541645, 0.472886, 0.822495],
+          "density": 0.125,
+          "probability": 0.686492,
+          "rotation": -2,
           "euclideanPulses": null,
-          "muteBars": [0],
-          "instrument": "cowbell"
+          "muteBars": [0, 13],
+          "instrument": "tom"
         }
       ]
     },
@@ -1046,14 +1057,14 @@
       "delayAmount": 0.123998
     },
     "development": {
-      "densityDelta": 0.225139,
+      "densityDelta": 0.078476,
       "bassVariation": true,
       "hatVariation": true,
-      "percussionChange": 1,
-      "filterMovement": 0.59167,
-      "probabilityDelta": 0.12499,
-      "rotationDelta": 5,
-      "energyDelta": 0.517525
+      "percussionChange": 0,
+      "filterMovement": 0.196112,
+      "probabilityDelta": 0.094989,
+      "rotationDelta": 1,
+      "energyDelta": 0.320312
     },
     "interaction": {
       "bassPercussionCoupling": -0.425661,
@@ -1062,18 +1073,18 @@
       "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.207092,
-      "mutationStrength": 0.453278,
-      "microWeight": 0.458921,
-      "mesoWeight": 0.277002,
-      "macroWeight": 0.264077,
-      "rhythmWeight": 0.316396,
-      "pitchWeight": 0.187607,
-      "soundWeight": 0.174425,
-      "developmentWeight": 0.321572
+      "mutationRate": 0.224465,
+      "mutationStrength": 0.471718,
+      "microWeight": 0.479403,
+      "mesoWeight": 0.246571,
+      "macroWeight": 0.274026,
+      "rhythmWeight": 0.244787,
+      "pitchWeight": 0.18676,
+      "soundWeight": 0.205276,
+      "developmentWeight": 0.363177
     },
     "lineage": {
-      "parents": ["gen1-028", "gen1-021"],
+      "parents": ["gen1-028", "gen1-019"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
@@ -1081,28 +1092,28 @@
         "founder-013",
         "founder-038",
         "gen1-028",
-        "founder-017",
-        "founder-028",
-        "gen1-021"
+        "founder-037",
+        "founder-034",
+        "gen1-019"
       ],
       "mutations": [
         {
-          "path": "percussion.layers[0].instrument",
+          "path": "percussion.layers[1].instrument",
           "mutationType": "percussion-layer-variation",
-          "before": "rim",
+          "before": "clap",
           "after": "tom",
           "scale": "meso",
           "category": "rhythm",
-          "strength": 0.317295
+          "strength": 0.330203
         },
         {
           "path": "bass.gate",
           "mutationType": "shift",
           "before": 0.506612,
-          "after": 0.576907,
+          "after": 0.579767,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.158647
+          "strength": 0.165101
         },
         {
           "path": "bass.pitchSet",
@@ -1111,16 +1122,16 @@
           "after": [0, 1],
           "scale": "macro",
           "category": "pitch",
-          "strength": 0.453278
+          "strength": 0.471718
         },
         {
-          "path": "percussion.layers[0].instrument",
-          "mutationType": "percussion-layer-variation",
-          "before": "tom",
-          "after": "cowbell",
+          "path": "bass.noteChoice[2]",
+          "mutationType": "note-choice-replace",
+          "before": 0,
+          "after": 1,
           "scale": "meso",
-          "category": "rhythm",
-          "strength": 0.317295
+          "category": "pitch",
+          "strength": 0.330203
         }
       ]
     }
@@ -1160,63 +1171,53 @@
         1.593209, 0.653514, 1.040725, 0.440061, 1.327836, 1.523812
       ],
       "gate": 0.13424,
-      "probability": 0.87804,
+      "probability": 0.898047,
       "rotation": 6,
       "periodicVariation": null
     },
     "closedHat": {
       "mode": "grid",
       "steps": 12,
-      "hits": [0, 9],
-      "accents": [0.898821, 0.55976],
-      "density": 0.16666666666666666,
-      "probability": 0.861455,
-      "rotation": -3,
+      "hits": [2, 6, 7, 8, 9, 11],
+      "accents": [0.856666, 0.837508, 0.736833, 0.69724, 0.760382, 0.61937],
+      "density": 0.5,
+      "probability": 0.95737,
+      "rotation": 0,
       "euclideanPulses": null,
       "muteBars": []
     },
     "openHat": {
-      "mode": "grid",
+      "mode": "euclidean",
       "steps": 24,
-      "hits": [14],
-      "accents": [0.622911],
-      "density": 0.041666666666666664,
-      "probability": 0.700816,
-      "rotation": -4,
-      "euclideanPulses": null,
-      "muteBars": [13, 14]
+      "hits": [2, 3, 13, 17, 19, 21, 22],
+      "accents": [
+        0.63086, 0.760263, 0.525369, 0.806842, 0.89944, 0.795333, 0.723593
+      ],
+      "density": 0.2916666666666667,
+      "probability": 0.76141,
+      "rotation": -1,
+      "euclideanPulses": 7,
+      "muteBars": []
     },
     "percussion": {
       "layers": [
         {
-          "mode": "grid",
-          "steps": 32,
-          "hits": [1, 2, 3, 5, 6, 7, 9, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27],
-          "accents": [
-            0.75908, 0.696484, 0.81099, 0.455028, 0.594475, 0.86185, 0.518753,
-            0.738312, 0.678701, 0.511722, 0.764499, 0.565022, 0.78123, 0.511749,
-            0.620579, 0.487624, 0.853579
-          ],
-          "density": 0.53125,
-          "probability": 0.68277,
-          "rotation": -1,
-          "euclideanPulses": null,
-          "muteBars": [12],
-          "instrument": "tom"
-        },
-        {
           "mode": "euclidean",
-          "steps": 20,
-          "hits": [3, 5, 6, 10, 14, 17, 18, 19],
-          "accents": [
-            0.458668, 0.684156, 0.783602, 0.798319, 0.744822, 0.490197, 0.78298,
-            0.683239
+          "steps": 32,
+          "hits": [
+            1, 2, 3, 5, 8, 10, 11, 12, 13, 14, 15, 18, 21, 22, 23, 24, 27, 28,
+            29, 30
           ],
-          "density": 0.4,
-          "probability": 0.75918,
-          "rotation": -1,
-          "euclideanPulses": 8,
-          "muteBars": [],
+          "accents": [
+            0.591238, 0.628424, 0.807579, 0.661428, 0.82227, 0.837236, 0.633599,
+            0.971382, 0.781282, 0.609473, 0.569204, 0.833871, 0.61443, 0.454586,
+            0.629757, 0.937199, 0.874642, 0.957315, 0.795959, 0.72645
+          ],
+          "density": 0.625,
+          "probability": 0.875692,
+          "rotation": 4,
+          "euclideanPulses": 20,
+          "muteBars": [5, 7],
           "instrument": "clap"
         }
       ]
@@ -1242,14 +1243,14 @@
       "delayAmount": 0.372597
     },
     "development": {
-      "densityDelta": 0.244338,
-      "bassVariation": true,
-      "hatVariation": true,
-      "percussionChange": 1,
-      "filterMovement": 0.327238,
-      "probabilityDelta": 0.139767,
+      "densityDelta": 0.108591,
+      "bassVariation": false,
+      "hatVariation": false,
+      "percussionChange": -1,
+      "filterMovement": 0.248369,
+      "probabilityDelta": 0.112384,
       "rotationDelta": 0,
-      "energyDelta": 0.402425
+      "energyDelta": 0.29818
     },
     "interaction": {
       "bassPercussionCoupling": -0.868932,
@@ -1258,22 +1259,22 @@
       "kickBassAvoidance": false
     },
     "mutationStrategy": {
-      "mutationRate": 0.205256,
-      "mutationStrength": 0.360104,
-      "microWeight": 0.508462,
-      "mesoWeight": 0.229604,
-      "macroWeight": 0.261934,
-      "rhythmWeight": 0.256138,
-      "pitchWeight": 0.225169,
-      "soundWeight": 0.237978,
-      "developmentWeight": 0.280715
+      "mutationRate": 0.125928,
+      "mutationStrength": 0.229015,
+      "microWeight": 0.507787,
+      "mesoWeight": 0.317784,
+      "macroWeight": 0.174429,
+      "rhythmWeight": 0.310405,
+      "pitchWeight": 0.161187,
+      "soundWeight": 0.213406,
+      "developmentWeight": 0.315002
     },
     "lineage": {
-      "parents": ["gen1-034", "gen1-042"],
+      "parents": ["gen1-033", "gen1-042"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
-      "ancestorIds": ["founder-040", "gen1-034", "gen1-042"],
+      "ancestorIds": ["founder-008", "gen1-033", "gen1-042"],
       "mutations": [
         {
           "path": "bass.rotation",
@@ -1282,34 +1283,25 @@
           "after": 6,
           "scale": "meso",
           "category": "rhythm",
-          "strength": 0.252073
+          "strength": 0.16031
         },
         {
           "path": "bass.probability",
           "mutationType": "shift",
           "before": 0.884413,
-          "after": 0.905851,
+          "after": 0.898047,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.126036
+          "strength": 0.080155
         },
         {
           "path": "development.energyDelta",
           "mutationType": "energy-shift",
-          "before": 0.440804,
-          "after": 0.402425,
+          "before": 0.322588,
+          "after": 0.29818,
           "scale": "micro",
           "category": "development",
-          "strength": 0.126036
-        },
-        {
-          "path": "bass.probability",
-          "mutationType": "shift",
-          "before": 0.905851,
-          "after": 0.87804,
-          "scale": "micro",
-          "category": "rhythm",
-          "strength": 0.126036
+          "strength": 0.080155
         }
       ]
     }
@@ -1491,7 +1483,7 @@
   {
     "version": "0.1",
     "id": "gen2-011",
-    "family": "groove-heavy",
+    "family": "percussion-led",
     "seed": "rebus-1452-generation-2-v1:gen2-011:crossover",
     "global": {
       "bpm": 120,
@@ -1511,55 +1503,50 @@
       "noteChoice": [0, 0, 0],
       "accents": [0.859498, 0.586803, 0.47495],
       "noteLengths": [0.259352, 0.264705, 0.454673],
-      "gate": 0.570975,
+      "gate": 0.574284,
       "probability": 0.849059,
       "rotation": -3,
       "periodicVariation": null
     },
     "closedHat": {
       "mode": "grid",
-      "steps": 12,
-      "hits": [2, 6, 7, 8, 9, 11],
-      "accents": [0.856666, 0.837508, 0.736833, 0.69724, 0.760382, 0.61937],
-      "density": 0.5,
-      "probability": 0.95737,
+      "steps": 32,
+      "hits": [1, 3, 7, 8, 11, 13, 14, 19, 23, 24, 26, 27, 29, 30, 31],
+      "accents": [
+        0.805597, 0.7733, 0.520552, 0.576535, 0.55698, 0.872891, 0.636167,
+        0.65069, 0.515316, 0.713305, 0.758553, 0.770082, 0.555307, 0.823514,
+        0.536054
+      ],
+      "density": 0.46875,
+      "probability": 0.805128,
       "rotation": 0,
       "euclideanPulses": null,
-      "muteBars": []
+      "muteBars": [11]
     },
     "openHat": {
       "mode": "euclidean",
-      "steps": 24,
-      "hits": [2, 3, 12, 13, 17, 21, 22],
-      "accents": [
-        0.63086, 0.760263, 0.827654, 0.525369, 0.806842, 0.795333, 0.723593
-      ],
-      "density": 0.2916666666666667,
-      "probability": 0.76141,
-      "rotation": -1,
-      "euclideanPulses": 7,
-      "muteBars": []
+      "steps": 8,
+      "hits": [7],
+      "accents": [0.776481],
+      "density": 0.125,
+      "probability": 0.786278,
+      "rotation": 1,
+      "euclideanPulses": 1,
+      "muteBars": [7]
     },
     "percussion": {
       "layers": [
         {
-          "mode": "euclidean",
-          "steps": 32,
-          "hits": [
-            1, 2, 3, 5, 8, 10, 11, 12, 13, 14, 15, 18, 21, 22, 23, 24, 27, 28,
-            29, 30
-          ],
-          "accents": [
-            0.591238, 0.628424, 0.807579, 0.661428, 0.82227, 0.837236, 0.633599,
-            0.971382, 0.781282, 0.609473, 0.569204, 0.833871, 0.61443, 0.454586,
-            0.629757, 0.937199, 0.874642, 0.957315, 0.795959, 0.72645
-          ],
-          "density": 0.625,
-          "probability": 0.875692,
-          "rotation": 4,
-          "euclideanPulses": 20,
-          "muteBars": [5, 7],
-          "instrument": "clap"
+          "mode": "grid",
+          "steps": 8,
+          "hits": [2, 3, 5, 7],
+          "accents": [0.457667, 0.766764, 0.855196, 0.538919],
+          "density": 0.5,
+          "probability": 0.728555,
+          "rotation": 0,
+          "euclideanPulses": null,
+          "muteBars": [0],
+          "instrument": "rim"
         }
       ]
     },
@@ -1584,14 +1571,14 @@
       "delayAmount": 0.317385
     },
     "development": {
-      "densityDelta": 0.108591,
+      "densityDelta": 0.225139,
       "bassVariation": true,
       "hatVariation": true,
-      "percussionChange": -1,
-      "filterMovement": 0.248369,
-      "probabilityDelta": 0.112384,
-      "rotationDelta": 0,
-      "energyDelta": 0.322588
+      "percussionChange": 1,
+      "filterMovement": 0.59167,
+      "probabilityDelta": 0.12499,
+      "rotationDelta": 5,
+      "energyDelta": 0.517525
     },
     "interaction": {
       "bassPercussionCoupling": -0.62848,
@@ -1600,25 +1587,25 @@
       "kickBassAvoidance": false
     },
     "mutationStrategy": {
-      "mutationRate": 0.170185,
-      "mutationStrength": 0.423379,
-      "microWeight": 0.43448,
-      "mesoWeight": 0.361235,
-      "macroWeight": 0.204285,
-      "rhythmWeight": 0.251841,
-      "pitchWeight": 0.128981,
-      "soundWeight": 0.262963,
-      "developmentWeight": 0.356215
+      "mutationRate": 0.200546,
+      "mutationStrength": 0.466878,
+      "microWeight": 0.422008,
+      "mesoWeight": 0.334677,
+      "macroWeight": 0.243315,
+      "rhythmWeight": 0.327359,
+      "pitchWeight": 0.134444,
+      "soundWeight": 0.210638,
+      "developmentWeight": 0.327559
     },
     "lineage": {
-      "parents": ["gen1-023", "gen1-005"],
+      "parents": ["gen1-021", "gen1-005"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
       "ancestorIds": [
-        "founder-005",
-        "founder-008",
-        "gen1-023",
+        "founder-017",
+        "founder-028",
+        "gen1-021",
         "founder-025",
         "gen1-005"
       ],
@@ -1627,19 +1614,19 @@
           "path": "bass.gate",
           "mutationType": "shift",
           "before": 0.538763,
-          "after": 0.570975,
+          "after": 0.574284,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.148183
+          "strength": 0.163407
         },
         {
           "path": "development.hatVariation",
           "mutationType": "development-variation",
-          "before": false,
-          "after": true,
+          "before": true,
+          "after": false,
           "scale": "meso",
           "category": "development",
-          "strength": 0.296365
+          "strength": 0.326815
         },
         {
           "path": "bass.root",
@@ -1648,7 +1635,16 @@
           "after": "D",
           "scale": "micro",
           "category": "pitch",
-          "strength": 0.148183
+          "strength": 0.163407
+        },
+        {
+          "path": "development.hatVariation",
+          "mutationType": "development-variation",
+          "before": false,
+          "after": true,
+          "scale": "meso",
+          "category": "development",
+          "strength": 0.326815
         }
       ]
     }
@@ -1994,7 +1990,7 @@
   {
     "version": "0.1",
     "id": "gen2-014",
-    "family": "bass-led",
+    "family": "sparse-hypnotic",
     "seed": "rebus-1452-generation-2-v1:gen2-014:crossover",
     "global": {
       "bpm": 120,
@@ -2006,26 +2002,18 @@
       "form": [8, 8]
     },
     "bass": {
-      "root": "G#",
-      "pitchSet": [0, 1, 3, 5, 6, 7, 10],
-      "octave": 1,
-      "steps": 24,
-      "hits": [0, 1, 2, 3, 5, 8, 9, 10, 11, 12, 13, 17, 18, 19, 21, 22, 23],
-      "noteChoice": [2, 0, 1, 1, 5, 3, 5, 3, 2, 1, 0, 1, 0, 5, 4, 2, 4],
-      "accents": [
-        0.722243, 0.619049, 0.571169, 0.804356, 0.521295, 0.853276, 0.560056,
-        0.704059, 0.877444, 0.575122, 0.671863, 0.579065, 0.772789, 0.637416,
-        0.56209, 0.578652, 0.612868
-      ],
-      "noteLengths": [
-        0.694412, 0.743346, 0.966439, 0.474713, 0.504546, 1.12642, 1.13246,
-        0.458871, 0.390934, 1.046362, 0.336426, 0.751905, 0.650768, 0.81454,
-        0.69864, 0.3335, 1.180147
-      ],
-      "gate": 0.752977,
-      "probability": 0.886679,
-      "rotation": -1,
-      "periodicVariation": null
+      "root": "C",
+      "pitchSet": [0, 3, 6],
+      "octave": 2,
+      "steps": 16,
+      "hits": [1, 4, 12],
+      "noteChoice": [1, 0, 1],
+      "accents": [0.549958, 0.997185, 0.918726],
+      "noteLengths": [0.413756, 0.594785, 1.049634],
+      "gate": 0.454877,
+      "probability": 0.867946,
+      "rotation": 3,
+      "periodicVariation": { "everyBars": 4, "rotation": 1 }
     },
     "closedHat": {
       "mode": "grid",
@@ -2075,24 +2063,24 @@
       ]
     },
     "harmony": {
-      "tonic": "G#",
-      "pitchCollection": [0, 1, 3, 5, 6, 7, 10],
+      "tonic": "C",
+      "pitchCollection": [0, 3, 6],
       "sectionBPitchShift": null
     },
     "sound": {
-      "oscillator": "square",
-      "filterCutoff": 5749.239735,
-      "resonance": 0.411191,
-      "drive": 0.472455,
+      "oscillator": "triangle",
+      "filterCutoff": 6137.347877,
+      "resonance": 0.245759,
+      "drive": 0.153894,
       "envelope": {
-        "attack": 0.074073,
-        "decay": 0.7158,
-        "sustain": 0.166849,
-        "release": 0.305026
+        "attack": 0.217896,
+        "decay": 0.275016,
+        "sustain": 0.351235,
+        "release": 0.796385
       },
-      "noiseAmount": 0.249731,
-      "reverbAmount": 0.313631,
-      "delayAmount": 0.265411
+      "noiseAmount": 0.136748,
+      "reverbAmount": 0.775804,
+      "delayAmount": 0.329383
     },
     "development": {
       "densityDelta": -0.253563,
@@ -2105,24 +2093,24 @@
       "energyDelta": -0.380636
     },
     "interaction": {
-      "bassPercussionCoupling": 0.836658,
-      "openHatPercussionDucking": 0.116046,
-      "accentAlignment": 0.750151,
+      "bassPercussionCoupling": 0.036311,
+      "openHatPercussionDucking": 0.170843,
+      "accentAlignment": 0.632146,
       "kickBassAvoidance": false
     },
     "mutationStrategy": {
-      "mutationRate": 0.140822,
-      "mutationStrength": 0.309024,
-      "microWeight": 0.496338,
-      "mesoWeight": 0.318198,
-      "macroWeight": 0.185464,
-      "rhythmWeight": 0.347704,
-      "pitchWeight": 0.143133,
-      "soundWeight": 0.263747,
-      "developmentWeight": 0.245416
+      "mutationRate": 0.157791,
+      "mutationStrength": 0.364694,
+      "microWeight": 0.42883,
+      "mesoWeight": 0.368041,
+      "macroWeight": 0.203129,
+      "rhythmWeight": 0.253539,
+      "pitchWeight": 0.137685,
+      "soundWeight": 0.302003,
+      "developmentWeight": 0.306773
     },
     "lineage": {
-      "parents": ["gen1-023", "gen1-025"],
+      "parents": ["gen1-023", "gen1-024"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
@@ -2130,28 +2118,27 @@
         "founder-005",
         "founder-008",
         "gen1-023",
-        "founder-006",
-        "founder-020",
-        "gen1-025"
+        "founder-036",
+        "gen1-024"
       ],
       "mutations": [
         {
-          "path": "bass.noteChoice[2]",
-          "mutationType": "note-choice-replace",
-          "before": 2,
-          "after": 1,
+          "path": "sound.oscillator",
+          "mutationType": "sound-family-shift",
+          "before": "sine",
+          "after": "triangle",
           "scale": "meso",
-          "category": "pitch",
-          "strength": 0.216317
+          "category": "sound",
+          "strength": 0.255286
         },
         {
           "path": "bass.pitchSet",
           "mutationType": "pitch-set-variation",
-          "before": [0, 1, 3, 5, 7, 10],
-          "after": [0, 1, 3, 5, 6, 7, 10],
+          "before": [0, 3],
+          "after": [0, 3, 6],
           "scale": "macro",
           "category": "pitch",
-          "strength": 0.309024
+          "strength": 0.364694
         },
         {
           "path": "development",
@@ -2178,7 +2165,7 @@
           },
           "scale": "macro",
           "category": "development",
-          "strength": 0.309024
+          "strength": 0.364694
         }
       ]
     }
@@ -2197,7 +2184,7 @@
       "form": [8, 8]
     },
     "bass": {
-      "root": "G",
+      "root": "G#",
       "pitchSet": [0],
       "octave": 1,
       "steps": 8,
@@ -2212,54 +2199,41 @@
     },
     "closedHat": {
       "mode": "grid",
-      "steps": 8,
-      "hits": [0, 4, 5, 6],
-      "accents": [0.749846, 0.589828, 0.517059, 0.799443],
-      "density": 0.5,
-      "probability": 0.978094,
-      "rotation": -1,
+      "steps": 20,
+      "hits": [2, 6, 9, 11, 16, 18, 19],
+      "accents": [
+        0.872785, 0.611248, 0.578992, 0.875691, 0.628445, 0.50575, 0.635251
+      ],
+      "density": 0.35,
+      "probability": 0.621727,
+      "rotation": 5,
       "euclideanPulses": null,
-      "muteBars": []
+      "muteBars": [4, 6, 11]
     },
     "openHat": {
-      "mode": "grid",
-      "steps": 12,
-      "hits": [0, 4, 8, 11],
-      "accents": [0.912859, 0.559876, 0.919489, 0.544043],
-      "density": 0.3333333333333333,
-      "probability": 0.688732,
-      "rotation": -7,
-      "euclideanPulses": null,
-      "muteBars": []
+      "mode": "euclidean",
+      "steps": 32,
+      "hits": [2, 10, 11, 15, 19, 23],
+      "accents": [0.706557, 0.412668, 0.546293, 0.878182, 0.623155, 0.615403],
+      "density": 0.1875,
+      "probability": 0.769099,
+      "rotation": -5,
+      "euclideanPulses": 6,
+      "muteBars": [2, 6, 13]
     },
     "percussion": {
       "layers": [
         {
-          "mode": "grid",
-          "steps": 8,
-          "hits": [0, 4, 5],
-          "accents": [0.950316, 0.538173, 0.86932],
-          "density": 0.375,
-          "probability": 0.693089,
-          "rotation": 6,
-          "euclideanPulses": null,
-          "muteBars": [4, 12],
-          "instrument": "cowbell"
-        },
-        {
           "mode": "euclidean",
-          "steps": 32,
-          "hits": [0, 5, 8, 12, 13, 20, 24, 26, 27],
-          "accents": [
-            0.914756, 0.571258, 0.737411, 0.670583, 0.525756, 0.551511,
-            0.831639, 0.473863, 0.804232
-          ],
-          "density": 0.28125,
-          "probability": 0.912886,
-          "rotation": 4,
-          "euclideanPulses": 9,
-          "muteBars": [14],
-          "instrument": "rim"
+          "steps": 8,
+          "hits": [3],
+          "accents": [0.901619],
+          "density": 0.125,
+          "probability": 0.570961,
+          "rotation": -5,
+          "euclideanPulses": 1,
+          "muteBars": [1],
+          "instrument": "tom"
         }
       ]
     },
@@ -2284,14 +2258,14 @@
       "delayAmount": 0.123998
     },
     "development": {
-      "densityDelta": -0.191797,
+      "densityDelta": 0.289954,
       "bassVariation": false,
-      "hatVariation": true,
-      "percussionChange": -1,
-      "filterMovement": -0.172732,
-      "probabilityDelta": -0.224415,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": 0.305241,
+      "probabilityDelta": 0.162496,
       "rotationDelta": -6,
-      "energyDelta": -0.493973
+      "energyDelta": 0.170416
     },
     "interaction": {
       "bassPercussionCoupling": -0.425661,
@@ -2300,22 +2274,22 @@
       "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.174947,
-      "mutationStrength": 0.357445,
-      "microWeight": 0.548337,
-      "mesoWeight": 0.22305,
-      "macroWeight": 0.228613,
-      "rhythmWeight": 0.297037,
-      "pitchWeight": 0.160511,
-      "soundWeight": 0.20982,
-      "developmentWeight": 0.332632
+      "mutationRate": 0.170039,
+      "mutationStrength": 0.61111,
+      "microWeight": 0.58476,
+      "mesoWeight": 0.264447,
+      "macroWeight": 0.150793,
+      "rhythmWeight": 0.283113,
+      "pitchWeight": 0.185046,
+      "soundWeight": 0.178475,
+      "developmentWeight": 0.353366
     },
     "lineage": {
-      "parents": ["gen1-028", "gen1-042"],
+      "parents": ["gen1-028", "gen1-041"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
-      "ancestorIds": ["founder-013", "founder-038", "gen1-028", "gen1-042"],
+      "ancestorIds": ["founder-013", "founder-038", "gen1-028", "gen1-041"],
       "mutations": [
         {
           "path": "bass.root",
@@ -2324,16 +2298,16 @@
           "after": "G#",
           "scale": "micro",
           "category": "pitch",
-          "strength": 0.125106
+          "strength": 0.213889
         },
         {
           "path": "development.rotationDelta",
           "mutationType": "development-variation",
-          "before": -3,
+          "before": 3,
           "after": -6,
           "scale": "meso",
           "category": "development",
-          "strength": 0.250211
+          "strength": 0.427777
         },
         {
           "path": "bass.root",
@@ -2342,7 +2316,16 @@
           "after": "G",
           "scale": "micro",
           "category": "pitch",
-          "strength": 0.125106
+          "strength": 0.213889
+        },
+        {
+          "path": "bass.root",
+          "mutationType": "semitone-shift",
+          "before": "G",
+          "after": "G#",
+          "scale": "micro",
+          "category": "pitch",
+          "strength": 0.213889
         }
       ]
     }
@@ -2350,7 +2333,7 @@
   {
     "version": "0.1",
     "id": "gen2-016",
-    "family": "bass-led",
+    "family": "dark-industrial",
     "seed": "rebus-1452-generation-2-v1:gen2-016:crossover",
     "global": {
       "bpm": 120,
@@ -2362,400 +2345,24 @@
       "form": [8, 8]
     },
     "bass": {
-      "root": "A",
-      "pitchSet": [0, 3, 9],
-      "octave": 2,
-      "steps": 8,
-      "hits": [3, 5, 7],
-      "noteChoice": [1, 1, 1],
-      "accents": [0.753725, 0.491915, 0.832012],
-      "noteLengths": [0.314689, 0.73877, 0.557398],
-      "gate": 0.755703,
-      "probability": 0.855544,
-      "rotation": 0,
-      "periodicVariation": { "everyBars": 8, "rotation": 2 }
-    },
-    "closedHat": {
-      "mode": "euclidean",
-      "steps": 24,
-      "hits": [0, 1, 2, 3, 7, 8, 9, 10, 14, 18, 23],
-      "accents": [
-        0.631871, 0.588868, 0.516953, 0.674352, 0.823006, 0.666886, 0.558824,
-        0.733672, 0.664226, 0.530351, 0.489379
-      ],
-      "density": 0.4583333333333333,
-      "probability": 0.973992,
-      "rotation": 1,
-      "euclideanPulses": 11,
-      "muteBars": [9]
-    },
-    "openHat": {
-      "mode": "grid",
-      "steps": 24,
-      "hits": [2, 7, 14, 17, 21, 22],
-      "accents": [0.555677, 0.630124, 0.815177, 0.73268, 0.581077, 0.600728],
-      "density": 0.25,
-      "probability": 0.760766,
-      "rotation": -2,
-      "euclideanPulses": null,
-      "muteBars": []
-    },
-    "percussion": {
-      "layers": [
-        {
-          "mode": "euclidean",
-          "steps": 24,
-          "hits": [2, 5, 6, 9, 13, 15, 17, 18, 19, 20, 21, 22, 23],
-          "accents": [
-            0.523506, 0.659983, 0.868346, 0.580024, 0.548396, 0.542295,
-            0.850434, 0.614737, 0.819253, 0.690989, 0.723871, 0.811488, 0.590878
-          ],
-          "density": 0.5416666666666666,
-          "probability": 0.732597,
-          "rotation": -2,
-          "euclideanPulses": 13,
-          "muteBars": [5, 12],
-          "instrument": "noise"
-        }
-      ]
-    },
-    "harmony": {
-      "tonic": "A",
-      "pitchCollection": [0, 3, 9],
-      "sectionBPitchShift": null
-    },
-    "sound": {
-      "oscillator": "triangle",
-      "filterCutoff": 8546.583674,
-      "resonance": 0.127578,
-      "drive": 0.23613,
-      "envelope": {
-        "attack": 0.063395,
-        "decay": 0.656402,
-        "sustain": 0.362211,
-        "release": 0.774084
-      },
-      "noiseAmount": 0.221974,
-      "reverbAmount": 0.312737,
-      "delayAmount": 0.166832
-    },
-    "development": {
-      "densityDelta": 0.236694,
-      "bassVariation": true,
-      "hatVariation": false,
-      "percussionChange": 1,
-      "filterMovement": 0.435896,
-      "probabilityDelta": 0.055311,
-      "rotationDelta": 1,
-      "energyDelta": 0.598885
-    },
-    "interaction": {
-      "bassPercussionCoupling": -0.351306,
-      "openHatPercussionDucking": 0.167463,
-      "accentAlignment": 0.757112,
-      "kickBassAvoidance": true
-    },
-    "mutationStrategy": {
-      "mutationRate": 0.201464,
-      "mutationStrength": 0.462399,
-      "microWeight": 0.489194,
-      "mesoWeight": 0.272913,
-      "macroWeight": 0.237893,
-      "rhythmWeight": 0.320393,
-      "pitchWeight": 0.181495,
-      "soundWeight": 0.214337,
-      "developmentWeight": 0.283775
-    },
-    "lineage": {
-      "parents": ["gen1-020", "gen1-028"],
-      "generation": 2,
-      "isFounder": false,
-      "originType": "crossover",
-      "ancestorIds": [
-        "founder-024",
-        "founder-007",
-        "gen1-020",
-        "founder-013",
-        "founder-038",
-        "gen1-028"
-      ],
-      "mutations": [
-        {
-          "path": "sound.filterCutoff",
-          "mutationType": "filter-shift",
-          "before": 7381.773615,
-          "after": 8546.583674,
-          "scale": "micro",
-          "category": "sound",
-          "strength": 0.16184
-        },
-        {
-          "path": "development.percussionChange",
-          "mutationType": "development-variation",
-          "before": 0,
-          "after": 1,
-          "scale": "meso",
-          "category": "development",
-          "strength": 0.323679
-        },
-        {
-          "path": "percussion.layers",
-          "mutationType": "percussion-layer-remove",
-          "before": [
-            {
-              "mode": "grid",
-              "steps": 12,
-              "hits": [0, 1, 2, 3, 5, 7, 8, 9, 10],
-              "accents": [
-                0.898278, 0.86617, 0.558845, 0.61133, 0.633337, 0.472493,
-                0.743488, 0.80539, 0.717942
-              ],
-              "density": 0.75,
-              "probability": 0.740598,
-              "rotation": 3,
-              "euclideanPulses": null,
-              "muteBars": [],
-              "instrument": "noise"
-            },
-            {
-              "mode": "euclidean",
-              "steps": 24,
-              "hits": [2, 5, 6, 9, 13, 15, 17, 18, 19, 20, 21, 22, 23],
-              "accents": [
-                0.523506, 0.659983, 0.868346, 0.580024, 0.548396, 0.542295,
-                0.850434, 0.614737, 0.819253, 0.690989, 0.723871, 0.811488,
-                0.590878
-              ],
-              "density": 0.5416666666666666,
-              "probability": 0.732597,
-              "rotation": -2,
-              "euclideanPulses": 13,
-              "muteBars": [5, 12],
-              "instrument": "noise"
-            }
-          ],
-          "after": [
-            {
-              "mode": "euclidean",
-              "steps": 24,
-              "hits": [2, 5, 6, 9, 13, 15, 17, 18, 19, 20, 21, 22, 23],
-              "accents": [
-                0.523506, 0.659983, 0.868346, 0.580024, 0.548396, 0.542295,
-                0.850434, 0.614737, 0.819253, 0.690989, 0.723871, 0.811488,
-                0.590878
-              ],
-              "density": 0.5416666666666666,
-              "probability": 0.732597,
-              "rotation": -2,
-              "euclideanPulses": 13,
-              "muteBars": [5, 12],
-              "instrument": "noise"
-            }
-          ],
-          "scale": "macro",
-          "category": "rhythm",
-          "strength": 0.462399
-        },
-        {
-          "path": "bass.probability",
-          "mutationType": "shift",
-          "before": 0.895925,
-          "after": 0.855544,
-          "scale": "micro",
-          "category": "rhythm",
-          "strength": 0.16184
-        }
-      ]
-    }
-  },
-  {
-    "version": "0.1",
-    "id": "gen2-017",
-    "family": "bass-led",
-    "seed": "rebus-1452-generation-2-v1:gen2-017:crossover",
-    "global": {
-      "bpm": 120,
-      "meter": [4, 4],
-      "bars": 16,
-      "beatsPerBar": 4,
-      "stepsPerBeat": 4,
-      "kick": "four-on-the-floor",
-      "form": [8, 8]
-    },
-    "bass": {
       "root": "F#",
-      "pitchSet": [0, 3],
-      "octave": 3,
-      "steps": 8,
-      "hits": [2, 4, 6, 7],
-      "noteChoice": [1, 1, 1, 1],
-      "accents": [0.864496, 0.463457, 0.785872, 0.937281],
-      "noteLengths": [0.977791, 0.298329, 0.697226, 0.90288],
-      "gate": 0.811915,
-      "probability": 0.976613,
-      "rotation": -3,
-      "periodicVariation": null
-    },
-    "closedHat": {
-      "mode": "grid",
-      "steps": 20,
-      "hits": [3, 8, 12, 13, 14, 18, 19],
-      "accents": [
-        0.553845, 0.924313, 0.74323, 0.554291, 0.830291, 0.878354, 0.724761
-      ],
-      "density": 0.35,
-      "probability": 0.859669,
-      "rotation": -1,
-      "euclideanPulses": null,
-      "muteBars": [4]
-    },
-    "openHat": {
-      "mode": "euclidean",
-      "steps": 8,
-      "hits": [3],
-      "accents": [0.843607],
-      "density": 0.125,
-      "probability": 0.783792,
-      "rotation": 4,
-      "euclideanPulses": 1,
-      "muteBars": [7, 9]
-    },
-    "percussion": {
-      "layers": [
-        {
-          "mode": "grid",
-          "steps": 20,
-          "hits": [0, 6, 8, 14, 17],
-          "accents": [0.741503, 0.472276, 0.813309, 0.575964, 0.605003],
-          "density": 0.25,
-          "probability": 0.846299,
-          "rotation": 0,
-          "euclideanPulses": null,
-          "muteBars": [5, 6],
-          "instrument": "cowbell"
-        }
-      ]
-    },
-    "harmony": {
-      "tonic": "F#",
-      "pitchCollection": [0, 3],
-      "sectionBPitchShift": null
-    },
-    "sound": {
-      "oscillator": "noise-blend",
-      "filterCutoff": 5925.067499,
-      "resonance": 0.358307,
-      "drive": 0.517474,
-      "envelope": {
-        "attack": 0.001,
-        "decay": 0.500551,
-        "sustain": 0.689879,
-        "release": 0.02
-      },
-      "noiseAmount": 0.262403,
-      "reverbAmount": 0.223805,
-      "delayAmount": 0.176118
-    },
-    "development": {
-      "densityDelta": 0.173192,
-      "bassVariation": true,
-      "hatVariation": true,
-      "percussionChange": 1,
-      "filterMovement": 0.159999,
-      "probabilityDelta": 0.152916,
-      "rotationDelta": 2,
-      "energyDelta": 0.40857
-    },
-    "interaction": {
-      "bassPercussionCoupling": -0.387577,
-      "openHatPercussionDucking": 0.093318,
-      "accentAlignment": 0.817713,
-      "kickBassAvoidance": true
-    },
-    "mutationStrategy": {
-      "mutationRate": 0.187003,
-      "mutationStrength": 0.368649,
-      "microWeight": 0.437962,
-      "mesoWeight": 0.313159,
-      "macroWeight": 0.248879,
-      "rhythmWeight": 0.310781,
-      "pitchWeight": 0.197857,
-      "soundWeight": 0.287163,
-      "developmentWeight": 0.204199
-    },
-    "lineage": {
-      "parents": ["gen1-009", "gen1-016"],
-      "generation": 2,
-      "isFounder": false,
-      "originType": "crossover",
-      "ancestorIds": [
-        "founder-013",
-        "founder-021",
-        "gen1-009",
-        "founder-029",
-        "founder-028",
-        "gen1-016"
-      ],
-      "mutations": [
-        {
-          "path": "development.energyDelta",
-          "mutationType": "energy-shift",
-          "before": 0.360056,
-          "after": 0.40857,
-          "scale": "micro",
-          "category": "development",
-          "strength": 0.129027
-        },
-        {
-          "path": "percussion.layers[0].instrument",
-          "mutationType": "percussion-layer-variation",
-          "before": "clap",
-          "after": "cowbell",
-          "scale": "meso",
-          "category": "rhythm",
-          "strength": 0.258054
-        },
-        {
-          "path": "sound.envelope.attack",
-          "mutationType": "envelope-shift",
-          "before": 0.007088,
-          "after": 0.001,
-          "scale": "micro",
-          "category": "sound",
-          "strength": 0.129027
-        }
-      ]
-    }
-  },
-  {
-    "version": "0.1",
-    "id": "gen2-018",
-    "family": "sparse-hypnotic",
-    "seed": "rebus-1452-generation-2-v1:gen2-018:crossover",
-    "global": {
-      "bpm": 120,
-      "meter": [4, 4],
-      "bars": 16,
-      "beatsPerBar": 4,
-      "stepsPerBeat": 4,
-      "kick": "four-on-the-floor",
-      "form": [8, 8]
-    },
-    "bass": {
-      "root": "F#",
-      "pitchSet": [0, 3],
+      "pitchSet": [0, 2, 3],
       "octave": 2,
       "steps": 32,
-      "hits": [3, 6, 10, 22, 23, 29],
-      "noteChoice": [0, 0, 0, 0, 0, 0],
-      "accents": [0.801518, 0.641963, 0.498127, 0.720163, 0.844473, 0.654905],
-      "noteLengths": [
-        0.248584, 0.856089, 0.901152, 0.302052, 0.394743, 0.18272
+      "hits": [0, 1, 5, 7, 12, 15, 17, 19, 20, 21, 23, 28, 29],
+      "noteChoice": [2, 2, 2, 1, 0, 0, 1, 1, 2, 0, 0, 0, 0],
+      "accents": [
+        0.601809, 0.827523, 0.82907, 0.81761, 0.898668, 0.566576, 0.693069,
+        0.464728, 0.590125, 0.665492, 0.527092, 0.895371, 0.869667
       ],
-      "gate": 0.812425,
-      "probability": 0.861863,
-      "rotation": 3,
-      "periodicVariation": { "everyBars": 8, "rotation": 2 }
+      "noteLengths": [
+        0.615446, 1.037639, 0.863927, 1.180736, 0.535767, 0.551249, 0.778203,
+        0.779745, 0.210026, 1.043167, 0.60484, 1.046166, 0.295294
+      ],
+      "gate": 0.384174,
+      "probability": 0.720204,
+      "rotation": -3,
+      "periodicVariation": null
     },
     "closedHat": {
       "mode": "grid",
@@ -2796,6 +2403,244 @@
           "euclideanPulses": 6,
           "muteBars": [15],
           "instrument": "tom"
+        },
+        {
+          "mode": "euclidean",
+          "steps": 32,
+          "hits": [7, 9, 10, 15, 23, 29],
+          "accents": [
+            0.672178, 0.702567, 0.524089, 0.655616, 0.765427, 0.75221
+          ],
+          "density": 0.1875,
+          "probability": 0.769664,
+          "rotation": 1,
+          "euclideanPulses": 6,
+          "muteBars": [15],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "F#",
+      "pitchCollection": [0, 2, 3],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "sine",
+      "filterCutoff": 3411.345937,
+      "resonance": 0.556048,
+      "drive": 0.739632,
+      "envelope": {
+        "attack": 0.058617,
+        "decay": 0.06208,
+        "sustain": 0.536999,
+        "release": 0.180944
+      },
+      "noiseAmount": 0.55847,
+      "reverbAmount": 0.211138,
+      "delayAmount": 0.173489
+    },
+    "development": {
+      "densityDelta": 0.076572,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 1,
+      "filterMovement": 0.079319,
+      "probabilityDelta": 0.025948,
+      "rotationDelta": 0,
+      "energyDelta": 0.168949
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.486769,
+      "openHatPercussionDucking": 0.06827,
+      "accentAlignment": 0.30116,
+      "kickBassAvoidance": false
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.213624,
+      "mutationStrength": 0.500986,
+      "microWeight": 0.437591,
+      "mesoWeight": 0.277064,
+      "macroWeight": 0.285345,
+      "rhythmWeight": 0.275887,
+      "pitchWeight": 0.172432,
+      "soundWeight": 0.227089,
+      "developmentWeight": 0.324592
+    },
+    "lineage": {
+      "parents": ["gen1-019", "gen1-027"],
+      "generation": 2,
+      "isFounder": false,
+      "originType": "crossover",
+      "ancestorIds": [
+        "founder-037",
+        "founder-034",
+        "gen1-019",
+        "founder-041",
+        "founder-003",
+        "gen1-027"
+      ],
+      "mutations": [
+        {
+          "path": "sound.filterCutoff",
+          "mutationType": "filter-shift",
+          "before": 2149.332974,
+          "after": 3411.345937,
+          "scale": "micro",
+          "category": "sound",
+          "strength": 0.175345
+        },
+        {
+          "path": "development.percussionChange",
+          "mutationType": "development-variation",
+          "before": -1,
+          "after": 1,
+          "scale": "meso",
+          "category": "development",
+          "strength": 0.35069
+        },
+        {
+          "path": "percussion.layers",
+          "mutationType": "percussion-layer-add",
+          "before": [
+            {
+              "mode": "euclidean",
+              "steps": 32,
+              "hits": [4, 6, 7, 12, 20, 26],
+              "accents": [
+                0.672178, 0.702567, 0.524089, 0.655616, 0.765427, 0.75221
+              ],
+              "density": 0.1875,
+              "probability": 0.769664,
+              "rotation": 3,
+              "euclideanPulses": 6,
+              "muteBars": [15],
+              "instrument": "tom"
+            }
+          ],
+          "after": [
+            {
+              "mode": "euclidean",
+              "steps": 32,
+              "hits": [4, 6, 7, 12, 20, 26],
+              "accents": [
+                0.672178, 0.702567, 0.524089, 0.655616, 0.765427, 0.75221
+              ],
+              "density": 0.1875,
+              "probability": 0.769664,
+              "rotation": 3,
+              "euclideanPulses": 6,
+              "muteBars": [15],
+              "instrument": "tom"
+            },
+            {
+              "mode": "euclidean",
+              "steps": 32,
+              "hits": [7, 9, 10, 15, 23, 29],
+              "accents": [
+                0.672178, 0.702567, 0.524089, 0.655616, 0.765427, 0.75221
+              ],
+              "density": 0.1875,
+              "probability": 0.769664,
+              "rotation": 1,
+              "euclideanPulses": 6,
+              "muteBars": [15],
+              "instrument": "rim"
+            }
+          ],
+          "scale": "macro",
+          "category": "rhythm",
+          "strength": 0.500986
+        },
+        {
+          "path": "bass.noteChoice[6]",
+          "mutationType": "note-choice-shift",
+          "before": 2,
+          "after": 1,
+          "scale": "micro",
+          "category": "pitch",
+          "strength": 0.175345
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "gen2-017",
+    "family": "percussion-led",
+    "seed": "rebus-1452-generation-2-v1:gen2-017:crossover",
+    "global": {
+      "bpm": 120,
+      "meter": [4, 4],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [8, 8]
+    },
+    "bass": {
+      "root": "F#",
+      "pitchSet": [0, 3],
+      "octave": 3,
+      "steps": 8,
+      "hits": [2, 4, 6, 7],
+      "noteChoice": [1, 1, 0, 1],
+      "accents": [0.864496, 0.463457, 0.785872, 0.937281],
+      "noteLengths": [0.977791, 0.298329, 0.697226, 0.90288],
+      "gate": 0.811915,
+      "probability": 0.976613,
+      "rotation": -3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 12,
+      "hits": [0, 2, 5, 7, 8, 9],
+      "accents": [0.98068, 0.624146, 0.826068, 0.563304, 0.765935, 0.641784],
+      "density": 0.5,
+      "probability": 0.92797,
+      "rotation": -4,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 20,
+      "hits": [4, 7, 10, 13, 18],
+      "accents": [0.857464, 0.67299, 0.520928, 0.487326, 0.617143],
+      "density": 0.25,
+      "probability": 0.954491,
+      "rotation": -1,
+      "euclideanPulses": null,
+      "muteBars": [15]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "euclidean",
+          "steps": 20,
+          "hits": [3, 6, 11, 12, 13, 15, 17],
+          "accents": [
+            0.517384, 0.506336, 0.772534, 0.841838, 0.600913, 0.70315, 0.550371
+          ],
+          "density": 0.35,
+          "probability": 0.894854,
+          "rotation": 1,
+          "euclideanPulses": 7,
+          "muteBars": [3],
+          "instrument": "rim"
+        },
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [1, 5],
+          "accents": [0.873829, 0.858235],
+          "density": 0.25,
+          "probability": 0.7137,
+          "rotation": -3,
+          "euclideanPulses": null,
+          "muteBars": [10],
+          "instrument": "cowbell"
         }
       ]
     },
@@ -2805,95 +2650,295 @@
       "sectionBPitchShift": null
     },
     "sound": {
-      "oscillator": "sine",
-      "filterCutoff": 7081.856204,
-      "resonance": 0.113285,
-      "drive": 0.192223,
+      "oscillator": "noise-blend",
+      "filterCutoff": 5925.067499,
+      "resonance": 0.358307,
+      "drive": 0.517474,
       "envelope": {
-        "attack": 0.008534,
-        "decay": 0.240838,
-        "sustain": 0.41948,
-        "release": 0.93838
+        "attack": 0.001,
+        "decay": 0.500551,
+        "sustain": 0.689879,
+        "release": 0.02
       },
-      "noiseAmount": 0.150266,
-      "reverbAmount": 0.521894,
-      "delayAmount": 0.312492
+      "noiseAmount": 0.262403,
+      "reverbAmount": 0.223805,
+      "delayAmount": 0.176118
     },
     "development": {
-      "densityDelta": 0.076572,
+      "densityDelta": 0.147087,
       "bassVariation": true,
-      "hatVariation": false,
-      "percussionChange": -1,
-      "filterMovement": 0.079319,
-      "probabilityDelta": 0.025948,
-      "rotationDelta": -4,
-      "energyDelta": 0.168949
+      "hatVariation": true,
+      "percussionChange": 0,
+      "filterMovement": 0.094863,
+      "probabilityDelta": 0.04836,
+      "rotationDelta": 0,
+      "energyDelta": 0.185691
     },
     "interaction": {
-      "bassPercussionCoupling": -0.68948,
-      "openHatPercussionDucking": 0.236734,
-      "accentAlignment": 0.399058,
-      "kickBassAvoidance": false
+      "bassPercussionCoupling": -0.387577,
+      "openHatPercussionDucking": 0.093318,
+      "accentAlignment": 0.817713,
+      "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.257239,
-      "mutationStrength": 0.545882,
-      "microWeight": 0.486474,
-      "mesoWeight": 0.319586,
-      "macroWeight": 0.19394,
-      "rhythmWeight": 0.313158,
-      "pitchWeight": 0.185218,
-      "soundWeight": 0.204933,
-      "developmentWeight": 0.296691
+      "mutationRate": 0.241536,
+      "mutationStrength": 0.491363,
+      "microWeight": 0.46467,
+      "mesoWeight": 0.340044,
+      "macroWeight": 0.195286,
+      "rhythmWeight": 0.322859,
+      "pitchWeight": 0.158838,
+      "soundWeight": 0.291148,
+      "developmentWeight": 0.227155
     },
     "lineage": {
-      "parents": ["gen1-027", "gen1-007"],
+      "parents": ["gen1-008", "gen1-016"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
       "ancestorIds": [
-        "founder-041",
-        "founder-003",
-        "gen1-027",
-        "founder-037",
-        "gen1-007"
+        "founder-029",
+        "founder-031",
+        "gen1-008",
+        "founder-028",
+        "gen1-016"
+      ],
+      "mutations": [
+        {
+          "path": "development.energyDelta",
+          "mutationType": "energy-shift",
+          "before": 0.121028,
+          "after": 0.185691,
+          "scale": "micro",
+          "category": "development",
+          "strength": 0.171977
+        },
+        {
+          "path": "percussion.layers[1].instrument",
+          "mutationType": "percussion-layer-variation",
+          "before": "tom",
+          "after": "cowbell",
+          "scale": "meso",
+          "category": "rhythm",
+          "strength": 0.343954
+        },
+        {
+          "path": "sound.envelope.attack",
+          "mutationType": "envelope-shift",
+          "before": 0.007088,
+          "after": 0.001,
+          "scale": "micro",
+          "category": "sound",
+          "strength": 0.171977
+        },
+        {
+          "path": "bass.noteChoice[2]",
+          "mutationType": "note-choice-shift",
+          "before": 1,
+          "after": 0,
+          "scale": "micro",
+          "category": "pitch",
+          "strength": 0.171977
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "gen2-018",
+    "family": "driving",
+    "seed": "rebus-1452-generation-2-v1:gen2-018:crossover",
+    "global": {
+      "bpm": 120,
+      "meter": [4, 4],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [8, 8]
+    },
+    "bass": {
+      "root": "B",
+      "pitchSet": [0, 3],
+      "octave": 2,
+      "steps": 32,
+      "hits": [2, 9, 11, 13, 18, 19, 21, 31],
+      "noteChoice": [0, 0, 1, 1, 0, 0, 0, 1],
+      "accents": [
+        0.824168, 0.730927, 0.479403, 0.845752, 0.817106, 0.473483, 0.617146,
+        0.463048
+      ],
+      "noteLengths": [
+        0.91271, 0.665473, 0.379026, 0.299919, 0.650383, 0.766676, 0.986575,
+        0.990745
+      ],
+      "gate": 0.919578,
+      "probability": 0.883975,
+      "rotation": -3,
+      "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 24,
+      "hits": [0, 1, 2, 3, 7, 8, 9, 10, 14, 18, 23],
+      "accents": [
+        0.631871, 0.588868, 0.516953, 0.674352, 0.823006, 0.666886, 0.558824,
+        0.733672, 0.664226, 0.530351, 0.489379
+      ],
+      "density": 0.4583333333333333,
+      "probability": 0.973992,
+      "rotation": 1,
+      "euclideanPulses": 11,
+      "muteBars": [9]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [2, 7, 14, 17, 21, 22],
+      "accents": [0.555677, 0.630124, 0.815177, 0.73268, 0.581077, 0.600728],
+      "density": 0.25,
+      "probability": 0.760766,
+      "rotation": -2,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 12,
+          "hits": [0, 1, 2, 3, 5, 7, 8, 9, 10],
+          "accents": [
+            0.898278, 0.86617, 0.558845, 0.61133, 0.633337, 0.472493, 0.743488,
+            0.80539, 0.717942
+          ],
+          "density": 0.75,
+          "probability": 0.740598,
+          "rotation": 3,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "noise"
+        },
+        {
+          "mode": "euclidean",
+          "steps": 24,
+          "hits": [2, 5, 6, 9, 13, 15, 17, 18, 19, 20, 21, 22, 23],
+          "accents": [
+            0.523506, 0.659983, 0.868346, 0.580024, 0.548396, 0.542295,
+            0.850434, 0.614737, 0.819253, 0.690989, 0.723871, 0.811488, 0.590878
+          ],
+          "density": 0.5416666666666666,
+          "probability": 0.732597,
+          "rotation": -2,
+          "euclideanPulses": 13,
+          "muteBars": [5, 12],
+          "instrument": "noise"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "B",
+      "pitchCollection": [0, 3],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "square",
+      "filterCutoff": 1328.528921,
+      "resonance": 0.538536,
+      "drive": 0.455509,
+      "envelope": {
+        "attack": 0.07519,
+        "decay": 0.261442,
+        "sustain": 0.071264,
+        "release": 0.446455
+      },
+      "noiseAmount": 0.179585,
+      "reverbAmount": 0.512396,
+      "delayAmount": 0.404337
+    },
+    "development": {
+      "densityDelta": 0.236694,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": 0.435896,
+      "probabilityDelta": 0.055311,
+      "rotationDelta": -4,
+      "energyDelta": 0.598885
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.536502,
+      "openHatPercussionDucking": 0.167158,
+      "accentAlignment": 0.675585,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.263971,
+      "mutationStrength": 0.504368,
+      "microWeight": 0.481056,
+      "mesoWeight": 0.274694,
+      "macroWeight": 0.24425,
+      "rhythmWeight": 0.278847,
+      "pitchWeight": 0.164267,
+      "soundWeight": 0.302703,
+      "developmentWeight": 0.254183
+    },
+    "lineage": {
+      "parents": ["gen1-028", "gen1-006"],
+      "generation": 2,
+      "isFounder": false,
+      "originType": "crossover",
+      "ancestorIds": [
+        "founder-013",
+        "founder-038",
+        "gen1-028",
+        "founder-029",
+        "gen1-006"
       ],
       "mutations": [
         {
           "path": "development.rotationDelta",
           "mutationType": "development-variation",
-          "before": 0,
+          "before": 1,
           "after": -4,
           "scale": "meso",
           "category": "development",
-          "strength": 0.382117
+          "strength": 0.353058
         },
         {
-          "path": "sound.oscillator",
-          "mutationType": "sound-family-shift",
-          "before": "saw",
-          "after": "sine",
-          "scale": "meso",
+          "path": "sound",
+          "mutationType": "sound-family-rebuild",
+          "before": {
+            "oscillator": "triangle",
+            "filterCutoff": 8828.090082,
+            "resonance": 0.42599
+          },
+          "after": {
+            "oscillator": "square",
+            "filterCutoff": 1328.528921,
+            "resonance": 0.538536
+          },
+          "scale": "macro",
           "category": "sound",
-          "strength": 0.382117
+          "strength": 0.504368
         },
         {
           "path": "sound.envelope.release",
           "mutationType": "envelope-shift",
-          "before": 0.759729,
-          "after": 0.93838,
+          "before": 0.28139,
+          "after": 0.446455,
           "scale": "micro",
           "category": "sound",
-          "strength": 0.191059
+          "strength": 0.176529
         },
         {
           "path": "bass.gate",
           "mutationType": "shift",
-          "before": 0.747976,
-          "after": 0.812425,
+          "before": 0.86003,
+          "after": 0.919578,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.191059
+          "strength": 0.176529
         }
       ]
     }
@@ -2913,18 +2958,18 @@
       "form": [8, 8]
     },
     "bass": {
-      "root": "D#",
-      "pitchSet": [0, 3, 10],
-      "octave": 2,
-      "steps": 12,
-      "hits": [3, 4, 5, 7],
-      "noteChoice": [0, 1, 2, 1],
-      "accents": [0.846274, 0.973163, 0.484283, 0.655779],
-      "noteLengths": [0.912135, 0.345487, 0.850584, 0.758026],
-      "gate": 0.430181,
-      "probability": 0.928504,
-      "rotation": 1,
-      "periodicVariation": { "everyBars": 8, "rotation": 2 }
+      "root": "F#",
+      "pitchSet": [0],
+      "octave": 3,
+      "steps": 16,
+      "hits": [5, 15],
+      "noteChoice": [0, 0],
+      "accents": [0.863819, 0.805002],
+      "noteLengths": [0.373897, 0.143602],
+      "gate": 0.820705,
+      "probability": 0.711437,
+      "rotation": 2,
+      "periodicVariation": null
     },
     "closedHat": {
       "mode": "grid",
@@ -2981,24 +3026,24 @@
       ]
     },
     "harmony": {
-      "tonic": "D#",
-      "pitchCollection": [0, 3, 10],
+      "tonic": "G",
+      "pitchCollection": [0],
       "sectionBPitchShift": null
     },
     "sound": {
-      "oscillator": "triangle",
-      "filterCutoff": 5736.170294,
-      "resonance": 0.627367,
-      "drive": 0.725413,
+      "oscillator": "fm",
+      "filterCutoff": 4820.390163,
+      "resonance": 0.524967,
+      "drive": 0.685409,
       "envelope": {
-        "attack": 0.062532,
-        "decay": 0.338283,
-        "sustain": 0.268582,
-        "release": 0.02
+        "attack": 0.07083,
+        "decay": 0.583435,
+        "sustain": 0.208648,
+        "release": 0.065042
       },
-      "noiseAmount": 0.69756,
-      "reverbAmount": 0.525508,
-      "delayAmount": 0.288167
+      "noiseAmount": 0.5344,
+      "reverbAmount": 0.406772,
+      "delayAmount": 0.265663
     },
     "development": {
       "densityDelta": 0.13074,
@@ -3008,27 +3053,27 @@
       "filterMovement": 0.24261,
       "probabilityDelta": 0.1109,
       "rotationDelta": 0,
-      "energyDelta": 0.423605
+      "energyDelta": 0.419414
     },
     "interaction": {
-      "bassPercussionCoupling": -0.761232,
-      "openHatPercussionDucking": 0.092324,
-      "accentAlignment": 0.500195,
+      "bassPercussionCoupling": -0.03221,
+      "openHatPercussionDucking": 0.228712,
+      "accentAlignment": 0.859302,
       "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.281681,
-      "mutationStrength": 0.482003,
-      "microWeight": 0.390469,
-      "mesoWeight": 0.367717,
-      "macroWeight": 0.241814,
-      "rhythmWeight": 0.243671,
-      "pitchWeight": 0.196606,
-      "soundWeight": 0.258604,
-      "developmentWeight": 0.301119
+      "mutationRate": 0.257457,
+      "mutationStrength": 0.455563,
+      "microWeight": 0.414614,
+      "mesoWeight": 0.39234,
+      "macroWeight": 0.193046,
+      "rhythmWeight": 0.29939,
+      "pitchWeight": 0.108302,
+      "soundWeight": 0.28454,
+      "developmentWeight": 0.307768
     },
     "lineage": {
-      "parents": ["gen1-024", "gen1-037"],
+      "parents": ["gen1-024", "gen1-035"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
@@ -3036,8 +3081,8 @@
         "founder-036",
         "founder-005",
         "gen1-024",
-        "founder-035",
-        "gen1-037"
+        "founder-031",
+        "gen1-035"
       ],
       "mutations": [
         {
@@ -3047,34 +3092,34 @@
           "after": false,
           "scale": "meso",
           "category": "development",
-          "strength": 0.337402
+          "strength": 0.318894
         },
         {
           "path": "development.energyDelta",
           "mutationType": "energy-shift",
           "before": 0.347208,
-          "after": 0.423605,
+          "after": 0.419414,
           "scale": "micro",
           "category": "development",
-          "strength": 0.168701
+          "strength": 0.159447
         },
         {
-          "path": "bass.noteChoice[2]",
-          "mutationType": "note-choice-shift",
-          "before": 0,
-          "after": 2,
+          "path": "bass.root",
+          "mutationType": "semitone-shift",
+          "before": "G",
+          "after": "F#",
           "scale": "micro",
           "category": "pitch",
-          "strength": 0.168701
+          "strength": 0.159447
         },
         {
           "path": "sound.filterCutoff",
           "mutationType": "filter-shift",
-          "before": 5031.744767,
-          "after": 5736.170294,
+          "before": 4154.605497,
+          "after": 4820.390163,
           "scale": "micro",
           "category": "sound",
-          "strength": 0.168701
+          "strength": 0.159447
         }
       ]
     }
@@ -3094,24 +3139,18 @@
       "form": [8, 8]
     },
     "bass": {
-      "root": "A#",
-      "pitchSet": [0, 10, 11],
-      "octave": 4,
-      "steps": 24,
-      "hits": [0, 1, 2, 6, 9, 15, 16, 19, 20, 22, 23],
-      "noteChoice": [1, 0, 2, 1, 0, 1, 1, 1, 2, 2, 2],
-      "accents": [
-        0.955952, 0.664588, 0.489951, 0.8623, 0.761475, 0.735838, 0.858272,
-        0.83188, 0.712016, 0.449171, 0.690644
-      ],
-      "noteLengths": [
-        0.767839, 1.601526, 1.34735, 0.576661, 0.29844, 0.303539, 0.424347,
-        0.898769, 0.86335, 0.520078, 1.636705
-      ],
-      "gate": 0.567684,
-      "probability": 0.713286,
-      "rotation": -7,
-      "periodicVariation": null
+      "root": "D#",
+      "pitchSet": [0, 3, 10],
+      "octave": 2,
+      "steps": 12,
+      "hits": [3, 4, 5, 7],
+      "noteChoice": [0, 1, 0, 1],
+      "accents": [0.846274, 0.973163, 0.484283, 0.655779],
+      "noteLengths": [0.912135, 0.345487, 0.850584, 0.758026],
+      "gate": 0.430181,
+      "probability": 0.974146,
+      "rotation": 1,
+      "periodicVariation": { "everyBars": 8, "rotation": 2 }
     },
     "closedHat": {
       "mode": "euclidean",
@@ -3154,24 +3193,24 @@
       ]
     },
     "harmony": {
-      "tonic": "A#",
-      "pitchCollection": [0, 10, 11],
-      "sectionBPitchShift": 1
+      "tonic": "D#",
+      "pitchCollection": [0, 3, 10],
+      "sectionBPitchShift": null
     },
     "sound": {
-      "oscillator": "square",
-      "filterCutoff": 10522.046427,
-      "resonance": 0.742826,
-      "drive": 0.376034,
+      "oscillator": "fm",
+      "filterCutoff": 1954.778211,
+      "resonance": 0.309657,
+      "drive": 0.725413,
       "envelope": {
-        "attack": 0.197475,
-        "decay": 1.269882,
-        "sustain": 0.944129,
-        "release": 0.07725
+        "attack": 0.062532,
+        "decay": 0.338283,
+        "sustain": 0.268582,
+        "release": 0.02
       },
-      "noiseAmount": 0.932636,
-      "reverbAmount": 0.146328,
-      "delayAmount": 0.694789
+      "noiseAmount": 0.69756,
+      "reverbAmount": 0.525508,
+      "delayAmount": 0.288167
     },
     "development": {
       "densityDelta": 0.109188,
@@ -3184,46 +3223,60 @@
       "energyDelta": 0.373275
     },
     "interaction": {
-      "bassPercussionCoupling": 0.041903,
-      "openHatPercussionDucking": 0.306133,
-      "accentAlignment": 0.073136,
-      "kickBassAvoidance": false
+      "bassPercussionCoupling": -0.761232,
+      "openHatPercussionDucking": 0.092324,
+      "accentAlignment": 0.500195,
+      "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.244164,
-      "mutationStrength": 0.506796,
-      "microWeight": 0.44046,
-      "mesoWeight": 0.369484,
-      "macroWeight": 0.190056,
-      "rhythmWeight": 0.276629,
-      "pitchWeight": 0.291835,
-      "soundWeight": 0.18076,
-      "developmentWeight": 0.250776
+      "mutationRate": 0.262304,
+      "mutationStrength": 0.547518,
+      "microWeight": 0.371205,
+      "mesoWeight": 0.361884,
+      "macroWeight": 0.266911,
+      "rhythmWeight": 0.274874,
+      "pitchWeight": 0.188953,
+      "soundWeight": 0.196486,
+      "developmentWeight": 0.339687
     },
     "lineage": {
-      "parents": ["gen1-014", "gen1-040"],
+      "parents": ["gen1-014", "gen1-037"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
-      "ancestorIds": ["founder-025", "founder-017", "gen1-014", "gen1-040"],
+      "ancestorIds": [
+        "founder-025",
+        "founder-017",
+        "gen1-014",
+        "founder-035",
+        "gen1-037"
+      ],
       "mutations": [
         {
           "path": "bass.probability",
           "mutationType": "shift",
-          "before": 0.671038,
-          "after": 0.713286,
+          "before": 0.928504,
+          "after": 0.974146,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.177379
+          "strength": 0.191631
         },
         {
-          "path": "bass.noteChoice[4]",
-          "mutationType": "note-choice-replace",
-          "before": 2,
-          "after": 0,
-          "scale": "meso",
-          "category": "pitch",
-          "strength": 0.354757
+          "path": "sound",
+          "mutationType": "sound-family-rebuild",
+          "before": {
+            "oscillator": "triangle",
+            "filterCutoff": 5031.744767,
+            "resonance": 0.627367
+          },
+          "after": {
+            "oscillator": "fm",
+            "filterCutoff": 1954.778211,
+            "resonance": 0.309657
+          },
+          "scale": "macro",
+          "category": "sound",
+          "strength": 0.547518
         },
         {
           "path": "percussion.layers[0].instrument",
@@ -3232,7 +3285,7 @@
           "after": "cowbell",
           "scale": "meso",
           "category": "rhythm",
-          "strength": 0.354757
+          "strength": 0.383263
         },
         {
           "path": "development.percussionChange",
@@ -3241,7 +3294,7 @@
           "after": 1,
           "scale": "meso",
           "category": "development",
-          "strength": 0.354757
+          "strength": 0.383263
         }
       ]
     }
@@ -3249,7 +3302,7 @@
   {
     "version": "0.1",
     "id": "gen2-021",
-    "family": "bass-led",
+    "family": "groove-heavy",
     "seed": "rebus-1452-generation-2-v1:gen2-021:crossover",
     "global": {
       "bpm": 120,
@@ -3262,89 +3315,98 @@
     },
     "bass": {
       "root": "A",
-      "pitchSet": [0, 2, 3],
+      "pitchSet": [0],
       "octave": 1,
-      "steps": 12,
-      "hits": [0, 3, 6, 9, 11],
-      "noteChoice": [1, 1, 1, 1, 0],
-      "accents": [0.628107, 0.821497, 0.5023, 0.461871, 0.485407],
-      "noteLengths": [1.148452, 0.515543, 0.140235, 0.188784, 1.101887],
-      "gate": 0.416449,
-      "probability": 0.693768,
-      "rotation": 4,
+      "steps": 8,
+      "hits": [2, 3, 7],
+      "noteChoice": [0, 0, 0],
+      "accents": [0.672582, 0.63989, 0.470266],
+      "noteLengths": [0.624417, 0.620295, 0.832381],
+      "gate": 0.33637,
+      "probability": 0.972117,
+      "rotation": 2,
       "periodicVariation": { "everyBars": 2, "rotation": -3 }
     },
     "closedHat": {
-      "mode": "grid",
-      "steps": 20,
-      "hits": [3, 8, 12, 13, 14, 18, 19],
+      "mode": "euclidean",
+      "steps": 24,
+      "hits": [0, 1, 2, 3, 7, 8, 9, 14, 18, 23],
       "accents": [
-        0.553845, 0.924313, 0.74323, 0.554291, 0.830291, 0.878354, 0.724761
+        0.631871, 0.588868, 0.516953, 0.674352, 0.823006, 0.666886, 0.453603,
+        0.664226, 0.530351, 0.489379
       ],
-      "density": 0.35,
-      "probability": 0.859669,
-      "rotation": -1,
-      "euclideanPulses": null,
-      "muteBars": [4]
+      "density": 0.4166666666666667,
+      "probability": 0.973992,
+      "rotation": 1,
+      "euclideanPulses": 10,
+      "muteBars": [9]
     },
     "openHat": {
-      "mode": "euclidean",
-      "steps": 8,
-      "hits": [3],
-      "accents": [0.843607],
-      "density": 0.125,
-      "probability": 0.783792,
-      "rotation": 4,
-      "euclideanPulses": 1,
-      "muteBars": [7, 9]
+      "mode": "grid",
+      "steps": 24,
+      "hits": [1, 2, 7, 14, 17, 21, 22],
+      "accents": [
+        0.756336, 0.555677, 0.630124, 0.815177, 0.73268, 0.581077, 0.600728
+      ],
+      "density": 0.2916666666666667,
+      "probability": 0.760766,
+      "rotation": -2,
+      "euclideanPulses": null,
+      "muteBars": []
     },
     "percussion": {
       "layers": [
         {
           "mode": "grid",
-          "steps": 20,
-          "hits": [0, 6, 8, 14, 17],
-          "accents": [0.741503, 0.472276, 0.813309, 0.575964, 0.605003],
-          "density": 0.25,
-          "probability": 0.846299,
-          "rotation": 0,
+          "steps": 12,
+          "hits": [0, 1, 2, 3, 5, 7, 8, 9, 10],
+          "accents": [
+            0.898278, 0.86617, 0.558845, 0.61133, 0.633337, 0.472493, 0.743488,
+            0.80539, 0.717942
+          ],
+          "density": 0.75,
+          "probability": 0.740598,
+          "rotation": 3,
           "euclideanPulses": null,
-          "muteBars": [5, 6],
-          "instrument": "clap"
+          "muteBars": [],
+          "instrument": "noise"
         },
         {
-          "mode": "grid",
-          "steps": 20,
-          "hits": [1, 3, 9, 12, 15],
-          "accents": [0.741503, 0.472276, 0.813309, 0.575964, 0.605003],
-          "density": 0.25,
-          "probability": 0.846299,
-          "rotation": 2,
-          "euclideanPulses": null,
-          "muteBars": [5, 6],
+          "mode": "euclidean",
+          "steps": 24,
+          "hits": [2, 5, 6, 9, 13, 15, 17, 18, 19, 20, 21, 22, 23],
+          "accents": [
+            0.523506, 0.659983, 0.868346, 0.580024, 0.548396, 0.542295,
+            0.850434, 0.614737, 0.819253, 0.690989, 0.723871, 0.811488, 0.590878
+          ],
+          "density": 0.5416666666666666,
+          "probability": 0.732597,
+          "rotation": -2,
+          "euclideanPulses": 13,
+          "muteBars": [5, 12],
           "instrument": "noise"
         }
       ]
     },
     "harmony": {
       "tonic": "A",
-      "pitchCollection": [0, 2, 3],
-      "sectionBPitchShift": 1
+      "pitchCollection": [0],
+      "sectionBPitchShift": null
     },
     "sound": {
       "oscillator": "triangle",
-      "filterCutoff": 6491.725844,
-      "resonance": 0.095885,
-      "drive": 0.162784,
+      "filterCutoff": 9704.275672,
+      "resonance": 0.330324,
+      "drive": 0.320532,
       "envelope": {
-        "attack": 0.115249,
-        "decay": 0.419328,
-        "sustain": 0.40647,
-        "release": 0.389942
+        "attack": 0.044988,
+        "decay": 0.510376,
+        "sustain": 0.424216,
+        "release": 0.305388
       },
-      "noiseAmount": 0.132522,
-      "reverbAmount": 0.346583,
-      "delayAmount": 0.249221
+      "noiseAmount": 0.172703,
+      "reverbAmount": 0.223713,
+      "delayAmount": 0.179157
     },
     "development": {
       "densityDelta": 0.314991,
@@ -3354,60 +3416,51 @@
       "filterMovement": 0.5475,
       "probabilityDelta": 0.108093,
       "rotationDelta": 3,
-      "energyDelta": 0.288864
+      "energyDelta": 0.296901
     },
     "interaction": {
-      "bassPercussionCoupling": -0.586342,
-      "openHatPercussionDucking": 0.129776,
-      "accentAlignment": 0.279521,
+      "bassPercussionCoupling": 0.699649,
+      "openHatPercussionDucking": 0.312729,
+      "accentAlignment": 0.40612,
       "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.207449,
-      "mutationStrength": 0.448969,
-      "microWeight": 0.415375,
-      "mesoWeight": 0.31085,
-      "macroWeight": 0.273775,
-      "rhythmWeight": 0.301939,
-      "pitchWeight": 0.202165,
-      "soundWeight": 0.262321,
-      "developmentWeight": 0.233575
+      "mutationRate": 0.167415,
+      "mutationStrength": 0.388655,
+      "microWeight": 0.410755,
+      "mesoWeight": 0.300616,
+      "macroWeight": 0.288629,
+      "rhythmWeight": 0.312437,
+      "pitchWeight": 0.22011,
+      "soundWeight": 0.196594,
+      "developmentWeight": 0.270859
     },
     "lineage": {
-      "parents": ["gen1-009", "gen1-012"],
+      "parents": ["gen1-010", "gen1-011"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
       "ancestorIds": [
-        "founder-013",
-        "founder-021",
-        "gen1-009",
-        "founder-019",
-        "founder-042",
-        "gen1-012"
+        "founder-010",
+        "founder-038",
+        "gen1-010",
+        "founder-026",
+        "founder-018",
+        "gen1-011"
       ],
       "mutations": [
-        {
-          "path": "bass.noteChoice[3]",
-          "mutationType": "note-choice-replace",
-          "before": 2,
-          "after": 1,
-          "scale": "meso",
-          "category": "pitch",
-          "strength": 0.314278
-        },
         {
           "path": "development",
           "mutationType": "development-rebuild",
           "before": {
-            "densityDelta": 0.173192,
+            "densityDelta": 0.236694,
             "bassVariation": true,
             "hatVariation": true,
-            "percussionChange": 1,
-            "filterMovement": 0.159999,
-            "probabilityDelta": 0.152916,
-            "rotationDelta": 2,
-            "energyDelta": 0.360056
+            "percussionChange": 0,
+            "filterMovement": 0.435896,
+            "probabilityDelta": 0.055311,
+            "rotationDelta": -3,
+            "energyDelta": 0.501349
           },
           "after": {
             "densityDelta": 0.314991,
@@ -3421,63 +3474,16 @@
           },
           "scale": "macro",
           "category": "development",
-          "strength": 0.448969
+          "strength": 0.388655
         },
         {
           "path": "development.energyDelta",
           "mutationType": "energy-shift",
           "before": 0.348686,
-          "after": 0.288864,
+          "after": 0.296901,
           "scale": "micro",
           "category": "development",
-          "strength": 0.157139
-        },
-        {
-          "path": "percussion.layers",
-          "mutationType": "percussion-layer-add",
-          "before": [
-            {
-              "mode": "grid",
-              "steps": 20,
-              "hits": [0, 6, 8, 14, 17],
-              "accents": [0.741503, 0.472276, 0.813309, 0.575964, 0.605003],
-              "density": 0.25,
-              "probability": 0.846299,
-              "rotation": 0,
-              "euclideanPulses": null,
-              "muteBars": [5, 6],
-              "instrument": "clap"
-            }
-          ],
-          "after": [
-            {
-              "mode": "grid",
-              "steps": 20,
-              "hits": [0, 6, 8, 14, 17],
-              "accents": [0.741503, 0.472276, 0.813309, 0.575964, 0.605003],
-              "density": 0.25,
-              "probability": 0.846299,
-              "rotation": 0,
-              "euclideanPulses": null,
-              "muteBars": [5, 6],
-              "instrument": "clap"
-            },
-            {
-              "mode": "grid",
-              "steps": 20,
-              "hits": [1, 3, 9, 12, 15],
-              "accents": [0.741503, 0.472276, 0.813309, 0.575964, 0.605003],
-              "density": 0.25,
-              "probability": 0.846299,
-              "rotation": 2,
-              "euclideanPulses": null,
-              "muteBars": [5, 6],
-              "instrument": "noise"
-            }
-          ],
-          "scale": "macro",
-          "category": "rhythm",
-          "strength": 0.448969
+          "strength": 0.136029
         }
       ]
     }
@@ -3485,7 +3491,7 @@
   {
     "version": "0.1",
     "id": "gen2-022",
-    "family": "dark-industrial",
+    "family": "percussion-led",
     "seed": "rebus-1452-generation-2-v1:gen2-022:crossover",
     "global": {
       "bpm": 120,
@@ -3506,9 +3512,185 @@
       "accents": [0.779397, 0.52242, 0.721877, 0.529482, 0.774264],
       "noteLengths": [0.814496, 0.80235, 0.730283, 0.886783, 0.642636],
       "gate": 0.292823,
-      "probability": 0.869818,
+      "probability": 0.871439,
       "rotation": -3,
       "periodicVariation": null
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 32,
+      "hits": [1, 3, 7, 8, 11, 13, 14, 19, 23, 24, 26, 27, 29, 30, 31],
+      "accents": [
+        0.805597, 0.7733, 0.520552, 0.576535, 0.55698, 0.872891, 0.636167,
+        0.65069, 0.515316, 0.713305, 0.758553, 0.770082, 0.555307, 0.823514,
+        0.536054
+      ],
+      "density": 0.46875,
+      "probability": 0.805128,
+      "rotation": 0,
+      "euclideanPulses": null,
+      "muteBars": [11]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 8,
+      "hits": [7],
+      "accents": [0.776481],
+      "density": 0.125,
+      "probability": 0.786278,
+      "rotation": 1,
+      "euclideanPulses": 1,
+      "muteBars": [7]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [2, 3, 5, 7],
+          "accents": [0.457667, 0.766764, 0.855196, 0.538919],
+          "density": 0.5,
+          "probability": 0.728555,
+          "rotation": 0,
+          "euclideanPulses": null,
+          "muteBars": [0],
+          "instrument": "rim"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "G#",
+      "pitchCollection": [0, 2, 3],
+      "sectionBPitchShift": -1
+    },
+    "sound": {
+      "oscillator": "sine",
+      "filterCutoff": 6539.045529,
+      "resonance": 0.437021,
+      "drive": 0.666834,
+      "envelope": {
+        "attack": 0.001708,
+        "decay": 0.564947,
+        "sustain": 0.517077,
+        "release": 0.293252
+      },
+      "noiseAmount": 0.289748,
+      "reverbAmount": 0.340288,
+      "delayAmount": 0.243689
+    },
+    "development": {
+      "densityDelta": 0.225139,
+      "bassVariation": true,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": 0.59167,
+      "probabilityDelta": 0.12499,
+      "rotationDelta": 5,
+      "energyDelta": 0.432129
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.551474,
+      "openHatPercussionDucking": 0.17281,
+      "accentAlignment": 0.141596,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.190481,
+      "mutationStrength": 0.397562,
+      "microWeight": 0.454524,
+      "mesoWeight": 0.331702,
+      "macroWeight": 0.213774,
+      "rhythmWeight": 0.335154,
+      "pitchWeight": 0.245488,
+      "soundWeight": 0.169843,
+      "developmentWeight": 0.249515
+    },
+    "lineage": {
+      "parents": ["gen1-031", "gen1-021"],
+      "generation": 2,
+      "isFounder": false,
+      "originType": "crossover",
+      "ancestorIds": [
+        "founder-011",
+        "founder-026",
+        "gen1-031",
+        "founder-017",
+        "founder-028",
+        "gen1-021"
+      ],
+      "mutations": [
+        {
+          "path": "bass.probability",
+          "mutationType": "shift",
+          "before": 0.901153,
+          "after": 0.871439,
+          "scale": "micro",
+          "category": "rhythm",
+          "strength": 0.139147
+        },
+        {
+          "path": "development.hatVariation",
+          "mutationType": "development-variation",
+          "before": true,
+          "after": false,
+          "scale": "meso",
+          "category": "development",
+          "strength": 0.278293
+        },
+        {
+          "path": "development.percussionChange",
+          "mutationType": "development-variation",
+          "before": 1,
+          "after": 0,
+          "scale": "meso",
+          "category": "development",
+          "strength": 0.278293
+        },
+        {
+          "path": "development.energyDelta",
+          "mutationType": "energy-shift",
+          "before": 0.517525,
+          "after": 0.432129,
+          "scale": "micro",
+          "category": "development",
+          "strength": 0.139147
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "gen2-023",
+    "family": "driving",
+    "seed": "rebus-1452-generation-2-v1:gen2-023:crossover",
+    "global": {
+      "bpm": 120,
+      "meter": [4, 4],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [8, 8]
+    },
+    "bass": {
+      "root": "G#",
+      "pitchSet": [0, 1, 3, 5],
+      "octave": 3,
+      "steps": 20,
+      "hits": [2, 6, 7, 9, 10, 15, 17, 19],
+      "noteChoice": [0, 3, 3, 0, 2, 0, 3, 0],
+      "accents": [
+        0.648576, 0.697186, 0.480625, 0.518725, 0.701969, 0.750439, 0.83463,
+        0.816366
+      ],
+      "noteLengths": [
+        0.456363, 1.222337, 0.273934, 0.842421, 0.648767, 0.584244, 1.160583,
+        0.678477
+      ],
+      "gate": 0.865831,
+      "probability": 0.99181,
+      "rotation": -1,
+      "periodicVariation": { "everyBars": 8, "rotation": 2 }
     },
     "closedHat": {
       "mode": "grid",
@@ -3565,109 +3747,109 @@
     },
     "harmony": {
       "tonic": "G#",
-      "pitchCollection": [0, 2, 3],
-      "sectionBPitchShift": -1
+      "pitchCollection": [0, 1, 3, 5],
+      "sectionBPitchShift": null
     },
     "sound": {
-      "oscillator": "sine",
-      "filterCutoff": 6539.045529,
-      "resonance": 0.437021,
-      "drive": 0.666834,
+      "oscillator": "fm",
+      "filterCutoff": 12000,
+      "resonance": 0.265205,
+      "drive": 0.411453,
       "envelope": {
-        "attack": 0.001708,
-        "decay": 0.564947,
-        "sustain": 0.517077,
-        "release": 0.293252
+        "attack": 0.096981,
+        "decay": 0.254973,
+        "sustain": 0.682657,
+        "release": 0.096963
       },
-      "noiseAmount": 0.289748,
-      "reverbAmount": 0.340288,
-      "delayAmount": 0.243689
+      "noiseAmount": 0.351783,
+      "reverbAmount": 0.66639,
+      "delayAmount": 0.473603
     },
     "development": {
       "densityDelta": 0.078476,
       "bassVariation": true,
-      "hatVariation": false,
-      "percussionChange": 1,
+      "hatVariation": true,
+      "percussionChange": 0,
       "filterMovement": 0.196112,
       "probabilityDelta": 0.094989,
       "rotationDelta": 1,
-      "energyDelta": 0.230258
+      "energyDelta": 0.320312
     },
     "interaction": {
-      "bassPercussionCoupling": -0.551474,
-      "openHatPercussionDucking": 0.17281,
-      "accentAlignment": 0.141596,
+      "bassPercussionCoupling": -0.018683,
+      "openHatPercussionDucking": 0.258582,
+      "accentAlignment": 0.533114,
       "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.220126,
-      "mutationStrength": 0.419249,
-      "microWeight": 0.469163,
-      "mesoWeight": 0.304559,
-      "macroWeight": 0.226278,
-      "rhythmWeight": 0.254783,
-      "pitchWeight": 0.260084,
-      "soundWeight": 0.197097,
-      "developmentWeight": 0.288036
+      "mutationRate": 0.264785,
+      "mutationStrength": 0.475395,
+      "microWeight": 0.443321,
+      "mesoWeight": 0.29359,
+      "macroWeight": 0.263089,
+      "rhythmWeight": 0.241624,
+      "pitchWeight": 0.172598,
+      "soundWeight": 0.252171,
+      "developmentWeight": 0.333607
     },
     "lineage": {
-      "parents": ["gen1-031", "gen1-019"],
+      "parents": ["gen1-019", "gen1-018"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
       "ancestorIds": [
-        "founder-011",
-        "founder-026",
-        "gen1-031",
         "founder-037",
         "founder-034",
-        "gen1-019"
+        "gen1-019",
+        "founder-041",
+        "founder-015",
+        "gen1-018"
       ],
       "mutations": [
         {
-          "path": "bass.probability",
-          "mutationType": "shift",
-          "before": 0.901153,
-          "after": 0.869818,
-          "scale": "micro",
-          "category": "rhythm",
-          "strength": 0.146737
-        },
-        {
-          "path": "development.hatVariation",
-          "mutationType": "development-variation",
-          "before": true,
-          "after": false,
+          "path": "sound.oscillator",
+          "mutationType": "sound-family-shift",
+          "before": "noise-blend",
+          "after": "sine",
           "scale": "meso",
-          "category": "development",
-          "strength": 0.293474
+          "category": "sound",
+          "strength": 0.332776
         },
         {
-          "path": "development.percussionChange",
-          "mutationType": "development-variation",
-          "before": 0,
-          "after": 1,
+          "path": "sound.oscillator",
+          "mutationType": "sound-family-shift",
+          "before": "sine",
+          "after": "noise-blend",
           "scale": "meso",
-          "category": "development",
-          "strength": 0.293474
+          "category": "sound",
+          "strength": 0.332776
         },
         {
-          "path": "development.energyDelta",
-          "mutationType": "energy-shift",
-          "before": 0.320312,
-          "after": 0.230258,
+          "path": "sound.oscillator",
+          "mutationType": "sound-family-shift",
+          "before": "noise-blend",
+          "after": "fm",
+          "scale": "meso",
+          "category": "sound",
+          "strength": 0.332776
+        },
+        {
+          "path": "sound.filterCutoff",
+          "mutationType": "filter-shift",
+          "before": 11813.376805,
+          "after": 12000,
           "scale": "micro",
-          "category": "development",
-          "strength": 0.146737
+          "category": "sound",
+          "strength": 0.166388
         }
       ]
     }
   },
   {
     "version": "0.1",
-    "id": "gen2-023",
+    "id": "gen2-024",
     "family": "percussion-led",
-    "seed": "rebus-1452-generation-2-v1:gen2-023:crossover",
+    "seed": "rebus-1452-generation-2-v1:gen2-024:crossover",
     "global": {
       "bpm": 120,
       "meter": [4, 4],
@@ -3683,387 +3865,12 @@
       "octave": 3,
       "steps": 8,
       "hits": [2, 4, 5],
-      "noteChoice": [0, 1, 1],
+      "noteChoice": [1, 0, 0],
       "accents": [0.516415, 0.790238, 0.700254],
       "noteLengths": [0.276103, 0.964998, 0.941342],
       "gate": 0.8043,
       "probability": 0.849369,
-      "rotation": 3,
-      "periodicVariation": null
-    },
-    "closedHat": {
-      "mode": "euclidean",
-      "steps": 8,
-      "hits": [0, 1, 2, 3, 6, 7],
-      "accents": [0.671031, 0.683317, 0.649436, 0.775528, 0.655097, 0.726258],
-      "density": 0.75,
-      "probability": 0.749498,
-      "rotation": -4,
-      "euclideanPulses": 6,
-      "muteBars": [3]
-    },
-    "openHat": {
-      "mode": "grid",
-      "steps": 16,
-      "hits": [0, 2, 4, 11, 12, 13, 15],
-      "accents": [
-        0.791843, 0.768583, 0.974939, 0.688911, 0.964761, 0.62288, 0.846594
-      ],
-      "density": 0.4375,
-      "probability": 0.720287,
-      "rotation": 0,
-      "euclideanPulses": null,
-      "muteBars": [6, 12]
-    },
-    "percussion": {
-      "layers": [
-        {
-          "mode": "euclidean",
-          "steps": 8,
-          "hits": [1, 5, 6],
-          "accents": [0.510545, 0.545782, 0.608005],
-          "density": 0.375,
-          "probability": 0.698048,
-          "rotation": -2,
-          "euclideanPulses": 3,
-          "muteBars": [],
-          "instrument": "noise"
-        },
-        {
-          "mode": "euclidean",
-          "steps": 16,
-          "hits": [0, 4, 7, 10, 15],
-          "accents": [0.583934, 0.742049, 0.528823, 0.793087, 0.555528],
-          "density": 0.3125,
-          "probability": 0.966453,
-          "rotation": -2,
-          "euclideanPulses": 5,
-          "muteBars": [],
-          "instrument": "rim"
-        }
-      ]
-    },
-    "harmony": {
-      "tonic": "A",
-      "pitchCollection": [0, 3],
-      "sectionBPitchShift": null
-    },
-    "sound": {
-      "oscillator": "noise-blend",
-      "filterCutoff": 10037.229382,
-      "resonance": 0.391083,
-      "drive": 0.388933,
-      "envelope": {
-        "attack": 0.036762,
-        "decay": 0.283559,
-        "sustain": 0.151111,
-        "release": 0.457136
-      },
-      "noiseAmount": 0.213457,
-      "reverbAmount": 0.252297,
-      "delayAmount": 0.119143
-    },
-    "development": {
-      "densityDelta": -0.346213,
-      "bassVariation": true,
-      "hatVariation": true,
-      "percussionChange": -1,
-      "filterMovement": -0.463145,
-      "probabilityDelta": -0.276096,
-      "rotationDelta": -6,
-      "energyDelta": -0.28748
-    },
-    "interaction": {
-      "bassPercussionCoupling": 0.804396,
-      "openHatPercussionDucking": 0.152125,
-      "accentAlignment": 0.293055,
-      "kickBassAvoidance": true
-    },
-    "mutationStrategy": {
-      "mutationRate": 0.204277,
-      "mutationStrength": 0.485922,
-      "microWeight": 0.419042,
-      "mesoWeight": 0.328798,
-      "macroWeight": 0.25216,
-      "rhythmWeight": 0.329947,
-      "pitchWeight": 0.177377,
-      "soundWeight": 0.208396,
-      "developmentWeight": 0.28428
-    },
-    "lineage": {
-      "parents": ["gen1-018", "gen1-021"],
-      "generation": 2,
-      "isFounder": false,
-      "originType": "crossover",
-      "ancestorIds": [
-        "founder-041",
-        "founder-015",
-        "gen1-018",
-        "founder-017",
-        "founder-028",
-        "gen1-021"
-      ],
-      "mutations": [
-        {
-          "path": "sound.oscillator",
-          "mutationType": "sound-family-shift",
-          "before": "noise-blend",
-          "after": "sine",
-          "scale": "meso",
-          "category": "sound",
-          "strength": 0.340145
-        },
-        {
-          "path": "bass.noteChoice[2]",
-          "mutationType": "note-choice-replace",
-          "before": 0,
-          "after": 1,
-          "scale": "meso",
-          "category": "pitch",
-          "strength": 0.340145
-        },
-        {
-          "path": "sound.oscillator",
-          "mutationType": "sound-family-shift",
-          "before": "sine",
-          "after": "noise-blend",
-          "scale": "meso",
-          "category": "sound",
-          "strength": 0.340145
-        },
-        {
-          "path": "bass.noteChoice[0]",
-          "mutationType": "note-choice-shift",
-          "before": 1,
-          "after": 0,
-          "scale": "micro",
-          "category": "pitch",
-          "strength": 0.170073
-        }
-      ]
-    }
-  },
-  {
-    "version": "0.1",
-    "id": "gen2-024",
-    "family": "dark-industrial",
-    "seed": "rebus-1452-generation-2-v1:gen2-024:crossover",
-    "global": {
-      "bpm": 120,
-      "meter": [4, 4],
-      "bars": 16,
-      "beatsPerBar": 4,
-      "stepsPerBeat": 4,
-      "kick": "four-on-the-floor",
-      "form": [8, 8]
-    },
-    "bass": {
-      "root": "F#",
-      "pitchSet": [0, 2, 3],
-      "octave": 2,
-      "steps": 32,
-      "hits": [0, 1, 5, 7, 12, 15, 17, 19, 20, 21, 23, 28, 29],
-      "noteChoice": [2, 2, 2, 1, 0, 0, 2, 2, 2, 0, 0, 0, 0],
-      "accents": [
-        0.601809, 0.827523, 0.82907, 0.81761, 0.898668, 0.566576, 0.693069,
-        0.464728, 0.590125, 0.665492, 0.527092, 0.895371, 0.869667
-      ],
-      "noteLengths": [
-        0.615446, 1.037639, 0.863927, 1.180736, 0.535767, 0.551249, 0.778203,
-        0.779745, 0.210026, 1.043167, 0.60484, 1.046166, 0.295294
-      ],
-      "gate": 0.384174,
-      "probability": 0.720204,
-      "rotation": -4,
-      "periodicVariation": null
-    },
-    "closedHat": {
-      "mode": "grid",
-      "steps": 8,
-      "hits": [1, 3, 4, 5, 7],
-      "accents": [0.770839, 0.836989, 0.936136, 0.510676, 0.534302],
-      "density": 0.625,
-      "probability": 0.854897,
-      "rotation": -4,
-      "euclideanPulses": null,
-      "muteBars": []
-    },
-    "openHat": {
-      "mode": "euclidean",
-      "steps": 24,
-      "hits": [5, 6, 7, 9, 11, 14, 15, 17],
-      "accents": [
-        0.755208, 0.627188, 0.773155, 0.4702, 0.796722, 0.691892, 0.464061,
-        0.483121
-      ],
-      "density": 0.3333333333333333,
-      "probability": 0.790586,
-      "rotation": 3,
-      "euclideanPulses": 8,
-      "muteBars": [0]
-    },
-    "percussion": {
-      "layers": [
-        {
-          "mode": "grid",
-          "steps": 32,
-          "hits": [
-            1, 2, 3, 5, 6, 7, 9, 11, 15, 18, 19, 20, 21, 22, 23, 26, 29, 30, 31
-          ],
-          "accents": [
-            0.80947, 0.826557, 0.830543, 0.782324, 0.651611, 0.620311, 0.683858,
-            0.844316, 0.647728, 0.554686, 0.803121, 0.68049, 0.500202, 0.833404,
-            0.520703, 0.768852, 0.655434, 0.822423, 0.590126
-          ],
-          "density": 0.59375,
-          "probability": 0.955278,
-          "rotation": -1,
-          "euclideanPulses": null,
-          "muteBars": [1],
-          "instrument": "noise"
-        },
-        {
-          "mode": "grid",
-          "steps": 32,
-          "hits": [1, 2, 6, 7, 8, 9, 10, 21, 23, 26, 29, 30, 31],
-          "accents": [
-            0.563554, 0.757079, 0.749565, 0.86056, 0.936249, 0.780171, 0.619952,
-            0.675441, 0.688148, 0.84629, 0.590989, 0.532315, 0.66314
-          ],
-          "density": 0.40625,
-          "probability": 0.80162,
-          "rotation": -4,
-          "euclideanPulses": null,
-          "muteBars": [3],
-          "instrument": "noise"
-        }
-      ]
-    },
-    "harmony": {
-      "tonic": "F#",
-      "pitchCollection": [0, 2, 3],
-      "sectionBPitchShift": null
-    },
-    "sound": {
-      "oscillator": "sine",
-      "filterCutoff": 2149.332974,
-      "resonance": 0.556048,
-      "drive": 0.739632,
-      "envelope": {
-        "attack": 0.058617,
-        "decay": 0.06208,
-        "sustain": 0.536999,
-        "release": 0.180944
-      },
-      "noiseAmount": 0.55847,
-      "reverbAmount": 0.211138,
-      "delayAmount": 0.173489
-    },
-    "development": {
-      "densityDelta": 0.151362,
-      "bassVariation": true,
-      "hatVariation": true,
-      "percussionChange": -1,
-      "filterMovement": 0.109285,
-      "probabilityDelta": 0.078314,
-      "rotationDelta": 0,
-      "energyDelta": 0.256773
-    },
-    "interaction": {
-      "bassPercussionCoupling": 0.486769,
-      "openHatPercussionDucking": 0.06827,
-      "accentAlignment": 0.30116,
-      "kickBassAvoidance": false
-    },
-    "mutationStrategy": {
-      "mutationRate": 0.242519,
-      "mutationStrength": 0.474405,
-      "microWeight": 0.44762,
-      "mesoWeight": 0.30734,
-      "macroWeight": 0.24504,
-      "rhythmWeight": 0.229072,
-      "pitchWeight": 0.167026,
-      "soundWeight": 0.238237,
-      "developmentWeight": 0.365665
-    },
-    "lineage": {
-      "parents": ["gen1-019", "gen1-005"],
-      "generation": 2,
-      "isFounder": false,
-      "originType": "crossover",
-      "ancestorIds": [
-        "founder-037",
-        "founder-034",
-        "gen1-019",
-        "founder-025",
-        "gen1-005"
-      ],
-      "mutations": [
-        {
-          "path": "development.percussionChange",
-          "mutationType": "development-variation",
-          "before": 1,
-          "after": -1,
-          "scale": "meso",
-          "category": "development",
-          "strength": 0.332083
-        },
-        {
-          "path": "closedHat.accents[4]",
-          "mutationType": "velocity-shift",
-          "before": 0.4839,
-          "after": 0.534302,
-          "scale": "micro",
-          "category": "rhythm",
-          "strength": 0.166042
-        },
-        {
-          "path": "bass.rotation",
-          "mutationType": "pattern-rotation",
-          "before": -3,
-          "after": -4,
-          "scale": "meso",
-          "category": "rhythm",
-          "strength": 0.332083
-        },
-        {
-          "path": "bass.noteChoice[7]",
-          "mutationType": "note-choice-replace",
-          "before": 1,
-          "after": 2,
-          "scale": "meso",
-          "category": "pitch",
-          "strength": 0.332083
-        }
-      ]
-    }
-  },
-  {
-    "version": "0.1",
-    "id": "gen2-025",
-    "family": "driving",
-    "seed": "rebus-1452-generation-2-v1:gen2-025:crossover",
-    "global": {
-      "bpm": 120,
-      "meter": [4, 4],
-      "bars": 16,
-      "beatsPerBar": 4,
-      "stepsPerBeat": 4,
-      "kick": "four-on-the-floor",
-      "form": [8, 8]
-    },
-    "bass": {
-      "root": "A",
-      "pitchSet": [0],
-      "octave": 1,
-      "steps": 8,
-      "hits": [4, 5, 7],
-      "noteChoice": [0, 0, 0],
-      "accents": [0.94532, 0.488569, 0.748525],
-      "noteLengths": [0.352084, 0.547601, 1.15518],
-      "gate": 0.506612,
-      "probability": 0.985984,
-      "rotation": 4,
+      "rotation": 2,
       "periodicVariation": null
     },
     "closedHat": {
@@ -4071,7 +3878,7 @@
       "steps": 8,
       "hits": [0, 1, 2, 3, 4, 5, 7],
       "accents": [
-        0.690316, 0.492269, 0.606878, 0.70658, 0.617826, 0.650059, 0.707291
+        0.690316, 0.492269, 0.606878, 0.70658, 0.617826, 0.650059, 0.753427
       ],
       "density": 0.875,
       "probability": 0.794886,
@@ -4108,23 +3915,23 @@
     },
     "harmony": {
       "tonic": "A",
-      "pitchCollection": [0],
+      "pitchCollection": [0, 3],
       "sectionBPitchShift": null
     },
     "sound": {
-      "oscillator": "noise-blend",
-      "filterCutoff": 8294.161299,
-      "resonance": 0.243295,
-      "drive": 0.278408,
+      "oscillator": "fm",
+      "filterCutoff": 10037.229382,
+      "resonance": 0.391083,
+      "drive": 0.388933,
       "envelope": {
-        "attack": 0.066005,
-        "decay": 0.575492,
-        "sustain": 0.696526,
-        "release": 0.211069
+        "attack": 0.036762,
+        "decay": 0.283559,
+        "sustain": 0.151111,
+        "release": 0.457136
       },
-      "noiseAmount": 0.27723,
-      "reverbAmount": 0.195196,
-      "delayAmount": 0.123998
+      "noiseAmount": 0.213457,
+      "reverbAmount": 0.252297,
+      "delayAmount": 0.119143
     },
     "development": {
       "densityDelta": -0.169663,
@@ -4133,83 +3940,83 @@
       "percussionChange": 0,
       "filterMovement": -0.318135,
       "probabilityDelta": -0.136783,
-      "rotationDelta": 1,
-      "energyDelta": -0.197382
+      "rotationDelta": 0,
+      "energyDelta": -0.33971
     },
     "interaction": {
-      "bassPercussionCoupling": -0.425661,
-      "openHatPercussionDucking": 0.226619,
-      "accentAlignment": 0.679169,
+      "bassPercussionCoupling": 0.804396,
+      "openHatPercussionDucking": 0.152125,
+      "accentAlignment": 0.293055,
       "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.197677,
-      "mutationStrength": 0.487854,
-      "microWeight": 0.434864,
-      "mesoWeight": 0.283422,
-      "macroWeight": 0.281714,
-      "rhythmWeight": 0.314526,
-      "pitchWeight": 0.12922,
-      "soundWeight": 0.213794,
-      "developmentWeight": 0.34246
+      "mutationRate": 0.184846,
+      "mutationStrength": 0.434252,
+      "microWeight": 0.400845,
+      "mesoWeight": 0.327908,
+      "macroWeight": 0.271247,
+      "rhythmWeight": 0.359883,
+      "pitchWeight": 0.145607,
+      "soundWeight": 0.202261,
+      "developmentWeight": 0.292249
     },
     "lineage": {
-      "parents": ["gen1-004", "gen1-028"],
+      "parents": ["gen1-021", "gen1-004"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
       "ancestorIds": [
+        "founder-017",
+        "founder-028",
+        "gen1-021",
         "founder-018",
-        "gen1-004",
-        "founder-013",
-        "founder-038",
-        "gen1-028"
+        "gen1-004"
       ],
       "mutations": [
         {
-          "path": "development.energyDelta",
-          "mutationType": "energy-shift",
-          "before": -0.33971,
-          "after": -0.257973,
-          "scale": "micro",
-          "category": "development",
-          "strength": 0.170749
-        },
-        {
-          "path": "development.energyDelta",
-          "mutationType": "energy-shift",
-          "before": -0.257973,
-          "after": -0.197382,
-          "scale": "micro",
-          "category": "development",
-          "strength": 0.170749
-        },
-        {
-          "path": "sound.filterCutoff",
-          "mutationType": "filter-shift",
-          "before": 9216.309458,
-          "after": 8294.161299,
-          "scale": "micro",
-          "category": "sound",
-          "strength": 0.170749
-        },
-        {
-          "path": "development.rotationDelta",
-          "mutationType": "development-variation",
-          "before": 0,
-          "after": 1,
+          "path": "sound.oscillator",
+          "mutationType": "sound-family-shift",
+          "before": "noise-blend",
+          "after": "fm",
           "scale": "meso",
-          "category": "development",
-          "strength": 0.341498
+          "category": "sound",
+          "strength": 0.303976
+        },
+        {
+          "path": "closedHat.accents[6]",
+          "mutationType": "velocity-shift",
+          "before": 0.707291,
+          "after": 0.753427,
+          "scale": "micro",
+          "category": "rhythm",
+          "strength": 0.151988
+        },
+        {
+          "path": "bass.rotation",
+          "mutationType": "pattern-rotation",
+          "before": 3,
+          "after": 2,
+          "scale": "meso",
+          "category": "rhythm",
+          "strength": 0.303976
+        },
+        {
+          "path": "bass.noteChoice[1]",
+          "mutationType": "note-choice-replace",
+          "before": 1,
+          "after": 0,
+          "scale": "meso",
+          "category": "pitch",
+          "strength": 0.303976
         }
       ]
     }
   },
   {
     "version": "0.1",
-    "id": "gen2-026",
-    "family": "percussion-led",
-    "seed": "rebus-1452-generation-2-v1:gen2-026:crossover",
+    "id": "gen2-025",
+    "family": "driving",
+    "seed": "rebus-1452-generation-2-v1:gen2-025:crossover",
     "global": {
       "bpm": 120,
       "meter": [4, 4],
@@ -4220,215 +4027,17 @@
       "form": [8, 8]
     },
     "bass": {
-      "root": "G#",
-      "pitchSet": [0, 11],
-      "octave": 1,
-      "steps": 8,
-      "hits": [2, 3, 7],
-      "noteChoice": [0, 0, 0],
-      "accents": [0.672582, 0.63989, 0.470266],
-      "noteLengths": [0.624417, 0.620295, 0.832381],
-      "gate": 0.33637,
-      "probability": 0.972117,
-      "rotation": 2,
-      "periodicVariation": { "everyBars": 2, "rotation": -3 }
-    },
-    "closedHat": {
-      "mode": "grid",
-      "steps": 12,
-      "hits": [0, 2, 5, 7, 8, 9],
-      "accents": [0.98068, 0.624146, 0.826068, 0.563304, 0.765935, 0.641784],
-      "density": 0.5,
-      "probability": 0.92797,
-      "rotation": -4,
-      "euclideanPulses": null,
-      "muteBars": []
-    },
-    "openHat": {
-      "mode": "grid",
-      "steps": 20,
-      "hits": [4, 7, 10, 13, 18],
-      "accents": [0.857464, 0.67299, 0.520928, 0.487326, 0.617143],
-      "density": 0.25,
-      "probability": 0.954491,
-      "rotation": -1,
-      "euclideanPulses": null,
-      "muteBars": [15]
-    },
-    "percussion": {
-      "layers": [
-        {
-          "mode": "euclidean",
-          "steps": 20,
-          "hits": [3, 6, 11, 12, 13, 15, 17],
-          "accents": [
-            0.517384, 0.506336, 0.772534, 0.841838, 0.600913, 0.70315, 0.550371
-          ],
-          "density": 0.35,
-          "probability": 0.894854,
-          "rotation": 1,
-          "euclideanPulses": 7,
-          "muteBars": [3],
-          "instrument": "rim"
-        },
-        {
-          "mode": "grid",
-          "steps": 8,
-          "hits": [1, 5],
-          "accents": [0.873829, 0.858235],
-          "density": 0.25,
-          "probability": 0.7137,
-          "rotation": -3,
-          "euclideanPulses": null,
-          "muteBars": [10],
-          "instrument": "tom"
-        }
-      ]
-    },
-    "harmony": {
-      "tonic": "A",
-      "pitchCollection": [0, 11],
-      "sectionBPitchShift": null
-    },
-    "sound": {
-      "oscillator": "triangle",
-      "filterCutoff": 9704.275672,
-      "resonance": 0.330324,
-      "drive": 0.320532,
-      "envelope": {
-        "attack": 0.044988,
-        "decay": 0.510376,
-        "sustain": 0.424216,
-        "release": 0.305388
-      },
-      "noiseAmount": 0.172703,
-      "reverbAmount": 0.223713,
-      "delayAmount": 0.179157
-    },
-    "development": {
-      "densityDelta": -0.238498,
-      "bassVariation": true,
-      "hatVariation": true,
-      "percussionChange": 1,
-      "filterMovement": -0.553109,
-      "probabilityDelta": -0.157828,
-      "rotationDelta": -7,
-      "energyDelta": -0.173914
-    },
-    "interaction": {
-      "bassPercussionCoupling": 0.699649,
-      "openHatPercussionDucking": 0.312729,
-      "accentAlignment": 0.40612,
-      "kickBassAvoidance": true
-    },
-    "mutationStrategy": {
-      "mutationRate": 0.244553,
-      "mutationStrength": 0.463625,
-      "microWeight": 0.412193,
-      "mesoWeight": 0.371732,
-      "macroWeight": 0.216075,
-      "rhythmWeight": 0.33973,
-      "pitchWeight": 0.168971,
-      "soundWeight": 0.23782,
-      "developmentWeight": 0.253479
-    },
-    "lineage": {
-      "parents": ["gen1-011", "gen1-008"],
-      "generation": 2,
-      "isFounder": false,
-      "originType": "crossover",
-      "ancestorIds": [
-        "founder-026",
-        "founder-018",
-        "gen1-011",
-        "founder-029",
-        "founder-031",
-        "gen1-008"
-      ],
-      "mutations": [
-        {
-          "path": "development",
-          "mutationType": "development-rebuild",
-          "before": {
-            "densityDelta": 0.147087,
-            "bassVariation": true,
-            "hatVariation": true,
-            "percussionChange": 0,
-            "filterMovement": 0.094863,
-            "probabilityDelta": 0.04836,
-            "rotationDelta": 0,
-            "energyDelta": 0.121028
-          },
-          "after": {
-            "densityDelta": -0.238498,
-            "bassVariation": true,
-            "hatVariation": true,
-            "percussionChange": 1,
-            "filterMovement": -0.553109,
-            "probabilityDelta": -0.157828,
-            "rotationDelta": -7,
-            "energyDelta": -0.245046
-          },
-          "scale": "macro",
-          "category": "development",
-          "strength": 0.463625
-        },
-        {
-          "path": "bass.root",
-          "mutationType": "semitone-shift",
-          "before": "A",
-          "after": "G#",
-          "scale": "micro",
-          "category": "pitch",
-          "strength": 0.162269
-        },
-        {
-          "path": "development.energyDelta",
-          "mutationType": "energy-shift",
-          "before": -0.245046,
-          "after": -0.173914,
-          "scale": "micro",
-          "category": "development",
-          "strength": 0.162269
-        },
-        {
-          "path": "bass.pitchSet",
-          "mutationType": "pitch-set-variation",
-          "before": [0],
-          "after": [0, 11],
-          "scale": "macro",
-          "category": "pitch",
-          "strength": 0.463625
-        }
-      ]
-    }
-  },
-  {
-    "version": "0.1",
-    "id": "gen2-027",
-    "family": "sparse-hypnotic",
-    "seed": "rebus-1452-generation-2-v1:gen2-027:crossover",
-    "global": {
-      "bpm": 120,
-      "meter": [4, 4],
-      "bars": 16,
-      "beatsPerBar": 4,
-      "stepsPerBeat": 4,
-      "kick": "four-on-the-floor",
-      "form": [8, 8]
-    },
-    "bass": {
-      "root": "A",
+      "root": "A#",
       "pitchSet": [0, 3],
-      "octave": 1,
-      "steps": 24,
-      "hits": [1, 8, 12, 14, 20],
-      "noteChoice": [0, 1, 1, 1, 1],
-      "accents": [0.556146, 0.789141, 0.691807, 0.82197, 0.828996],
-      "noteLengths": [0.519652, 1.084668, 0.278832, 0.447271, 0.876837],
-      "gate": 0.667364,
-      "probability": 0.972464,
-      "rotation": -1,
+      "octave": 3,
+      "steps": 8,
+      "hits": [3, 7],
+      "noteChoice": [1, 0],
+      "accents": [0.774829, 0.588291],
+      "noteLengths": [0.67336, 0.700685],
+      "gate": 0.648274,
+      "probability": 0.834903,
+      "rotation": -2,
       "periodicVariation": { "everyBars": 8, "rotation": -3 }
     },
     "closedHat": {
@@ -4436,7 +4045,7 @@
       "steps": 8,
       "hits": [0, 1, 2, 3, 4, 6, 7],
       "accents": [
-        0.873043, 0.816346, 0.737268, 0.844742, 0.723761, 0.491144, 0.652428
+        0.873043, 0.816346, 0.737268, 0.844742, 0.723761, 0.55178, 0.652428
       ],
       "density": 0.875,
       "probability": 0.990095,
@@ -4472,14 +4081,403 @@
       ]
     },
     "harmony": {
-      "tonic": "A",
+      "tonic": "A#",
       "pitchCollection": [0, 3],
       "sectionBPitchShift": null
     },
     "sound": {
-      "oscillator": "sine",
-      "filterCutoff": 6857.202459,
-      "resonance": 0.258193,
+      "oscillator": "square",
+      "filterCutoff": 2595.0066,
+      "resonance": 0.179624,
+      "drive": 0.394279,
+      "envelope": {
+        "attack": 0.004491,
+        "decay": 0.175513,
+        "sustain": 0.168362,
+        "release": 0.139867
+      },
+      "noiseAmount": 0.190756,
+      "reverbAmount": 0.468312,
+      "delayAmount": 0.256382
+    },
+    "development": {
+      "densityDelta": 0.109188,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": -1,
+      "filterMovement": 0.386639,
+      "probabilityDelta": 0.099112,
+      "rotationDelta": 1,
+      "energyDelta": 0.523307
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.627993,
+      "openHatPercussionDucking": 0.147654,
+      "accentAlignment": 0.318923,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.230006,
+      "mutationStrength": 0.514261,
+      "microWeight": 0.449595,
+      "mesoWeight": 0.289667,
+      "macroWeight": 0.260738,
+      "rhythmWeight": 0.415549,
+      "pitchWeight": 0.196468,
+      "soundWeight": 0.151432,
+      "developmentWeight": 0.236551
+    },
+    "lineage": {
+      "parents": ["gen1-003", "gen1-026"],
+      "generation": 2,
+      "isFounder": false,
+      "originType": "crossover",
+      "ancestorIds": [
+        "founder-017",
+        "gen1-003",
+        "founder-023",
+        "founder-030",
+        "gen1-026"
+      ],
+      "mutations": [
+        {
+          "path": "development.energyDelta",
+          "mutationType": "energy-shift",
+          "before": 0.373275,
+          "after": 0.459436,
+          "scale": "micro",
+          "category": "development",
+          "strength": 0.179991
+        },
+        {
+          "path": "development.energyDelta",
+          "mutationType": "energy-shift",
+          "before": 0.459436,
+          "after": 0.523307,
+          "scale": "micro",
+          "category": "development",
+          "strength": 0.179991
+        },
+        {
+          "path": "bass.noteChoice[0]",
+          "mutationType": "note-choice-shift",
+          "before": 0,
+          "after": 1,
+          "scale": "micro",
+          "category": "pitch",
+          "strength": 0.179991
+        },
+        {
+          "path": "sound.oscillator",
+          "mutationType": "sound-family-shift",
+          "before": "fm",
+          "after": "square",
+          "scale": "meso",
+          "category": "sound",
+          "strength": 0.359983
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "gen2-026",
+    "family": "groove-heavy",
+    "seed": "rebus-1452-generation-2-v1:gen2-026:crossover",
+    "global": {
+      "bpm": 120,
+      "meter": [4, 4],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [8, 8]
+    },
+    "bass": {
+      "root": "A",
+      "pitchSet": [0, 2, 3, 11],
+      "octave": 1,
+      "steps": 12,
+      "hits": [0, 3, 6, 9, 11],
+      "noteChoice": [1, 1, 1, 2, 2],
+      "accents": [0.628107, 0.821497, 0.5023, 0.461871, 0.485407],
+      "noteLengths": [1.148452, 0.515543, 0.140235, 0.188784, 1.101887],
+      "gate": 0.416449,
+      "probability": 0.693768,
+      "rotation": 4,
+      "periodicVariation": { "everyBars": 2, "rotation": -3 }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 24,
+      "hits": [0, 1, 2, 3, 7, 8, 9, 14, 18, 23],
+      "accents": [
+        0.631871, 0.588868, 0.516953, 0.674352, 0.823006, 0.666886, 0.453603,
+        0.664226, 0.530351, 0.489379
+      ],
+      "density": 0.4166666666666667,
+      "probability": 0.973992,
+      "rotation": 1,
+      "euclideanPulses": 10,
+      "muteBars": [9]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 24,
+      "hits": [1, 2, 7, 14, 17, 21, 22],
+      "accents": [
+        0.756336, 0.555677, 0.630124, 0.815177, 0.73268, 0.581077, 0.600728
+      ],
+      "density": 0.2916666666666667,
+      "probability": 0.760766,
+      "rotation": -2,
+      "euclideanPulses": null,
+      "muteBars": []
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 12,
+          "hits": [0, 1, 2, 3, 5, 7, 8, 9, 10],
+          "accents": [
+            0.898278, 0.86617, 0.558845, 0.61133, 0.633337, 0.472493, 0.743488,
+            0.80539, 0.717942
+          ],
+          "density": 0.75,
+          "probability": 0.740598,
+          "rotation": 3,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "noise"
+        },
+        {
+          "mode": "euclidean",
+          "steps": 24,
+          "hits": [2, 5, 6, 9, 13, 15, 17, 18, 19, 20, 21, 22, 23],
+          "accents": [
+            0.523506, 0.659983, 0.868346, 0.580024, 0.548396, 0.542295,
+            0.850434, 0.614737, 0.819253, 0.690989, 0.723871, 0.811488, 0.590878
+          ],
+          "density": 0.5416666666666666,
+          "probability": 0.732597,
+          "rotation": -2,
+          "euclideanPulses": 13,
+          "muteBars": [5, 12],
+          "instrument": "noise"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A",
+      "pitchCollection": [0, 2, 3, 11],
+      "sectionBPitchShift": 1
+    },
+    "sound": {
+      "oscillator": "triangle",
+      "filterCutoff": 6491.725844,
+      "resonance": 0.095885,
+      "drive": 0.162784,
+      "envelope": {
+        "attack": 0.115249,
+        "decay": 0.419328,
+        "sustain": 0.40647,
+        "release": 0.389942
+      },
+      "noiseAmount": 0.132522,
+      "reverbAmount": 0.346583,
+      "delayAmount": 0.249221
+    },
+    "development": {
+      "densityDelta": -0.238498,
+      "bassVariation": true,
+      "hatVariation": true,
+      "percussionChange": 1,
+      "filterMovement": -0.553109,
+      "probabilityDelta": -0.157828,
+      "rotationDelta": -7,
+      "energyDelta": -0.179054
+    },
+    "interaction": {
+      "bassPercussionCoupling": -0.586342,
+      "openHatPercussionDucking": 0.129776,
+      "accentAlignment": 0.279521,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.207324,
+      "mutationStrength": 0.430128,
+      "microWeight": 0.450949,
+      "mesoWeight": 0.259635,
+      "macroWeight": 0.289416,
+      "rhythmWeight": 0.286361,
+      "pitchWeight": 0.218605,
+      "soundWeight": 0.220541,
+      "developmentWeight": 0.274493
+    },
+    "lineage": {
+      "parents": ["gen1-012", "gen1-010"],
+      "generation": 2,
+      "isFounder": false,
+      "originType": "crossover",
+      "ancestorIds": [
+        "founder-019",
+        "founder-042",
+        "gen1-012",
+        "founder-010",
+        "founder-038",
+        "gen1-010"
+      ],
+      "mutations": [
+        {
+          "path": "development",
+          "mutationType": "development-rebuild",
+          "before": {
+            "densityDelta": 0.236694,
+            "bassVariation": true,
+            "hatVariation": true,
+            "percussionChange": 0,
+            "filterMovement": 0.435896,
+            "probabilityDelta": 0.055311,
+            "rotationDelta": -3,
+            "energyDelta": 0.501349
+          },
+          "after": {
+            "densityDelta": -0.238498,
+            "bassVariation": true,
+            "hatVariation": true,
+            "percussionChange": 1,
+            "filterMovement": -0.553109,
+            "probabilityDelta": -0.157828,
+            "rotationDelta": -7,
+            "energyDelta": -0.245046
+          },
+          "scale": "macro",
+          "category": "development",
+          "strength": 0.430128
+        },
+        {
+          "path": "bass.noteChoice[4]",
+          "mutationType": "note-choice-shift",
+          "before": 0,
+          "after": 2,
+          "scale": "micro",
+          "category": "pitch",
+          "strength": 0.150545
+        },
+        {
+          "path": "development.energyDelta",
+          "mutationType": "energy-shift",
+          "before": -0.245046,
+          "after": -0.179054,
+          "scale": "micro",
+          "category": "development",
+          "strength": 0.150545
+        },
+        {
+          "path": "bass.pitchSet",
+          "mutationType": "pitch-set-variation",
+          "before": [0, 2, 3],
+          "after": [0, 2, 3, 11],
+          "scale": "macro",
+          "category": "pitch",
+          "strength": 0.430128
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "gen2-027",
+    "family": "sparse-hypnotic",
+    "seed": "rebus-1452-generation-2-v1:gen2-027:crossover",
+    "global": {
+      "bpm": 120,
+      "meter": [4, 4],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [8, 8]
+    },
+    "bass": {
+      "root": "A",
+      "pitchSet": [0, 3, 11],
+      "octave": 1,
+      "steps": 24,
+      "hits": [1, 8, 12, 14, 20],
+      "noteChoice": [0, 1, 1, 1, 1],
+      "accents": [0.556146, 0.789141, 0.691807, 0.82197, 0.828996],
+      "noteLengths": [0.519652, 1.084668, 0.278832, 0.447271, 0.876837],
+      "gate": 0.667364,
+      "probability": 0.972464,
+      "rotation": -1,
+      "periodicVariation": { "everyBars": 8, "rotation": -3 }
+    },
+    "closedHat": {
+      "mode": "euclidean",
+      "steps": 16,
+      "hits": [0, 2, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15],
+      "accents": [
+        0.699565, 0.83465, 0.797254, 0.725242, 0.5105, 0.732967, 0.571526,
+        0.700582, 0.588397, 0.57678, 0.709752, 0.511047, 0.563684
+      ],
+      "density": 0.8125,
+      "probability": 0.725846,
+      "rotation": -1,
+      "euclideanPulses": 13,
+      "muteBars": [5]
+    },
+    "openHat": {
+      "mode": "euclidean",
+      "steps": 16,
+      "hits": [1, 3, 5, 7, 11, 12, 15],
+      "accents": [
+        0.552228, 0.842026, 0.763893, 0.863994, 0.824252, 0.681917, 0.498373
+      ],
+      "density": 0.4375,
+      "probability": 0.992071,
+      "rotation": 1,
+      "euclideanPulses": 7,
+      "muteBars": [0, 1]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 16,
+          "hits": [0, 4, 7, 11, 15],
+          "accents": [0.746813, 0.958454, 0.521277, 0.773735, 0.738437],
+          "density": 0.3125,
+          "probability": 0.923425,
+          "rotation": -1,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "noise"
+        },
+        {
+          "mode": "grid",
+          "steps": 16,
+          "hits": [3, 4, 11],
+          "accents": [0.460516, 0.674279, 0.463253],
+          "density": 0.1875,
+          "probability": 0.821267,
+          "rotation": 2,
+          "euclideanPulses": null,
+          "muteBars": [9, 10],
+          "instrument": "tom"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A",
+      "pitchCollection": [0, 3, 11],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "saw",
+      "filterCutoff": 3430.721422,
+      "resonance": 0.301322,
       "drive": 0.210592,
       "envelope": {
         "attack": 0.124904,
@@ -4492,14 +4490,14 @@
       "delayAmount": 0.412806
     },
     "development": {
-      "densityDelta": 0.109188,
-      "bassVariation": true,
+      "densityDelta": 0.150181,
+      "bassVariation": false,
       "hatVariation": true,
-      "percussionChange": -1,
-      "filterMovement": 0.386639,
-      "probabilityDelta": 0.099112,
-      "rotationDelta": 8,
-      "energyDelta": 0.373275
+      "percussionChange": 0,
+      "filterMovement": 0.1628,
+      "probabilityDelta": 0.069916,
+      "rotationDelta": 1,
+      "energyDelta": 0.317881
     },
     "interaction": {
       "bassPercussionCoupling": -0.602761,
@@ -4508,57 +4506,40 @@
       "kickBassAvoidance": false
     },
     "mutationStrategy": {
-      "mutationRate": 0.115987,
-      "mutationStrength": 0.333333,
-      "microWeight": 0.468578,
-      "mesoWeight": 0.291319,
-      "macroWeight": 0.240103,
-      "rhythmWeight": 0.376864,
-      "pitchWeight": 0.172284,
-      "soundWeight": 0.184085,
-      "developmentWeight": 0.266767
+      "mutationRate": 0.099983,
+      "mutationStrength": 0.246145,
+      "microWeight": 0.526005,
+      "mesoWeight": 0.243661,
+      "macroWeight": 0.230334,
+      "rhythmWeight": 0.368189,
+      "pitchWeight": 0.208196,
+      "soundWeight": 0.197524,
+      "developmentWeight": 0.226091
     },
     "lineage": {
-      "parents": ["gen1-001", "gen1-003"],
+      "parents": ["gen1-001", "gen1-002"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
-      "ancestorIds": ["founder-004", "gen1-001", "founder-017", "gen1-003"],
+      "ancestorIds": ["founder-004", "gen1-001", "founder-013", "gen1-002"],
       "mutations": [
         {
-          "path": "closedHat.accents[5]",
+          "path": "closedHat.accents[10]",
           "mutationType": "velocity-shift",
-          "before": 0.55178,
-          "after": 0.491144,
+          "before": 0.754528,
+          "after": 0.709752,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.116667
+          "strength": 0.086151
         },
         {
-          "path": "sound",
-          "mutationType": "sound-family-rebuild",
-          "before": {
-            "oscillator": "saw",
-            "filterCutoff": 3430.721422,
-            "resonance": 0.301322
-          },
-          "after": {
-            "oscillator": "sine",
-            "filterCutoff": 6857.202459,
-            "resonance": 0.258193
-          },
+          "path": "bass.pitchSet",
+          "mutationType": "pitch-set-variation",
+          "before": [0, 3],
+          "after": [0, 3, 11],
           "scale": "macro",
-          "category": "sound",
-          "strength": 0.333333
-        },
-        {
-          "path": "development.rotationDelta",
-          "mutationType": "development-variation",
-          "before": 1,
-          "after": 8,
-          "scale": "meso",
-          "category": "development",
-          "strength": 0.233333
+          "category": "pitch",
+          "strength": 0.246145
         }
       ]
     }
@@ -4566,7 +4547,7 @@
   {
     "version": "0.1",
     "id": "gen2-028",
-    "family": "wild-outliers",
+    "family": "percussion-led",
     "seed": "rebus-1452-generation-2-v1:gen2-028:crossover",
     "global": {
       "bpm": 120,
@@ -4579,16 +4560,16 @@
     },
     "bass": {
       "root": "A",
-      "pitchSet": [0, 2, 3],
+      "pitchSet": [0],
       "octave": 1,
-      "steps": 12,
-      "hits": [0, 3, 6, 9, 11],
-      "noteChoice": [1, 1, 1, 2, 0],
-      "accents": [0.628107, 0.821497, 0.5023, 0.461871, 0.485407],
-      "noteLengths": [1.148452, 0.515543, 0.140235, 0.188784, 1.101887],
-      "gate": 0.416449,
-      "probability": 0.693768,
-      "rotation": 5,
+      "steps": 8,
+      "hits": [2, 3, 7],
+      "noteChoice": [0, 0, 0],
+      "accents": [0.672582, 0.63989, 0.470266],
+      "noteLengths": [0.624417, 0.620295, 0.832381],
+      "gate": 0.33637,
+      "probability": 0.972117,
+      "rotation": 3,
       "periodicVariation": { "everyBars": 2, "rotation": -3 }
     },
     "closedHat": {
@@ -4648,23 +4629,23 @@
     },
     "harmony": {
       "tonic": "A",
-      "pitchCollection": [0, 2, 3],
-      "sectionBPitchShift": 1
+      "pitchCollection": [0],
+      "sectionBPitchShift": null
     },
     "sound": {
       "oscillator": "triangle",
-      "filterCutoff": 6491.725844,
-      "resonance": 0.095885,
-      "drive": 0.162784,
+      "filterCutoff": 9704.275672,
+      "resonance": 0.330324,
+      "drive": 0.320532,
       "envelope": {
-        "attack": 0.143356,
-        "decay": 0.419328,
-        "sustain": 0.40647,
-        "release": 0.389942
+        "attack": 0.044988,
+        "decay": 0.510376,
+        "sustain": 0.424216,
+        "release": 0.305388
       },
-      "noiseAmount": 0.132522,
-      "reverbAmount": 0.346583,
-      "delayAmount": 0.249221
+      "noiseAmount": 0.172703,
+      "reverbAmount": 0.223713,
+      "delayAmount": 0.179157
     },
     "development": {
       "densityDelta": 0.150181,
@@ -4674,34 +4655,34 @@
       "filterMovement": 0.1628,
       "probabilityDelta": 0.069916,
       "rotationDelta": 1,
-      "energyDelta": 0.265836
+      "energyDelta": 0.270111
     },
     "interaction": {
-      "bassPercussionCoupling": -0.586342,
-      "openHatPercussionDucking": 0.129776,
-      "accentAlignment": 0.279521,
+      "bassPercussionCoupling": 0.699649,
+      "openHatPercussionDucking": 0.312729,
+      "accentAlignment": 0.40612,
       "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.21443,
-      "mutationStrength": 0.365027,
-      "microWeight": 0.492431,
-      "mesoWeight": 0.242781,
-      "macroWeight": 0.264788,
-      "rhythmWeight": 0.315846,
-      "pitchWeight": 0.214143,
-      "soundWeight": 0.196774,
-      "developmentWeight": 0.273237
+      "mutationRate": 0.184137,
+      "mutationStrength": 0.335041,
+      "microWeight": 0.420048,
+      "mesoWeight": 0.319386,
+      "macroWeight": 0.260566,
+      "rhythmWeight": 0.350681,
+      "pitchWeight": 0.203783,
+      "soundWeight": 0.175679,
+      "developmentWeight": 0.269857
     },
     "lineage": {
-      "parents": ["gen1-012", "gen1-002"],
+      "parents": ["gen1-011", "gen1-002"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
       "ancestorIds": [
-        "founder-019",
-        "founder-042",
-        "gen1-012",
+        "founder-026",
+        "founder-018",
+        "gen1-011",
         "founder-013",
         "gen1-002"
       ],
@@ -4709,11 +4690,11 @@
         {
           "path": "bass.rotation",
           "mutationType": "pattern-rotation",
-          "before": 4,
-          "after": 5,
+          "before": 2,
+          "after": 3,
           "scale": "meso",
           "category": "rhythm",
-          "strength": 0.255519
+          "strength": 0.234529
         },
         {
           "path": "development.hatVariation",
@@ -4722,25 +4703,16 @@
           "after": false,
           "scale": "meso",
           "category": "development",
-          "strength": 0.255519
+          "strength": 0.234529
         },
         {
           "path": "development.energyDelta",
           "mutationType": "energy-shift",
           "before": 0.317881,
-          "after": 0.265836,
+          "after": 0.270111,
           "scale": "micro",
           "category": "development",
-          "strength": 0.127759
-        },
-        {
-          "path": "sound.envelope.attack",
-          "mutationType": "envelope-shift",
-          "before": 0.115249,
-          "after": 0.143356,
-          "scale": "micro",
-          "category": "sound",
-          "strength": 0.127759
+          "strength": 0.117264
         }
       ]
     }
@@ -4773,61 +4745,48 @@
         0.904108, 0.946066, 1.039237, 0.157554, 1.60918, 0.695572, 0.425881,
         0.91684, 0.344601
       ],
-      "gate": 0.834805,
-      "probability": 0.819259,
+      "gate": 0.836232,
+      "probability": 0.818227,
       "rotation": 1,
       "periodicVariation": { "everyBars": 2, "rotation": 1 }
     },
     "closedHat": {
-      "mode": "grid",
-      "steps": 12,
-      "hits": [0, 2, 5, 7, 8, 9, 11],
+      "mode": "euclidean",
+      "steps": 16,
+      "hits": [1, 5, 9, 10, 11, 12, 13, 15],
       "accents": [
-        0.98068, 0.624146, 0.826068, 0.563304, 0.765935, 0.641784, 0.556206
+        0.517535, 0.463318, 0.531726, 0.576671, 0.545689, 0.871622, 0.730622,
+        0.645988
       ],
-      "density": 0.5833333333333334,
-      "probability": 0.92797,
+      "density": 0.5,
+      "probability": 0.87144,
       "rotation": -4,
-      "euclideanPulses": null,
-      "muteBars": []
+      "euclideanPulses": 8,
+      "muteBars": [9]
     },
     "openHat": {
       "mode": "grid",
-      "steps": 20,
-      "hits": [4, 7, 10, 13, 18],
-      "accents": [0.857464, 0.67299, 0.520928, 0.487326, 0.617143],
+      "steps": 24,
+      "hits": [1, 3, 5, 9, 13, 17],
+      "accents": [0.510171, 0.591352, 0.777358, 0.812096, 0.760749, 0.834923],
       "density": 0.25,
-      "probability": 0.954491,
+      "probability": 0.788656,
       "rotation": -1,
       "euclideanPulses": null,
-      "muteBars": [15]
+      "muteBars": [9]
     },
     "percussion": {
       "layers": [
         {
-          "mode": "euclidean",
-          "steps": 20,
-          "hits": [3, 6, 11, 12, 13, 15, 17],
-          "accents": [
-            0.517384, 0.506336, 0.772534, 0.841838, 0.600913, 0.70315, 0.550371
-          ],
-          "density": 0.35,
-          "probability": 0.894854,
-          "rotation": 1,
-          "euclideanPulses": 7,
-          "muteBars": [3],
-          "instrument": "rim"
-        },
-        {
           "mode": "grid",
-          "steps": 8,
-          "hits": [1, 5],
-          "accents": [0.873829, 0.858235],
-          "density": 0.25,
-          "probability": 0.7137,
-          "rotation": -3,
+          "steps": 12,
+          "hits": [9, 11],
+          "accents": [0.76983, 0.860433],
+          "density": 0.16666666666666666,
+          "probability": 0.774004,
+          "rotation": 0,
           "euclideanPulses": null,
-          "muteBars": [10],
+          "muteBars": [13],
           "instrument": "cowbell"
         }
       ]
@@ -4853,14 +4812,14 @@
       "delayAmount": 0.02884
     },
     "development": {
-      "densityDelta": 0.147087,
+      "densityDelta": -0.244054,
       "bassVariation": true,
-      "hatVariation": false,
-      "percussionChange": 0,
-      "filterMovement": 0.094863,
-      "probabilityDelta": 0.04836,
-      "rotationDelta": 0,
-      "energyDelta": 0.178728
+      "hatVariation": true,
+      "percussionChange": 1,
+      "filterMovement": -0.357928,
+      "probabilityDelta": -0.17981,
+      "rotationDelta": -4,
+      "energyDelta": -0.278104
     },
     "interaction": {
       "bassPercussionCoupling": 0.976035,
@@ -4869,22 +4828,22 @@
       "kickBassAvoidance": false
     },
     "mutationStrategy": {
-      "mutationRate": 0.162476,
-      "mutationStrength": 0.666977,
-      "microWeight": 0.495187,
-      "mesoWeight": 0.404183,
-      "macroWeight": 0.10063,
-      "rhythmWeight": 0.32925,
-      "pitchWeight": 0.142888,
-      "soundWeight": 0.183717,
-      "developmentWeight": 0.344145
+      "mutationRate": 0.150474,
+      "mutationStrength": 0.683845,
+      "microWeight": 0.585623,
+      "mesoWeight": 0.301085,
+      "macroWeight": 0.113292,
+      "rhythmWeight": 0.342721,
+      "pitchWeight": 0.220713,
+      "soundWeight": 0.168138,
+      "developmentWeight": 0.268428
     },
     "lineage": {
-      "parents": ["gen1-041", "gen1-035"],
+      "parents": ["gen1-041", "gen1-036"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
-      "ancestorIds": ["gen1-041", "founder-031", "gen1-035"],
+      "ancestorIds": ["gen1-041", "founder-024", "gen1-036"],
       "mutations": [
         {
           "path": "bass.noteChoice[6]",
@@ -4893,34 +4852,34 @@
           "after": 3,
           "scale": "micro",
           "category": "pitch",
-          "strength": 0.233442
+          "strength": 0.239346
         },
         {
           "path": "bass.gate",
           "mutationType": "shift",
           "before": 0.778358,
-          "after": 0.740152,
+          "after": 0.739185,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.233442
+          "strength": 0.239346
         },
         {
           "path": "bass.probability",
           "mutationType": "shift",
           "before": 0.860042,
-          "after": 0.819259,
+          "after": 0.818227,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.233442
+          "strength": 0.239346
         },
         {
           "path": "bass.gate",
           "mutationType": "shift",
-          "before": 0.740152,
-          "after": 0.834805,
+          "before": 0.739185,
+          "after": 0.836232,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.233442
+          "strength": 0.239346
         }
       ]
     }
@@ -5135,22 +5094,18 @@
       "form": [8, 8]
     },
     "bass": {
-      "root": "G",
-      "pitchSet": [0, 3, 5],
-      "octave": 3,
-      "steps": 16,
-      "hits": [0, 3, 4, 8, 11, 12, 14],
-      "noteChoice": [1, 2, 0, 1, 0, 1, 0],
-      "accents": [
-        0.895325, 0.704759, 0.912791, 0.824392, 0.586529, 0.592489, 0.824559
-      ],
-      "noteLengths": [
-        0.598846, 0.409525, 1.087801, 0.968867, 0.251182, 0.157791, 0.148724
-      ],
-      "gate": 0.779887,
-      "probability": 0.763757,
-      "rotation": -4,
-      "periodicVariation": { "everyBars": 4, "rotation": -3 }
+      "root": "A",
+      "pitchSet": [0],
+      "octave": 1,
+      "steps": 8,
+      "hits": [4, 5, 7],
+      "noteChoice": [0, 0, 0],
+      "accents": [0.94532, 0.488569, 0.748525],
+      "noteLengths": [0.352084, 0.547601, 1.15518],
+      "gate": 0.573777,
+      "probability": 0.985984,
+      "rotation": 4,
+      "periodicVariation": null
     },
     "closedHat": {
       "mode": "grid",
@@ -5206,24 +5161,24 @@
       ]
     },
     "harmony": {
-      "tonic": "G",
-      "pitchCollection": [0, 3, 5],
+      "tonic": "A",
+      "pitchCollection": [0],
       "sectionBPitchShift": null
     },
     "sound": {
-      "oscillator": "saw",
-      "filterCutoff": 7620.369075,
-      "resonance": 0.30233,
-      "drive": 0.418696,
+      "oscillator": "noise-blend",
+      "filterCutoff": 9216.309458,
+      "resonance": 0.243295,
+      "drive": 0.278408,
       "envelope": {
-        "attack": 0.010454,
-        "decay": 0.83184,
-        "sustain": 0.367961,
-        "release": 0.02
+        "attack": 0.066005,
+        "decay": 0.575492,
+        "sustain": 0.696526,
+        "release": 0.118447
       },
-      "noiseAmount": 0.412483,
-      "reverbAmount": 0.092802,
-      "delayAmount": 0.055985
+      "noiseAmount": 0.27723,
+      "reverbAmount": 0.195196,
+      "delayAmount": 0.123998
     },
     "development": {
       "densityDelta": 0.078476,
@@ -5236,31 +5191,31 @@
       "energyDelta": 0.288493
     },
     "interaction": {
-      "bassPercussionCoupling": -0.667922,
-      "openHatPercussionDucking": 0.128122,
-      "accentAlignment": 0.668695,
-      "kickBassAvoidance": false
+      "bassPercussionCoupling": -0.425661,
+      "openHatPercussionDucking": 0.226619,
+      "accentAlignment": 0.679169,
+      "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.230094,
-      "mutationStrength": 0.471702,
-      "microWeight": 0.512849,
-      "mesoWeight": 0.308771,
-      "macroWeight": 0.17838,
-      "rhythmWeight": 0.2815,
-      "pitchWeight": 0.230162,
-      "soundWeight": 0.243963,
-      "developmentWeight": 0.244375
+      "mutationRate": 0.264078,
+      "mutationStrength": 0.52939,
+      "microWeight": 0.542996,
+      "mesoWeight": 0.270924,
+      "macroWeight": 0.18608,
+      "rhythmWeight": 0.256753,
+      "pitchWeight": 0.241765,
+      "soundWeight": 0.176585,
+      "developmentWeight": 0.324897
     },
     "lineage": {
-      "parents": ["gen1-029", "gen1-007"],
+      "parents": ["gen1-028", "gen1-007"],
       "generation": 2,
       "isFounder": false,
       "originType": "crossover",
       "ancestorIds": [
-        "founder-019",
-        "founder-016",
-        "gen1-029",
+        "founder-013",
+        "founder-038",
+        "gen1-028",
         "founder-037",
         "gen1-007"
       ],
@@ -5272,25 +5227,25 @@
           "after": false,
           "scale": "meso",
           "category": "development",
-          "strength": 0.330191
-        },
-        {
-          "path": "bass.noteChoice[1]",
-          "mutationType": "note-choice-replace",
-          "before": 0,
-          "after": 2,
-          "scale": "meso",
-          "category": "pitch",
-          "strength": 0.330191
+          "strength": 0.370573
         },
         {
           "path": "bass.gate",
           "mutationType": "shift",
-          "before": 0.720041,
-          "after": 0.779887,
+          "before": 0.506612,
+          "after": 0.573777,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.165096
+          "strength": 0.185286
+        },
+        {
+          "path": "sound.envelope.release",
+          "mutationType": "envelope-shift",
+          "before": 0.211069,
+          "after": 0.118447,
+          "scale": "micro",
+          "category": "sound",
+          "strength": 0.185286
         }
       ]
     }
@@ -5850,7 +5805,7 @@
   {
     "version": "0.1",
     "id": "gen2-035",
-    "family": "groove-heavy",
+    "family": "driving",
     "seed": "rebus-1452-generation-2-v1:gen2-035:mutation",
     "global": {
       "bpm": 120,
@@ -5862,28 +5817,179 @@
       "form": [8, 8]
     },
     "bass": {
-      "root": "C",
-      "pitchSet": [0, 1, 3, 5],
+      "root": "A",
+      "pitchSet": [0],
       "octave": 1,
-      "steps": 32,
-      "hits": [
-        5, 6, 7, 8, 10, 11, 13, 15, 17, 18, 19, 23, 24, 26, 27, 28, 29, 31
-      ],
-      "noteChoice": [0, 0, 1, 3, 2, 0, 3, 0, 3, 2, 0, 2, 2, 1, 2, 2, 3, 0],
+      "steps": 8,
+      "hits": [2, 3, 7],
+      "noteChoice": [0, 0, 0],
+      "accents": [0.672582, 0.63989, 0.470266],
+      "noteLengths": [0.624417, 0.620295, 0.832381],
+      "gate": 0.418362,
+      "probability": 0.961455,
+      "rotation": 3,
+      "periodicVariation": { "everyBars": 2, "rotation": -3 }
+    },
+    "closedHat": {
+      "mode": "grid",
+      "steps": 8,
+      "hits": [0, 1, 2, 3, 4, 5, 7],
       "accents": [
-        0.8173, 0.642198, 0.699204, 0.665164, 0.616354, 0.578206, 0.877327,
-        0.879034, 0.849712, 0.525394, 0.475398, 0.539263, 0.80425, 0.662859,
-        0.652504, 0.968283, 0.823915, 0.862673
+        0.590426, 0.492269, 0.606878, 0.70658, 0.617826, 0.650059, 0.707291
       ],
-      "noteLengths": [
-        0.902424, 1.006225, 0.591081, 1.030341, 1.207751, 0.957471, 0.517528,
-        0.129887, 0.147052, 0.856913, 1.073701, 0.511784, 0.771642, 0.529321,
-        0.239249, 1.242024, 0.833649, 0.644769
-      ],
-      "gate": 0.835668,
-      "probability": 0.821321,
-      "rotation": -1,
-      "periodicVariation": { "everyBars": 2, "rotation": 2 }
+      "density": 0.875,
+      "probability": 0.794886,
+      "rotation": 3,
+      "euclideanPulses": null,
+      "muteBars": [7]
+    },
+    "openHat": {
+      "mode": "grid",
+      "steps": 16,
+      "hits": [0, 1, 2, 9, 15],
+      "accents": [0.857743, 0.865791, 0.817837, 0.585053, 0.564504],
+      "density": 0.3125,
+      "probability": 0.850777,
+      "rotation": 1,
+      "euclideanPulses": null,
+      "muteBars": [2, 14]
+    },
+    "percussion": {
+      "layers": [
+        {
+          "mode": "grid",
+          "steps": 8,
+          "hits": [0, 2, 3],
+          "accents": [0.824945, 0.653269, 0.586522],
+          "density": 0.375,
+          "probability": 0.759271,
+          "rotation": 3,
+          "euclideanPulses": null,
+          "muteBars": [5],
+          "instrument": "cowbell"
+        }
+      ]
+    },
+    "harmony": {
+      "tonic": "A",
+      "pitchCollection": [0],
+      "sectionBPitchShift": null
+    },
+    "sound": {
+      "oscillator": "triangle",
+      "filterCutoff": 9704.275672,
+      "resonance": 0.330324,
+      "drive": 0.320532,
+      "envelope": {
+        "attack": 0.044988,
+        "decay": 0.510376,
+        "sustain": 0.424216,
+        "release": 0.305388
+      },
+      "noiseAmount": 0.172703,
+      "reverbAmount": 0.223713,
+      "delayAmount": 0.179157
+    },
+    "development": {
+      "densityDelta": -0.169663,
+      "bassVariation": false,
+      "hatVariation": false,
+      "percussionChange": 0,
+      "filterMovement": -0.318135,
+      "probabilityDelta": -0.136783,
+      "rotationDelta": -8,
+      "energyDelta": -0.33971
+    },
+    "interaction": {
+      "bassPercussionCoupling": 0.699649,
+      "openHatPercussionDucking": 0.312729,
+      "accentAlignment": 0.40612,
+      "kickBassAvoidance": true
+    },
+    "mutationStrategy": {
+      "mutationRate": 0.189551,
+      "mutationStrength": 0.461915,
+      "microWeight": 0.387703,
+      "mesoWeight": 0.327225,
+      "macroWeight": 0.285072,
+      "rhythmWeight": 0.379011,
+      "pitchWeight": 0.063688,
+      "soundWeight": 0.232404,
+      "developmentWeight": 0.324897
+    },
+    "lineage": {
+      "parents": ["gen1-032"],
+      "generation": 2,
+      "isFounder": false,
+      "originType": "mutation",
+      "ancestorIds": ["founder-018", "gen1-032"],
+      "mutations": [
+        {
+          "path": "bass.rotation",
+          "mutationType": "pattern-rotation",
+          "before": 2,
+          "after": 3,
+          "scale": "meso",
+          "category": "rhythm",
+          "strength": 0.32334
+        },
+        {
+          "path": "percussion.layers[0].instrument",
+          "mutationType": "percussion-layer-variation",
+          "before": "rim",
+          "after": "cowbell",
+          "scale": "meso",
+          "category": "rhythm",
+          "strength": 0.32334
+        },
+        {
+          "path": "bass.probability",
+          "mutationType": "shift",
+          "before": 0.972117,
+          "after": 0.99027,
+          "scale": "micro",
+          "category": "rhythm",
+          "strength": 0.16167
+        },
+        {
+          "path": "bass.probability",
+          "mutationType": "shift",
+          "before": 0.99027,
+          "after": 0.961455,
+          "scale": "micro",
+          "category": "rhythm",
+          "strength": 0.16167
+        }
+      ]
+    }
+  },
+  {
+    "version": "0.1",
+    "id": "gen2-036",
+    "family": "groove-heavy",
+    "seed": "rebus-1452-generation-2-v1:gen2-036:mutation",
+    "global": {
+      "bpm": 120,
+      "meter": [4, 4],
+      "bars": 16,
+      "beatsPerBar": 4,
+      "stepsPerBeat": 4,
+      "kick": "four-on-the-floor",
+      "form": [8, 8]
+    },
+    "bass": {
+      "root": "C",
+      "pitchSet": [0, 3],
+      "octave": 2,
+      "steps": 16,
+      "hits": [1, 4, 12],
+      "noteChoice": [1, 0, 1],
+      "accents": [0.549958, 0.997185, 0.918726],
+      "noteLengths": [0.413756, 0.594785, 1.049634],
+      "gate": 0.441409,
+      "probability": 0.867946,
+      "rotation": 3,
+      "periodicVariation": { "everyBars": 4, "rotation": 1 }
     },
     "closedHat": {
       "mode": "grid",
@@ -5899,9 +6005,9 @@
     "openHat": {
       "mode": "euclidean",
       "steps": 24,
-      "hits": [2, 3, 13, 17, 19, 21, 22],
+      "hits": [2, 3, 12, 13, 17, 21, 22],
       "accents": [
-        0.63086, 0.760263, 0.525369, 0.806842, 0.89944, 0.795333, 0.723593
+        0.63086, 0.760263, 0.827654, 0.525369, 0.806842, 0.795333, 0.723593
       ],
       "density": 0.2916666666666667,
       "probability": 0.76141,
@@ -5928,173 +6034,7 @@
           "rotation": 4,
           "euclideanPulses": 20,
           "muteBars": [5, 7],
-          "instrument": "cowbell"
-        }
-      ]
-    },
-    "harmony": {
-      "tonic": "C",
-      "pitchCollection": [0, 1, 3, 5],
-      "sectionBPitchShift": 1
-    },
-    "sound": {
-      "oscillator": "saw",
-      "filterCutoff": 6626.886538,
-      "resonance": 0.481535,
-      "drive": 0.551999,
-      "envelope": {
-        "attack": 0.019658,
-        "decay": 0.353832,
-        "sustain": 0.087243,
-        "release": 0.598882
-      },
-      "noiseAmount": 0.42719,
-      "reverbAmount": 0.245251,
-      "delayAmount": 0.124929
-    },
-    "development": {
-      "densityDelta": 0.108591,
-      "bassVariation": false,
-      "hatVariation": false,
-      "percussionChange": -1,
-      "filterMovement": 0.248369,
-      "probabilityDelta": 0.112384,
-      "rotationDelta": 0,
-      "energyDelta": 0.322588
-    },
-    "interaction": {
-      "bassPercussionCoupling": 0.739558,
-      "openHatPercussionDucking": 0.154553,
-      "accentAlignment": 0.622921,
-      "kickBassAvoidance": false
-    },
-    "mutationStrategy": {
-      "mutationRate": 0.130459,
-      "mutationStrength": 0.264004,
-      "microWeight": 0.378084,
-      "mesoWeight": 0.450552,
-      "macroWeight": 0.171364,
-      "rhythmWeight": 0.296913,
-      "pitchWeight": 0.208259,
-      "soundWeight": 0.193922,
-      "developmentWeight": 0.300906
-    },
-    "lineage": {
-      "parents": ["gen1-033"],
-      "generation": 2,
-      "isFounder": false,
-      "originType": "mutation",
-      "ancestorIds": ["founder-008", "gen1-033"],
-      "mutations": [
-        {
-          "path": "bass.rotation",
-          "mutationType": "pattern-rotation",
-          "before": -2,
-          "after": -1,
-          "scale": "meso",
-          "category": "rhythm",
-          "strength": 0.184803
-        },
-        {
-          "path": "percussion.layers[0].instrument",
-          "mutationType": "percussion-layer-variation",
-          "before": "clap",
-          "after": "cowbell",
-          "scale": "meso",
-          "category": "rhythm",
-          "strength": 0.184803
-        },
-        {
-          "path": "bass.probability",
-          "mutationType": "shift",
-          "before": 0.810946,
-          "after": 0.821321,
-          "scale": "micro",
-          "category": "rhythm",
-          "strength": 0.092401
-        }
-      ]
-    }
-  },
-  {
-    "version": "0.1",
-    "id": "gen2-036",
-    "family": "sparse-hypnotic",
-    "seed": "rebus-1452-generation-2-v1:gen2-036:mutation",
-    "global": {
-      "bpm": 120,
-      "meter": [4, 4],
-      "bars": 16,
-      "beatsPerBar": 4,
-      "stepsPerBeat": 4,
-      "kick": "four-on-the-floor",
-      "form": [8, 8]
-    },
-    "bass": {
-      "root": "C",
-      "pitchSet": [0, 3],
-      "octave": 2,
-      "steps": 16,
-      "hits": [1, 4, 12],
-      "noteChoice": [1, 0, 1],
-      "accents": [0.549958, 0.997185, 0.918726],
-      "noteLengths": [0.413756, 0.594785, 1.049634],
-      "gate": 0.437671,
-      "probability": 0.867946,
-      "rotation": 3,
-      "periodicVariation": { "everyBars": 4, "rotation": 1 }
-    },
-    "closedHat": {
-      "mode": "grid",
-      "steps": 24,
-      "hits": [0, 1, 2, 3, 5, 7, 8, 9, 11, 15, 16, 17, 20, 21, 22],
-      "accents": [
-        0.861196, 0.776298, 0.551931, 0.86566, 0.545044, 0.744333, 0.898542,
-        0.479465, 0.735781, 0.743721, 0.620087, 0.521294, 0.972365, 0.840109,
-        0.63194
-      ],
-      "density": 0.625,
-      "probability": 0.978602,
-      "rotation": 1,
-      "euclideanPulses": null,
-      "muteBars": [2]
-    },
-    "openHat": {
-      "mode": "euclidean",
-      "steps": 20,
-      "hits": [3, 9, 11, 19],
-      "accents": [0.874688, 0.864109, 0.708222, 0.535241],
-      "density": 0.2,
-      "probability": 0.701922,
-      "rotation": 2,
-      "euclideanPulses": 4,
-      "muteBars": [5, 13]
-    },
-    "percussion": {
-      "layers": [
-        {
-          "mode": "euclidean",
-          "steps": 8,
-          "hits": [1, 3, 7],
-          "accents": [0.702137, 0.6376, 0.624355],
-          "density": 0.375,
-          "probability": 0.819741,
-          "rotation": 4,
-          "euclideanPulses": 3,
-          "muteBars": [4],
-          "instrument": "rim"
-        },
-        {
-          "mode": "grid",
-          "steps": 16,
-          "hits": [1, 5, 6, 9, 11],
-          "accents": [0.520001, 0.813656, 0.476035, 0.632354, 0.571097],
-          "density": 0.3125,
-          "probability": 0.871416,
-          "rotation": -2,
-          "euclideanPulses": null,
-          "muteBars": [8, 12],
-          "instrument": "rim"
+          "instrument": "clap"
         }
       ]
     },
@@ -6104,29 +6044,29 @@
       "sectionBPitchShift": null
     },
     "sound": {
-      "oscillator": "saw",
-      "filterCutoff": 2395.39527,
-      "resonance": 0.802103,
+      "oscillator": "sine",
+      "filterCutoff": 6568.899722,
+      "resonance": 0.245759,
       "drive": 0.153894,
       "envelope": {
         "attack": 0.217896,
         "decay": 0.275016,
         "sustain": 0.351235,
-        "release": 0.796385
+        "release": 0.640728
       },
       "noiseAmount": 0.136748,
       "reverbAmount": 0.775804,
       "delayAmount": 0.329383
     },
     "development": {
-      "densityDelta": 0.13074,
+      "densityDelta": 0.108591,
       "bassVariation": true,
-      "hatVariation": true,
-      "percussionChange": 0,
-      "filterMovement": 0.24261,
-      "probabilityDelta": 0.1109,
+      "hatVariation": false,
+      "percussionChange": -1,
+      "filterMovement": 0.248369,
+      "probabilityDelta": 0.112384,
       "rotationDelta": 0,
-      "energyDelta": 0.392065
+      "energyDelta": 0.322588
     },
     "interaction": {
       "bassPercussionCoupling": 0.036311,
@@ -6135,66 +6075,49 @@
       "kickBassAvoidance": false
     },
     "mutationStrategy": {
-      "mutationRate": 0.231471,
-      "mutationStrength": 0.403238,
-      "microWeight": 0.42519,
-      "mesoWeight": 0.353387,
-      "macroWeight": 0.221423,
-      "rhythmWeight": 0.250517,
-      "pitchWeight": 0.102623,
-      "soundWeight": 0.36428,
-      "developmentWeight": 0.28258
+      "mutationRate": 0.132847,
+      "mutationStrength": 0.315614,
+      "microWeight": 0.434175,
+      "mesoWeight": 0.377474,
+      "macroWeight": 0.188351,
+      "rhythmWeight": 0.246095,
+      "pitchWeight": 0.15897,
+      "soundWeight": 0.262488,
+      "developmentWeight": 0.332447
     },
     "lineage": {
-      "parents": ["gen1-024"],
+      "parents": ["gen1-023"],
       "generation": 2,
       "isFounder": false,
       "originType": "mutation",
-      "ancestorIds": ["founder-036", "founder-005", "gen1-024"],
+      "ancestorIds": ["founder-005", "founder-008", "gen1-023"],
       "mutations": [
         {
-          "path": "sound",
-          "mutationType": "sound-family-rebuild",
-          "before": {
-            "oscillator": "sine",
-            "filterCutoff": 6137.347877,
-            "resonance": 0.245759
-          },
-          "after": {
-            "oscillator": "saw",
-            "filterCutoff": 2395.39527,
-            "resonance": 0.802103
-          },
-          "scale": "macro",
+          "path": "sound.oscillator",
+          "mutationType": "sound-family-shift",
+          "before": "square",
+          "after": "sine",
+          "scale": "meso",
           "category": "sound",
-          "strength": 0.403238
+          "strength": 0.22093
         },
         {
           "path": "bass.gate",
           "mutationType": "shift",
           "before": 0.454877,
-          "after": 0.390011,
+          "after": 0.404106,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.141133
+          "strength": 0.110465
         },
         {
           "path": "bass.gate",
           "mutationType": "shift",
-          "before": 0.390011,
-          "after": 0.437671,
+          "before": 0.404106,
+          "after": 0.441409,
           "scale": "micro",
           "category": "rhythm",
-          "strength": 0.141133
-        },
-        {
-          "path": "development.energyDelta",
-          "mutationType": "energy-shift",
-          "before": 0.347208,
-          "after": 0.392065,
-          "scale": "micro",
-          "category": "development",
-          "strength": 0.141133
+          "strength": 0.110465
         }
       ]
     }
@@ -6202,7 +6125,7 @@
   {
     "version": "0.1",
     "id": "gen2-037",
-    "family": "sparse-hypnotic",
+    "family": "percussion-led",
     "seed": "rebus-1452-generation-2-v1:gen2-037:mutation",
     "global": {
       "bpm": 120,
@@ -6214,140 +6137,169 @@
       "form": [8, 8]
     },
     "bass": {
-      "root": "G#",
-      "pitchSet": [0, 2, 3, 7],
+      "root": "F#",
+      "pitchSet": [0, 3],
       "octave": 3,
-      "steps": 16,
-      "hits": [2, 3, 8, 10, 13],
-      "noteChoice": [2, 2, 2, 1, 3],
-      "accents": [0.463606, 0.832031, 0.791634, 0.686927, 0.681919],
-      "noteLengths": [1.081044, 0.859143, 0.566397, 0.129241, 0.884448],
-      "gate": 0.589238,
-      "probability": 0.744228,
-      "rotation": 3,
+      "steps": 8,
+      "hits": [2, 4, 6, 7],
+      "noteChoice": [1, 1, 1, 0],
+      "accents": [0.864496, 0.463457, 0.785872, 0.937281],
+      "noteLengths": [0.977791, 0.298329, 0.697226, 0.90288],
+      "gate": 0.811915,
+      "probability": 0.976613,
+      "rotation": -2,
       "periodicVariation": null
     },
     "closedHat": {
-      "mode": "grid",
-      "steps": 24,
-      "hits": [0, 3, 4, 8, 9, 12, 16, 17, 21, 22],
+      "mode": "euclidean",
+      "steps": 8,
+      "hits": [0, 1, 2, 3, 4, 5, 7],
       "accents": [
-        0.783697, 0.516202, 0.580189, 0.680026, 0.597019, 0.931148, 0.917399,
-        0.587163, 0.490951, 0.516528
+        0.54795, 0.515226, 0.727551, 0.761074, 0.779196, 0.73928, 0.772494
       ],
-      "density": 0.4166666666666667,
-      "probability": 0.727277,
-      "rotation": 3,
-      "euclideanPulses": null,
-      "muteBars": [10]
+      "density": 0.875,
+      "probability": 0.899096,
+      "rotation": 0,
+      "euclideanPulses": 7,
+      "muteBars": []
     },
     "openHat": {
-      "mode": "grid",
-      "steps": 16,
-      "hits": [1, 6, 14],
-      "accents": [0.534281, 0.658572, 0.848248],
-      "density": 0.1875,
-      "probability": 0.886067,
-      "rotation": -1,
-      "euclideanPulses": null,
-      "muteBars": [9, 13]
+      "mode": "euclidean",
+      "steps": 32,
+      "hits": [1, 15, 18, 19, 22, 23, 26, 29, 31],
+      "accents": [
+        0.483575, 0.695344, 0.534132, 0.752564, 0.541532, 0.579211, 0.791764,
+        0.569723, 0.641694
+      ],
+      "density": 0.28125,
+      "probability": 0.785705,
+      "rotation": -3,
+      "euclideanPulses": 9,
+      "muteBars": []
     },
     "percussion": {
       "layers": [
         {
-          "mode": "euclidean",
+          "mode": "grid",
           "steps": 16,
-          "hits": [12, 14],
-          "accents": [0.818164, 0.81571],
-          "density": 0.125,
-          "probability": 0.884621,
-          "rotation": -4,
-          "euclideanPulses": 2,
-          "muteBars": [],
+          "hits": [0, 2, 3, 5, 6, 7, 9, 12, 13, 14, 15],
+          "accents": [
+            0.904352, 0.723453, 0.549401, 0.8682, 0.809313, 0.683318, 0.572101,
+            0.889983, 0.770859, 0.51064, 0.554792
+          ],
+          "density": 0.6875,
+          "probability": 0.959256,
+          "rotation": -1,
+          "euclideanPulses": null,
+          "muteBars": [4, 8],
           "instrument": "rim"
+        },
+        {
+          "mode": "grid",
+          "steps": 24,
+          "hits": [1, 3, 5, 7, 9, 13, 14, 15, 18, 19, 21, 22],
+          "accents": [
+            0.574047, 0.825913, 0.720623, 0.730581, 0.870258, 0.710897,
+            0.769697, 0.56519, 0.630212, 0.673751, 0.526033, 0.538708
+          ],
+          "density": 0.5,
+          "probability": 0.786038,
+          "rotation": -3,
+          "euclideanPulses": null,
+          "muteBars": [],
+          "instrument": "cowbell"
         }
       ]
     },
     "harmony": {
-      "tonic": "G#",
-      "pitchCollection": [0, 2, 3, 7],
+      "tonic": "F#",
+      "pitchCollection": [0, 3],
       "sectionBPitchShift": null
     },
     "sound": {
-      "oscillator": "square",
-      "filterCutoff": 6377.251887,
-      "resonance": 0.334176,
-      "drive": 0.551669,
+      "oscillator": "noise-blend",
+      "filterCutoff": 5925.067499,
+      "resonance": 0.358307,
+      "drive": 0.517474,
       "envelope": {
-        "attack": 0.025775,
-        "decay": 0.741185,
-        "sustain": 0.305907,
-        "release": 0.302105
+        "attack": 0.007088,
+        "decay": 0.500551,
+        "sustain": 0.689879,
+        "release": 0.02
       },
-      "noiseAmount": 0.41769,
-      "reverbAmount": 0.270372,
-      "delayAmount": 0.116872
+      "noiseAmount": 0.262403,
+      "reverbAmount": 0.223805,
+      "delayAmount": 0.176118
     },
     "development": {
-      "densityDelta": 0.031181,
+      "densityDelta": 0.12626,
       "bassVariation": true,
-      "hatVariation": false,
-      "percussionChange": 0,
-      "filterMovement": 0.125199,
-      "probabilityDelta": 0.051672,
+      "hatVariation": true,
+      "percussionChange": -1,
+      "filterMovement": 0.226173,
+      "probabilityDelta": 0.057497,
       "rotationDelta": 0,
-      "energyDelta": 0.090681
+      "energyDelta": 0.378548
     },
     "interaction": {
-      "bassPercussionCoupling": -0.748317,
-      "openHatPercussionDucking": 0.069124,
-      "accentAlignment": 0.33244,
+      "bassPercussionCoupling": -0.387577,
+      "openHatPercussionDucking": 0.093318,
+      "accentAlignment": 0.817713,
       "kickBassAvoidance": true
     },
     "mutationStrategy": {
-      "mutationRate": 0.162546,
-      "mutationStrength": 0.411262,
-      "microWeight": 0.441877,
-      "mesoWeight": 0.318489,
-      "macroWeight": 0.239634,
-      "rhythmWeight": 0.239822,
-      "pitchWeight": 0.145913,
-      "soundWeight": 0.248951,
-      "developmentWeight": 0.365314
+      "mutationRate": 0.19748,
+      "mutationStrength": 0.435757,
+      "microWeight": 0.468822,
+      "mesoWeight": 0.310001,
+      "macroWeight": 0.221177,
+      "rhythmWeight": 0.312196,
+      "pitchWeight": 0.196787,
+      "soundWeight": 0.304144,
+      "developmentWeight": 0.186873
     },
     "lineage": {
-      "parents": ["gen1-017"],
+      "parents": ["gen1-016"],
       "generation": 2,
       "isFounder": false,
       "originType": "mutation",
-      "ancestorIds": ["founder-005", "founder-027", "gen1-017"],
+      "ancestorIds": ["founder-029", "founder-028", "gen1-016"],
       "mutations": [
         {
-          "path": "bass.noteChoice[4]",
+          "path": "closedHat.accents[3]",
+          "mutationType": "velocity-shift",
+          "before": 0.708586,
+          "after": 0.761074,
+          "scale": "micro",
+          "category": "rhythm",
+          "strength": 0.152515
+        },
+        {
+          "path": "bass.noteChoice[3]",
           "mutationType": "note-choice-shift",
-          "before": 2,
+          "before": 1,
           "after": 0,
           "scale": "micro",
           "category": "pitch",
-          "strength": 0.143942
-        },
-        {
-          "path": "bass.noteChoice[4]",
-          "mutationType": "note-choice-shift",
-          "before": 0,
-          "after": 3,
-          "scale": "micro",
-          "category": "pitch",
-          "strength": 0.143942
+          "strength": 0.152515
         },
         {
           "path": "development.energyDelta",
           "mutationType": "energy-shift",
-          "before": 0.057116,
-          "after": 0.090681,
+          "before": 0.342983,
+          "after": 0.378548,
           "scale": "micro",
           "category": "development",
-          "strength": 0.143942
+          "strength": 0.152515
+        },
+        {
+          "path": "bass.rotation",
+          "mutationType": "pattern-rotation",
+          "before": -3,
+          "after": -2,
+          "scale": "meso",
+          "category": "rhythm",
+          "strength": 0.30503
         }
       ]
     }

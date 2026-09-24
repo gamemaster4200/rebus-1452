@@ -38,6 +38,7 @@ const config: GenerationConfig = {
   eliteIds: ['gen4-001'],
   maxParentUses: 4,
   minimumPairDistance: 0.12,
+  useFounderFamilyPressure: false,
 };
 
 describe('generic next-generation engine', () => {

@@ -25,7 +25,9 @@ export function selectionWeight(
 ): number {
   if (uses >= config.maxParentUses) return 0;
   const usageProtection = 1 / (1 + uses * 0.9);
-  const familyProtection = 1 / (1 + familyUses * 0.35);
+  const familyProtection = config.useFounderFamilyPressure
+    ? 1 / (1 + familyUses * 0.35)
+    : 1;
   if (!counterpart) return baseFitness * usageProtection * familyProtection;
 
   const distance = featureDistance(genome, counterpart);
@@ -33,7 +35,11 @@ export function selectionWeight(
     distance < config.minimumPairDistance
       ? 0.08
       : 0.55 + Math.min(distance, 0.75) * 1.8;
-  const crossFamily = genome.family !== counterpart.family ? 1.3 : 0.72;
+  const crossFamily = config.useFounderFamilyPressure
+    ? genome.family !== counterpart.family
+      ? 1.3
+      : 0.72
+    : 1;
   return (
     baseFitness * usageProtection * familyProtection * diversity * crossFamily
   );
