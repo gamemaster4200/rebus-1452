@@ -7,7 +7,10 @@ import type { PopulationRatingsDataset } from './GenerationTypes';
 import {
   aggregateEffectiveFitness,
   buildFitnessHistory,
+  FITNESS_POLICY_VERSION,
   fitnessMapForPopulation,
+  fitnessWeight,
+  PHENOTYPE_FITNESS_HISTORY_V1,
   phenotypeHash,
   type FitnessObservation,
 } from './FitnessHistory';
@@ -18,6 +21,25 @@ const generation0Ratings =
   generation0RatingsJson as unknown as PopulationRatingsDataset;
 
 describe('phenotype fitness history', () => {
+  it('owns the complete immutable v1 score-to-weight policy', () => {
+    expect(PHENOTYPE_FITNESS_HISTORY_V1).toEqual({
+      version: 'phenotype-fitness-history-v1',
+      scoreWeights: {
+        '-2': 0.1,
+        '-1': 0.35,
+        '0': 0.75,
+        '1': 1.5,
+        '2': 3,
+      },
+    });
+    expect(FITNESS_POLICY_VERSION).toBe('phenotype-fitness-history-v1');
+    expect(
+      [-2, -1, 0, 1, 2].map((score) =>
+        fitnessWeight(score as -2 | -1 | 0 | 1 | 2),
+      ),
+    ).toEqual([0.1, 0.35, 0.75, 1.5, 3]);
+  });
+
   it('ignores identity while hashing the complete compiled phenotype', () => {
     const source = founders[0];
     const renamed: MusicGenome = {

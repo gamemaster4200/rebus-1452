@@ -2,10 +2,23 @@ import { createHash } from 'node:crypto';
 import { compileGenomeToStrudel } from '../audio/strudel/StrudelCompiler';
 import type { MusicGenome } from '../genome/MusicGenome';
 import type { FounderScore } from '../ratings/RatingRepository';
-import { FITNESS_WEIGHTS } from './GenerationConfig';
 import type { PopulationRatingsDataset } from './GenerationTypes';
 
-export const FITNESS_POLICY_VERSION = 'phenotype-fitness-history-v1';
+export const PHENOTYPE_FITNESS_HISTORY_V1 = {
+  version: 'phenotype-fitness-history-v1',
+  scoreWeights: {
+    [-2]: 0.1,
+    [-1]: 0.35,
+    [0]: 0.75,
+    [1]: 1.5,
+    [2]: 3,
+  },
+} as const satisfies {
+  readonly version: string;
+  readonly scoreWeights: Readonly<Record<FounderScore, number>>;
+};
+
+export const FITNESS_POLICY_VERSION = PHENOTYPE_FITNESS_HISTORY_V1.version;
 
 export interface FitnessObservation {
   readonly phenotypeHash: string;
@@ -51,7 +64,7 @@ export function phenotypeHash(genome: MusicGenome): string {
 }
 
 export function fitnessWeight(score: FounderScore): number {
-  return FITNESS_WEIGHTS[score];
+  return PHENOTYPE_FITNESS_HISTORY_V1.scoreWeights[score];
 }
 
 export function buildFitnessHistory(

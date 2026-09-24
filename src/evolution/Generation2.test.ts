@@ -192,11 +192,14 @@ describe('Generation 2', () => {
   });
 
   it('changes aggregate provenance when any descriptor changes', () => {
-    const changed = structuredClone(metadata.fitnessHistoryInputs);
-    changed[0] = {
-      ...changed[0],
-      ratingsFileSha256: `${changed[0].ratingsFileSha256}-changed`,
-    };
+    const changed = metadata.fitnessHistoryInputs.map((input, index) =>
+      index === 0
+        ? {
+            ...input,
+            ratingsFileSha256: `${input.ratingsFileSha256}-changed`,
+          }
+        : input,
+    );
     expect(fitnessHistoryProvenanceHash(changed)).not.toBe(
       metadata.fitnessHistorySha256,
     );

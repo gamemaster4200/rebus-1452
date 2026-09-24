@@ -1,5 +1,3 @@
-import type { FounderScore } from '../ratings/RatingRepository';
-
 export const GENERATION_1_MASTER_SEED = 'rebus-1452-generation-1-v1';
 export const GENERATION_1_DATASET_VERSION = 'v0.1';
 export const GENERATION_2_MASTER_SEED = 'rebus-1452-generation-2-v1';
@@ -18,14 +16,6 @@ export const GENERATION_1_COUNTS: GenerationCounts = {
   mutation: 7,
   immigrant: 4,
 } as const;
-
-export const FITNESS_WEIGHTS: Readonly<Record<FounderScore, number>> = {
-  [-2]: 0.1,
-  [-1]: 0.35,
-  [0]: 0.75,
-  [1]: 1.5,
-  [2]: 3,
-};
 
 export const CANONICAL_ELITE_IDS = [
   'founder-004',

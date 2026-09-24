@@ -3,11 +3,8 @@ import foundersJson from '../data/founders.v0.1.json';
 import ratingsJson from '../data/generation-0-ratings.v1.json';
 import type { MusicGenome } from '../genome/MusicGenome';
 import { SeededRng } from '../random/SeededRng';
-import {
-  FITNESS_WEIGHTS,
-  GENERATION_1_CONFIG,
-  GENERATION_2_CONFIG,
-} from './GenerationConfig';
+import { GENERATION_1_CONFIG, GENERATION_2_CONFIG } from './GenerationConfig';
+import { fitnessWeight } from './FitnessHistory';
 import {
   featureDistance,
   selectParentPair,
@@ -19,7 +16,7 @@ const ratings = ratingsJson;
 const baseFitness = new Map(
   ratings.ratings.map((rating) => [
     rating.genomeId,
-    FITNESS_WEIGHTS[rating.score as keyof typeof FITNESS_WEIGHTS],
+    fitnessWeight(rating.score as -2 | -1 | 0 | 1 | 2),
   ]),
 );
 
@@ -29,14 +26,7 @@ describe('generation 1 selection', () => {
     expect(GENERATION_2_CONFIG.useFounderFamilyPressure).toBe(false);
   });
 
-  it('uses the canonical human fitness weights', () => {
-    expect(FITNESS_WEIGHTS).toEqual({
-      '-2': 0.1,
-      '-1': 0.35,
-      '0': 0.75,
-      '1': 1.5,
-      '2': 3,
-    });
+  it('accepts numeric base fitness without remapping it', () => {
     expect(selectionWeight(founders[3], 3, 0, 0, GENERATION_1_CONFIG)).toBe(3);
   });
 
