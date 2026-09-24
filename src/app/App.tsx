@@ -4,6 +4,8 @@ import { StrudelAudioEngine } from '../audio/strudel/StrudelRuntime';
 import canonicalFounders from '../data/founders.v0.1.json';
 import generation1Json from '../data/generation-1.v0.1.json';
 import generation1MetadataJson from '../data/generation-1.v0.1.meta.json';
+import generation2Json from '../data/generation-2.v0.1.json';
+import generation2MetadataJson from '../data/generation-2.v0.1.meta.json';
 import type { GenerationDatasetMetadata } from '../evolution/GenerationTypes';
 import type { MusicGenome } from '../genome/MusicGenome';
 import {
@@ -20,22 +22,30 @@ import {
   type RatingDatasetIdentity,
 } from '../ratings/RatingRepository';
 
-type Generation = 0 | 1;
+type Generation = number;
 
 const generation1Metadata =
   generation1MetadataJson as GenerationDatasetMetadata;
-const DATASETS: Record<
-  Generation,
+const generation2Metadata =
+  generation2MetadataJson as GenerationDatasetMetadata;
+
+interface RegisteredGeneration {
+  readonly generation: Generation;
+  readonly label: string;
+  readonly genomes: readonly MusicGenome[];
+  readonly identity: RatingDatasetIdentity;
+}
+
+const GENERATION_REGISTRY: readonly RegisteredGeneration[] = [
   {
-    readonly genomes: readonly MusicGenome[];
-    readonly identity: RatingDatasetIdentity;
-  }
-> = {
-  0: {
+    generation: 0,
+    label: 'Generation 0',
     genomes: canonicalFounders as unknown as MusicGenome[],
     identity: GENERATION_0_IDENTITY,
   },
-  1: {
+  {
+    generation: 1,
+    label: 'Generation 1',
     genomes: generation1Json as unknown as MusicGenome[],
     identity: {
       generation: 1,
@@ -43,7 +53,21 @@ const DATASETS: Record<
       datasetSha256: generation1Metadata.datasetSha256,
     },
   },
-};
+  {
+    generation: 2,
+    label: 'Generation 2',
+    genomes: generation2Json as unknown as MusicGenome[],
+    identity: {
+      generation: 2,
+      datasetVersion: generation2Metadata.datasetVersion,
+      datasetSha256: generation2Metadata.datasetSha256,
+    },
+  },
+];
+
+const DATASETS = new Map(
+  GENERATION_REGISTRY.map((dataset) => [dataset.generation, dataset]),
+);
 
 const SCORES: readonly FounderScore[] = [-2, -1, 0, 1, 2];
 const SCORE_LABELS: Record<FounderScore, string> = {
@@ -94,7 +118,12 @@ function LineageSummary({ genome }: { readonly genome: MusicGenome }) {
       <p>
         <strong>Origin:</strong> {lineage.originType}
       </p>
-      {lineage.parents.length > 0 && (
+      {lineage.originType === 'elite' && lineage.sourceGenomeId && (
+        <p>
+          <strong>Preserved from:</strong> {lineage.sourceGenomeId}
+        </p>
+      )}
+      {lineage.originType !== 'elite' && lineage.parents.length > 0 && (
         <p>
           <strong>
             {lineage.parents.length === 1 ? 'Parent:' : 'Parents:'}
@@ -127,22 +156,31 @@ export function App() {
   const [playback, setPlayback] = useState(initialPlaybackState);
   const [error, setError] = useState<string | null>(null);
   const repositories = useMemo(
-    () => ({
-      0: new RatingRepository(window.localStorage, DATASETS[0].identity),
-      1: new RatingRepository(window.localStorage, DATASETS[1].identity),
-    }),
+    () =>
+      new Map(
+        GENERATION_REGISTRY.map((dataset) => [
+          dataset.generation,
+          new RatingRepository(window.localStorage, dataset.identity),
+        ]),
+      ),
     [],
   );
-  const [ratingsByGeneration, setRatingsByGeneration] = useState(() => ({
-    0: repositories[0].load(),
-    1: repositories[1].load(),
-  }));
+  const [ratingsByGeneration, setRatingsByGeneration] = useState<
+    Record<number, ReadonlyMap<string, FounderRating>>
+  >(() =>
+    Object.fromEntries(
+      [...repositories].map(([registeredGeneration, repository]) => [
+        registeredGeneration,
+        repository.load(),
+      ]),
+    ),
+  );
   const controller = useMemo(
     () => new PlaybackController(new StrudelAudioEngine()),
     [],
   );
 
-  const dataset = DATASETS[generation];
+  const dataset = DATASETS.get(generation) ?? GENERATION_REGISTRY[0];
   const genomes = dataset.genomes;
   const genome = genomes[genomeIndex];
   const ratings = ratingsByGeneration[generation];
@@ -231,7 +269,10 @@ export function App() {
   };
 
   const rate = (score: FounderScore) => {
-    const next = repositories[generation].save({
+    const repository = repositories.get(generation);
+    if (!repository)
+      throw new Error(`Missing ratings repository for G${generation}.`);
+    const next = repository.save({
       genomeId: genome.id,
       score,
       ratedAt: new Date().toISOString(),
@@ -264,12 +305,13 @@ export function App() {
           id="generation"
           aria-label="Generation"
           value={generation}
-          onChange={(event) =>
-            switchGeneration(Number(event.target.value) as Generation)
-          }
+          onChange={(event) => switchGeneration(Number(event.target.value))}
         >
-          <option value={0}>Generation 0</option>
-          <option value={1}>Generation 1</option>
+          {GENERATION_REGISTRY.map((registered) => (
+            <option key={registered.generation} value={registered.generation}>
+              {registered.label}
+            </option>
+          ))}
         </select>
       </nav>
 

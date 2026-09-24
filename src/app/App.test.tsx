@@ -43,7 +43,7 @@ describe('App', () => {
     expect(screen.getByRole('button', { name: 'Play loop' })).toBeVisible();
   });
 
-  it('switches to Generation 1, stops playback, and shows lineage', () => {
+  it('offers Generation 2 and stops playback when switching generations', () => {
     const stop = vi.spyOn(PlaybackController.prototype, 'stop');
     render(<App />);
     fireEvent.change(screen.getByRole('combobox', { name: 'Generation' }), {
@@ -55,9 +55,23 @@ describe('App', () => {
     expect(screen.getByLabelText('Происхождение организма')).toHaveTextContent(
       'Origin: elite',
     );
+    expect(screen.getByLabelText('Происхождение организма')).toHaveTextContent(
+      'Preserved from: founder-004',
+    );
+    expect(
+      screen.getByLabelText('Происхождение организма'),
+    ).not.toHaveTextContent('Parent:');
+
+    fireEvent.change(screen.getByRole('combobox', { name: 'Generation' }), {
+      target: { value: '2' },
+    });
+    expect(stop).toHaveBeenCalledTimes(2);
+    expect(screen.getByText(/Organism 001 \/ 42/)).toBeVisible();
+    expect(screen.getByRole('heading', { name: 'gen2-001' })).toBeVisible();
+    expect(screen.getByRole('status')).toHaveTextContent('idle');
   });
 
-  it('keeps G0 and G1 ratings separate and treats zero as rated', () => {
+  it('keeps G0, G1 and G2 ratings separate and treats zero as rated', () => {
     render(<App />);
     fireEvent.click(screen.getByRole('button', { name: '0: Нейтрально' }));
     expect(screen.getByLabelText('Прогресс оценивания')).toHaveTextContent(
@@ -76,6 +90,24 @@ describe('App', () => {
 
     fireEvent.change(screen.getByRole('combobox', { name: 'Generation' }), {
       target: { value: '0' },
+    });
+    expect(screen.getByLabelText('Прогресс оценивания')).toHaveTextContent(
+      '1из 42 оценено',
+    );
+
+    fireEvent.change(screen.getByRole('combobox', { name: 'Generation' }), {
+      target: { value: '2' },
+    });
+    expect(screen.getByLabelText('Прогресс оценивания')).toHaveTextContent(
+      '0из 42 оценено',
+    );
+    fireEvent.click(screen.getByRole('button', { name: '0: Нейтрально' }));
+    expect(screen.getByLabelText('Прогресс оценивания')).toHaveTextContent(
+      '1из 42 оценено',
+    );
+
+    fireEvent.change(screen.getByRole('combobox', { name: 'Generation' }), {
+      target: { value: '1' },
     });
     expect(screen.getByLabelText('Прогресс оценивания')).toHaveTextContent(
       '1из 42 оценено',
