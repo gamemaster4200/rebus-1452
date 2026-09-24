@@ -17,16 +17,24 @@ WebAudio
   event plan; `StrudelAudioEngine` is the only browser/runtime boundary.
 - The compact `StyleEnvelope` defines the fixed 120 BPM, 4/4, 16-bar world and bounded musical ranges. Explicit validators enforce its invariants at runtime.
 - Deterministic generation and compilation are mandatory. Founder generation uses
-  `masterSeed + founder index`; compilation derives every probability decision from
-  `genome.seed + compiler version + event key`. Uncontrolled randomness is excluded.
+  `masterSeed + founder index`; Generation 1 uses its canonical ratings input,
+  generation config, and `rebus-1452-generation-1-v1`; compilation derives every
+  probability decision from `genome.seed + compiler version + event key`.
+  Uncontrolled randomness is excluded from all deterministic paths.
 - The canonical starting population contains 42 independent founders: six members in each of seven diversity-oriented metadata families. Families seed breadth but are not permanent genre classes.
 - `extractGenomeFeatures` projects every genome into ten normalized, deterministic dimensions. The founder validator uses these features for simple distance and axis-range checks; the same representation can later support novelty, species, and population-map work.
-- The system is frontend-first and local-first. Founder ratings use versioned
-  `localStorage` data for this milestone and export with the canonical dataset hash.
+- Generation 1 is produced by a bounded evolution pipeline: fitness- and
+  diversity-aware seeded selection, modular crossover, micro/meso/macro mutation,
+  deterministic immigrants, validation, and a canonical dataset writer. Parent
+  usage caps and feature-space checks protect diversity without rejecting music by
+  aesthetic rules.
+- The system is frontend-first and local-first. Ratings are stored separately by
+  generation, dataset version, and dataset hash. Exports preserve that identity,
+  and the legacy Generation 0 storage key is migrated on read.
 - There is no backend at this stage.
 
 The audio boundary is `MusicGenome → StrudelCompiler → CompiledStrudelPattern →
 StrudelAudioEngine → WebAudio`. The compiler interprets a genome but never leaks
 renderer concepts back into it. Playback timing and UI state live in
-`PlaybackController`, independent from Strudel. Selection, crossover, mutation
-execution, and offspring remain outside this stage.
+`PlaybackController`, independent from Strudel. Switching organism or generation
+stops and retires the current audio run before another one can start.
