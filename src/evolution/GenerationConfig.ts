@@ -3,7 +3,14 @@ import type { FounderScore } from '../ratings/RatingRepository';
 export const GENERATION_1_MASTER_SEED = 'rebus-1452-generation-1-v1';
 export const GENERATION_1_DATASET_VERSION = 'v0.1';
 
-export const GENERATION_1_COUNTS = {
+export interface GenerationCounts {
+  readonly elite: number;
+  readonly crossover: number;
+  readonly mutation: number;
+  readonly immigrant: number;
+}
+
+export const GENERATION_1_COUNTS: GenerationCounts = {
   elite: 7,
   crossover: 24,
   mutation: 7,
@@ -29,8 +36,9 @@ export const CANONICAL_ELITE_IDS = [
 ] as const;
 
 export interface GenerationConfig {
+  readonly targetGeneration: number;
   readonly masterSeed: string;
-  readonly counts: typeof GENERATION_1_COUNTS;
+  readonly counts: GenerationCounts;
   readonly fitnessWeights: Readonly<Record<FounderScore, number>>;
   readonly eliteIds: readonly string[];
   readonly maxParentUses: number;
@@ -38,6 +46,7 @@ export interface GenerationConfig {
 }
 
 export const GENERATION_1_CONFIG: GenerationConfig = {
+  targetGeneration: 1,
   masterSeed: GENERATION_1_MASTER_SEED,
   counts: GENERATION_1_COUNTS,
   fitnessWeights: FITNESS_WEIGHTS,

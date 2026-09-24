@@ -56,6 +56,21 @@ describe('RatingRepository', () => {
     expect([...g1.load().keys()]).toEqual(['gen1-001']);
   });
 
+  it('supports arbitrary non-negative generation identities', () => {
+    const identity: RatingDatasetIdentity = {
+      generation: 7,
+      datasetVersion: 'v7.3',
+      datasetSha256: 'GEN7HASH',
+    };
+    const repository = new RatingRepository(new MemoryStorage(), identity);
+    repository.save({ genomeId: 'gen7-001', score: 1, ratedAt: 'future' });
+
+    expect(repository.load().get('gen7-001')).toMatchObject(identity);
+    expect(
+      createRatingsExport(repository.load(), identity, 'now'),
+    ).toMatchObject(identity);
+  });
+
   it('migrates legacy G0 ratings without exposing them to G1', () => {
     const storage = new MemoryStorage();
     storage.setItem(

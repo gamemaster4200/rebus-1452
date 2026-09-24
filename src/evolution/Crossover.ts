@@ -61,6 +61,7 @@ export function crossoverGenomes(
   right: MusicGenome,
   id: string,
   seed: string,
+  targetGeneration = 1,
 ): MusicGenome {
   if (left.id === right.id) throw new Error('Crossover requires two parents.');
   const rng = new SeededRng(seed);
@@ -88,10 +89,17 @@ export function crossoverGenomes(
     ),
     lineage: {
       parents: [left.id, right.id],
-      generation: 1,
+      generation: targetGeneration,
       isFounder: false,
       originType: 'crossover',
-      ancestorIds: [left.id, right.id],
+      ancestorIds: [
+        ...new Set([
+          ...(left.lineage.ancestorIds ?? []),
+          left.id,
+          ...(right.lineage.ancestorIds ?? []),
+          right.id,
+        ]),
+      ],
       mutations: [],
     },
   };

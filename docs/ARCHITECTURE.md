@@ -23,14 +23,21 @@ WebAudio
   Uncontrolled randomness is excluded from all deterministic paths.
 - The canonical starting population contains 42 independent founders: six members in each of seven diversity-oriented metadata families. Families seed breadth but are not permanent genre classes.
 - `extractGenomeFeatures` projects every genome into ten normalized, deterministic dimensions. The founder validator uses these features for simple distance and axis-range checks; the same representation can later support novelty, species, and population-map work.
-- Generation 1 is produced by a bounded evolution pipeline: fitness- and
-  diversity-aware seeded selection, modular crossover, micro/meso/macro mutation,
-  deterministic immigrants, validation, and a canonical dataset writer. Parent
-  usage caps and feature-space checks protect diversity without rejecting music by
-  aesthetic rules.
+- `generateNextGeneration` is the generation-neutral evolution boundary. It accepts
+  a source population, that population's ratings, and a config containing the next
+  generation number. It assigns `genN-*` identities and lineage while orchestrating
+  seeded selection, modular crossover, micro/meso/macro mutation, immigrants, and
+  validation. Generation 1 is only a canonical wrapper around this engine.
+- `generateImmigrant` samples identity-free musical material directly from the
+  `StyleEnvelope`. It uses stratified coordinates for population breadth and has no
+  dependency on founder families or founder profiles; the generation engine assigns
+  immigrant identity and lineage.
+- Parent usage caps and feature-space checks protect diversity without rejecting
+  music by aesthetic rules.
 - The system is frontend-first and local-first. Ratings are stored separately by
-  generation, dataset version, and dataset hash. Exports preserve that identity,
-  and the legacy Generation 0 storage key is migrated on read.
+  arbitrary non-negative generation number, dataset version, and dataset hash.
+  Exports preserve that identity, and the legacy Generation 0 storage key is
+  migrated on read.
 - There is no backend at this stage.
 
 The audio boundary is `MusicGenome → StrudelCompiler → CompiledStrudelPattern →

@@ -1,7 +1,7 @@
 import type { MusicGenome } from '../genome/MusicGenome';
 
 export type FounderScore = -2 | -1 | 0 | 1 | 2;
-export type RatingGeneration = 0 | 1;
+export type RatingGeneration = number;
 
 export interface RatingDatasetIdentity {
   readonly generation: RatingGeneration;
@@ -78,6 +78,9 @@ export class RatingRepository {
     private readonly storage: KeyValueStorage,
     readonly identity: RatingDatasetIdentity = GENERATION_0_IDENTITY,
   ) {
+    if (!Number.isInteger(identity.generation) || identity.generation < 0) {
+      throw new Error('Rating generation must be a non-negative integer.');
+    }
     this.storageKey = storageKey(identity);
   }
 

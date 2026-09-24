@@ -88,6 +88,13 @@ in stable ID order, seven unchanged musical elites, 24 crossover children, seven
 mutation-only children, and four random immigrants. Every evolved lineage records
 its origin, parents, ancestors, and actual path-level mutations.
 
+The canonical G1 wrapper delegates reproduction to the generation-neutral engine.
+That engine can produce later numbered generations from any validated preceding
+population and its matching ratings without embedding G1-specific conditions.
+Immigrants are sampled independently from the full Style Envelope, carry no family,
+parents, or ancestors, and receive their ID and generation only when admitted to a
+population.
+
 ## Feature extraction
 
 `extractGenomeFeatures` deterministically maps a genome to ten normalized values:

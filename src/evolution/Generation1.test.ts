@@ -72,6 +72,19 @@ describe('Generation 1', () => {
     });
   });
 
+  it('contains four identity-free-family immigrants with empty ancestry', () => {
+    const immigrants = canonical.filter(
+      (genome) => genome.lineage.originType === 'immigrant',
+    );
+    expect(immigrants).toHaveLength(4);
+    immigrants.forEach((genome) => {
+      expect(genome.family).toBeUndefined();
+      expect(genome.lineage.parents).toEqual([]);
+      expect(genome.lineage.ancestorIds).toEqual([]);
+      expect(compileGenomeToStrudel(genome).events.length).toBeGreaterThan(0);
+    });
+  });
+
   it('keeps macro mutation rare across the canonical population', () => {
     const mutations = canonical.flatMap(
       (genome) => genome.lineage.mutations ?? [],
