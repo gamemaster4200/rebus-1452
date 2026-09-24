@@ -129,7 +129,8 @@ export class StrudelAudioEngine implements CompiledAudioEngine {
       throw new Error('Strudel runtime failed to initialize.');
 
     repl.setCps(0.5);
-    this.activeController = this.createAudioGeneration(module);
+    const controller = this.createAudioGeneration(module);
+    this.activeController = controller;
     const bars = Array.from({ length: compiled.bars }, (_, bar) =>
       buildBarPattern(module, compiled, bar),
     );
@@ -137,11 +138,17 @@ export class StrudelAudioEngine implements CompiledAudioEngine {
     try {
       await repl.setPattern(module.slowcat(...bars), true);
     } catch (error) {
-      if (operation === this.operation) this.halt();
-      throw error;
+      if (operation === this.operation) {
+        this.halt();
+        throw error;
+      }
+      this.retireController(controller);
+      return;
     }
 
-    if (operation !== this.operation) this.halt();
+    if (operation !== this.operation && this.activeController !== controller) {
+      this.retireController(controller);
+    }
   }
 
   stop(): void {

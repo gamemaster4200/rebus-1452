@@ -84,7 +84,6 @@ export class PlaybackController {
     await this.engine.play(compiled);
 
     if (operation !== this.operation || compiled !== this.selected) {
-      this.engine.stop();
       return;
     }
 

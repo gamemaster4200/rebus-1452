@@ -19,6 +19,14 @@ function compiled(genomeId: string): CompiledStrudelPattern {
   };
 }
 
+function deferred() {
+  let resolve: (() => void) | undefined;
+  const promise = new Promise<void>((complete) => {
+    resolve = complete;
+  });
+  return { promise, resolve: () => resolve?.() };
+}
+
 class FakeController {
   readonly cancelScheduledValues = vi.fn();
   readonly setValueAtTime = vi.fn();
@@ -152,5 +160,56 @@ describe('StrudelAudioEngine', () => {
     expect(playback.setValueAtTime).toHaveBeenCalledTimes(2);
     expect(playback.setValueAtTime).toHaveBeenNthCalledWith(1, 0.55, 12);
     expect(playback.setValueAtTime).toHaveBeenNthCalledWith(2, 0, 12);
+  });
+
+  it('never lets a late B completion halt an already-playing C', async () => {
+    const { controllers, engine, replStop, setPattern } = setup();
+    const pendingB = deferred();
+    setPattern
+      .mockResolvedValueOnce(undefined)
+      .mockImplementationOnce(() => pendingB.promise)
+      .mockResolvedValueOnce(undefined);
+
+    await engine.play(compiled('A'));
+    const playB = engine.play(compiled('B'));
+    await vi.waitFor(() => expect(setPattern).toHaveBeenCalledTimes(2));
+    await engine.play(compiled('C'));
+    const controllerC = controllers[3];
+    const stopsBeforeBCompletes = replStop.mock.calls.length;
+
+    pendingB.resolve();
+    await playB;
+
+    expect(replStop).toHaveBeenCalledTimes(stopsBeforeBCompletes);
+    expect(controllerC.outputDisconnect).not.toHaveBeenCalled();
+    expect(controllerC.setValueAtTime).toHaveBeenCalledWith(0.55, 12);
+  });
+
+  it('keeps C ownership when B resolves before pending C', async () => {
+    const { controllers, engine, replStop, setPattern } = setup();
+    const pendingB = deferred();
+    const pendingC = deferred();
+    setPattern
+      .mockResolvedValueOnce(undefined)
+      .mockImplementationOnce(() => pendingB.promise)
+      .mockImplementationOnce(() => pendingC.promise);
+
+    await engine.play(compiled('A'));
+    const playB = engine.play(compiled('B'));
+    await vi.waitFor(() => expect(setPattern).toHaveBeenCalledTimes(2));
+    const playC = engine.play(compiled('C'));
+    await vi.waitFor(() => expect(setPattern).toHaveBeenCalledTimes(3));
+    const controllerC = controllers[3];
+    const stopsBeforeCompletions = replStop.mock.calls.length;
+
+    pendingB.resolve();
+    await playB;
+    expect(replStop).toHaveBeenCalledTimes(stopsBeforeCompletions);
+    expect(controllerC.outputDisconnect).not.toHaveBeenCalled();
+
+    pendingC.resolve();
+    await playC;
+    expect(replStop).toHaveBeenCalledTimes(stopsBeforeCompletions);
+    expect(controllerC.outputDisconnect).not.toHaveBeenCalled();
   });
 });

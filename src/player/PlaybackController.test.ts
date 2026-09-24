@@ -153,4 +153,40 @@ describe('PlaybackController', () => {
     });
     expect(play).toHaveBeenCalledTimes(2);
   });
+
+  it('does not let a stale play completion stop the current organism', async () => {
+    let resolveB: (() => void) | undefined;
+    const scheduler = new FakeScheduler();
+    const play = vi
+      .fn<(compiled: CompiledStrudelPattern) => Promise<void>>()
+      .mockResolvedValueOnce()
+      .mockImplementationOnce(
+        () =>
+          new Promise<void>((resolve) => {
+            resolveB = resolve;
+          }),
+      )
+      .mockResolvedValueOnce();
+    const stop = vi.fn();
+    const controller = new PlaybackController({ play, stop }, scheduler);
+
+    controller.select(compiled('A'));
+    await controller.play();
+    controller.select(compiled('B'));
+    const pendingB = controller.play();
+    controller.select(compiled('C'));
+    await controller.play();
+    const stopsBeforeStaleB = stop.mock.calls.length;
+
+    resolveB?.();
+    await pendingB;
+
+    expect(controller.getState().status).toBe('playing');
+    expect(stop).toHaveBeenCalledTimes(stopsBeforeStaleB);
+    expect(play.mock.calls.map(([value]) => value.genomeId)).toEqual([
+      'A',
+      'B',
+      'C',
+    ]);
+  });
 });
