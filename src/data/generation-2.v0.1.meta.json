@@ -1,0 +1,14 @@
+{
+  "version": "1",
+  "generation": 2,
+  "datasetVersion": "v0.1",
+  "datasetSha256": "341BDE33F42298EFDA0C3732ADE0FF8B1E465273253CBD41A4FC7EF6B0FB488C",
+  "masterSeed": "rebus-1452-generation-2-v1",
+  "sourceDatasetVersion": "v0.1",
+  "sourceDatasetSha256": "107825B6EB43023F82517DF51BAB436B0CD3052BE2363D45B4D080D2F42C9A18",
+  "ratingsDatasetVersion": "1",
+  "sourceRatingsDatasetVersion": "1",
+  "sourceRatingsDatasetSha256": "669D2705C377A86668C3D00E025080BB9F207EB68E2EA7377FE19964631CAE5A",
+  "fitnessPolicyVersion": "phenotype-fitness-history-v1",
+  "phenotypeCompilerVersion": "strudel-compiler-v3"
+}

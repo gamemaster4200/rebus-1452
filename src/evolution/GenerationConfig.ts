@@ -2,6 +2,8 @@ import type { FounderScore } from '../ratings/RatingRepository';
 
 export const GENERATION_1_MASTER_SEED = 'rebus-1452-generation-1-v1';
 export const GENERATION_1_DATASET_VERSION = 'v0.1';
+export const GENERATION_2_MASTER_SEED = 'rebus-1452-generation-2-v1';
+export const GENERATION_2_DATASET_VERSION = 'v0.1';
 
 export interface GenerationCounts {
   readonly elite: number;
@@ -49,6 +51,14 @@ export const GENERATION_1_CONFIG: GenerationConfig = {
   masterSeed: GENERATION_1_MASTER_SEED,
   counts: GENERATION_1_COUNTS,
   eliteIds: CANONICAL_ELITE_IDS,
+  maxParentUses: 4,
+  minimumPairDistance: 0.12,
+};
+
+export const GENERATION_2_CONFIG: GenerationConfig = {
+  targetGeneration: 2,
+  masterSeed: GENERATION_2_MASTER_SEED,
+  counts: GENERATION_1_COUNTS,
   maxParentUses: 4,
   minimumPairDistance: 0.12,
 };
