@@ -10,6 +10,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "generate:founders": "tsx src/founders/generateFounders.ts",
+    "generate:g1": "tsx src/evolution/generateGeneration1.ts",
     "test": "vitest run"
   },
   "dependencies": {

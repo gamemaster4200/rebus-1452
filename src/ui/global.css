@@ -27,7 +27,8 @@ body {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 button {
@@ -57,7 +58,28 @@ button:disabled {
 }
 
 .masthead {
-  margin-bottom: clamp(2rem, 6vw, 4.75rem);
+  margin-bottom: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.generation-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  color: #8dcaab;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.generation-picker select {
+  min-width: 11rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #385144;
+  border-radius: 0.2rem;
+  background: #111612;
+  color: #eff5f1;
 }
 
 .eyebrow,
@@ -126,6 +148,32 @@ h2 {
 .rating-panel,
 .workflow-actions {
   padding: clamp(1.25rem, 3vw, 2.2rem);
+}
+
+.lineage-summary {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.5rem;
+  padding: 0 2.2rem 1.5rem;
+  color: #9aa79f;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.76rem;
+}
+
+.lineage-summary p,
+.lineage-summary details {
+  margin: 0;
+}
+
+.lineage-summary summary {
+  cursor: pointer;
+  color: #8dcaab;
+}
+
+.lineage-summary ul {
+  margin: 0.7rem 0 0;
+  padding-left: 1.2rem;
 }
 
 .metadata {

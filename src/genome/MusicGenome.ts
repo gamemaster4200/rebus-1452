@@ -148,10 +148,30 @@ export interface MutationStrategyGenome {
   readonly developmentWeight: number;
 }
 
+export type EvolutionOriginType =
+  'elite' | 'crossover' | 'mutation' | 'immigrant';
+
+export type MutationScale = 'micro' | 'meso' | 'macro';
+export type MutationCategory = 'rhythm' | 'pitch' | 'sound' | 'development';
+
+export interface MutationRecord {
+  readonly path: string;
+  readonly mutationType: string;
+  readonly before: unknown;
+  readonly after: unknown;
+  readonly scale: MutationScale;
+  readonly category: MutationCategory;
+  readonly strength: number;
+}
+
 export interface LineageMetadata {
   readonly parents: readonly string[];
   readonly generation: number;
   readonly isFounder: boolean;
+  readonly originType?: EvolutionOriginType;
+  readonly ancestorIds?: readonly string[];
+  readonly mutations?: readonly MutationRecord[];
+  readonly sourceGenomeId?: string;
 }
 
 /** Renderer-neutral musical organism contract for the v0.1 world model. */

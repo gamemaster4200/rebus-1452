@@ -1,17 +1,41 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from '@testing-library/react';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { StrudelAudioEngine } from '../audio/strudel/StrudelRuntime';
+import { PlaybackController } from '../player/PlaybackController';
 import { App } from './App';
+
+function mockAudioEngine() {
+  const play = vi
+    .spyOn(StrudelAudioEngine.prototype, 'play')
+    .mockResolvedValue();
+  const stop = vi
+    .spyOn(StrudelAudioEngine.prototype, 'stop')
+    .mockImplementation(() => undefined);
+  return { play, stop };
+}
 
 describe('App', () => {
   beforeEach(() => window.localStorage.clear());
-  afterEach(cleanup);
+  afterEach(() => {
+    cleanup();
+    vi.restoreAllMocks();
+  });
 
-  it('shows the first founder and the looping 16-bar A/B form', () => {
+  it('shows Generation 0 and the looping 16-bar A/B form', () => {
     render(<App />);
-
     expect(
       screen.getByRole('heading', { name: 'REBUS EVOLUTION' }),
     ).toBeVisible();
+    expect(screen.getByRole('combobox', { name: 'Generation' })).toHaveValue(
+      '0',
+    );
     expect(screen.getByText(/Founder 001 \/ 42/)).toBeVisible();
     expect(screen.getByText('A · bars 1–8')).toBeVisible();
     expect(screen.getByText('B · bars 9–16')).toBeVisible();
@@ -19,30 +43,178 @@ describe('App', () => {
     expect(screen.getByRole('button', { name: 'Play loop' })).toBeVisible();
   });
 
-  it('persists a neutral rating and navigates to the next unrated founder', () => {
-    const { unmount } = render(<App />);
-    const neutral = screen.getByRole('button', { name: '0: Нейтрально' });
-    fireEvent.click(neutral);
+  it('switches to Generation 1, stops playback, and shows lineage', () => {
+    const stop = vi.spyOn(PlaybackController.prototype, 'stop');
+    render(<App />);
+    fireEvent.change(screen.getByRole('combobox', { name: 'Generation' }), {
+      target: { value: '1' },
+    });
+    expect(stop).toHaveBeenCalled();
+    expect(screen.getByText(/Organism 001 \/ 42/)).toBeVisible();
+    expect(screen.getByRole('heading', { name: 'gen1-001' })).toBeVisible();
+    expect(screen.getByLabelText('Происхождение организма')).toHaveTextContent(
+      'Origin: elite',
+    );
+  });
 
-    expect(neutral).toHaveAttribute('aria-pressed', 'true');
+  it('keeps G0 and G1 ratings separate and treats zero as rated', () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole('button', { name: '0: Нейтрально' }));
     expect(screen.getByLabelText('Прогресс оценивания')).toHaveTextContent(
       '1из 42 оценено',
     );
-    fireEvent.click(screen.getByRole('button', { name: 'Next unrated' }));
-    expect(screen.getByText(/Founder 002 \/ 42/)).toBeVisible();
 
-    unmount();
-    render(<App />);
+    fireEvent.change(screen.getByRole('combobox', { name: 'Generation' }), {
+      target: { value: '1' },
+    });
+    expect(screen.getByLabelText('Прогресс оценивания')).toHaveTextContent(
+      '0из 42 оценено',
+    );
+    fireEvent.click(screen.getByRole('button', { name: '1: Нравится' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Next unrated' }));
+    expect(screen.getByText(/Organism 002 \/ 42/)).toBeVisible();
+
+    fireEvent.change(screen.getByRole('combobox', { name: 'Generation' }), {
+      target: { value: '0' },
+    });
     expect(screen.getByLabelText('Прогресс оценивания')).toHaveTextContent(
       '1из 42 оценено',
     );
   });
 
-  it('stops and wraps navigation between founders', () => {
+  it('wraps navigation inside the active generation', () => {
+    render(<App />);
+    fireEvent.change(screen.getByRole('combobox', { name: 'Generation' }), {
+      target: { value: '1' },
+    });
+    fireEvent.click(screen.getByRole('button', { name: '← Previous' }));
+    expect(screen.getByText(/Organism 042 \/ 42/)).toBeVisible();
+    expect(screen.getByRole('status')).toHaveTextContent('idle');
+    fireEvent.click(screen.getByRole('button', { name: 'Next →' }));
+    expect(screen.getByText(/Organism 001 \/ 42/)).toBeVisible();
+    expect(screen.getByRole('status')).toHaveTextContent('idle');
+  });
+
+  it('keeps playing across Next and starts the next organism at zero', async () => {
+    const { play, stop } = mockAudioEngine();
+    render(<App />);
+    fireEvent.click(screen.getByRole('button', { name: 'Play loop' }));
+    await waitFor(() =>
+      expect(screen.getByRole('status')).toHaveTextContent('playing'),
+    );
+    const stopsBeforeNext = stop.mock.calls.length;
+
+    fireEvent.click(screen.getByRole('button', { name: 'Next →' }));
+
+    expect(screen.getByRole('heading', { name: 'founder-002' })).toBeVisible();
+    await waitFor(() =>
+      expect(screen.getByRole('status')).toHaveTextContent(
+        'playing · section A0:00 / 0:32',
+      ),
+    );
+    expect(play).toHaveBeenCalledTimes(2);
+    expect(play.mock.calls[1][0].genomeId).toBe('founder-002');
+    expect(stop.mock.calls.length).toBeGreaterThan(stopsBeforeNext);
+  });
+
+  it('keeps playing across Previous and wraps to the last organism', async () => {
+    const { play, stop } = mockAudioEngine();
+    render(<App />);
+    fireEvent.click(screen.getByRole('button', { name: 'Play loop' }));
+    await waitFor(() =>
+      expect(screen.getByRole('status')).toHaveTextContent('playing'),
+    );
+    const stopsBeforePrevious = stop.mock.calls.length;
+
+    fireEvent.click(screen.getByRole('button', { name: '← Previous' }));
+
+    expect(screen.getByRole('heading', { name: 'founder-042' })).toBeVisible();
+    await waitFor(() =>
+      expect(screen.getByRole('status')).toHaveTextContent('playing'),
+    );
+    expect(play).toHaveBeenCalledTimes(2);
+    expect(play.mock.calls[1][0].genomeId).toBe('founder-042');
+    expect(stop.mock.calls.length).toBeGreaterThan(stopsBeforePrevious);
+  });
+
+  it('keeps stopped across Next and Previous without hidden autoplay', () => {
+    const { play } = mockAudioEngine();
+    render(<App />);
+    fireEvent.click(screen.getByRole('button', { name: 'Stop' }));
+    expect(screen.getByRole('status')).toHaveTextContent('stopped');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Next →' }));
+    expect(screen.getByRole('heading', { name: 'founder-002' })).toBeVisible();
+    expect(screen.getByRole('status')).toHaveTextContent('stopped');
+
+    fireEvent.click(screen.getByRole('button', { name: '← Previous' }));
+    expect(screen.getByRole('heading', { name: 'founder-001' })).toBeVisible();
+    expect(screen.getByRole('status')).toHaveTextContent('stopped');
+    expect(play).not.toHaveBeenCalled();
+  });
+
+  it('wraps Next from the last organism and preserves stopped state', () => {
+    const { play } = mockAudioEngine();
     render(<App />);
     fireEvent.click(screen.getByRole('button', { name: '← Previous' }));
-    expect(screen.getByText(/Founder 042 \/ 42/)).toBeVisible();
+    expect(screen.getByRole('heading', { name: 'founder-042' })).toBeVisible();
+    fireEvent.click(screen.getByRole('button', { name: 'Stop' }));
+
     fireEvent.click(screen.getByRole('button', { name: 'Next →' }));
-    expect(screen.getByText(/Founder 001 \/ 42/)).toBeVisible();
+
+    expect(screen.getByRole('heading', { name: 'founder-001' })).toBeVisible();
+    expect(screen.getByRole('status')).toHaveTextContent('stopped');
+    expect(play).not.toHaveBeenCalled();
+  });
+
+  it('cancels rapid navigation plays so only the final organism remains active', async () => {
+    let resolveNext: (() => void) | undefined;
+    let resolvePrevious: (() => void) | undefined;
+    const play = vi
+      .spyOn(StrudelAudioEngine.prototype, 'play')
+      .mockResolvedValueOnce()
+      .mockImplementationOnce(
+        () =>
+          new Promise<void>((resolve) => {
+            resolveNext = resolve;
+          }),
+      )
+      .mockImplementationOnce(
+        () =>
+          new Promise<void>((resolve) => {
+            resolvePrevious = resolve;
+          }),
+      );
+    vi.spyOn(StrudelAudioEngine.prototype, 'stop').mockImplementation(
+      () => undefined,
+    );
+    render(<App />);
+    fireEvent.click(screen.getByRole('button', { name: 'Play loop' }));
+    await waitFor(() =>
+      expect(screen.getByRole('status')).toHaveTextContent('playing'),
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Next →' }));
+    fireEvent.click(screen.getByRole('button', { name: '← Previous' }));
+    expect(screen.getByRole('heading', { name: 'founder-001' })).toBeVisible();
+    expect(play.mock.calls.map(([pattern]) => pattern.genomeId)).toEqual([
+      'founder-001',
+      'founder-002',
+      'founder-001',
+    ]);
+
+    await act(async () => {
+      resolveNext?.();
+      await Promise.resolve();
+    });
+    expect(screen.getByRole('status')).toHaveTextContent('loading');
+
+    await act(async () => {
+      resolvePrevious?.();
+      await Promise.resolve();
+    });
+    expect(screen.getByRole('status')).toHaveTextContent(
+      'playing · section A0:00 / 0:32',
+    );
   });
 });

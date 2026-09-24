@@ -1,8 +1,11 @@
-import { useEffect, useMemo, useState } from 'react';
-import canonicalFounders from '../data/founders.v0.1.json';
-import type { MusicGenome } from '../genome/MusicGenome';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { compileGenomeToStrudel } from '../audio/strudel/StrudelCompiler';
 import { StrudelAudioEngine } from '../audio/strudel/StrudelRuntime';
+import canonicalFounders from '../data/founders.v0.1.json';
+import generation1Json from '../data/generation-1.v0.1.json';
+import generation1MetadataJson from '../data/generation-1.v0.1.meta.json';
+import type { GenerationDatasetMetadata } from '../evolution/GenerationTypes';
+import type { MusicGenome } from '../genome/MusicGenome';
 import {
   PlaybackController,
   type PlaybackState,
@@ -10,12 +13,38 @@ import {
 import {
   createRatingsExport,
   findNextUnratedIndex,
+  GENERATION_0_IDENTITY,
   RatingRepository,
   type FounderRating,
   type FounderScore,
+  type RatingDatasetIdentity,
 } from '../ratings/RatingRepository';
 
-const founders = canonicalFounders as unknown as MusicGenome[];
+type Generation = 0 | 1;
+
+const generation1Metadata =
+  generation1MetadataJson as GenerationDatasetMetadata;
+const DATASETS: Record<
+  Generation,
+  {
+    readonly genomes: readonly MusicGenome[];
+    readonly identity: RatingDatasetIdentity;
+  }
+> = {
+  0: {
+    genomes: canonicalFounders as unknown as MusicGenome[],
+    identity: GENERATION_0_IDENTITY,
+  },
+  1: {
+    genomes: generation1Json as unknown as MusicGenome[],
+    identity: {
+      generation: 1,
+      datasetVersion: generation1Metadata.datasetVersion,
+      datasetSha256: generation1Metadata.datasetSha256,
+    },
+  },
+};
+
 const SCORES: readonly FounderScore[] = [-2, -1, 0, 1, 2];
 const SCORE_LABELS: Record<FounderScore, string> = {
   [-2]: 'Совсем не подходит',
@@ -38,45 +67,94 @@ function formatTime(milliseconds: number): string {
 }
 
 function familyName(family: MusicGenome['family']): string {
-  return family?.replaceAll('-', ' ') ?? 'unknown';
+  return family?.replaceAll('-', ' ') ?? 'evolved';
 }
 
-function downloadRatings(ratings: ReadonlyMap<string, FounderRating>): void {
-  const json = JSON.stringify(createRatingsExport(ratings), null, 2);
+function downloadRatings(
+  ratings: ReadonlyMap<string, FounderRating>,
+  identity: RatingDatasetIdentity,
+): void {
+  const json = JSON.stringify(createRatingsExport(ratings, identity), null, 2);
   const url = URL.createObjectURL(
     new Blob([json], { type: 'application/json' }),
   );
   const anchor = document.createElement('a');
   anchor.href = url;
-  anchor.download = 'rebus-1452-founder-ratings.json';
+  anchor.download = `rebus-1452-generation-${identity.generation}-ratings.json`;
   anchor.click();
   URL.revokeObjectURL(url);
 }
 
+function LineageSummary({ genome }: { readonly genome: MusicGenome }) {
+  const lineage = genome.lineage;
+  if (lineage.generation === 0) return null;
+  const mutations = lineage.mutations ?? [];
+  return (
+    <div className="lineage-summary" aria-label="Происхождение организма">
+      <p>
+        <strong>Origin:</strong> {lineage.originType}
+      </p>
+      {lineage.parents.length > 0 && (
+        <p>
+          <strong>
+            {lineage.parents.length === 1 ? 'Parent:' : 'Parents:'}
+          </strong>{' '}
+          {lineage.parents.join(' × ')}
+        </p>
+      )}
+      {mutations.length > 0 && (
+        <details>
+          <summary>Mutations: {mutations.length}</summary>
+          <ul>
+            {mutations.map((mutation, index) => (
+              <li key={`${mutation.path}-${index}`}>
+                {mutation.scale} / {mutation.category}: {mutation.path}
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </div>
+  );
+}
+
 export function App() {
-  const [founderIndex, setFounderIndex] = useState(0);
+  const [generation, setGeneration] = useState<Generation>(0);
+  const [genomeIndex, setGenomeIndex] = useState(0);
+  const selectedIndexRef = useRef(0);
+  const selectedGenomeIdRef = useRef<string | null>(null);
+  const playbackIntentRef = useRef(false);
   const [playback, setPlayback] = useState(initialPlaybackState);
   const [error, setError] = useState<string | null>(null);
-  const repository = useMemo(
-    () => new RatingRepository(window.localStorage),
+  const repositories = useMemo(
+    () => ({
+      0: new RatingRepository(window.localStorage, DATASETS[0].identity),
+      1: new RatingRepository(window.localStorage, DATASETS[1].identity),
+    }),
     [],
   );
-  const [ratings, setRatings] = useState(() => repository.load());
+  const [ratingsByGeneration, setRatingsByGeneration] = useState(() => ({
+    0: repositories[0].load(),
+    1: repositories[1].load(),
+  }));
   const controller = useMemo(
     () => new PlaybackController(new StrudelAudioEngine()),
     [],
   );
 
-  const founder = founders[founderIndex];
-  const compiled = useMemo(() => compileGenomeToStrudel(founder), [founder]);
-  const currentRating = ratings.get(founder.id)?.score;
+  const dataset = DATASETS[generation];
+  const genomes = dataset.genomes;
+  const genome = genomes[genomeIndex];
+  const ratings = ratingsByGeneration[generation];
+  const compiled = useMemo(() => compileGenomeToStrudel(genome), [genome]);
+  const currentRating = ratings.get(genome.id)?.score;
 
   useEffect(() => controller.subscribe(setPlayback), [controller]);
-
   useEffect(() => {
+    if (selectedGenomeIdRef.current === compiled.genomeId) return;
+    selectedGenomeIdRef.current = compiled.genomeId;
     controller.select(compiled);
   }, [compiled, controller]);
-
   useEffect(
     () => () => {
       controller.dispose();
@@ -84,27 +162,62 @@ export function App() {
     [controller],
   );
 
+  const switchGeneration = (next: Generation) => {
+    playbackIntentRef.current = false;
+    selectedIndexRef.current = 0;
+    selectedGenomeIdRef.current = null;
+    controller.stop();
+    setError(null);
+    setGeneration(next);
+    setGenomeIndex(0);
+  };
+
   const selectRelative = (delta: number) => {
     setError(null);
-    setFounderIndex(
-      (index) => (index + delta + founders.length) % founders.length,
-    );
+    const status = controller.getState().status;
+    const shouldResume =
+      playbackIntentRef.current &&
+      (status === 'playing' || status === 'loading');
+    const nextIndex =
+      (selectedIndexRef.current + delta + genomes.length) % genomes.length;
+    const nextCompiled = compileGenomeToStrudel(genomes[nextIndex]);
+
+    selectedIndexRef.current = nextIndex;
+    selectedGenomeIdRef.current = nextCompiled.genomeId;
+    controller.select(nextCompiled, status === 'stopped' ? 'stopped' : 'idle');
+    setGenomeIndex(nextIndex);
+
+    if (shouldResume) {
+      void controller.play().catch((reason: unknown) => {
+        playbackIntentRef.current = false;
+        controller.stop();
+        setError(
+          reason instanceof Error
+            ? reason.message
+            : 'Не удалось включить звук.',
+        );
+      });
+    }
   };
 
   const selectNextUnrated = () => {
-    const next = findNextUnratedIndex(founders, ratings, founderIndex);
+    const next = findNextUnratedIndex(genomes, ratings, genomeIndex);
     if (next !== null) {
       setError(null);
-      setFounderIndex(next);
+      playbackIntentRef.current = false;
+      selectedIndexRef.current = next;
+      setGenomeIndex(next);
     }
   };
 
   const startPlayback = async (restart = false) => {
     setError(null);
+    playbackIntentRef.current = true;
     try {
       if (restart) await controller.restart();
       else await controller.play();
     } catch (reason) {
+      playbackIntentRef.current = false;
       controller.stop();
       setError(
         reason instanceof Error ? reason.message : 'Не удалось включить звук.',
@@ -112,54 +225,80 @@ export function App() {
     }
   };
 
+  const stopPlayback = () => {
+    playbackIntentRef.current = false;
+    controller.stop();
+  };
+
   const rate = (score: FounderScore) => {
-    const next = repository.save({
-      genomeId: founder.id,
+    const next = repositories[generation].save({
+      genomeId: genome.id,
       score,
       ratedAt: new Date().toISOString(),
     });
-    setRatings(new Map(next));
+    setRatingsByGeneration((current) => ({
+      ...current,
+      [generation]: new Map(next),
+    }));
   };
 
   const progress = (playback.elapsedMs / playback.totalMs) * 100;
+  const itemLabel = generation === 0 ? 'Founder' : 'Organism';
 
   return (
     <main className="shell">
       <header className="masthead">
         <div>
-          <p className="eyebrow">rebus-1452 / founder listening room</p>
+          <p className="eyebrow">rebus-1452 / evolutionary listening room</p>
           <h1>REBUS EVOLUTION</h1>
         </div>
         <div className="rated-counter" aria-label="Прогресс оценивания">
           <strong>{ratings.size}</strong>
-          <span>из {founders.length} оценено</span>
+          <span>из {genomes.length} оценено</span>
         </div>
       </header>
+
+      <nav className="generation-picker" aria-label="Выбор поколения">
+        <label htmlFor="generation">Generation</label>
+        <select
+          id="generation"
+          aria-label="Generation"
+          value={generation}
+          onChange={(event) =>
+            switchGeneration(Number(event.target.value) as Generation)
+          }
+        >
+          <option value={0}>Generation 0</option>
+          <option value={1}>Generation 1</option>
+        </select>
+      </nav>
 
       <section className="player-card" aria-labelledby="founder-title">
         <div className="founder-heading">
           <div>
             <p className="counter">
-              Founder {String(founderIndex + 1).padStart(3, '0')} /{' '}
-              {founders.length}
+              {itemLabel} {String(genomeIndex + 1).padStart(3, '0')} /{' '}
+              {genomes.length}
             </p>
-            <h2 id="founder-title">{founder.id}</h2>
+            <h2 id="founder-title">{genome.id}</h2>
           </div>
           <dl className="metadata">
             <div>
               <dt>Family</dt>
-              <dd>{familyName(founder.family)}</dd>
+              <dd>{familyName(genome.family)}</dd>
             </div>
             <div>
               <dt>Generation</dt>
-              <dd>{founder.lineage.generation}</dd>
+              <dd>{genome.lineage.generation}</dd>
             </div>
             <div>
               <dt>Seed</dt>
-              <dd title={founder.seed}>{founder.seed}</dd>
+              <dd title={genome.seed}>{genome.seed}</dd>
             </div>
           </dl>
         </div>
+
+        <LineageSummary genome={genome} />
 
         <div
           className="timeline"
@@ -197,7 +336,7 @@ export function App() {
           >
             {playback.status === 'loading' ? 'Loading…' : 'Play loop'}
           </button>
-          <button type="button" onClick={() => controller.stop()}>
+          <button type="button" onClick={stopPlayback}>
             Stop
           </button>
           <button
@@ -238,14 +377,14 @@ export function App() {
             type="button"
             className="next-unrated"
             onClick={selectNextUnrated}
-            disabled={ratings.size === founders.length}
+            disabled={ratings.size === genomes.length}
           >
             Next unrated
           </button>
           <button
             type="button"
             className="export"
-            onClick={() => downloadRatings(ratings)}
+            onClick={() => downloadRatings(ratings, dataset.identity)}
             disabled={ratings.size === 0}
           >
             Export ratings JSON

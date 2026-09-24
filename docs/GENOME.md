@@ -46,8 +46,10 @@ The first compiler maps hereditary traits into a 16-bar Strudel event plan:
   pitch, percussion, filter, and energy changes;
 - interactions influence kick/bass balance, open-hat ducking, and aligned accents.
 
-Mutation strategy remains hereditary metadata for future reproduction. It is not
-executed during playback, so listening to an organism cannot mutate its genome.
+Mutation strategy is hereditary metadata used by the offline Generation 1
+generator. It controls mutation rate, strength, scale weights, and category
+weights. It is never executed during playback, so listening to an organism cannot
+mutate its genome.
 
 ## Founders
 
@@ -67,15 +69,31 @@ Family profiles stratify the initial population across musical feature ranges. T
 
 ## Determinism and canonical data
 
-The master seed is `rebus-1452-founders-v1`. A founder seed is the master seed plus a zero-padded index, for example `rebus-1452-founders-v1:017`. The generator uses only the project-owned seeded PRNG.
+The founder master seed is `rebus-1452-founders-v1`. A founder seed is the master
+seed plus a zero-padded index, for example `rebus-1452-founders-v1:017`. The
+Generation 1 master seed is `rebus-1452-generation-1-v1`. Both generators use only
+the project-owned seeded PRNG.
 
 Run:
 
 ```sh
 npm run generate:founders
+npm run generate:g1
 ```
 
-The command validates and writes `src/data/founders.v0.1.json`. The JSON is generated data and must not be edited manually. Re-running the command produces byte-equivalent output.
+The commands validate and write `src/data/founders.v0.1.json` and
+`src/data/generation-1.v0.1.json`. Generated JSON must not be edited manually;
+re-running either command produces byte-equivalent output. Generation 1 contains,
+in stable ID order, seven unchanged musical elites, 24 crossover children, seven
+mutation-only children, and four random immigrants. Every evolved lineage records
+its origin, parents, ancestors, and actual path-level mutations.
+
+The canonical G1 wrapper delegates reproduction to the generation-neutral engine.
+That engine can produce later numbered generations from any validated preceding
+population and its matching ratings without embedding G1-specific conditions.
+Immigrants are sampled independently from the full Style Envelope, carry no family,
+parents, or ancestors, and receive their ID and generation only when admitted to a
+population.
 
 ## Feature extraction
 
