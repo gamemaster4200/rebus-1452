@@ -7,7 +7,8 @@ export interface StrudelPattern {
 
 /**
  * Strudel is loaded only when audio is requested. Compilation and playback are
- * intentionally left for v0.1 so the genome never becomes Strudel source code.
+ * intentionally left for the audio milestone so the genome never becomes
+ * Strudel source code.
  */
 export class StrudelAdapter implements MusicRenderer<StrudelPattern> {
   compile(_genome: MusicGenome): StrudelPattern {

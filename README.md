@@ -20,6 +20,7 @@ npm run build
 npm run lint
 npm test
 npm run format:check
+npm run generate:founders
 ```
 
 See [Architecture](docs/ARCHITECTURE.md) and [Roadmap](docs/ROADMAP.md).

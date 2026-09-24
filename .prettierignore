@@ -2,3 +2,4 @@ dist
 coverage
 node_modules
 package-lock.json
+src/data/founders.v0.1.json
