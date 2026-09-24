@@ -30,10 +30,18 @@ export interface GenerationDatasetMetadata {
   readonly ratingsDatasetVersion: string;
 }
 
+export interface FitnessHistoryInputProvenance {
+  readonly generation: number;
+  readonly populationDatasetVersion: string;
+  readonly populationDatasetSha256: string;
+  readonly ratingsDatasetVersion: string;
+  readonly ratingsFileSha256: string;
+}
+
 export interface Generation2DatasetMetadata extends GenerationDatasetMetadata {
   readonly generation: 2;
-  readonly sourceRatingsDatasetVersion: string;
-  readonly sourceRatingsDatasetSha256: string;
+  readonly fitnessHistoryInputs: readonly FitnessHistoryInputProvenance[];
+  readonly fitnessHistorySha256: string;
   readonly fitnessPolicyVersion: string;
   readonly phenotypeCompilerVersion: string;
 }

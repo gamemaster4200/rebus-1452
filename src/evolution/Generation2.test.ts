@@ -1,4 +1,6 @@
 import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { format } from 'prettier';
 import { describe, expect, it } from 'vitest';
 import {
@@ -14,6 +16,7 @@ import generation2MetadataJson from '../data/generation-2.v0.1.meta.json';
 import type { MusicGenome } from '../genome/MusicGenome';
 import { GENERATION_2_CONFIG } from './GenerationConfig';
 import { phenotypeHash } from './FitnessHistory';
+import { fitnessHistoryProvenanceHash } from './FitnessProvenance';
 import {
   generateGeneration2,
   generation2Fitness,
@@ -34,6 +37,13 @@ const generation1Ratings =
   generation1RatingsJson as unknown as CanonicalRatingsDataset;
 const canonical = generation2Json as unknown as MusicGenome[];
 const metadata = generation2MetadataJson as Generation2DatasetMetadata;
+
+function dataFileSha256(fileName: string): string {
+  return createHash('sha256')
+    .update(readFileSync(resolve(process.cwd(), 'src/data', fileName), 'utf8'))
+    .digest('hex')
+    .toUpperCase();
+}
 
 const expectedEliteIds = [
   'gen1-021',
@@ -154,5 +164,41 @@ describe('Generation 2', () => {
     expect(sha).toBe(metadata.datasetSha256);
     expect(metadata.generation).toBe(2);
     expect(metadata.fitnessPolicyVersion).toBe('phenotype-fitness-history-v1');
+  });
+
+  it('records complete deterministic G0+G1 fitness provenance', () => {
+    expect(
+      metadata.fitnessHistoryInputs.map(({ generation }) => generation),
+    ).toEqual([0, 1]);
+    expect(metadata.fitnessHistoryInputs).toEqual([
+      {
+        generation: 0,
+        populationDatasetVersion: generation0Ratings.datasetVersion,
+        populationDatasetSha256: dataFileSha256('founders.v0.1.json'),
+        ratingsDatasetVersion: generation0Ratings.version,
+        ratingsFileSha256: dataFileSha256('generation-0-ratings.v1.json'),
+      },
+      {
+        generation: 1,
+        populationDatasetVersion: generation1Ratings.datasetVersion,
+        populationDatasetSha256: dataFileSha256('generation-1.v0.1.json'),
+        ratingsDatasetVersion: generation1Ratings.version,
+        ratingsFileSha256: dataFileSha256('generation-1-ratings.v1.json'),
+      },
+    ]);
+    expect(metadata.fitnessHistorySha256).toBe(
+      fitnessHistoryProvenanceHash(metadata.fitnessHistoryInputs),
+    );
+  });
+
+  it('changes aggregate provenance when any descriptor changes', () => {
+    const changed = structuredClone(metadata.fitnessHistoryInputs);
+    changed[0] = {
+      ...changed[0],
+      ratingsFileSha256: `${changed[0].ratingsFileSha256}-changed`,
+    };
+    expect(fitnessHistoryProvenanceHash(changed)).not.toBe(
+      metadata.fitnessHistorySha256,
+    );
   });
 });

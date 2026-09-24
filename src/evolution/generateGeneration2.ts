@@ -15,9 +15,14 @@ import {
   GENERATION_2_MASTER_SEED,
 } from './GenerationConfig';
 import { FITNESS_POLICY_VERSION, buildFitnessHistory } from './FitnessHistory';
+import {
+  canonicalFitnessHistoryInputs,
+  fitnessHistoryProvenanceHash,
+} from './FitnessProvenance';
 import { generateGeneration2, generation2Report } from './Generation2';
 import type {
   CanonicalRatingsDataset,
+  FitnessHistoryInputProvenance,
   Generation2DatasetMetadata,
   GenerationDatasetMetadata,
 } from './GenerationTypes';
@@ -38,29 +43,53 @@ const generation1Ratings =
 const generation1Metadata =
   generation1MetadataJson as GenerationDatasetMetadata;
 
-const canonicalGeneration1 = readFileSync(
-  resolve(sourceDirectory, '../data/generation-1.v0.1.json'),
-  'utf8',
+function canonicalFileSha256(relativePath: string): string {
+  return createHash('sha256')
+    .update(readFileSync(resolve(sourceDirectory, relativePath), 'utf8'))
+    .digest('hex')
+    .toUpperCase();
+}
+
+const foundersSha256 = canonicalFileSha256('../data/founders.v0.1.json');
+const generation0RatingsFileSha256 = canonicalFileSha256(
+  '../data/generation-0-ratings.v1.json',
 );
-const generation1Sha256 = createHash('sha256')
-  .update(canonicalGeneration1)
-  .digest('hex')
-  .toUpperCase();
+const generation1Sha256 = canonicalFileSha256('../data/generation-1.v0.1.json');
+const generation1RatingsFileSha256 = canonicalFileSha256(
+  '../data/generation-1-ratings.v1.json',
+);
 if (
+  generation0Ratings.generation !== 0 ||
+  foundersSha256 !== generation0Ratings.datasetSha256
+) {
+  throw new Error(`Founder dataset identity mismatch: ${foundersSha256}.`);
+}
+if (
+  generation1Metadata.generation !== 1 ||
+  generation1Ratings.generation !== 1 ||
   generation1Sha256 !== generation1Metadata.datasetSha256 ||
   generation1Sha256 !== generation1Ratings.datasetSha256
 ) {
   throw new Error(`Generation 1 dataset hash mismatch: ${generation1Sha256}.`);
 }
 
-const canonicalRatings = readFileSync(
-  resolve(sourceDirectory, '../data/generation-1-ratings.v1.json'),
-  'utf8',
-);
-const sourceRatingsDatasetSha256 = createHash('sha256')
-  .update(canonicalRatings)
-  .digest('hex')
-  .toUpperCase();
+const fitnessHistoryInputs = canonicalFitnessHistoryInputs([
+  {
+    generation: 0,
+    populationDatasetVersion: generation0Ratings.datasetVersion,
+    populationDatasetSha256: foundersSha256,
+    ratingsDatasetVersion: generation0Ratings.version,
+    ratingsFileSha256: generation0RatingsFileSha256,
+  },
+  {
+    generation: 1,
+    populationDatasetVersion: generation1Metadata.datasetVersion,
+    populationDatasetSha256: generation1Sha256,
+    ratingsDatasetVersion: generation1Ratings.version,
+    ratingsFileSha256: generation1RatingsFileSha256,
+  },
+]) satisfies FitnessHistoryInputProvenance[];
+const fitnessHistorySha256 = fitnessHistoryProvenanceHash(fitnessHistoryInputs);
 
 const generation = generateGeneration2(
   founders,
@@ -83,8 +112,8 @@ const metadata: Generation2DatasetMetadata = {
   sourceDatasetVersion: generation1Metadata.datasetVersion,
   sourceDatasetSha256: generation1Metadata.datasetSha256,
   ratingsDatasetVersion: generation1Ratings.version,
-  sourceRatingsDatasetVersion: generation1Ratings.version,
-  sourceRatingsDatasetSha256,
+  fitnessHistoryInputs,
+  fitnessHistorySha256,
   fitnessPolicyVersion: FITNESS_POLICY_VERSION,
   phenotypeCompilerVersion: STRUDEL_COMPILER_VERSION,
 };
@@ -116,7 +145,8 @@ console.log(
       datasetPath,
       metadataPath,
       datasetSha256,
-      sourceRatingsDatasetSha256,
+      fitnessHistorySha256,
+      fitnessHistoryInputs,
       organisms: generation.length,
       uniquePhenotypes: observationCounts.size,
       repeatedPhenotypes: [...observationCounts.values()].filter(

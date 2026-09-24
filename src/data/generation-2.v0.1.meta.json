@@ -7,8 +7,23 @@
   "sourceDatasetVersion": "v0.1",
   "sourceDatasetSha256": "107825B6EB43023F82517DF51BAB436B0CD3052BE2363D45B4D080D2F42C9A18",
   "ratingsDatasetVersion": "1",
-  "sourceRatingsDatasetVersion": "1",
-  "sourceRatingsDatasetSha256": "669D2705C377A86668C3D00E025080BB9F207EB68E2EA7377FE19964631CAE5A",
+  "fitnessHistoryInputs": [
+    {
+      "generation": 0,
+      "populationDatasetVersion": "v0.1",
+      "populationDatasetSha256": "3D3E1A354CE56AC535183283F5BEDC547B0CF57B5238D4F5E921A8C267290FF3",
+      "ratingsDatasetVersion": "1",
+      "ratingsFileSha256": "317AEB35684D08A4D994B55CC809E2C92B1A26564A781A5CA663546AD02FB40C"
+    },
+    {
+      "generation": 1,
+      "populationDatasetVersion": "v0.1",
+      "populationDatasetSha256": "107825B6EB43023F82517DF51BAB436B0CD3052BE2363D45B4D080D2F42C9A18",
+      "ratingsDatasetVersion": "1",
+      "ratingsFileSha256": "669D2705C377A86668C3D00E025080BB9F207EB68E2EA7377FE19964631CAE5A"
+    }
+  ],
+  "fitnessHistorySha256": "F3C30991C88CDDE8EF1E1EF797BAE0551342628A9061A87B0F5C2552D8667325",
   "fitnessPolicyVersion": "phenotype-fitness-history-v1",
   "phenotypeCompilerVersion": "strudel-compiler-v3"
 }
